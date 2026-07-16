@@ -84,9 +84,6 @@
                 <button onclick="switchTab('tour-tab')" id="btn-tour-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
                     <i class="fa-solid fa-medal mr-2"></i>Турниры
                 </button>
-                <button onclick="switchTab('config-tab')" id="btn-config-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
-                    <i class="fa-brands fa-github mr-2"></i>База ИИ
-                </button>
             </nav>
         </div>
     </header>
@@ -104,7 +101,7 @@
                 <div>
                     <div class="flex items-center gap-2 mb-1">
                         <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_#f59e0b]"></span>
-                        <span id="sync-status-text" class="text-[10px] text-amber-400 font-bold uppercase tracking-widest">Ожидание настройки ИИ</span>
+                        <span id="sync-status-text" class="text-[10px] text-amber-400 font-bold uppercase tracking-widest">Ожидание базы данных...</span>
                     </div>
                     <h2 class="text-base font-bold text-white leading-tight"><span id="user-nickname">Гость</span>: Калибровка Personal Diff Score</h2>
                 </div>
@@ -119,8 +116,8 @@
                     <i class="fa-solid fa-rotate"></i> OpenDota
                 </button>
                 <div class="w-px h-8 bg-gray-800 hidden sm:block self-center mx-1"></div>
-                <button onclick="forceLoadGitHubData()" class="px-5 py-2 rounded-lg bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 text-white shadow-lg shadow-rose-900/20 font-bold text-xs transition-all flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-cloud-arrow-down"></i> Обновить Мету (GitHub)
+                <button onclick="loadGitHubData()" class="px-5 py-2 rounded-lg bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 text-white shadow-lg shadow-rose-900/20 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-down"></i> Обновить Мету
                 </button>
             </div>
         </div>
@@ -334,25 +331,6 @@
             </div>
         </div>
 
-        <div id="config-tab" class="tab-content hidden transition-opacity duration-300">
-            <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
-                <h3 class="text-lg font-bold text-white mb-2">Настройка Автоматизации GitHub</h3>
-                <p class="text-sm text-gray-400 mb-6">Укажи свой репозиторий, откуда сайт должен брать свежий файл data.json, собранный ИИ.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mb-8">
-                    <input type="text" id="github-username-input" placeholder="Твой ник на GitHub (например: rekdekk)" class="bg-[#04060a] px-4 py-3 rounded-xl text-sm font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="">
-                    <button onclick="saveConfigAndLoad()" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all whitespace-nowrap">
-                        <i class="fa-solid fa-save mr-2"></i>Сохранить и Загрузить
-                    </button>
-                </div>
-
-                <div class="bg-slate-900/50 p-5 rounded-xl border border-gray-800/80">
-                    <h4 class="text-sm font-bold text-rose-400 mb-2"><i class="fa-solid fa-shield-halved mr-2"></i>Защита от ошибки 404</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">В систему встроена защита <code>safeFetchJson</code>. Если ты опечатаешься в нике, или GitHub Actions еще не создал файл <code>data.json</code>, скрипт не сломается с красной ошибкой. Он плавно перейдет в Демо-режим и предупредит тебя.</p>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <div id="hero-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden">
@@ -439,7 +417,7 @@
         const state = {
             activeTab: 'hero-tab',
             weights: { pro: 20, pub: 30, comfort: 50 },
-            githubUsername: '', 
+            githubUsername: 'rekdekk', // Твой никнейм жестко зашит
             playerProfile: null,
             userComfortPool: [],
             metaHeroes: [],
@@ -469,48 +447,24 @@
         };
 
         const itemImageMapping = {
-            "black_king_bar": "black_king_bar",
-            "blink": "blink",
-            "ultimate_scepter": "ultimate_scepter",
-            "silver_edge": "silver_edge",
-            "maelstrom": "maelstrom",
-            "lesser_crit": "lesser_crit",
-            "desolator": "desolator",
-            "crimson_guard": "crimson_guard",
-            "pipe_of_insight": "pipe"
+            "black_king_bar": "black_king_bar", "blink": "blink", "ultimate_scepter": "ultimate_scepter",
+            "silver_edge": "silver_edge", "maelstrom": "maelstrom", "lesser_crit": "lesser_crit",
+            "desolator": "desolator", "crimson_guard": "crimson_guard", "pipe_of_insight": "pipe"
         };
 
         const heroImageMapping = {
-            "shadow fiend": "nevermore",
-            "shadow_fiend": "nevermore",
-            "windranger": "windrunner",
-            "magnataur": "magnataur",
-            "enigma": "enigma",
-            "tidehunter": "tidehunter",
-            "treant": "treant",
-            "crystal_maiden": "crystal_maiden",
-            "bloodseeker": "bloodseeker",
-            "centaur": "centaur",
-            "axe": "axe",
-            "templar_assassin": "templar_assassin",
-            "pudge": "pudge",
-            "viper": "viper"
+            "shadow fiend": "nevermore", "shadow_fiend": "nevermore", "windranger": "windrunner",
+            "magnataur": "magnataur", "enigma": "enigma", "tidehunter": "tidehunter", "treant": "treant",
+            "crystal_maiden": "crystal_maiden", "bloodseeker": "bloodseeker", "centaur": "centaur",
+            "axe": "axe", "templar_assassin": "templar_assassin", "pudge": "pudge", "viper": "viper"
         };
 
-        // БРОНЕБОЙНАЯ ФУНКЦИЯ ДЛЯ ЗАЩИТЫ ОТ ОШИБКИ 404 И СБРОСА КЭША
         async function safeFetchJson(url) {
             try {
                 const res = await fetch(url, { cache: "no-store" });
-                if (!res.ok) {
-                    throw new Error(`HTTP Error ${res.status}`);
-                }
+                if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
                 const text = await res.text();
-                
-                // Главная защита от ошибки "<"
-                if (text.trim().startsWith('<')) {
-                    throw new Error("Сервер вернул HTML-страницу вместо JSON (вероятно, файл не найден или доступ закрыт).");
-                }
-                
+                if (text.trim().startsWith('<')) throw new Error("Сервер вернул HTML-страницу.");
                 return JSON.parse(text);
             } catch (err) {
                 console.warn(`[SafeFetch Error] Failed to load ${url}:`, err);
@@ -553,12 +507,10 @@
         async function fetchDotaHeroes() {
             try {
                 const data = await safeFetchJson('https://api.opendota.com/api/heroes');
-                data.forEach(h => {
-                    state.heroMapping[h.id] = h;
-                });
+                data.forEach(h => { state.heroMapping[h.id] = h; });
                 populateAddHeroSelect();
             } catch (err) {
-                console.log("Using fallback names for OpenDota due to API issues.");
+                console.log("Using fallback names due to API issues.");
             }
         }
 
@@ -619,10 +571,8 @@
             const foundHero = state.heroMapping[heroId];
             
             const newHero = {
-                id: heroId,
-                localized_name: foundHero.localized_name,
-                winrate: parseFloat(wrInput.value) || 50,
-                games: parseInt(gamesInput.value) || 10
+                id: heroId, localized_name: foundHero.localized_name,
+                winrate: parseFloat(wrInput.value) || 50, games: parseInt(gamesInput.value) || 10
             };
 
             const existIndex = state.userComfortPool.findIndex(h => h.id === heroId);
@@ -681,7 +631,7 @@
 
         function getMinifiedItemImage(itemName) {
             const mappedName = itemImageMapping[itemName] || itemName;
-            return `https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/items/${mappedName}.png`;
+            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${mappedName}.png`;
         }
 
         function renderHeroTable() {
@@ -768,7 +718,7 @@
                         document.getElementById('user-avatar').src = profileData.profile.avatarfull;
                         document.getElementById('user-avatar-container').classList.remove('hidden');
                     }
-                } catch(e) { console.log("Profile missing") }
+                } catch(e) {}
 
                 let wlData = { win: 0, lose: 0 };
                 try { wlData = await safeFetchJson(`https://api.opendota.com/api/players/${steamId}/wl`); } catch(e) {}
@@ -814,7 +764,7 @@
 
                 showToast("Статистика успешно импортирована!", "success");
             } catch (err) {
-                showToast("Не удалось импортировать профиль полностью. Загружены демо-данные.", "error");
+                showToast("Не удалось импортировать профиль. Загружены демо-данные.", "error");
                 loadMockDotaMatches();
             }
         }
@@ -1003,17 +953,8 @@
             });
         }
 
-        async function loadGitHubData(forcedUsername = null) {
-            // Берем ник либо переданный принудительно, либо из инпута, либо пустой
-            let username = forcedUsername || document.getElementById('github-username-input').value.trim() || state.githubUsername;
-            
-            // Если никнейм вообще пустой, включаем демо-режим, не делая лишних запросов
-            if (!username) {
-                applyDemoData("Укажи свой никнейм GitHub для загрузки живой меты.");
-                return;
-            }
-
-            // Добавлена метка времени (t=...) для полного обхода кэширования GitHub CDN
+        async function loadGitHubData() {
+            const username = state.githubUsername;
             const url = `https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${Date.now()}`;
             
             showToast("Стучимся к ИИ на GitHub...", "info");
@@ -1021,7 +962,6 @@
             document.getElementById('sync-status-text').textContent = "Синхронизация...";
 
             try {
-                // Используем безопасный фетч, который перехватывает 404 HTML
                 const data = await safeFetchJson(url);
                 
                 state.metaHeroes = data.meta_heroes || fallbackHeroes;
@@ -1036,8 +976,7 @@
                 renderTournaments();
                 showToast("Интеграция ИИ успешно завершена!", "success");
             } catch (err) {
-                // Если файл не найден или вернул HTML, мы перехватываем ошибку здесь
-                applyDemoData(`Сбой ИИ: Файл не найден у @${username}. Включен Демо-режим.`);
+                applyDemoData(`Сбой ИИ: Файл не найден в репозитории. Включен Демо-режим.`);
             }
         }
 
@@ -1053,20 +992,6 @@
             renderHeroTable();
             renderProTeams();
             renderTournaments();
-        }
-
-        function forceLoadGitHubData() {
-            const inputUsername = document.getElementById('github-username-input').value.trim();
-            if (inputUsername) {
-                state.githubUsername = inputUsername;
-                loadGitHubData(inputUsername);
-            } else {
-                showToast("Сначала укажи свой ник на GitHub во вкладке 'База ИИ'!", "error");
-            }
-        }
-
-        function saveConfigAndLoad() {
-            forceLoadGitHubData();
         }
 
         function renderProTeams() {
@@ -1174,14 +1099,9 @@
         }
 
         window.addEventListener('DOMContentLoaded', async () => {
-            // 1. Инициализация UI
             loadPoolFromStorage();
             initDraftSimulator();
-            
-            // 2. Грузим героев из Dota API в фоне
             fetchDotaHeroes();
-            
-            // 3. Пытаемся затянуть живую ИИ-дату
             loadGitHubData();
         });
     </script>
