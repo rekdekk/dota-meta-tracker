@@ -792,6 +792,10 @@
             computedList.forEach(hero => {
                 if (roleFilter !== 'all' && hero.role !== roleFilter) return;
 
+                // Находим правильное системное имя героя для картинки (например, 'nevermore' вместо 'Shadow Fiend')
+                const mappedHero = Object.values(state.heroMapping).find(h => h.name.toLowerCase() === hero.name.toLowerCase()) || { raw: hero.name.toLowerCase().replace(/\s+/g, '_') };
+                const rawName = mappedHero.raw;
+
                 const tr = document.createElement('tr');
                 tr.className = "border-b border-gray-900/60 hover:bg-[#0c111e]/40 transition-colors";
                 
@@ -800,22 +804,30 @@
                 else if (hero.pds >= 60) pdsColorClass = "text-amber-400 font-bold";
 
                 tr.innerHTML = `
-                    <td class="py-3 pl-2 flex items-center gap-2">
-                        <img class="w-8 h-8 rounded border border-slate-800 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${hero.name.toLowerCase().replace(/\s+/g, '_')}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.name[0]}'">
-                        <div>
-                            <span class="font-bold text-white block">${hero.name}</span>
-                            <span class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded-full uppercase">${hero.badge}</span>
+                    <td class="py-3 pl-2 min-w-[220px]">
+                        <div class="flex items-center gap-3 mb-2">
+                            <img class="w-10 h-10 rounded-lg border border-slate-700/80 object-cover shadow-md" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${rawName}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.name[0]}'">
+                            <div>
+                                <span class="font-bold text-white text-sm block">${hero.name}</span>
+                                <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded-full border border-slate-700 uppercase tracking-wider">${hero.badge}</span>
+                            </div>
                         </div>
+                        ${hero.build_advice ? `
+                        <div class="text-[10px] text-gray-400 bg-slate-900/60 p-2 rounded-lg border border-slate-800/80 mt-1 flex items-start gap-1.5 shadow-inner">
+                            <i class="fa-solid fa-khanda text-amber-500 mt-0.5"></i> 
+                            <span class="leading-relaxed"><strong class="text-gray-300">Победный билд:</strong> ${hero.build_advice}</span>
+                        </div>
+                        ` : ''}
                     </td>
-                    <td class="py-3 text-gray-400 font-semibold">${hero.role}</td>
-                    <td class="py-3 text-center text-gray-300 font-mono">${hero.comfortWr} <span class="text-gray-500">/ ${hero.comfortGames}</span></td>
-                    <td class="py-3 text-center text-cyan-400 font-bold font-mono">${hero.winrate_d2pt}</td>
-                    <td class="py-3 text-center">
+                    <td class="py-3 text-gray-400 font-semibold align-top pt-4">${hero.role}</td>
+                    <td class="py-3 text-center text-gray-300 font-mono align-top pt-4">${hero.comfortWr} <span class="text-gray-500">/ ${hero.comfortGames}</span></td>
+                    <td class="py-3 text-center text-cyan-400 font-bold font-mono align-top pt-4">${hero.winrate_d2pt}</td>
+                    <td class="py-3 text-center align-top pt-4">
                         <span class="text-[10px] font-bold ${hero.pro_trend === 'high_priority' ? 'text-amber-400' : 'text-gray-500'} uppercase">
                             ${hero.pro_trend === 'high_priority' ? 'Tier 1 Pick' : 'Stable'}
                         </span>
                     </td>
-                    <td class="py-3 text-right pr-2 font-mono text-base ${pdsColorClass}">${hero.pds}</td>
+                    <td class="py-3 text-right pr-2 font-mono text-base ${pdsColorClass} align-top pt-4">${hero.pds}</td>
                 `;
                 tbody.appendChild(tr);
             });
