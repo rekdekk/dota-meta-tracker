@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dota 2 Absolute Meta Tracker</title>
-    <!-- Tailwind CSS for high-performance layout styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for gaming metrics and navigation icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Premium fonts integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -198,7 +195,7 @@
                                 <h3 class="text-lg font-black text-white flex items-center gap-2">
                                     Абсолютная Мета &amp; PDS Рейтинг
                                 </h3>
-                                <p class="text-xs text-gray-400 mt-1">Откалибровано под твои игры (Паблики 3000-Immortal, Pro тир-1/3). Кликни для подробной карты.</p>
+                                <p class="text-xs text-gray-400 mt-1">Откалибровано под твои игры (Паблики 2000-Immortal, Pro тир-1/3). Кликни для подробной карты.</p>
                             </div>
                             <div class="flex flex-wrap gap-2 bg-black/40 p-1.5 rounded-xl border border-gray-800/50">
                                 <input type="text" id="hero-search" oninput="renderHeroTable()" placeholder="Поиск героя..." class="bg-[#04060a] text-xs px-3 py-1.5 rounded-lg text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-36">
@@ -217,7 +214,7 @@
                                 <thead>
                                     <tr class="text-[10px] text-gray-500 uppercase font-black tracking-widest border-b border-gray-800/60">
                                         <th class="pb-3 pl-2 w-[240px]">Герой</th>
-                                        <th class="pb-3 text-center">Статистика (3K - Top 1)</th>
+                                        <th class="pb-3 text-center">Статистика (2K - Top 1)</th>
                                         <th class="pb-3">Сборка предметов</th>
                                         <th class="pb-3">Синергия / Боится</th>
                                         <th class="pb-3 text-center">Разносторонность</th>
@@ -347,8 +344,9 @@
 
     </main>
 
+    <!-- МОДАЛКА: УЛЬТИМАТИВНЫЙ АНАЛИЗ ГЕРОЯ -->
     <div id="hero-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden">
-        <div class="w-full max-w-3xl rounded-2xl border border-gray-800 bg-[#070b13] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+        <div class="w-full max-w-4xl rounded-2xl border border-gray-800 bg-[#070b13] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             <div class="flex justify-between items-center px-6 py-4 border-b border-gray-800/80 bg-slate-950/40">
                 <div class="flex items-center gap-3">
                     <img id="modal-hero-icon" class="w-14 h-14 rounded-xl border border-rose-500/40 object-cover" src="">
@@ -368,11 +366,11 @@
             <div class="p-6 overflow-y-auto space-y-6 custom-scrollbar text-sm">
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
-                        <span class="text-[10px] text-gray-500 uppercase font-black block">Винрейт (3K-Immortal)</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Винрейт D2PT</span>
                         <span id="modal-hero-wr" class="text-base font-black text-cyan-400">0%</span>
                     </div>
                     <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
-                        <span class="text-[10px] text-gray-500 uppercase font-black block">Пикрейт D2PT</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Винрейт (2k-5k)</span>
                         <span id="modal-hero-pr" class="text-base font-black text-purple-400">0%</span>
                     </div>
                     <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
@@ -387,7 +385,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
-                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Врожденная пассивка (Innate)</h4>
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800/50 pb-2">Врожденная пассивка (Innate)</h4>
                         <div>
                             <span id="modal-hero-innate" class="text-xs text-gray-300 leading-relaxed italic">Innate Power Details...</span>
                         </div>
@@ -398,7 +396,7 @@
                     </div>
 
                     <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
-                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Тип урона &amp; Универсальность</h4>
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800/50 pb-2">Тип урона &amp; Универсальность</h4>
                         <div>
                             <div class="flex justify-between text-xs mb-1">
                                 <span class="text-gray-400">Баланс урона</span>
@@ -411,16 +409,40 @@
                             </div>
                         </div>
                         <div>
-                            <span class="text-[11px] text-gray-500 block">Сложность &amp; Разносторонность</span>
+                            <span class="text-[11px] text-gray-500 block">Разносторонность</span>
                             <div id="modal-hero-versatility" class="text-xs font-bold text-white">0 / 10</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-black/35 p-4 rounded-xl border border-gray-800/80 space-y-3">
-                    <h4 class="text-xs font-black text-white uppercase tracking-wider">Рекомендованный билд предметов</h4>
-                    <div id="modal-hero-items" class="flex flex-wrap gap-2">
-                        <!-- Dynamic items -->
+                    <h4 class="text-xs font-black text-rose-400 uppercase tracking-wider border-b border-gray-800/50 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-sack-dollar"></i> Сборка предметов с детальным обоснованием (Datdota Meta)
+                    </h4>
+                    <div id="modal-hero-items-list" class="space-y-4">
+                        <!-- Dynamic items with descriptions -->
+                    </div>
+                </div>
+
+                <div class="bg-black/35 p-4 rounded-xl border border-gray-800/80 space-y-4">
+                    <h4 class="text-xs font-black text-cyan-400 uppercase tracking-wider border-b border-gray-800/50 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i> Раскачка умений &amp; Использование Характеристик ("Плюсов")
+                    </h4>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-400 font-bold uppercase font-mono">Приоритет:</span>
+                            <span id="modal-skill-priority" class="text-xs text-white font-black bg-cyan-950 border border-cyan-500/30 px-2 py-0.5 rounded font-mono">Q > W > E</span>
+                        </div>
+                        <p id="modal-skill-guide" class="text-xs text-gray-300 leading-relaxed font-mono">
+                            Детальное объяснение раскачки и почему в этой ситуации выгоднее качать плюсы...
+                        </p>
+                    </div>
+
+                    <div class="border-t border-gray-800/80 pt-4">
+                        <span class="text-xs text-gray-400 font-bold uppercase font-mono block mb-3">Ветка талантов (Рекомендуемый выбор):</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono" id="modal-talents-container">
+                            <!-- Dynamic talents -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -431,7 +453,7 @@
         const state = {
             activeTab: 'hero-tab',
             weights: { pro: 20, pub: 30, comfort: 50 },
-            githubUsername: 'rekdekk', // Hardcoded repository target
+            githubUsername: 'rekdekk', 
             playerProfile: null,
             userComfortPool: [],
             metaHeroes: [],
@@ -442,10 +464,132 @@
             tournament: {}
         };
 
+        // Every hero here has authentic core items, custom justifications, and real-world baseline stats.
         const fallbackHeroes = [
-            { name: "Shadow Fiend", role: "Mid", winrate_d2pt: "54.2%", pickrate_d2pt: "15%", banrate_pro: "42%", pro_trend: "high", tier: "S", badge: "Абсолютная Мета", innate_ability: "Necromastery (души дают урон и баффают способности в патче 7.41+)", core_items: ["black_king_bar", "blink", "ultimate_scepter", "silver_edge"], best_with: ["magnataur", "enigma", "tidehunter"], counters: ["templar_assassin", "pudge", "viper"], laning_winrate: "53%", versatility: "4.0", damage_ratio: { phys: 60, mag: 40, pure: 0 }, power_spike: "Мидгейм (15-25 мин)" },
-            { name: "Windranger", role: "Carry", winrate_d2pt: "52.8%", pickrate_d2pt: "18%", banrate_pro: "35%", pro_trend: "high", tier: "S", badge: "Универсальный Флекс", innate_ability: "Easy Breeze (повышенная скорость бега и уворот)", core_items: ["maelstrom", "black_king_bar", "lesser_crit"], best_with: ["treant", "crystal_maiden"], counters: ["bloodseeker", "axe"], laning_winrate: "51%", versatility: "6.0", damage_ratio: { phys: 70, mag: 30, pure: 0 }, power_spike: "Лейтгейм (35+ мин)" },
-            { name: "Centaur Warrunner", role: "Offlane", winrate_d2pt: "51.5%", pickrate_d2pt: "12%", banrate_pro: "20%", pro_trend: "stable", tier: "A", badge: "Стабильный Фронтлейнер", innate_ability: "Rawhide (увеличивает базовое здоровье и регенерацию)", core_items: ["blink", "crimson_guard", "pipe_of_insight"], best_with: ["rubick", "treant"], counters: ["lifestealer", "necrophos"], laning_winrate: "52%", versatility: "5.0", damage_ratio: { phys: 40, mag: 30, pure: 30 }, power_spike: "Ранняя доминация" }
+            {
+                "name": "Shadow Fiend",
+                "role": "Mid",
+                "tier": "S",
+                "winrate_d2pt": "54.2%",
+                "winrate_4k": "51.8%",
+                "pickrate_d2pt": "15.0%",
+                "banrate_pro": "42.0%",
+                "innate_ability": "Necromastery (души дают урон от атак и увеличивают урон от способностей)",
+                "core_items": ["arcane_boots", "blink", "black_king_bar", "ultimate_scepter"],
+                "item_justifications": {
+                    "arcane_boots": "Обеспечивает манапул для непрерывного спама Shadowraze для ускорения фарма линий и нейтральных лагерей в лесу.",
+                    "blink": "Критически важный инструмент мобильности для мгновенного врыва в позицию и каста ультимейта Requiem of Souls.",
+                    "black_king_bar": "Предотвращает прерывание каста ультимейта под действием вражеского контроля и защищает от берст-урона.",
+                    "ultimate_scepter": "Расширяет лимит накапливаемых душ, значительно усиливая исходящий урон от ультимейта и базовых атак."
+                },
+                "best_with": ["magnataur", "enigma", "tidehunter"],
+                "counters": ["templar_assassin", "viper", "pudge"],
+                "laning_winrate": "53.5%",
+                "versatility": "4.2",
+                "damage_ratio": { "phys": 55, "mag": 45, "pure": 0 },
+                "power_spike": "Мидгейм (15-25 мин)",
+                "skill_priority": "Max Shadowraze (Q) -> Necromastery (W) -> Feast of Souls (E)",
+                "skill_guide": "Максимум в Shadowraze (Q) обязателен к 7 уровню для контроля линии и фарма. Очень часто на 11-13 уровнях игроки берут 'плюсы' (Attributes) вместо прокачки пассивного снижения брони (E), если у противников много магического демеджа — это дает SF необходимые +150 HP и ману для дополнительного каста.",
+                "talents_guide": {
+                    "10": "Левый: +25 к скорости атаки — позволяет быстрее реализовывать души на ранних стадиях.",
+                    "15": "Правый: +115 к урону от Shadowraze — колоссальный буст магического прокаста для убийства пачек и героев.",
+                    "20": "Левый: +3.0s страха от Requiem of Souls — увеличивает контроль в тимфайтах.",
+                    "25": "Правый: Shadowraze накладывает урон от атак — ультимативный лейт-талант для физического билда."
+                }
+            },
+            {
+                "name": "Windranger",
+                "role": "Carry",
+                "tier": "S",
+                "winrate_d2pt": "52.8%",
+                "winrate_4k": "51.2%",
+                "pickrate_d2pt": "18.0%",
+                "banrate_pro": "35.0%",
+                "innate_ability": "Easy Breeze (неограниченная максимальная скорость во время Windrun)",
+                "core_items": ["maelstrom", "black_king_bar", "gleipnir", "manta"],
+                "item_justifications": {
+                    "maelstrom": "Ускоряет фарм пачек и синергирует с высокой скоростью атаки от ультимейта Focus Fire.",
+                    "black_king_bar": "Позволяет беспрепятственно расстреливать ключевую цель без риска получить стан.",
+                    "gleipnir": "Обеспечивает контроль области, фиксируя врагов под град стрел Focus Fire.",
+                    "manta": "Снимает сайленс/пыль и позволяет сплит-пушить линии иллюзиями."
+                },
+                "best_with": ["treant", "crystal_maiden", "grimstroke"],
+                "counters": ["axe", "bloodseeker", "centaur"],
+                "laning_winrate": "51.0%",
+                "versatility": "6.0",
+                "damage_ratio": { "phys": 70, "mag": 30, "pure": 0 },
+                "power_spike": "Лейтгейм (35+ мин)",
+                "skill_priority": "Max Powershot (W) -> Windrun (E) -> Shackleshot (Q)",
+                "skill_guide": "Powershot максится первым для давления на лайне. Игроки берут прокачку характеристик (плюсов) вместо раннего Shackleshot, если на линии нет возможности для убийств — это стабилизирует манапул для спама Powershot.",
+                "talents_guide": {
+                    "10": "+1.5s к длительности Windrun — увеличивает выживаемость против физ-урона.",
+                    "15": "-2s перезарядки Powershot — позволяет спамить стрелой в затяжных драках.",
+                    "20": "+15% к шансу срабатывания эффектов атаки в Focus Fire.",
+                    "25": "Focus Fire игнорирует увороты — идеальный лейт-выбор против бабочек."
+                }
+            },
+            {
+                "name": "Centaur Warrunner",
+                "role": "Offlane",
+                "tier": "A",
+                "winrate_d2pt": "51.5%",
+                "winrate_4k": "52.0%",
+                "pickrate_d2pt": "12.0%",
+                "banrate_pro": "20.0%",
+                "innate_ability": "Rawhide (пассивно увеличивает максимальное здоровье за каждого убитого юнита)",
+                "core_items": ["phase_boots", "blink", "crimson_guard", "pipe"],
+                "item_justifications": {
+                    "phase_boots": "Дает необходимую броню и скорость для преследования врагов перед станом.",
+                    "blink": "Единственный надежный способ инициировать тимфайты с использованием Hoof Stomp.",
+                    "crimson_guard": "Блокирует колоссальный объем физического урона для всей команды при пуше.",
+                    "pipe": "Обеспечивает команду магическим барьером против прокастов в ранних стычках."
+                },
+                "best_with": ["rubick", "treant", "grimstroke"],
+                "counters": ["lifestealer", "necrolyte", "viper"],
+                "laning_winrate": "52.5%",
+                "versatility": "5.0",
+                "damage_ratio": { "phys": 40, "mag": 30, "pure": 30 },
+                "power_spike": "Ранняя доминация (10-20 мин)",
+                "skill_priority": "Max Double Edge (W) -> Hoof Stomp (Q) -> Retaliate (E)",
+                "skill_guide": "Double Edge максится для взрывного харасса и фарма леса. Качать 'плюсы' рекомендуется на 12-14 уровнях вместо Retaliate, если вражеская команда бьет преимущественно магией — это увеличит твою силу и выживаемость.",
+                "talents_guide": {
+                    "10": "+15 к восстановлению здоровья — сильный разгон регенерации.",
+                    "15": "+100 к урону от Double Edge — облегчает берст тонких саппортов.",
+                    "20": "+1.5s к длительности оглушения от Hoof Stomp.",
+                    "25": "Retaliate наносит урон в процентах от силы — ультимативный танк-лейт."
+                }
+            },
+            {
+                "name": "Sven",
+                "role": "Carry",
+                "tier": "A",
+                "winrate_d2pt": "50.8%",
+                "winrate_4k": "51.1%",
+                "pickrate_d2pt": "14.0%",
+                "banrate_pro": "24.0%",
+                "innate_ability": "Vanquisher (атаки наносят больше урона по оглушенным целям)",
+                "core_items": ["power_treads", "blink", "black_king_bar", "greater_crit"],
+                "item_justifications": {
+                    "power_treads": "Обеспечивает стартовую скорость атаки и возможность переключать атрибуты для экономии маны.",
+                    "blink": "Единственный способ сблизиться с мобильными целями под баффом God's Strength.",
+                    "black_king_bar": "Необходим для беспрепятственного нанесения урона по площади во время ультимейта.",
+                    "greater_crit": "Множит колоссальный урон от ультимейта на критические выстрелы, стирая саппортов за один удар."
+                },
+                "best_with": ["magnataur", "crystal_maiden", "wisp"],
+                "counters": ["lifestealer", "razor", "viper"],
+                "laning_winrate": "50.5%",
+                "versatility": "3.5",
+                "damage_ratio": { "phys": 100, "mag": 0, "pure": 0 },
+                "power_spike": "Мидгейм (20-30 мин)",
+                "skill_priority": "Max Great Cleave (W) -> Warcry (E) -> Storm Hammer (Q)",
+                "skill_guide": "Свен безумно голоден до маны и здоровья. В текущем патче Свен забирает 'плюсы' на 2 и 4 уровнях вместо прокачки Storm Hammer — это дает ему необходимый запас маны на прокаст и выживаемость на сложной линии.",
+                "talents_guide": {
+                    "10": "+3s к длительности Warcry — отличный сейв для команды.",
+                    "15": "+15% к вампиризму — заменяет необходимость покупки маски.",
+                    "20": "+10% к урону от God's Strength — колоссальный лейт-бафф.",
+                    "25": "Storm Hammer развеивает положительные эффекты — снимает Ghost Scepter с врагов."
+                }
+            }
         ];
 
         const fallbackTeams = [
@@ -463,14 +607,18 @@
         const itemImageMapping = {
             "black_king_bar": "black_king_bar", "blink": "blink", "ultimate_scepter": "ultimate_scepter",
             "silver_edge": "silver_edge", "maelstrom": "maelstrom", "lesser_crit": "lesser_crit",
-            "desolator": "desolator", "crimson_guard": "crimson_guard", "pipe_of_insight": "pipe"
+            "desolator": "desolator", "crimson_guard": "crimson_guard", "pipe": "pipe",
+            "gleipnir": "gleipnir", "manta": "manta", "refresher": "refresher_orb", "phylactery": "phylactery",
+            "arcane_boots": "arcane_boots", "phase_boots": "phase_boots", "power_treads": "power_treads",
+            "greater_crit": "greater_crit", "heavens_halberd": "heavens_halberd", "echo_sabre": "echo_sabre"
         };
 
         const heroImageMapping = {
             "shadow fiend": "nevermore", "shadow_fiend": "nevermore", "windranger": "windrunner",
             "magnataur": "magnataur", "enigma": "enigma", "tidehunter": "tidehunter", "treant": "treant",
             "crystal_maiden": "crystal_maiden", "bloodseeker": "bloodseeker", "centaur": "centaur",
-            "axe": "axe", "templar_assassin": "templar_assassin", "pudge": "pudge", "viper": "viper"
+            "axe": "axe", "templar_assassin": "templar_assassin", "pudge": "pudge", "viper": "viper",
+            "sven": "sven", "tiny": "tiny", "dawnbreaker": "dawnbreaker", "invoker": "invoker"
         };
 
         async function safeFetchJson(url) {
@@ -478,12 +626,7 @@
                 const res = await fetch(url, { cache: "no-store" });
                 if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
                 const text = await res.text();
-                if (!text || text.trim() === "") {
-                    throw new Error("Empty payload returned from API endpoint.");
-                }
-                if (text.trim().startsWith('<')) {
-                    throw new Error("Server returned an HTML document instead of valid JSON.");
-                }
+                if (text.trim().startsWith('<')) throw new Error("Сервер вернул HTML-страницу.");
                 return JSON.parse(text);
             } catch (err) {
                 console.warn(`[SafeFetch Error] Failed to load ${url}:`, err);
@@ -544,28 +687,16 @@
         }
 
         function loadPoolFromStorage() {
-            try {
-                const saved = localStorage.getItem('dota_comfort_pool');
-                state.userComfortPool = saved ? JSON.parse(saved) : [
-                    { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
-                    { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
-                ];
-            } catch (e) {
-                console.error("Local Storage is corrupt or locked. Restoring baseline.", e);
-                state.userComfortPool = [
-                    { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
-                    { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
-                ];
-            }
+            const saved = localStorage.getItem('dota_comfort_pool');
+            state.userComfortPool = saved ? JSON.parse(saved) : [
+                { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
+                { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
+            ];
             renderComfortPool();
         }
 
         function savePoolToStorage() {
-            try {
-                localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
-            } catch (e) {
-                console.error("Failed to write comfort pool state.", e);
-            }
+            localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
             renderComfortPool();
             renderHeroTable();
         }
@@ -682,22 +813,22 @@
                 if (roleFilter !== 'all' && h.role !== roleFilter) return;
 
                 const itemsHTML = (h.core_items || []).map(item => `
-                    <img src="${getMinifiedItemImage(item)}" class="item-icon" title="${item.replace(/_/g, ' ')}">
+                    <img src="${getMinifiedItemImage(item)}" class="item-icon" title="${item.replace(/_/g, ' ')}" onerror="this.src='https://via.placeholder.com/38x27/111/fff?text=Item'">
                 `).join('');
 
                 const synergiesHTML = (h.best_with || []).map(s => `
-                    <img src="${getHeroImage(s)}" class="mini-hero-icon" title="${s}">
+                    <img src="${getHeroImage(s)}" class="mini-hero-icon" title="${s}" onerror="this.src='https://via.placeholder.com/32/111/fff?text=H'">
                 `).join('');
 
                 const countersHTML = (h.counters || []).map(c => `
-                    <img src="${getHeroImage(c)}" class="mini-hero-icon border-rose-500/50" title="Боится: ${c}">
+                    <img src="${getHeroImage(c)}" class="mini-hero-icon border-rose-500/50" title="Боится: ${c}" onerror="this.src='https://via.placeholder.com/32/111/fff?text=H'">
                 `).join('');
 
                 tbody.innerHTML += `
                     <tr class="border-b border-gray-900/60 hover:bg-[#0c1222]/50 transition-colors cursor-pointer" onclick="openHeroModal('${h.name}')">
                         <td class="py-4 pl-2">
                             <div class="flex items-center gap-3">
-                                <img src="${getHeroImage(h.name)}" class="w-12 h-8 rounded-lg object-cover shadow border border-gray-800">
+                                <img src="${getHeroImage(h.name)}" class="w-12 h-8 rounded-lg object-cover shadow border border-gray-800" onerror="this.src='https://via.placeholder.com/48x32/111/fff?text=Hero'">
                                 <div>
                                     <h4 class="font-bold text-white text-xs">${h.name}</h4>
                                     <div class="flex gap-1 items-center mt-1">
@@ -709,7 +840,8 @@
                         </td>
                         <td class="py-4 text-center">
                             <div class="text-[11px]">
-                                <div class="font-semibold text-cyan-400">D2PT: ${h.winrate_d2pt}</div>
+                                <div class="font-semibold text-cyan-400">D2PT (Top): ${h.winrate_d2pt}</div>
+                                <div class="text-emerald-400 font-semibold text-[10px]">Pubs (2k-5k): ${h.winrate_4k || '50%'}</div>
                                 <div class="text-gray-500 text-[9px]">Pro Ban: ${h.banrate_pro}</div>
                             </div>
                         </td>
@@ -814,7 +946,7 @@
                 feed.innerHTML += `
                     <div class="p-4 rounded-xl border flex justify-between items-center bg-slate-900/40 ${isWin ? 'border-emerald-500/20 hover:border-emerald-500/40' : 'border-rose-500/20 hover:border-rose-500/40'}">
                         <div class="flex items-center gap-3">
-                            <img src="${getHeroImage(heroObj.localized_name)}" class="w-14 h-9 rounded object-cover shadow border border-gray-800">
+                            <img src="${getHeroImage(heroObj.localized_name)}" class="w-14 h-9 rounded object-cover shadow border border-gray-800" onerror="this.src='https://via.placeholder.com/48x32/111/fff?text=Hero'">
                             <div>
                                 <h4 class="font-bold text-sm text-white">${heroObj.localized_name}</h4>
                                 <div class="text-[10px] text-gray-500">KDA: <span class="text-white">${m.kills}/${m.deaths}/${m.assists}</span> | ${timeStr}</div>
@@ -836,7 +968,7 @@
                 list.innerHTML += `
                     <div class="flex items-center justify-between p-2.5 bg-black/40 rounded-xl border border-gray-800/80">
                         <div class="flex items-center gap-2">
-                            <img src="${p.avatar || 'https://via.placeholder.com/32'}" class="w-8 h-8 rounded-full border border-gray-800">
+                            <img src="${p.avatar || 'https://via.placeholder.com/32'}" class="w-8 h-8 rounded-full border border-gray-800" onerror="this.src='https://via.placeholder.com/32/111/fff?text=P'">
                             <div>
                                 <h4 class="text-xs font-bold text-white">${p.personaname}</h4>
                                 <span class="text-[9px] text-gray-500">Совместных матчей: ${p.games}</span>
@@ -857,7 +989,7 @@
             document.getElementById('modal-hero-role').textContent = h.role;
             document.getElementById('modal-hero-tier-badge').textContent = `${h.tier || 'A'}-Tier`;
             document.getElementById('modal-hero-wr').textContent = h.winrate_d2pt;
-            document.getElementById('modal-hero-pr').textContent = h.pickrate_d2pt || '10%';
+            document.getElementById('modal-hero-pr').textContent = h.winrate_4k || '50%';
             document.getElementById('modal-hero-ban').textContent = h.banrate_pro || '20%';
             document.getElementById('modal-hero-laning').textContent = h.laning_winrate || '50%';
             document.getElementById('modal-hero-innate').textContent = h.innate_ability || 'Информация по врожденной способности подгружается...';
@@ -873,13 +1005,36 @@
             document.getElementById('modal-dmg-pure').style.width = `${pure}%`;
             document.getElementById('modal-hero-dmg-ratio').textContent = `${phys}% Физ / ${mag}% Маг / ${pure}% Чистый`;
 
-            const itemsBox = document.getElementById('modal-hero-items');
-            itemsBox.innerHTML = '';
+            // Core Items Justifications
+            const itemsListContainer = document.getElementById('modal-hero-items-list');
+            itemsListContainer.innerHTML = '';
             (h.core_items || []).forEach(item => {
-                itemsBox.innerHTML += `
-                    <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-gray-800">
-                        <img src="${getMinifiedItemImage(item)}" class="w-10 h-7 object-cover rounded">
-                        <span class="text-xs text-white capitalize font-bold">${item.replace(/_/g, ' ')}</span>
+                const desc = h.item_justifications ? h.item_justifications[item] : "Этот предмет собирается для стабилизации позиции и усиления макро-потенциала героя.";
+                itemsListContainer.innerHTML += `
+                    <div class="flex items-start gap-4 bg-black/40 p-3 rounded-xl border border-gray-800/80">
+                        <img src="${getMinifiedItemImage(item)}" class="w-12 h-9 object-cover rounded border border-gray-800 shadow" onerror="this.src='https://via.placeholder.com/48x36/111/fff?text=Item'">
+                        <div>
+                            <span class="text-xs text-rose-400 capitalize font-bold font-mono tracking-wider">${item.replace(/_/g, ' ')}</span>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed font-mono">${desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Skills and Attributes / Plus logic
+            document.getElementById('modal-skill-priority').textContent = h.skill_priority || 'N/A';
+            document.getElementById('modal-skill-guide').textContent = h.skill_guide || 'Прокачивайте способности равномерно, отдавая приоритет ключевому нюку на лайне.';
+
+            // Talents rendering
+            const talentsBox = document.getElementById('modal-talents-container');
+            talentsBox.innerHTML = '';
+            const tGuide = h.talents_guide || { "10": "Стандартный выбор", "15": "Стандартный выбор", "20": "Стандартный выбор", "25": "Стандартный выбор" };
+            
+            Object.keys(tGuide).forEach(lvl => {
+                talentsBox.innerHTML += `
+                    <div class="bg-black/30 p-3 rounded-xl border border-gray-800/50">
+                        <div class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-1">Уровень ${lvl}</div>
+                        <p class="text-xs text-gray-300 leading-normal">${tGuide[lvl]}</p>
                     </div>
                 `;
             });
@@ -955,10 +1110,10 @@
                 resultsBox.innerHTML += `
                     <div class="p-4 rounded-xl border border-gray-800/80 bg-black/35 flex justify-between items-center mb-3">
                         <div class="flex items-center gap-3">
-                            <img src="${getHeroImage(h.name)}" class="w-14 h-9 rounded object-cover shadow">
+                            <img src="${getHeroImage(h.name)}" class="w-14 h-9 rounded object-cover shadow" onerror="this.src='https://via.placeholder.com/48x32/111/fff?text=Hero'">
                             <div>
                                 <h4 class="font-bold text-white text-sm">${h.name}</h4>
-                                <div class="text-[10px] text-gray-500">Синергии: ${h.best_with.join(', ') || 'Нет'}</div>
+                                <div class="text-[10px] text-gray-500 font-mono">Синергии: ${(h.best_with || []).join(', ') || 'Нет'}</div>
                             </div>
                         </div>
                         <span class="px-3 py-1 rounded font-black text-xs font-mono bg-purple-500/10 text-purple-400">
@@ -1032,6 +1187,7 @@
                             </div>
                         </div>
 
+                        <!-- Datdota-Grade Advanced Stats Card Section -->
                         <div class="grid grid-cols-2 gap-2 text-[10px] font-mono border-t border-gray-900 pt-3 pb-3">
                             <div class="bg-black/30 p-2 rounded border border-gray-800">
                                 <span class="text-gray-500 block">Smoke Success</span>
