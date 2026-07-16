@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Absolute Meta Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #06080c;
+            color: #f3f4f6;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f43f5e;
+        }
+        .neon-glow-rose {
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.15);
+        }
+        .neon-glow-emerald {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0d111d] via-[#06080c] to-[#040508]">
 
+    <header class="border-b border-gray-900 bg-[#090d16]/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-rose-600 via-purple-600 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-950/40">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-xl font-black tracking-tight bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">DOTA 2 ABSOLUTE TRACKER</h1>
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">4,000 MMR</span>
+                    </div>
+                    <p class="text-xs text-rose-500 font-semibold uppercase tracking-wider">Калькулятор Личного Диффа &amp; Настройщик Gemini Spark</p>
+                </div>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center bg-[#0d1220] p-1 rounded-xl border border-gray-800/80">
+                <button onclick="switchTab('hero-tab')" id="btn-hero-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-rose-600 text-white shadow-md shadow-rose-950/20">
+                    <i class="fa-solid fa-calculator mr-2"></i>Калькулятор Диффа
+                </button>
+                <button onclick="switchTab('team-tab')" id="btn-team-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-shield-halved mr-2"></i>Анализ Команд
+                </button>
+                <button onclick="switchTab('sim-tab')" id="btn-sim-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-gamepad mr-2"></i>Симулятор Пика
+                </button>
+                <button onclick="switchTab('prompt-tab')" id="btn-prompt-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white text-amber-400">
+                    <i class="fa-solid fa-robot mr-2"></i>Промпт для Spark
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <main class="max-w-7xl mx-auto px-4 mt-8">
+        
+        <div class="mb-8 p-6 rounded-2xl bg-gradient-to-r from-slate-950 via-[#0d111e] to-slate-950 border border-slate-800/60 shadow-xl flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span id="sync-status-text" class="text-xs text-amber-400 font-bold uppercase tracking-widest">Локальный Демо-Режим</span>
+                </div>
+                <h2 class="text-lg font-bold text-white">Интеграция с автоматическим парсером Gemini Spark</h2>
+                <p class="text-sm text-gray-400">По умолчанию сайт работает в демо-режиме. Вы можете привязать свой GitHub репозиторий для автообновления.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
+                <input type="text" id="github-url-input" placeholder="Юзернейм/Репозиторий" class="bg-[#06080c] px-4 py-2 rounded-xl text-xs text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full sm:w-64" value="">
+                <button onclick="toggleGitHubConnection()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-link"></i> Подключить авто-дату
+                </button>
+            </div>
+        </div>
+
+        <div id="hero-tab" class="tab-content transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Боковое меню: Настройки Весов и Комфорт-пула -->
+                <div class="space-y-6">
+                    <!-- Регуляторы весов алгоритма -->
+                    <div class="p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                        <div class="absolute -right-16 -top-16 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl"></div>
+                        <h3 class="text-md font-bold text-white mb-4 flex items-center justify-between">
+                            <span>1. Веса алгоритма PDS</span>
+                            <i class="fa-solid fa-sliders text-rose-500"></i>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-gray-400">Про-сцена (Liquipedia / Турниры)</span>
+                                    <span id="val-weight-pro" class="text-rose-400 font-bold">20%</span>
+                                </div>
+                                <input type="range" id="weight-pro" min="0" max="100" value="20" oninput="updateWeights()" class="w-full accent-rose-500 bg-gray-800 rounded-lg h-1.5">
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-gray-400">Паб-мета D2PT (8k+ MMR)</span>
+                                    <span id="val-weight-pub" class="text-cyan-400 font-bold">30%</span>
+                                </div>
+                                <input type="range" id="weight-pub" min="0" max="100" value="30" oninput="updateWeights()" class="w-full accent-cyan-500 bg-gray-800 rounded-lg h-1.5">
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-gray-400">Личный комфорт (4k MMR)</span>
+                                    <span id="val-weight-comfort" class="text-emerald-400 font-bold">50%</span>
+                                </div>
+                                <input type="range" id="weight-comfort" min="0" max="100" value="50" oninput="updateWeights()" class="w-full accent-emerald-500 bg-gray-800 rounded-lg h-1.5">
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-gray-800/60 text-[11px] text-gray-500 leading-relaxed">
+                            <i class="fa-solid fa-circle-info mr-1 text-gray-400"></i> 
+                            Сумма весов калибрует формулу под твой стиль. Для 4,000 MMR мы рекомендуем ставить больший упор на комфорт (50%), так как исполнение решает больше, чем сухая статистика.
+                        </div>
+                    </div>
+
+                    <!-- Управление личным пулом комфорта -->
+                    <div class="p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                        <div class="absolute -right-16 -top-16 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                        <h3 class="text-md font-bold text-white mb-4 flex items-center justify-between">
+                            <span>2. Твой Личный Пул</span>
+                            <i class="fa-solid fa-heart text-emerald-500"></i>
+                        </h3>
+                        
+                        <div id="comfort-pool-list" class="space-y-2 max-h-60 overflow-y-auto mb-4 pr-1">
+                            <!-- Populated by JS -->
+                        </div>
+
+                        <!-- Добавление/Редактирование героя в комфорт пул -->
+                        <div class="bg-slate-900/60 p-3 rounded-xl border border-gray-800 space-y-3">
+                            <h4 class="text-xs font-bold text-gray-300">Добавить / Настроить героя</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <select id="add-
