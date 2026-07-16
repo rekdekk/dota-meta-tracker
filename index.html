@@ -11,44 +11,55 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #06080c;
+            background-color: #030509;
             color: #f3f4f6;
             overflow-x: hidden;
         }
         .mono { font-family: 'JetBrains Mono', monospace; }
         
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0b0d16; }
-        ::-webkit-scrollbar-thumb { background: #1f293d; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #06080c; }
+        ::-webkit-scrollbar-thumb { background: #1a2235; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #f43f5e; }
         
         .hero-card-hover:hover {
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.1);
-            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 25px rgba(244, 63, 94, 0.08);
+            border-color: rgba(244, 63, 94, 0.25);
+            background: rgba(13, 18, 30, 0.6) !important;
         }
         
-        /* Стили для маленьких иконок предметов */
         .item-icon {
-            width: 28px;
-            height: 20px;
+            width: 38px;
+            height: 27px;
             border-radius: 4px;
-            border: 1px solid #1f2937;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            border: 1px solid #1f293d;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.6);
             object-fit: cover;
+            transition: all 0.2s ease;
+        }
+        .item-icon:hover {
+            transform: scale(1.15);
+            border-color: #f43f5e;
+            box-shadow: 0 0 10px rgba(244, 63, 94, 0.4);
         }
         .mini-hero-icon {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 6px;
             border: 1px solid #1f2937;
             object-fit: cover;
+            transition: all 0.2s ease;
+        }
+        .mini-hero-icon:hover {
+            transform: translateY(-2px);
+            border-color: #10b981;
         }
     </style>
 </head>
 
-<body class="min-h-screen pb-12 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0d111d] via-[#06080c] to-[#040508]">
+<body class="min-h-screen pb-12 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0b101d] via-[#04060a] to-[#010204]">
 
-    <header class="border-b border-gray-900 bg-[#090d16]/95 backdrop-blur-md sticky top-0 z-50 shadow-xl shadow-black/40">
+    <header class="border-b border-gray-900 bg-[#060a12]/95 backdrop-blur-md sticky top-0 z-50 shadow-xl shadow-black/60">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-12 bg-gradient-to-br from-rose-600 via-purple-600 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-950/40 border border-rose-500/30">
@@ -57,13 +68,13 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <h1 class="text-xl font-black tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">DOTA 2 ABSOLUTE TRACKER</h1>
-                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">v2.0 PRO</span>
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">v4.1 PATCH 7.41+</span>
                     </div>
-                    <p class="text-[10px] text-rose-500 font-bold uppercase tracking-widest">Ультимативная Мета, Билды & Синергии</p>
+                    <p class="text-[10px] text-rose-500 font-bold uppercase tracking-widest">Абсолютный ИИ-Анализ Врожденных Способностей &amp; Драфта</p>
                 </div>
             </div>
             
-            <nav class="flex flex-wrap justify-center bg-[#0d1220] p-1 rounded-xl border border-gray-800/80 shadow-inner">
+            <nav class="flex flex-wrap justify-center bg-[#080c14] p-1 rounded-xl border border-gray-800/80 shadow-inner">
                 <button onclick="switchTab('hero-tab')" id="btn-hero-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md border border-rose-500/50">
                     <i class="fa-solid fa-calculator mr-2"></i>Абсолютная Мета
                 </button>
@@ -72,6 +83,9 @@
                 </button>
                 <button onclick="switchTab('sim-tab')" id="btn-sim-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
                     <i class="fa-solid fa-brain mr-2"></i>Умный Драфт
+                </button>
+                <button onclick="switchTab('team-tab')" id="btn-team-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-trophy mr-2"></i>Про-Сцена
                 </button>
                 <button onclick="switchTab('config-tab')" id="btn-config-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
                     <i class="fa-brands fa-github mr-2"></i>База ИИ
@@ -82,9 +96,9 @@
 
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
 
-    <main class="max-w-[1400px] mx-auto px-4 mt-6">
+    <main class="max-w-[1440px] mx-auto px-4 mt-6">
         
-        <div class="mb-6 p-5 rounded-2xl bg-gradient-to-r from-slate-950 via-[#0d111e] to-slate-950 border border-slate-800/60 shadow-xl flex flex-col xl:flex-row justify-between items-center gap-6">
+        <div class="mb-6 p-5 rounded-2xl bg-gradient-to-r from-slate-950 via-[#0a0d18] to-slate-950 border border-slate-800/60 shadow-xl flex flex-col xl:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-4 w-full xl:w-auto">
                 <div id="user-avatar-container" class="hidden relative">
                     <img id="user-avatar" src="" alt="Avatar" class="w-14 h-14 rounded-xl border-2 border-rose-500/50 shadow-lg shadow-rose-900/20">
@@ -92,17 +106,17 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-2 mb-1">
-                        <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_#f59e0b]"></span>
-                        <span id="sync-status-text" class="text-[10px] text-amber-400 font-bold uppercase tracking-widest">Локальный Режим</span>
+                        <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]"></span>
+                        <span id="sync-status-text" class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">База Данных ИИ Активна</span>
                     </div>
-                    <h2 class="text-base font-bold text-white leading-tight"><span id="user-nickname">Dota Player</span>: Твоя экосистема авто-синхронизирована</h2>
+                    <h2 class="text-base font-bold text-white leading-tight"><span id="user-nickname">Гость</span>: Калибровка Personal Diff Score</h2>
                 </div>
             </div>
             
             <div class="flex flex-col sm:flex-row gap-3 w-full xl:w-auto items-stretch bg-black/20 p-2 rounded-xl border border-white/5">
                 <div class="relative w-full sm:w-48">
                     <span class="absolute left-3 top-2.5 text-gray-500 text-xs font-bold">ID:</span>
-                    <input type="text" id="steam-id-input" placeholder="Steam32 ID" class="bg-[#06080c] pl-9 pr-4 py-2 rounded-lg text-xs font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full transition-colors" value="872107609">
+                    <input type="text" id="steam-id-input" placeholder="Steam32 ID" class="bg-[#04060a] pl-9 pr-4 py-2 rounded-lg text-xs font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full transition-colors" value="872107609">
                 </div>
                 <button onclick="loadOpenDotaStats()" class="px-5 py-2 rounded-lg bg-emerald-600/20 border border-emerald-500/30 hover:bg-emerald-600/40 text-emerald-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-rotate"></i> OpenDota
@@ -114,11 +128,12 @@
             </div>
         </div>
 
+        <!-- ТАБ: Абсолютная Мета -->
         <div id="hero-tab" class="tab-content transition-opacity duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
                 
                 <div class="space-y-6 lg:col-span-1">
-                    <div class="p-5 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                    <div class="p-5 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
                         <div class="absolute -right-10 -top-10 w-24 h-24 bg-rose-500/10 rounded-full blur-2xl"></div>
                         <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
                             <i class="fa-solid fa-sliders text-rose-500"></i> Веса PDS
@@ -148,7 +163,7 @@
                         </div>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                    <div class="p-5 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
                         <div class="absolute -right-10 -top-10 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
                         <h3 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
                             <span class="flex items-center gap-2"><i class="fa-solid fa-heart text-emerald-500"></i> Твой Пул</span>
@@ -161,10 +176,10 @@
 
                         <div class="bg-black/30 p-3 rounded-xl border border-gray-800/80">
                             <h4 class="text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wide">Добавить героя в пул</h4>
-                            <select id="add-hero-select" class="w-full bg-[#06080c] text-xs rounded-lg border border-gray-800 px-2 py-2 mb-2 text-white focus:outline-none focus:border-rose-500"></select>
+                            <select id="add-hero-select" class="w-full bg-[#04060a] text-xs rounded-lg border border-gray-800 px-2 py-2 mb-2 text-white focus:outline-none focus:border-rose-500"></select>
                             <div class="grid grid-cols-2 gap-2 mb-2">
-                                <input type="number" id="add-hero-wr" placeholder="Винрейт %" min="0" max="100" class="bg-[#06080c] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
-                                <input type="number" id="add-hero-games" placeholder="Матчи" min="0" class="bg-[#06080c] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
+                                <input type="number" id="add-hero-wr" placeholder="Винрейт %" min="0" max="100" class="bg-[#04060a] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
+                                <input type="number" id="add-hero-games" placeholder="Матчи" min="0" class="bg-[#04060a] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
                             </div>
                             <button onclick="manuallyAddHero()" class="w-full bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-400 font-bold text-xs py-2 rounded-lg transition-all">
                                 Сохранить
@@ -174,15 +189,16 @@
                 </div>
 
                 <div class="lg:col-span-3 p-1">
-                    <div class="p-6 rounded-2xl bg-[#090d16]/90 border border-gray-800/80 backdrop-blur-xl relative shadow-2xl">
+                    <div class="p-6 rounded-2xl bg-[#060a12]/90 border border-gray-800/80 backdrop-blur-xl relative shadow-2xl">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                             <div>
                                 <h3 class="text-lg font-black text-white flex items-center gap-2">
-                                    Абсолютная Мета & PDS Рейтинг
+                                    Абсолютная Мета &amp; PDS Рейтинг
                                 </h3>
-                                <p class="text-xs text-gray-400 mt-1">Откалибровано под твои игры, включает лучшие сборки и синергии</p>
+                                <p class="text-xs text-gray-400 mt-1">Откалибровано под твои игры в патче 7.41+ (Без аспектов). Кликни на героя для подробной карты.</p>
                             </div>
-                            <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-gray-800/50">
+                            <div class="flex flex-wrap gap-2 bg-black/40 p-1.5 rounded-xl border border-gray-800/50">
+                                <input type="text" id="hero-search" oninput="renderHeroTable()" placeholder="Поиск героя..." class="bg-[#04060a] text-xs px-3 py-1.5 rounded-lg text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-36">
                                 <select id="role-filter" onchange="renderHeroTable()" class="bg-transparent text-xs font-bold px-3 py-1.5 text-white focus:outline-none cursor-pointer">
                                     <option value="all">Все Роли</option>
                                     <option value="Carry">Carry</option>
@@ -194,13 +210,14 @@
                         </div>
 
                         <div class="overflow-x-auto custom-scrollbar pb-2">
-                            <table class="w-full text-left border-collapse min-w-[900px]">
+                            <table class="w-full text-left border-collapse min-w-[950px]">
                                 <thead>
                                     <tr class="text-[10px] text-gray-500 uppercase font-black tracking-widest border-b border-gray-800/60">
-                                        <th class="pb-3 pl-2 w-[220px]">Герой</th>
+                                        <th class="pb-3 pl-2 w-[240px]">Герой</th>
                                         <th class="pb-3 text-center">Статистика</th>
-                                        <th class="pb-3">Core Предметы (Билд)</th>
+                                        <th class="pb-3">Сборка предметов</th>
                                         <th class="pb-3">Синергия / Боится</th>
+                                        <th class="pb-3 text-center">Разносторонность</th>
                                         <th class="pb-3 text-right pr-4">PDS Score</th>
                                     </tr>
                                 </thead>
@@ -214,14 +231,15 @@
             </div>
         </div>
 
+        <!-- ТАБ: Мой Профиль -->
         <div id="stats-tab" class="tab-content hidden transition-opacity duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="space-y-6">
-                    <div class="p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md">
+                    <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
                         <h3 class="text-sm font-bold text-white mb-4"><i class="fa-solid fa-chart-pie text-purple-500 mr-2"></i>Анализ текущей формы</h3>
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800/80 text-center">
-                                <span class="text-gray-500 text-[10px] uppercase font-bold block mb-1">WR (20 игр)</span>
+                                <span class="text-gray-500 text-[10px] uppercase font-bold block mb-1">WR (Последние игры)</span>
                                 <span id="stats-winrate-pct" class="text-xl font-black text-emerald-400">0%</span>
                             </div>
                             <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800/80 text-center">
@@ -237,8 +255,27 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md">
+                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
                     <h3 class="text-lg font-bold text-white mb-6">История последних матчей (OpenDota)</h3>
+                    
+                    <!-- Блок принудительного демо-режима для закрытых аккаунтов -->
+                    <div id="private-profile-instructions" class="hidden mb-6 p-5 rounded-xl border border-amber-500/20 bg-amber-500/5">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-lock text-amber-400 text-lg mt-0.5 animate-pulse"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-amber-300">Профиль Dota 2 скрыт или пуст</h4>
+                                <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                                    Чтобы дашборд подтянул твои реальные игры и высчитал идеальный PDS, зайди в настройки Dota 2 -> вкладка <b>«Сообщество»</b> и включи галочку <b>«Общедоступная история матчей»</b>.
+                                </p>
+                                <div class="flex gap-2 mt-4">
+                                    <button onclick="loadMockDotaMatches()" class="px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 hover:bg-amber-500/40 text-amber-400 font-bold text-[10px] rounded uppercase tracking-wider transition-all">
+                                        Загрузить демо-игры
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div id="matches-feed" class="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                         <!-- Populated by JS -->
                     </div>
@@ -246,40 +283,59 @@
             </div>
         </div>
 
+        <!-- ТАБ: Умный Драфт -->
         <div id="sim-tab" class="tab-content hidden transition-opacity duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md">
+                <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
                     <h3 class="text-md font-bold text-white mb-2">Пик Вражеской Команды</h3>
-                    <p class="text-xs text-gray-400 mb-6">Укажи героев противника. ИИ проанализирует контрпики и синергии из твоего пула.</p>
+                    <p class="text-xs text-gray-400 mb-6">Укажи героев соперника. ИИ рассчитает лучшие синергические контрпики из твоего личного пула и общей меты.</p>
                     
                     <div class="space-y-3" id="enemy-picks-selectors">
                         <!-- 5 selectors populated by JS -->
                     </div>
                     
                     <button onclick="calculateDraftCounters()" class="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-rose-600 hover:from-purple-500 hover:to-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-purple-900/20 transition-all">
-                        <i class="fa-solid fa-brain mr-2"></i>Запустить Нейросеть
+                        <i class="fa-solid fa-brain mr-2"></i>Анализировать драфт
                     </button>
                 </div>
 
-                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md">
-                    <h3 class="text-md font-bold text-white mb-4">Рекомендации для Твоего Драфта</h3>
-                    <div id="draft-suggestions-results" class="space-y-4">
+                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md flex flex-col">
+                    <h3 class="text-md font-bold text-white mb-4">Анализ драфта &amp; Рекомендации</h3>
+                    <div id="draft-suggestions-results" class="flex-1 flex flex-col justify-center">
                         <div class="flex flex-col items-center justify-center py-24 text-gray-600">
-                            <i class="fa-solid fa-microchip text-5xl mb-4 text-gray-800"></i>
-                            <p class="text-sm font-semibold">Ожидание вводных данных...</p>
+                            <i class="fa-solid fa-microchip text-5xl mb-4 text-gray-800 animate-pulse"></i>
+                            <p class="text-sm font-semibold">Ожидание входных данных о пике противника...</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- ТАБ: Про-Сцена -->
+        <div id="team-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="p-6 rounded-2xl bg-[#060a12]/90 border border-gray-800/80 backdrop-blur-xl relative">
+                <div class="absolute -right-20 -top-20 w-44 h-44 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div class="mb-6">
+                    <h2 class="text-xl font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-purple-500"></i> Аналитика Про-Сцены (EWC / TI Intel)
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">Оценка формы команд, сыгранности, ментальной стойкости и стратегических предпочтений сторон.</p>
+                </div>
+
+                <div id="teams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic team cards generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБ: База ИИ -->
         <div id="config-tab" class="tab-content hidden transition-opacity duration-300">
-            <div class="p-6 rounded-2xl bg-[#090d16]/80 border border-gray-800/80 backdrop-blur-md">
+            <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
                 <h3 class="text-lg font-bold text-white mb-2">Настройка Автоматизации GitHub</h3>
                 <p class="text-sm text-gray-400 mb-6">Укажи свой репозиторий, откуда сайт должен брать свежий файл data.json, собранный ИИ.</p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 max-w-xl mb-8">
-                    <input type="text" id="github-username-input" placeholder="Твой ник на GitHub (например: rekdekk)" class="bg-[#06080c] px-4 py-3 rounded-xl text-sm font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="rekdekk">
+                    <input type="text" id="github-username-input" placeholder="Твой ник на GitHub (например: rekdekk)" class="bg-[#04060a] px-4 py-3 rounded-xl text-sm font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="rekdekk">
                     <button onclick="saveConfigAndLoad()" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all whitespace-nowrap">
                         <i class="fa-solid fa-save mr-2"></i>Сохранить и Загрузить
                     </button>
@@ -295,6 +351,87 @@
 
     </main>
 
+    <!-- МОДАЛКА: Ультимативный Анализ Героя -->
+    <div id="hero-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden">
+        <div class="w-full max-w-3xl rounded-2xl border border-gray-800 bg-[#070b13] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-800/80 bg-slate-950/40">
+                <div class="flex items-center gap-3">
+                    <img id="modal-hero-icon" class="w-14 h-14 rounded-xl border border-rose-500/40 object-cover" src="">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 id="modal-hero-name" class="text-lg font-black text-white font-mono">Имя Героя</h2>
+                            <span id="modal-hero-tier-badge" class="px-2 py-0.5 rounded text-[10px] font-black bg-rose-500/20 text-rose-400">S-Tier</span>
+                        </div>
+                        <span id="modal-hero-role" class="text-xs text-rose-400 uppercase tracking-widest font-bold">Роль</span>
+                    </div>
+                </div>
+                <button onclick="closeHeroModal()" class="w-8 h-8 rounded-full bg-gray-800/80 hover:bg-rose-600/30 text-white flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-6 custom-scrollbar text-sm">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Винрейт D2PT</span>
+                        <span id="modal-hero-wr" class="text-base font-black text-cyan-400">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Пикрейт D2PT</span>
+                        <span id="modal-hero-pr" class="text-base font-black text-purple-400">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Про Банрейт</span>
+                        <span id="modal-hero-ban" class="text-base font-black text-rose-500">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Laning Winrate</span>
+                        <span id="modal-hero-laning" class="text-base font-black text-emerald-400">0%</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Врожденная пассивка (Innate)</h4>
+                        <div>
+                            <span id="modal-hero-innate" class="text-xs text-gray-300 leading-relaxed italic">Innate Power Details...</span>
+                        </div>
+                        <div class="pt-2">
+                            <span class="text-[11px] text-gray-500 block">Сила на линии / Темп</span>
+                            <span id="modal-hero-spike" class="text-xs font-bold text-white">Power Spike</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Тип урона &amp; Универсальность</h4>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-gray-400">Баланс урона</span>
+                                <span id="modal-hero-dmg-ratio" class="font-bold text-gray-300">50% Phys / 50% Mag</span>
+                            </div>
+                            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden flex">
+                                <div id="modal-dmg-phys" class="bg-orange-500 h-full" style="width: 50%"></div>
+                                <div id="modal-dmg-mag" class="bg-blue-500 h-full" style="width: 50%"></div>
+                                <div id="modal-dmg-pure" class="bg-yellow-500 h-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Сложность &amp; Разносторонность</span>
+                            <div id="modal-hero-versatility" class="text-xs font-bold text-white">0 / 10</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black/35 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                    <h4 class="text-xs font-black text-white uppercase tracking-wider">Рекомендованный билд предметов</h4>
+                    <div id="modal-hero-items" class="flex flex-wrap gap-2">
+                        <!-- Dynamic items -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Глобальное состояние
         const state = {
@@ -307,421 +444,67 @@
             metaHeroes: [],
             heroMapping: {},
             recentMatches: [],
-            peers: []
+            peers: [],
+            proTeams: []
         };
 
-        // Внушительная оффлайн база героев (чтобы всё работало даже без API)
-        let localHeroList = [
-            { id: 1, name: "antimage", localized: "Anti-Mage" }, { id: 2, name: "axe", localized: "Axe" },
-            { id: 3, name: "bane", localized: "Bane" }, { id: 4, name: "bloodseeker", localized: "Bloodseeker" },
-            { id: 5, name: "crystal_maiden", localized: "Crystal Maiden" }, { id: 6, name: "drow_ranger", localized: "Drow Ranger" },
-            { id: 7, name: "earthshaker", localized: "Earthshaker" }, { id: 8, name: "juggernaut", localized: "Juggernaut" },
-            { id: 9, name: "mirana", localized: "Mirana" }, { id: 10, name: "morphling", localized: "Morphling" },
-            { id: 11, name: "nevermore", localized: "Shadow Fiend" }, { id: 12, name: "phantom_lancer", localized: "Phantom Lancer" },
-            { id: 13, name: "puck", localized: "Puck" }, { id: 14, name: "pudge", localized: "Pudge" },
-            { id: 15, name: "razor", localized: "Razor" }, { id: 16, name: "sand_king", localized: "Sand King" },
-            { id: 17, name: "storm_spirit", localized: "Storm Spirit" }, { id: 18, name: "sven", localized: "Sven" },
-            { id: 19, name: "tiny", localized: "Tiny" }, { id: 20, name: "vengefulspirit", localized: "Vengeful Spirit" },
-            { id: 21, name: "windrunner", localized: "Windranger" }, { id: 22, name: "zuus", localized: "Zeus" },
-            { id: 23, name: "kunkka", localized: "Kunkka" }, { id: 25, name: "lina", localized: "Lina" },
-            { id: 26, name: "lion", localized: "Lion" }, { id: 27, name: "shadow_shaman", localized: "Shadow Shaman" },
-            { id: 28, name: "slardar", localized: "Slardar" }, { id: 29, name: "tidehunter", localized: "Tidehunter" },
-            { id: 30, name: "witch_doctor", localized: "Witch Doctor" }, { id: 31, name: "lich", localized: "Lich" },
-            { id: 32, name: "riki", localized: "Riki" }, { id: 33, name: "enigma", localized: "Enigma" },
-            { id: 34, name: "tinker", localized: "Tinker" }, { id: 35, name: "sniper", localized: "Sniper" },
-            { id: 36, name: "necrolyte", localized: "Necrophos" }, { id: 37, name: "warlock", localized: "Warlock" },
-            { id: 38, name: "beastmaster", localized: "Beastmaster" }, { id: 39, name: "queenofpain", localized: "Queen of Pain" },
-            { id: 40, name: "venomancer", localized: "Venomancer" }, { id: 41, name: "faceless_void", localized: "Faceless Void" },
-            { id: 42, name: "skeleton_king", localized: "Wraith King" }, { id: 43, name: "death_prophet", localized: "Death Prophet" },
-            { id: 44, name: "phantom_assassin", localized: "Phantom Assassin" }, { id: 45, name: "pugna", localized: "Pugna" },
-            { id: 46, name: "templar_assassin", localized: "Templar Assassin" }, { id: 47, name: "viper", localized: "Viper" },
-            { id: 48, name: "luna", localized: "Luna" }, { id: 49, name: "dragon_knight", localized: "Dragon Knight" },
-            { id: 50, name: "dazzle", localized: "Dazzle" }, { id: 51, name: "rattletrap", localized: "Clockwerk" },
-            { id: 52, name: "leshrac", localized: "Leshrac" }, { id: 53, name: "furion", localized: "Nature's Prophet" },
-            { id: 54, name: "life_stealer", localized: "Lifestealer" }, { id: 55, name: "dark_seer", localized: "Dark Seer" },
-            { id: 56, name: "clinkz", localized: "Clinkz" }, { id: 57, name: "omniknight", localized: "Omniknight" },
-            { id: 58, name: "enchantress", localized: "Enchantress" }, { id: 59, name: "huskar", localized: "Huskar" },
-            { id: 60, name: "night_stalker", localized: "Night Stalker" }, { id: 61, name: "broodmother", localized: "Broodmother" },
-            { id: 62, name: "bounty_hunter", localized: "Bounty Hunter" }, { id: 63, name: "weaver", localized: "Weaver" },
-            { id: 64, name: "jakiro", localized: "Jakiro" }, { id: 65, name: "batrider", localized: "Batrider" },
-            { id: 66, name: "chen", localized: "Chen" }, { id: 67, name: "spectre", localized: "Spectre" },
-            { id: 68, name: "ancient_apparition", localized: "Ancient Apparition" }, { id: 69, name: "doom_bringer", localized: "Doom" },
-            { id: 70, name: "ursa", localized: "Ursa" }, { id: 71, name: "spirit_breaker", localized: "Spirit Breaker" },
-            { id: 72, name: "gyrocopter", localized: "Gyrocopter" }, { id: 73, name: "alchemist", localized: "Alchemist" },
-            { id: 74, name: "invoker", localized: "Invoker" }, { id: 75, name: "silencer", localized: "Silencer" },
-            { id: 76, name: "obsidian_destroyer", localized: "Outworld Destroyer" }, { id: 77, name: "lycan", localized: "Lycan" },
-            { id: 78, name: "brewmaster", localized: "Brewmaster" }, { id: 79, name: "shadow_demon", localized: "Shadow Demon" },
-            { id: 80, name: "lone_druid", localized: "Lone Druid" }, { id: 81, name: "chaos_knight", localized: "Chaos Knight" },
-            { id: 82, name: "meepo", localized: "Meepo" }, { id: 83, name: "treant", localized: "Treant Protector" },
-            { id: 84, name: "ogre_magi", localized: "Ogre Magi" }, { id: 85, name: "undying", localized: "Undying" },
-            { id: 86, name: "rubick", localized: "Rubick" }, { id: 87, name: "disruptor", localized: "Disruptor" },
-            { id: 88, name: "nyx_assassin", localized: "Nyx Assassin" }, { id: 89, name: "naga_siren", localized: "Naga Siren" },
-            { id: 90, name: "keeper_of_the_light", localized: "Keeper of the Light" }, { id: 91, name: "wisp", localized: "Io" },
-            { id: 92, name: "visage", localized: "Visage" }, { id: 93, name: "slark", localized: "Slark" },
-            { id: 94, name: "medusa", localized: "Medusa" }, { id: 95, name: "troll_warlord", localized: "Troll Warlord" },
-            { id: 96, name: "centaur", localized: "Centaur Warrunner" }, { id: 97, name: "magnataur", localized: "Magnus" },
-            { id: 98, name: "shredder", localized: "Timbersaw" }, { id: 99, name: "bristleback", localized: "Bristleback" },
-            { id: 100, name: "tusk", localized: "Tusk" }, { id: 101, name: "skywrath_mage", localized: "Skywrath Mage" },
-            { id: 102, name: "abaddon", localized: "Abaddon" }, { id: 103, name: "elder_titan", localized: "Elder Titan" },
-            { id: 104, name: "legion_commander", localized: "Legion Commander" }, { id: 105, name: "techies", localized: "Techies" },
-            { id: 106, name: "ember_spirit", localized: "Ember Spirit" }, { id: 107, name: "earth_spirit", localized: "Earth Spirit" },
-            { id: 108, name: "abyssal_underlord", localized: "Underlord" }, { id: 109, name: "terrorblade", localized: "Terrorblade" },
-            { id: 110, name: "phoenix", localized: "Phoenix" }, { id: 111, name: "oracle", localized: "Oracle" },
-            { id: 112, name: "winter_wyvern", localized: "Winter Wyvern" }, { id: 113, name: "arc_warden", localized: "Arc Warden" },
-            { id: 114, name: "monkey_king", localized: "Monkey King" }, { id: 119, name: "dark_willow", localized: "Dark Willow" },
-            { id: 120, name: "pangolier", localized: "Pangolier" }, { id: 121, name: "grimstroke", localized: "Grimstroke" },
-            { id: 123, name: "hoodwink", localized: "Hoodwink" }, { id: 126, name: "void_spirit", localized: "Void Spirit" },
-            { id: 128, name: "snapfire", localized: "Snapfire" }, { id: 129, name: "mars", localized: "Mars" },
-            { id: 135, name: "dawnbreaker", localized: "Dawnbreaker" }, { id: 136, name: "marci", localized: "Marci" },
-            { id: 137, name: "primal_beast", localized: "Primal Beast" }, { id: 138, name: "muerta", localized: "Muerta" },
-            { id: 131, name: "ringmaster", localized: "Ringmaster" }, { id: 145, name: "kez", localized: "Kez" }
+        // Запасные мета-данные на случай отсутствия интернета
+        const fallbackHeroes = [
+            { name: "Shadow Fiend", role: "Mid", winrate_d2pt: "54.2%", pickrate_d2pt: "15%", banrate_pro: "42%", pro_trend: "high", tier: "S", badge: "Абсолютная Мета", innate_ability: "Necromastery (души дают урон и баффают способности в патче 7.41+)", core_items: ["black_king_bar", "blink", "ultimate_scepter", "silver_edge"], best_with: ["magnataur", "enigma", "tidehunter"], counters: ["templar_assassin", "pudge", "viper"], laning_winrate: "53%", versatility: "4.0", damage_ratio: { phys: 60, mag: 40, pure: 0 }, power_spike: "Мидгейм (15-25 мин)" },
+            { name: "Windranger", role: "Carry", winrate_d2pt: "52.8%", pickrate_d2pt: "18%", banrate_pro: "35%", pro_trend: "high", tier: "S", badge: "Универсальный Флекс", innate_ability: "Easy Breeze (повышенная скорость бега и уворот)", core_items: ["maelstrom", "black_king_bar", "lesser_crit"], best_with: ["treant", "crystal_maiden"], counters: ["bloodseeker", "axe"], laning_winrate: "51%", versatility: "6.0", damage_ratio: { phys: 70, mag: 30, pure: 0 }, power_spike: "Лейтгейм (35+ мин)" },
+            { name: "Centaur Warrunner", role: "Offlane", winrate_d2pt: "51.5%", pickrate_d2pt: "12%", banrate_pro: "20%", pro_trend: "stable", tier: "A", badge: "Стабильный Фронтлейнер", innate_ability: "Rawhide (увеличивает базовое здоровье и регенерацию)", core_items: ["blink", "crimson_guard", "pipe_of_insight"], best_with: ["rubick", "treant"], counters: ["lifestealer", "necrophos"], laning_winrate: "52%", versatility: "5.0", damage_ratio: { phys: 40, mag: 30, pure: 30 }, power_spike: "Ранняя доминация" }
         ];
 
-        const MOCK_META_PAYLOAD = [
-            { name: "Shadow Fiend", role: "Mid", winrate_d2pt: "54.2%", pro_trend: "high", badge: "Абсолютная Мета", 
-              core_items: ["black_king_bar", "blink", "ultimate_scepter"], best_with: ["magnataur", "enigma", "tidehunter"], counters: ["templar_assassin", "pudge"] },
-            { name: "Windranger", role: "Carry", winrate_d2pt: "52.8%", pro_trend: "high", badge: "Скрытая имба", 
-              core_items: ["maelstrom", "black_king_bar", "lesser_crit"], best_with: ["treant", "crystal_maiden"], counters: ["bloodseeker", "centaur"] },
-            { name: "Centaur Warrunner", role: "Offlane", winrate_d2pt: "51.5%", pro_trend: "stable", badge: "Стабильный Пик", 
-              core_items: ["phase_boots", "blink", "crimson_guard"], best_with: ["rubick", "lina", "lion"], counters: ["lifestealer", "necrolyte"] },
-            { name: "Rubick", role: "Support", winrate_d2pt: "50.1%", pro_trend: "stable", badge: "Флекс Пик", 
-              core_items: ["arcane_boots", "aether_lens", "blink"], best_with: ["enigma", "tidehunter"], counters: ["bristleback", "phantom_assassin"] },
-            { name: "Tiny", role: "Mid", winrate_d2pt: "53.0%", pro_trend: "high", badge: "Берст Урон", 
-              core_items: ["power_treads", "blink", "echo_sabre"], best_with: ["wisp", "lycan"], counters: ["lifestealer", "ursa"] },
-            { name: "Pudge", role: "Support", winrate_d2pt: "48.5%", pro_trend: "falling", badge: "Рискованный", 
-              core_items: ["tranquil_boots", "aether_lens", "blade_mail"], best_with: ["bloodseeker", "techies"], counters: ["life_stealer", "weaver"] },
-            { name: "Sven", role: "Carry", winrate_d2pt: "47.2%", pro_trend: "falling", badge: "Не в мете", 
-              core_items: ["power_treads", "mask_of_madness", "blink"], best_with: ["magnataur", "enigma"], counters: ["venomancer", "tinker"] }
+        const fallbackTeams = [
+            { name: "Team Falcons", power_index: 95, recent_results: "W-W-W-W-L", status: "Тир-1 Фаворит", playstyle: "Быстрый темп и удушение", average_match_length: "34:12", win_rate_10m: "84%", coach_strategy: "Гибкие лайны, флекс Магнуса/Рубика", key_heroes: ["Razor", "Timbersaw"], last_opponents: ["Spirit: W", "Gaimin: L"] },
+            { name: "Team Spirit", power_index: 91, recent_results: "W-W-L-W-W", status: "Стабильный Фаворит", playstyle: "Агрессивный лейт и контратаки", average_match_length: "38:40", win_rate_10m: "72%", coach_strategy: "Поздние драфты, опора на сигнатурки Магнуса и Лины", key_heroes: ["Magnus", "Lina"], last_opponents: ["Falcons: L", "Xtreme: W"] }
         ];
 
-        // Словарь названий предметов для резервного отображения (если картинка не грузится)
-        const ITEM_NAMES = {
-            "black_king_bar": "BKB", "blink": "Blink", "ultimate_scepter": "Aghanim", "maelstrom": "Maelstrom",
-            "lesser_crit": "Crystalys", "phase_boots": "Phase", "crimson_guard": "Crimson", "arcane_boots": "Arcanes",
-            "aether_lens": "Aether Lens", "power_treads": "PT", "echo_sabre": "Echo", "tranquil_boots": "Tranquils",
-            "blade_mail": "Blademail", "mask_of_madness": "MoM"
+        // Системный маппинг имен
+        const itemImageMapping = {
+            "black_king_bar": "black_king_bar",
+            "blink": "blink",
+            "ultimate_scepter": "ultimate_scepter",
+            "silver_edge": "silver_edge",
+            "maelstrom": "maelstrom",
+            "lesser_crit": "lesser_crit",
+            "desolator": "desolator",
+            "crimson_guard": "crimson_guard",
+            "pipe_of_insight": "pipe"
         };
 
-        window.onload = async function() {
-            await fetchAllHeroes();
-            initEnemySelectors();
-            
-            // Загрузка настроек
-            if (localStorage.getItem('steam_id')) state.steamId = localStorage.getItem('steam_id');
-            if (localStorage.getItem('github_username')) state.githubUsername = localStorage.getItem('github_username');
-
-            document.getElementById('steam-id-input').value = state.steamId;
-            document.getElementById('github-username-input').value = state.githubUsername;
-
-            loadDemoUserPool(); // Сразу грузим демо-пул для отображения
-            loadGitHubData();   // Пытаемся стянуть живую дату
-            loadOpenDotaStats(); // Пытаемся стянуть реальный профиль
-            
-            showToast("Абсолютный Дашборд Запущен!", "success");
+        const heroImageMapping = {
+            "shadow fiend": "nevermore",
+            "shadow_fiend": "nevermore",
+            "windranger": "windrunner",
+            "magnataur": "magnataur",
+            "enigma": "enigma",
+            "tidehunter": "tidehunter",
+            "treant": "treant",
+            "crystal_maiden": "crystal_maiden",
+            "bloodseeker": "bloodseeker",
+            "centaur": "centaur",
+            "axe": "axe",
+            "templar_assassin": "templar_assassin",
+            "pudge": "pudge",
+            "viper": "viper"
         };
 
-        async function fetchAllHeroes() {
-            initHeroMapping(); // Инит из оффлайн-кэша сначала
-            try {
-                const res = await fetch('https://api.opendota.com/api/heroes');
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data && data.length > 0) {
-                        localHeroList = data.map(h => ({
-                            id: h.id,
-                            name: h.name.replace('npc_dota_hero_', ''),
-                            localized: h.localized_name
-                        }));
-                        initHeroMapping(); // Пересборка с полными данными сервера
-                    }
-                }
-            } catch (err) {
-                console.warn("API героев недоступно, используем 125 оффлайн героев.", err);
-            }
-        }
-
-        function initHeroMapping() {
-            localHeroList.sort((a, b) => a.localized.localeCompare(b.localized));
-            localHeroList.forEach(h => {
-                state.heroMapping[h.id] = { name: h.localized, raw: h.name };
-            });
-            const select = document.getElementById('add-hero-select');
-            if (select) {
-                select.innerHTML = '';
-                localHeroList.forEach(h => {
-                    const opt = document.createElement('option');
-                    opt.value = h.id;
-                    opt.textContent = h.localized;
-                    select.appendChild(opt);
-                });
-            }
-        }
-
-        function initEnemySelectors() {
-            const container = document.getElementById('enemy-picks-selectors');
-            container.innerHTML = '';
-            for (let i = 1; i <= 5; i++) {
-                const div = document.createElement('div');
-                div.className = "flex gap-3 items-center bg-black/20 p-2 rounded-xl border border-gray-800/50";
-                div.innerHTML = `
-                    <div class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-500 flex items-center justify-center text-xs font-bold border border-rose-500/30">${i}</div>
-                    <select id="enemy-pick-${i}" class="bg-transparent text-sm font-semibold border-none text-white focus:outline-none w-full cursor-pointer">
-                        <option value="none" class="bg-slate-900">-- Выбрать героя --</option>
-                        ${localHeroList.map(h => `<option value="${h.id}" class="bg-slate-900">${h.localized}</option>`).join('')}
-                    </select>
-                `;
-                container.appendChild(div);
-            }
-        }
-
-        function loadDemoUserPool() {
-            state.userComfortPool = [
-                { id: 11, name: "nevermore", localizedName: "Shadow Fiend", winrate: 56.5, games: 120, comfort: 9 },
-                { id: 21, name: "windrunner", localizedName: "Windranger", winrate: 53.2, games: 98, comfort: 8 },
-                { id: 96, name: "centaur", localizedName: "Centaur Warrunner", winrate: 51.0, games: 60, comfort: 7 },
-                { id: 86, name: "rubick", localizedName: "Rubick", winrate: 48.2, games: 250, comfort: 10 }
-            ];
-            state.metaHeroes = MOCK_META_PAYLOAD;
-            renderAll();
-        }
-
-        async function loadGitHubData() {
-            const username = document.getElementById('github-username-input').value.trim();
-            if(!username) return;
-            try {
-                // Обход кэша CDN:
-                const res = await fetch(`https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${Date.now()}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.meta_heroes) {
-                        state.metaHeroes = data.meta_heroes;
-                        showToast("База меты ИИ успешно загружена!", "success");
-                        renderAll();
-                    }
-                }
-            } catch (e) {
-                console.warn("GitHub JSON не найден, используем расширенные локальные данные.");
-            }
-        }
-
-        async function loadOpenDotaStats() {
-            const steamId = document.getElementById('steam-id-input').value.trim();
-            if (!steamId) return;
-            state.steamId = steamId;
-            localStorage.setItem('steam_id', steamId);
-            
-            showToast("Запрашиваем историю OpenDota...", "info");
-
-            try {
-                const profileRes = await fetch(`https://api.opendota.com/api/players/${steamId}`);
-                if (profileRes.ok) {
-                    const profileData = await profileRes.json();
-                    if (profileData.profile) {
-                        document.getElementById('user-avatar').src = profileData.profile.avatarfull;
-                        document.getElementById('user-avatar-container').classList.remove('hidden');
-                        document.getElementById('user-nickname').textContent = profileData.profile.personaname;
-                        document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]";
-                        document.getElementById('sync-status-text').textContent = "Синхронизировано";
-                        document.getElementById('sync-status-text').className = "text-[10px] text-emerald-400 font-bold uppercase tracking-widest";
-                    }
-                }
-
-                // Герои
-                const heroesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/heroes`);
-                if (heroesRes.ok) {
-                    const heroesData = await heroesRes.json();
-                    if (Array.isArray(heroesData) && heroesData.length > 0) {
-                        state.userComfortPool = heroesData.filter(h => h.games > 4).slice(0, 8).map(h => {
-                            const mapped = state.heroMapping[h.hero_id] || { name: `Hero ${h.hero_id}`, raw: "nevermore" };
-                            return {
-                                id: parseInt(h.hero_id), name: mapped.raw, localizedName: mapped.name,
-                                winrate: parseFloat(((h.win / h.games) * 100).toFixed(1)),
-                                games: h.games, comfort: Math.min(10, Math.max(1, Math.round(h.games / 10)))
-                            };
-                        });
-                    }
-                }
-
-                // Матчи (с защитой от скрытого профиля)
-                const matchesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/recentMatches`);
-                if (matchesRes.ok) {
-                    const matchesData = await matchesRes.json();
-                    state.recentMatches = Array.isArray(matchesData) ? matchesData : [];
-                }
-                
-                showToast("Профиль обновлен!", "success");
-                renderAll();
-            } catch (e) {
-                console.error("OpenDota error:", e);
-                showToast("Профиль скрыт или API перегружен. Загружен демо-режим.", "warning");
-                loadDemoUserPool();
-            }
-        }
-
-        function renderAll() {
-            renderComfortPool();
-            renderHeroTable();
-            renderMatchesFeed();
-        }
-
-        function renderComfortPool() {
-            const container = document.getElementById('comfort-pool-list');
-            container.innerHTML = '';
-            document.getElementById('pool-count').textContent = state.userComfortPool.length;
-
-            state.userComfortPool.forEach(hero => {
-                const rawName = hero.name.replace(/\s+/g, '_').toLowerCase();
-                const item = document.createElement('div');
-                item.className = "flex items-center justify-between p-2 rounded-xl bg-black/40 border border-gray-800 hover:border-emerald-500/50 transition-colors";
-                item.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <img class="w-8 h-8 rounded-lg border border-gray-700 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${rawName}.png?" onerror="this.src='https://placehold.co/32x32/1a1f29/fff?text=${hero.localizedName[0]}'">
-                        <div>
-                            <p class="text-xs font-bold text-white leading-tight">${hero.localizedName}</p>
-                            <p class="text-[10px] text-emerald-400 font-mono">${hero.winrate}% WR</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <i class="fa-solid fa-star text-[8px] text-amber-500"></i>
-                        <span class="text-xs font-mono font-bold text-gray-300 block">${hero.comfort}/10</span>
-                    </div>
-                `;
-                container.appendChild(item);
-            });
-        }
-
-        function getMappedRawName(name) {
-            const found = Object.values(state.heroMapping).find(h => h.name.toLowerCase() === name.toLowerCase());
-            return found ? found.raw : name.toLowerCase().replace(/\s+/g, '_');
-        }
-
-        function renderHeroTable() {
-            const tbody = document.getElementById('meta-heroes-tbody');
-            tbody.innerHTML = '';
-            const roleFilter = document.getElementById('role-filter').value;
-
-            // Расчет PDS
-            const computedList = state.metaHeroes.map(meta => {
-                const comfortMatch = state.userComfortPool.find(c => c.localizedName.toLowerCase() === meta.name.toLowerCase());
-                const personalWr = comfortMatch ? comfortMatch.winrate : 45.0;
-                const comfortVal = comfortMatch ? comfortMatch.comfort * 10 : 30;
-                const d2ptWr = parseFloat((meta.winrate_d2pt || "50%").replace('%', ''));
-                
-                const proRating = meta.pro_trend === 'high' ? 95 : (meta.pro_trend === 'stable' ? 70 : 40);
-                const pubRating = d2ptWr * 1.5;
-                const userRating = (comfortVal * 0.4) + (personalWr * 0.6);
-
-                const pds = ((proRating * (state.weights.pro / 100)) + 
-                             (pubRating * (state.weights.pub / 100)) + 
-                             (userRating * (state.weights.comfort / 100))).toFixed(1);
-
-                return { ...meta, comfortWr: comfortMatch ? `${comfortMatch.winrate}%` : '—', pds: parseFloat(pds) };
-            });
-
-            computedList.sort((a, b) => b.pds - a.pds);
-
-            computedList.forEach(hero => {
-                if (roleFilter !== 'all' && hero.role !== roleFilter) return;
-
-                const rawName = getMappedRawName(hero.name);
-                const pdsColor = hero.pds >= 75 ? 'text-emerald-400' : (hero.pds >= 60 ? 'text-amber-400' : 'text-rose-500');
-                const badgeColor = hero.pro_trend === 'high' ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' : 'bg-gray-800 text-gray-300 border-gray-700';
-
-                // Генерация HTML для предметов
-                const itemsHtml = (hero.core_items || []).map(item => `
-                    <div class="relative group cursor-help">
-                        <img src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/items/${item}.png" 
-                             onerror="this.src='https://placehold.co/28x20/1f2937/fff?text=${item[0].toUpperCase()}'" 
-                             class="item-icon">
-                        <div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-black/90 text-white text-[9px] px-2 py-1 rounded hidden group-hover:block whitespace-nowrap z-10 border border-gray-700">
-                            ${ITEM_NAMES[item] || item.replace(/_/g, ' ')}
-                        </div>
-                    </div>
-                `).join('');
-
-                // Генерация HTML для синергий
-                const synergyHtml = (hero.best_with || []).map(sh => {
-                    const sRaw = getMappedRawName(sh);
-                    return `<img src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${sRaw}.png" class="mini-hero-icon border-emerald-500/50" title="Хорош с ${sh}">`;
-                }).join('');
-
-                const countersHtml = (hero.counters || []).map(ch => {
-                    const cRaw = getMappedRawName(ch);
-                    return `<img src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${cRaw}.png" class="mini-hero-icon border-rose-500/50" title="Боится ${ch}">`;
-                }).join('');
-
-                const tr = document.createElement('tr');
-                tr.className = "hero-card-hover border-b border-gray-800/50 transition-all duration-300 bg-[#090d16]/30";
-                
-                tr.innerHTML = `
-                    <td class="py-3 pl-2 align-middle">
-                        <div class="flex items-center gap-3">
-                            <img class="w-12 h-12 rounded-xl border border-gray-700 shadow-md object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${rawName}.png" onerror="this.src='https://placehold.co/48x48/1a1f29/fff?text=${hero.name[0]}'">
-                            <div>
-                                <span class="font-bold text-white text-sm block leading-tight">${hero.name}</span>
-                                <span class="text-[9px] px-1.5 py-0.5 rounded-full border uppercase tracking-wider font-bold ${badgeColor}">${hero.badge || hero.role}</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="py-3 align-middle">
-                        <div class="text-[10px] text-gray-400 font-mono">D2PT: <span class="text-cyan-400 font-bold">${hero.winrate_d2pt}</span></div>
-                        <div class="text-[10px] text-gray-400 font-mono mt-0.5">Личный: <span class="text-emerald-400 font-bold">${hero.comfortWr}</span></div>
-                    </td>
-                    <td class="py-3 align-middle">
-                        <div class="flex flex-wrap gap-1">${itemsHtml || '<span class="text-xs text-gray-600">Нет данных</span>'}</div>
-                    </td>
-                    <td class="py-3 align-middle">
-                        <div class="flex gap-1 mb-1">${synergyHtml}</div>
-                        <div class="flex gap-1">${countersHtml}</div>
-                    </td>
-                    <td class="py-3 text-right pr-4 align-middle">
-                        <span class="text-2xl font-black font-mono ${pdsColor} drop-shadow-md">${hero.pds}</span>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function renderMatchesFeed() {
-            const container = document.getElementById('matches-feed');
-            container.innerHTML = '';
-
-            if (!state.recentMatches || state.recentMatches.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-10 px-6 rounded-2xl bg-black/30 border border-dashed border-gray-700">
-                        <i class="fa-solid fa-user-secret text-4xl mb-4 text-gray-600"></i>
-                        <h4 class="text-sm font-bold text-white mb-2">История матчей скрыта</h4>
-                        <p class="text-xs text-gray-400 mb-4 max-w-sm mx-auto">Чтобы ИИ мог анализировать твою форму, включи «Общедоступную историю матчей» в настройках Dota 2.</p>
-                        <button onclick="loadDemoUserPool()" class="px-4 py-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-bold hover:bg-emerald-600/40 transition-colors">Загрузить Демо-Матчи для теста</button>
-                    </div>`;
-                return;
-            }
-
-            let wins = 0;
-            state.recentMatches.slice(0, 15).forEach(match => {
-                const isRadiant = match.player_slot < 128;
-                const isWin = (isRadiant && match.radiant_win) || (!isRadiant && !match.radiant_win);
-                if(isWin) wins++;
-
-                const heroMapped = state.heroMapping[match.hero_id] || { raw: "nevermore", name: "Hero" };
-                const div = document.createElement('div');
-                div.className = `flex items-center justify-between p-3 rounded-xl bg-black/40 border ${isWin ? 'border-emerald-500/20' : 'border-rose-500/20'}`;
-                
-                div.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <img class="w-10 h-10 rounded-lg border border-gray-800 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${heroMapped.raw}.png">
-                        <div>
-                            <span class="text-xs font-bold text-white block">${heroMapped.name}</span>
-                            <span class="text-[9px] font-black ${isWin ? 'text-emerald-400' : 'text-rose-400'} uppercase">${isWin ? 'Победа' : 'Поражение'}</span>
-                        </div>
-                    </div>
-                    <div class="text-right font-mono">
-                        <span class="text-sm font-black text-white">${match.kills} / ${match.deaths} / ${match.assists}</span>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-            document.getElementById('stats-winrate-pct').textContent = `${((wins / Math.max(1, state.recentMatches.length)) * 100).toFixed(0)}%`;
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `p-4 rounded-xl border text-xs font-bold shadow-lg transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2 ${
+                type === 'success' ? 'bg-emerald-950/90 border-emerald-500/40 text-emerald-400' :
+                type === 'error' ? 'bg-rose-950/90 border-rose-500/40 text-rose-400' :
+                'bg-[#0b0f19]/90 border-gray-800 text-gray-300'
+            }`;
+            toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-info'}"></i> ${message}`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.classList.remove('translate-y-2', 'opacity-0'); }, 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
         }
 
         function switchTab(tabId) {
@@ -732,63 +515,549 @@
                 btn.className = "tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white";
             });
             
-            const active = document.getElementById(`btn-${tabId}`);
-            if(active) active.className = "tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md shadow-rose-900/30 border border-rose-500/50";
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md border border-rose-500/50";
+            }
+            state.activeTab = tabId;
+        }
+
+        async function fetchDotaHeroes() {
+            try {
+                const res = await fetch('https://api.opendota.com/api/heroes');
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                data.forEach(h => {
+                    state.heroMapping[h.id] = h;
+                });
+                populateAddHeroSelect();
+            } catch (err) {
+                showToast("Используется локальная база названий героев", "info");
+            }
+        }
+
+        function populateAddHeroSelect() {
+            const select = document.getElementById('add-hero-select');
+            select.innerHTML = '<option value="">Выбрать героя...</option>';
+            Object.values(state.heroMapping)
+                .sort((a,b) => a.localized_name.localeCompare(b.localized_name))
+                .forEach(h => {
+                    select.innerHTML += `<option value="${h.id}">${h.localized_name}</option>`;
+                });
+        }
+
+        function loadPoolFromStorage() {
+            const saved = localStorage.getItem('dota_comfort_pool');
+            state.userComfortPool = saved ? JSON.parse(saved) : [
+                { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
+                { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
+            ];
+            renderComfortPool();
+        }
+
+        function savePoolToStorage() {
+            localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
+            renderComfortPool();
+            renderHeroTable();
+        }
+
+        function renderComfortPool() {
+            const list = document.getElementById('comfort-pool-list');
+            document.getElementById('pool-count').textContent = state.userComfortPool.length;
+            list.innerHTML = '';
+            
+            state.userComfortPool.forEach((h, index) => {
+                const imgUrl = getHeroImage(h.localized_name);
+                list.innerHTML += `
+                    <div class="flex items-center justify-between bg-black/40 p-2.5 rounded-xl border border-gray-800/80">
+                        <div class="flex items-center gap-2">
+                            <img src="${imgUrl}" class="w-8 h-8 rounded object-cover" onerror="this.src='https://via.placeholder.com/32x32/1a1a1a/ffffff?text=Dota'">
+                            <div>
+                                <h4 class="text-xs font-bold text-white">${h.localized_name}</h4>
+                                <span class="text-[9px] text-gray-500 font-mono">WR: ${h.winrate}% | Матчей: ${h.games}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeHeroFromPool(${index})" class="text-gray-500 hover:text-rose-500 text-xs px-2"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+            });
+        }
+
+        function manuallyAddHero() {
+            const select = document.getElementById('add-hero-select');
+            const wrInput = document.getElementById('add-hero-wr');
+            const gamesInput = document.getElementById('add-hero-games');
+            
+            if (!select.value) return showToast("Выбери героя!", "error");
+            const heroId = parseInt(select.value);
+            const foundHero = state.heroMapping[heroId];
+            
+            const newHero = {
+                id: heroId,
+                localized_name: foundHero.localized_name,
+                winrate: parseFloat(wrInput.value) || 50,
+                games: parseInt(gamesInput.value) || 10
+            };
+
+            const existIndex = state.userComfortPool.findIndex(h => h.id === heroId);
+            if (existIndex > -1) state.userComfortPool[existIndex] = newHero;
+            else state.userComfortPool.push(newHero);
+            
+            savePoolToStorage();
+            showToast(`${foundHero.localized_name} сохранен в пул`, "success");
+        }
+
+        function removeHeroFromPool(index) {
+            state.userComfortPool.splice(index, 1);
+            savePoolToStorage();
         }
 
         function updateWeights() {
-            const p = parseInt(document.getElementById('weight-pro').value);
-            const pu = parseInt(document.getElementById('weight-pub').value);
-            const c = parseInt(document.getElementById('weight-comfort').value);
-            const sum = p + pu + c;
-            
-            state.weights.pro = Math.round((p/sum)*100);
-            state.weights.pub = Math.round((pu/sum)*100);
-            state.weights.comfort = 100 - state.weights.pro - state.weights.pub;
+            state.weights.pro = parseInt(document.getElementById('weight-pro').value) || 0;
+            state.weights.pub = parseInt(document.getElementById('weight-pub').value) || 0;
+            state.weights.comfort = parseInt(document.getElementById('weight-comfort').value) || 0;
 
-            document.getElementById('val-weight-pro').textContent = state.weights.pro + '%';
-            document.getElementById('val-weight-pub').textContent = state.weights.pub + '%';
-            document.getElementById('val-weight-comfort').textContent = state.weights.comfort + '%';
+            const total = state.weights.pro + state.weights.pub + state.weights.comfort;
+            if (total !== 100) {
+                document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_10px_#f43f5e]";
+                document.getElementById('sync-status-text').textContent = `Некалибровано (${total}%)`;
+            } else {
+                document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]";
+                document.getElementById('sync-status-text').textContent = "Калибровка идеальна";
+            }
+
+            document.getElementById('val-weight-pro').textContent = `${state.weights.pro}%`;
+            document.getElementById('val-weight-pub').textContent = `${state.weights.pub}%`;
+            document.getElementById('val-weight-comfort').textContent = `${state.weights.comfort}%`;
             
             renderHeroTable();
         }
 
+        function calculatePDS(hero) {
+            const pub_wr = parseFloat(hero.winrate_d2pt) || 50;
+            const pro_ban = parseFloat(hero.banrate_pro) || 0;
+            const pro_rating = Math.min(100, pro_ban * 2); 
+
+            const comfortMatch = state.userComfortPool.find(h => h.localized_name.toLowerCase() === hero.name.toLowerCase());
+            const comfort_rating = comfortMatch ? comfortMatch.winrate : 50;
+
+            const pds = (pro_rating * (state.weights.pro / 100)) + 
+                        (pub_wr * (state.weights.pub / 100)) + 
+                        (comfort_rating * (state.weights.comfort / 100));
+            return parseFloat(pds.toFixed(1));
+        }
+
+        function getHeroImage(heroName) {
+            let formatted = heroName.toLowerCase().replace(/ /g, '_');
+            const short = heroImageMapping[formatted] || formatted;
+            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${short}.png`;
+        }
+
+        function getMinifiedItemImage(itemName) {
+            const mappedName = itemImageMapping[itemName] || itemName;
+            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${mappedName}.png`;
+        }
+
+        function renderHeroTable() {
+            const tbody = document.getElementById('meta-heroes-tbody');
+            tbody.innerHTML = '';
+            
+            const search = document.getElementById('hero-search').value.toLowerCase();
+            const roleFilter = document.getElementById('role-filter').value;
+
+            const processed = state.metaHeroes.map(h => ({
+                ...h,
+                pds_score: calculatePDS(h)
+            })).sort((a,b) => b.pds_score - a.pds_score);
+
+            processed.forEach(h => {
+                if (search && !h.name.toLowerCase().includes(search)) return;
+                if (roleFilter !== 'all' && h.role !== roleFilter) return;
+
+                const itemsHTML = (h.core_items || []).map(item => `
+                    <img src="${getMinifiedItemImage(item)}" class="item-icon" title="${item.replace(/_/g, ' ')}">
+                `).join('');
+
+                const synergiesHTML = (h.best_with || []).map(s => `
+                    <img src="${getHeroImage(s)}" class="mini-hero-icon" title="${s}">
+                `).join('');
+
+                const countersHTML = (h.counters || []).map(c => `
+                    <img src="${getHeroImage(c)}" class="mini-hero-icon border-rose-500/50" title="Боится: ${c}">
+                `).join('');
+
+                tbody.innerHTML += `
+                    <tr class="border-b border-gray-900/60 hover:bg-[#0c1222]/50 transition-colors cursor-pointer" onclick="openHeroModal('${h.name}')">
+                        <td class="py-4 pl-2">
+                            <div class="flex items-center gap-3">
+                                <img src="${getHeroImage(h.name)}" class="w-12 h-8 rounded-lg object-cover shadow border border-gray-800">
+                                <div>
+                                    <h4 class="font-bold text-white text-xs">${h.name}</h4>
+                                    <div class="flex gap-1 items-center mt-1">
+                                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-400 font-bold border border-rose-500/20">${h.tier || 'A'}-Tier</span>
+                                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 font-mono">${h.role}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-4 text-center">
+                            <div class="text-[11px]">
+                                <div class="font-semibold text-cyan-400">D2PT: ${h.winrate_d2pt}</div>
+                                <div class="text-gray-500 text-[9px]">Pro Ban: ${h.banrate_pro}</div>
+                            </div>
+                        </td>
+                        <td class="py-4">
+                            <div class="flex gap-1.5">${itemsHTML}</div>
+                        </td>
+                        <td class="py-4">
+                            <div class="flex items-center gap-4">
+                                <div class="flex gap-1">${synergiesHTML}</div>
+                                <div class="w-px h-6 bg-gray-800"></div>
+                                <div class="flex gap-1">${countersHTML}</div>
+                            </div>
+                        </td>
+                        <td class="py-4 text-center text-xs font-mono font-bold text-purple-400">
+                            ${h.versatility || '5.0'}
+                        </td>
+                        <td class="py-4 text-right pr-4">
+                            <span class="px-2.5 py-1.5 rounded-lg text-xs font-black bg-rose-600/10 text-rose-400 border border-rose-500/30 font-mono">${h.pds_score}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function loadOpenDotaStats() {
+            const steamId = document.getElementById('steam-id-input').value.trim();
+            if (!steamId) return showToast("Укажи валидный Steam32 ID", "error");
+
+            showToast("Загружаем данные профиля...", "info");
+            document.getElementById('private-profile-instructions').classList.add('hidden');
+            try {
+                const profileRes = await fetch(`https://api.opendota.com/api/players/${steamId}`);
+                if (profileRes.ok) {
+                    const profileData = await profileRes.json();
+                    if (profileData.profile) {
+                        document.getElementById('user-nickname').textContent = profileData.profile.personaname;
+                        document.getElementById('user-avatar').src = profileData.profile.avatarfull;
+                        document.getElementById('user-avatar-container').classList.remove('hidden');
+                    }
+                }
+
+                const wlRes = await fetch(`https://api.opendota.com/api/players/${steamId}/wl`);
+                const wlData = wlRes.ok ? await wlRes.json() : { win: 0, lose: 0 };
+                const totalGames = wlData.win + wlData.lose;
+                const winrate = totalGames > 0 ? ((wlData.win / totalGames) * 100).toFixed(1) : 0;
+                document.getElementById('stats-winrate-pct').textContent = `${winrate}%`;
+
+                // Сигнатурки
+                const heroesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/heroes`);
+                if (heroesRes.ok) {
+                    const heroesData = await heroesRes.json();
+                    state.userComfortPool = heroesData.slice(0, 5).map(h => {
+                        const gameInfo = state.heroMapping[h.hero_id] || { localized_name: `Hero ${h.hero_id}` };
+                        return {
+                            id: parseInt(h.hero_id),
+                            localized_name: gameInfo.localized_name,
+                            winrate: h.games > 0 ? parseFloat(((h.win / h.games) * 100).toFixed(1)) : 50,
+                            games: h.games
+                        };
+                    });
+                    savePoolToStorage();
+                }
+
+                // Матчи
+                const matchesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/recentMatches`);
+                if (matchesRes.ok) {
+                    state.recentMatches = await matchesRes.json();
+                    if (state.recentMatches.length === 0) {
+                        document.getElementById('private-profile-instructions').classList.remove('hidden');
+                    } else {
+                        renderMatchesFeed();
+                    }
+                }
+
+                // Соратники
+                const peersRes = await fetch(`https://api.opendota.com/api/players/${steamId}/peers`);
+                if (peersRes.ok) {
+                    state.peers = await peersRes.json();
+                    renderPeers();
+                }
+
+                showToast("Статистика OpenDota успешно импортирована!", "success");
+            } catch (err) {
+                showToast("Не удалось импортировать профиль. Используем ручную заглушку.", "error");
+                document.getElementById('private-profile-instructions').classList.remove('hidden');
+            }
+        }
+
+        function loadMockDotaMatches() {
+            state.recentMatches = [
+                { hero_id: 11, player_slot: 1, radiant_win: true, kills: 14, deaths: 3, assists: 11, start_time: Date.now()/1000 - 3600 },
+                { hero_id: 21, player_slot: 2, radiant_win: true, kills: 8, deaths: 4, assists: 19, start_time: Date.now()/1000 - 18000 },
+                { hero_id: 96, player_slot: 3, radiant_win: false, kills: 2, deaths: 8, assists: 10, start_time: Date.now()/1000 - 86400 }
+            ];
+            state.peers = [
+                { personaname: "Yatoro", games: 15, win: 12, avatar: "https://via.placeholder.com/32" },
+                { personaname: "Collapse", games: 10, win: 8, avatar: "https://via.placeholder.com/32" }
+            ];
+            document.getElementById('stats-winrate-pct').textContent = "68.5%";
+            document.getElementById('stats-avg-kda').textContent = "4.25";
+            document.getElementById('private-profile-instructions').classList.add('hidden');
+            renderMatchesFeed();
+            renderPeers();
+            showToast("Демо-игры успешно подгружены!", "success");
+        }
+
+        function renderMatchesFeed() {
+            const feed = document.getElementById('matches-feed');
+            feed.innerHTML = '';
+            
+            state.recentMatches.slice(0, 8).forEach(m => {
+                const isWin = (m.player_slot < 128 && m.radiant_win) || (m.player_slot >= 128 && !m.radiant_win);
+                const heroObj = state.heroMapping[m.hero_id] || { localized_name: `Hero ${m.hero_id}` };
+                const timeStr = new Date(m.start_time * 1000).toLocaleDateString('ru-RU');
+                
+                feed.innerHTML += `
+                    <div class="p-4 rounded-xl border flex justify-between items-center bg-slate-900/40 ${isWin ? 'border-emerald-500/20 hover:border-emerald-500/40' : 'border-rose-500/20 hover:border-rose-500/40'}">
+                        <div class="flex items-center gap-3">
+                            <img src="${getHeroImage(heroObj.localized_name)}" class="w-14 h-9 rounded object-cover shadow border border-gray-800">
+                            <div>
+                                <h4 class="font-bold text-sm text-white">${heroObj.localized_name}</h4>
+                                <div class="text-[10px] text-gray-500">KDA: <span class="text-white">${m.kills}/${m.deaths}/${m.assists}</span> | ${timeStr}</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded font-black text-xs font-mono ${isWin ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}">
+                            ${isWin ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ'}
+                        </span>
+                    </div>
+                `;
+            });
+        }
+
+        function renderPeers() {
+            const list = document.getElementById('peers-list');
+            list.innerHTML = '';
+            state.peers.slice(0, 4).forEach(p => {
+                const wr = p.games > 0 ? ((p.win / p.games) * 100).toFixed(1) : 0;
+                list.innerHTML += `
+                    <div class="flex items-center justify-between p-2.5 bg-black/40 rounded-xl border border-gray-800/80">
+                        <div class="flex items-center gap-2">
+                            <img src="${p.avatar || 'https://via.placeholder.com/32'}" class="w-8 h-8 rounded-full border border-gray-800">
+                            <div>
+                                <h4 class="text-xs font-bold text-white">${p.personaname}</h4>
+                                <span class="text-[9px] text-gray-500">Совместных матчей: ${p.games}</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400">${wr}% WR</span>
+                    </div>
+                `;
+            });
+        }
+
+        function openHeroModal(heroName) {
+            const h = state.metaHeroes.find(x => x.name.toLowerCase() === heroName.toLowerCase());
+            if (!h) return;
+
+            document.getElementById('modal-hero-icon').src = getHeroImage(h.name);
+            document.getElementById('modal-hero-name').textContent = h.name;
+            document.getElementById('modal-hero-role').textContent = h.role;
+            document.getElementById('modal-hero-tier-badge').textContent = `${h.tier || 'A'}-Tier`;
+            document.getElementById('modal-hero-wr').textContent = h.winrate_d2pt;
+            document.getElementById('modal-hero-pr').textContent = h.pickrate_d2pt || '10%';
+            document.getElementById('modal-hero-ban').textContent = h.banrate_pro || '20%';
+            document.getElementById('modal-hero-laning').textContent = h.laning_winrate || '50%';
+            document.getElementById('modal-hero-innate').textContent = h.innate_ability || 'Информация по врожденной способности подгружается...';
+            document.getElementById('modal-hero-spike').textContent = h.power_spike || 'Равномерный темп';
+            document.getElementById('modal-hero-versatility').textContent = `${h.versatility || '5.0'} / 10`;
+
+            const phys = h.damage_ratio ? h.damage_ratio.phys : 50;
+            const mag = h.damage_ratio ? h.damage_ratio.mag : 50;
+            const pure = h.damage_ratio ? h.damage_ratio.pure : 0;
+
+            document.getElementById('modal-dmg-phys').style.width = `${phys}%`;
+            document.getElementById('modal-dmg-mag').style.width = `${mag}%`;
+            document.getElementById('modal-dmg-pure').style.width = `${pure}%`;
+            document.getElementById('modal-hero-dmg-ratio').textContent = `${phys}% Физ / ${mag}% Маг / ${pure}% Чистый`;
+
+            const itemsBox = document.getElementById('modal-hero-items');
+            itemsBox.innerHTML = '';
+            (h.core_items || []).forEach(item => {
+                itemsBox.innerHTML += `
+                    <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-gray-800">
+                        <img src="${getMinifiedItemImage(item)}" class="w-10 h-7 object-cover rounded">
+                        <span class="text-xs text-white capitalize font-bold">${item.replace(/_/g, ' ')}</span>
+                    </div>
+                `;
+            });
+
+            document.getElementById('hero-modal').classList.remove('hidden');
+        }
+
+        function closeHeroModal() {
+            document.getElementById('hero-modal').classList.add('hidden');
+        }
+
+        function initDraftSimulator() {
+            const container = document.getElementById('enemy-picks-selectors');
+            container.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                container.innerHTML += `
+                    <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-[10px] font-black text-rose-500 uppercase tracking-widest">Враг ${i}:</span>
+                        <select id="enemy-pick-${i}" class="bg-[#04060a] w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-800 text-xs text-white focus:outline-none focus:border-rose-500 cursor-pointer">
+                            <option value="">Не выбран...</option>
+                        </select>
+                    </div>
+                `;
+            }
+
+            setTimeout(() => {
+                for (let i = 1; i <= 5; i++) {
+                    const sel = document.getElementById(`enemy-pick-${i}`);
+                    Object.values(state.heroMapping)
+                        .sort((a,b) => a.localized_name.localeCompare(b.localized_name))
+                        .forEach(h => {
+                            sel.innerHTML += `<option value="${h.localized_name}">${h.localized_name}</option>`;
+                        });
+                }
+            }, 1000);
+        }
+
+        function calculateDraftCounters() {
+            const enemies = [];
+            for (let i = 1; i <= 5; i++) {
+                const val = document.getElementById(`enemy-pick-${i}`).value;
+                if (val) enemies.push(val.toLowerCase());
+            }
+
+            if (enemies.length === 0) {
+                return showToast("Укажи хотя бы одного вражеского героя!", "error");
+            }
+
+            const resultsBox = document.getElementById('draft-suggestions-results');
+            resultsBox.innerHTML = '';
+
+            const scored = state.metaHeroes.map(h => {
+                let score = calculatePDS(h);
+                let counterBonus = 0;
+                let synergyBonus = 0;
+
+                enemies.forEach(enemy => {
+                    if ((h.counters || []).some(c => c.toLowerCase() === enemy)) counterBonus -= 15;
+                    if ((h.best_with || []).some(b => b.toLowerCase() === enemy)) synergyBonus += 10;
+                });
+
+                const comfortBonus = state.userComfortPool.some(x => x.localized_name.toLowerCase() === h.name.toLowerCase()) ? 15 : 0;
+
+                return {
+                    ...h,
+                    final_score: score + counterBonus + synergyBonus + comfortBonus,
+                    counterBonus,
+                    comfortBonus
+                };
+            }).sort((a,b) => b.final_score - a.final_score).slice(0, 5);
+
+            scored.forEach(h => {
+                resultsBox.innerHTML += `
+                    <div class="p-4 rounded-xl border border-gray-800/80 bg-black/35 flex justify-between items-center mb-3">
+                        <div class="flex items-center gap-3">
+                            <img src="${getHeroImage(h.name)}" class="w-14 h-9 rounded object-cover shadow">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">${h.name}</h4>
+                                <div class="text-[10px] text-gray-500">Синергии: ${h.best_with.join(', ') || 'Нет'}</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded font-black text-xs font-mono bg-purple-500/10 text-purple-400">
+                            Score: ${h.final_score.toFixed(1)}
+                        </span>
+                    </div>
+                `;
+            });
+        }
+
+        async function loadGitHubData() {
+            const username = document.getElementById('github-username-input').value.trim() || state.githubUsername;
+            // Добавлена метка времени (t=...) для полного обхода кэширования GitHub CDN
+            const url = `https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${Date.now()}`;
+            
+            showToast("Обновляем базу данных с GitHub...", "info");
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                
+                state.metaHeroes = data.meta_heroes || fallbackHeroes;
+                state.proTeams = data.teams || fallbackTeams;
+                
+                renderHeroTable();
+                renderProTeams();
+                showToast("Интеграция ИИ успешно завершена!", "success");
+            } catch (err) {
+                showToast("Используется локальная база (оффлайн режим)", "info");
+                state.metaHeroes = fallbackHeroes;
+                state.proTeams = fallbackTeams;
+                renderHeroTable();
+                renderProTeams();
+            }
+        }
+
+        function renderProTeams() {
+            const grid = document.getElementById('teams-grid');
+            grid.innerHTML = '';
+
+            state.proTeams.forEach(t => {
+                const results = (t.recent_results || '').split('-').map(r => `
+                    <span class="w-6 h-6 rounded flex items-center justify-center font-mono text-[10px] font-bold ${r === 'W' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'}">${r}</span>
+                `).join('');
+
+                grid.innerHTML += `
+                    <div class="p-5 rounded-2xl bg-black/40 border border-gray-800 hover:border-purple-500/40 transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-base font-black text-white">${t.name}</h3>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">${t.status}</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-500 block uppercase font-mono font-bold">Power Index</span>
+                                <span class="text-base font-black text-purple-400 font-mono">${t.power_index}</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-xs mb-4">
+                            <div>
+                                <span class="text-gray-500 text-[10px] block">Стиль игры:</span>
+                                <span class="text-gray-300 font-medium">${t.playstyle || 'Неизвестно'}</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 text-[10px] block">План тренера:</span>
+                                <span class="text-gray-300 italic font-mono text-[11px]">${t.coach_strategy || 'Патч тестируется'}</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-900 pt-4">
+                            <span class="text-[10px] text-gray-500 block uppercase font-bold mb-2">Последняя форма</span>
+                            <div class="flex gap-1.5">${results}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
         function saveConfigAndLoad() {
-            const user = document.getElementById('github-username-input').value.trim();
-            if(user) {
-                localStorage.setItem('github_username', user);
+            const username = document.getElementById('github-username-input').value.trim();
+            if (username) {
+                state.githubUsername = username;
                 loadGitHubData();
             }
         }
 
-        function showToast(msg, type="info") {
-            const c = document.getElementById('toast-container');
-            const t = document.createElement('div');
-            const color = type === 'success' ? 'bg-emerald-600' : (type === 'error' ? 'bg-rose-600' : 'bg-gray-800');
-            t.className = `p-4 rounded-xl text-xs font-bold text-white shadow-lg transition-all transform translate-y-5 opacity-0 flex items-center gap-2 ${color}`;
-            t.innerHTML = `<i class="fa-solid fa-info-circle"></i> <span>${msg}</span>`;
-            c.appendChild(t);
-            setTimeout(() => t.classList.remove('translate-y-5', 'opacity-0'), 10);
-            setTimeout(() => { t.classList.add('opacity-0'); setTimeout(()=>t.remove(),300); }, 3000);
-        }
-
-        function manuallyAddHero() {
-            const id = parseInt(document.getElementById('add-hero-select').value);
-            const wr = parseFloat(document.getElementById('add-hero-wr').value) || 50;
-            const games = parseInt(document.getElementById('add-hero-games').value) || 10;
-            
-            const mapped = state.heroMapping[id];
-            if(!mapped) return;
-
-            const existing = state.userComfortPool.findIndex(h => h.id === id);
-            const hero = { id, name: mapped.raw, localizedName: mapped.name, winrate: wr, games, comfort: Math.min(10, Math.round(games/10)) };
-            
-            if(existing > -1) state.userComfortPool[existing] = hero;
-            else state.userComfortPool.push(hero);
-            
-            renderAll();
-            showToast(`${mapped.name} добавлен в пул!`, "success");
-        }
+        window.addEventListener('DOMContentLoaded', async () => {
+            await fetchDotaHeroes();
+            loadPoolFromStorage();
+            initDraftSimulator();
+            loadGitHubData();
+        });
     </script>
 </body>
 </html>
