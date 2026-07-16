@@ -3,844 +3,1164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REKDEKK // META TRACKER v7.41+</title>
-    <!-- Tailwind CSS for styling -->
+    <title>Dota 2 Absolute Meta Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for sharp industrial icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap');
-        
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: #0A0A0C;
-            color: #F5F5FA;
+            font-family: 'Inter', sans-serif;
+            background-color: #030509;
+            color: #f3f4f6;
+            overflow-x: hidden;
         }
-
-        /* Brutalist solid scrollbars */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #06080c; }
+        ::-webkit-scrollbar-thumb { background: #1a2235; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f43f5e; }
+        
+        .hero-card-hover:hover {
+            box-shadow: 0 0 25px rgba(244, 63, 94, 0.08);
+            border-color: rgba(244, 63, 94, 0.25);
+            background: rgba(13, 18, 30, 0.6) !important;
         }
-        ::-webkit-scrollbar-track {
-            background: #111116;
+        
+        .item-icon {
+            width: 38px;
+            height: 27px;
+            border-radius: 4px;
+            border: 1px solid #1f293d;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            object-fit: cover;
+            transition: all 0.2s ease;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #262636;
-            border: 1px solid #00FF66;
+        .item-icon:hover {
+            transform: scale(1.15);
+            border-color: #f43f5e;
+            box-shadow: 0 0 10px rgba(244, 63, 94, 0.4);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00FF66;
+        .mini-hero-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            border: 1px solid #1f2937;
+            object-fit: cover;
+            transition: all 0.2s ease;
         }
-
-        /* Flat brutalist shadows */
-        .brutal-shadow-green {
-            box-shadow: 4px 4px 0px 0px rgba(0, 255, 102, 1);
-        }
-        .brutal-shadow-red {
-            box-shadow: 4px 4px 0px 0px rgba(239, 68, 68, 1);
-        }
-        .brutal-shadow-white {
-            box-shadow: 4px 4px 0px 0px rgba(245, 245, 250, 1);
-        }
-        .brutal-shadow-gray {
-            box-shadow: 4px 4px 0px 0px rgba(38, 38, 54, 1);
+        .mini-hero-icon:hover {
+            transform: translateY(-2px);
+            border-color: #10b981;
         }
     </style>
 </head>
-<body class="p-4 md:p-8 min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER BLOCK -->
-    <header class="border-4 border-[#1A1A24] bg-[#111116] p-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 brutal-shadow-gray">
-        <div>
-            <h1 class="text-3xl font-extrabold tracking-wider text-white">
-                REKDEKK // <span class="text-[#00FF66]">META_TRACKER</span>
-            </h1>
-            <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">
-                Multi-Tier Data Aggregator // Patch 7.41+ Innate Abilities
-            </p>
-        </div>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <div class="bg-[#1A1A24] px-4 py-2 border border-gray-700 text-xs">
-                STATUS: <span class="text-[#00FF66] font-bold animate-pulse">ONLINE</span>
+<body class="min-h-screen pb-12 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0b101d] via-[#04060a] to-[#010204]">
+
+    <header class="border-b border-gray-900 bg-[#060a12]/95 backdrop-blur-md sticky top-0 z-50 shadow-xl shadow-black/60">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-rose-600 via-purple-600 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-950/40 border border-rose-500/30">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-xl font-black tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">DOTA 2 ABSOLUTE TRACKER</h1>
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">v4.1 PATCH 7.41+</span>
+                    </div>
+                    <p class="text-[10px] text-rose-500 font-bold uppercase tracking-widest">Абсолютный ИИ-Анализ Врожденных Способностей &amp; Драфта</p>
+                </div>
             </div>
-            <div class="text-right">
-                <div class="text-xs text-gray-400">ПОСЛЕДНЕЕ ОБНОВЛЕНИЕ:</div>
-                <div id="last-update" class="text-sm font-bold text-white">Загрузка...</div>
-            </div>
+            
+            <nav class="flex flex-wrap justify-center bg-[#080c14] p-1 rounded-xl border border-gray-800/80 shadow-inner">
+                <button onclick="switchTab('hero-tab')" id="btn-hero-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md border border-rose-500/50">
+                    <i class="fa-solid fa-calculator mr-2"></i>Абсолютная Мета
+                </button>
+                <button onclick="switchTab('stats-tab')" id="btn-stats-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-chart-line mr-2"></i>Мой Профиль
+                </button>
+                <button onclick="switchTab('sim-tab')" id="btn-sim-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-brain mr-2"></i>Умный Драфт
+                </button>
+                <button onclick="switchTab('team-tab')" id="btn-team-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-users mr-2"></i>Про-Сцена
+                </button>
+                <!-- НОВАЯ ВКЛАДКА ТУРНИРОВ -->
+                <button onclick="switchTab('tournament-tab')" id="btn-tournament-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-trophy mr-2 text-amber-500/70"></i>Турниры
+                </button>
+                <button onclick="switchTab('config-tab')" id="btn-config-tab" class="tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white">
+                    <i class="fa-brands fa-github mr-2"></i>База ИИ
+                </button>
+            </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <main class="max-w-[1440px] mx-auto px-4 mt-6">
         
-        <!-- SIDEBAR / NAVIGATION (3 cols) -->
-        <nav class="lg:col-span-3 flex flex-col gap-3">
-            <button onclick="switchTab('meta')" id="btn-meta" class="w-full text-left p-4 border-2 border-[#00FF66] bg-[#111116] text-[#00FF66] font-bold uppercase tracking-wider brutal-shadow-green transition-all duration-150">
-                <i class="fa-solid fa-bolt mr-3"></i> ⚡ Мета Героев
-            </button>
-            <button onclick="switchTab('draft')" id="btn-draft" class="w-full text-left p-4 border-2 border-[#262636] bg-[#111116] text-gray-400 font-bold uppercase tracking-wider transition-all duration-150 hover:text-white hover:border-white">
-                <i class="fa-solid fa-gamepad mr-3"></i> ⚔️ Умный Драфт
-            </button>
-            <button onclick="switchTab('teams')" id="btn-teams" class="w-full text-left p-4 border-2 border-[#262636] bg-[#111116] text-gray-400 font-bold uppercase tracking-wider transition-all duration-150 hover:text-white hover:border-white">
-                <i class="fa-solid fa-shield-halved mr-3"></i> 🏢 Тир-1 Команды
-            </button>
-            <button onclick="switchTab('tournament')" id="btn-tournament" class="w-full text-left p-4 border-2 border-[#262636] bg-[#111116] text-gray-400 font-bold uppercase tracking-wider transition-all duration-150 hover:text-white hover:border-white">
-                <i class="fa-solid fa-trophy mr-3"></i> 🏆 Турниры
-            </button>
-
-            <!-- LIVE ANALYTICS BRIEF -->
-            <div class="border-2 border-[#1A1A24] bg-[#0E0E12] p-4 mt-4 text-xs">
-                <div class="font-bold text-gray-400 mb-2 border-b border-[#1A1A24] pb-1 uppercase">Многоранговые фильтры:</div>
-                <ul class="space-y-1 text-gray-500">
-                    <li>• <span class="text-white font-bold">Pro Scene:</span> Контрпики и баны</li>
-                    <li>• <span class="text-white font-bold">8000+ MMR:</span> Сборки и тайминги</li>
-                    <li>• <span class="text-white font-bold">3000-5000 MMR:</span> Статистика пабликов</li>
-                </ul>
+        <div class="mb-6 p-5 rounded-2xl bg-gradient-to-r from-slate-950 via-[#0a0d18] to-slate-950 border border-slate-800/60 shadow-xl flex flex-col xl:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4 w-full xl:w-auto">
+                <div id="user-avatar-container" class="hidden relative">
+                    <img id="user-avatar" src="" alt="Avatar" class="w-14 h-14 rounded-xl border-2 border-rose-500/50 shadow-lg shadow-rose-900/20">
+                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-[#0d111e] rounded-full"></div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]"></span>
+                        <span id="sync-status-text" class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">База Данных ИИ Активна</span>
+                    </div>
+                    <h2 class="text-base font-bold text-white leading-tight"><span id="user-nickname">Гость</span>: Калибровка Personal Diff Score</h2>
+                </div>
             </div>
-        </nav>
-
-        <!-- CONTENT PANEL (9 cols) -->
-        <main class="lg:col-span-9 border-4 border-[#1A1A24] bg-[#111116] p-6 brutal-shadow-gray min-h-[600px]">
             
-            <!-- TAB 1: META HEROES -->
-            <section id="tab-meta" class="tab-content">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b-2 border-[#1A1A24] pb-4">
-                    <h2 class="text-2xl font-black uppercase text-white">Актуальная Мета Героев</h2>
-                    <!-- Filters -->
-                    <div class="flex flex-wrap gap-2">
-                        <select id="filter-role" onchange="renderMetaHeroes()" class="bg-[#1A1A24] border border-gray-700 text-xs text-white px-3 py-2 font-mono outline-none focus:border-[#00FF66]">
-                            <option value="ALL">ВСЕ РОЛИ</option>
-                            <option value="Carry">CARRY</option>
-                            <option value="Mid">MID</option>
-                            <option value="Offlane">OFFLANE</option>
-                            <option value="Support">SUPPORT</option>
-                        </select>
-                        <select id="filter-tier" onchange="renderMetaHeroes()" class="bg-[#1A1A24] border border-gray-700 text-xs text-white px-3 py-2 font-mono outline-none focus:border-[#00FF66]">
-                            <option value="ALL">ВСЕ ТИРЫ</option>
-                            <option value="S">S-TIER</option>
-                            <option value="A">A-TIER</option>
-                            <option value="B">B-TIER</option>
-                        </select>
-                    </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full xl:w-auto items-stretch bg-black/20 p-2 rounded-xl border border-white/5">
+                <div class="relative w-full sm:w-48">
+                    <span class="absolute left-3 top-2.5 text-gray-500 text-xs font-bold">ID:</span>
+                    <input type="text" id="steam-id-input" placeholder="Steam32 ID" class="bg-[#04060a] pl-9 pr-4 py-2 rounded-lg text-xs font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full transition-colors" value="872107609">
                 </div>
+                <button onclick="loadOpenDotaStats()" class="px-5 py-2 rounded-lg bg-emerald-600/20 border border-emerald-500/30 hover:bg-emerald-600/40 text-emerald-400 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate"></i> OpenDota
+                </button>
+                <div class="w-px h-8 bg-gray-800 hidden sm:block self-center mx-1"></div>
+                <button onclick="loadGitHubData()" class="px-5 py-2 rounded-lg bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 text-white shadow-lg shadow-rose-900/20 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-down"></i> Обновить Мету (GitHub)
+                </button>
+            </div>
+        </div>
 
-                <!-- Heroes Grid -->
-                <div id="heroes-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Dynamic Loading -->
-                </div>
-            </section>
-
-            <!-- TAB 2: SMART DRAFT -->
-            <section id="tab-draft" class="tab-content hidden">
-                <div class="border-b-2 border-[#1A1A24] pb-4 mb-6">
-                    <h2 class="text-2xl font-black uppercase text-white">ИИ Ассистент Выбора Героев</h2>
-                    <p class="text-xs text-gray-500 uppercase mt-1">Система рассчитывает синергию и контрпики в реальном времени</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- ALLY PICK -->
-                    <div class="border-2 border-[#1A1A24] bg-[#0E0E12] p-4">
-                        <h3 class="text-sm font-extrabold text-[#00FF66] uppercase tracking-wider mb-3">Союзники (Твоя команда)</h3>
-                        <div class="grid grid-cols-5 gap-2 mb-4" id="ally-slots">
-                            <!-- 5 slots -->
+        <!-- ТАБ: Абсолютная Мета -->
+        <div id="hero-tab" class="tab-content transition-opacity duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div class="space-y-6 lg:col-span-1">
+                    <div class="p-5 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-24 h-24 bg-rose-500/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-rose-500"></i> Веса PDS
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-[11px] font-semibold mb-1">
+                                    <span class="text-gray-400">Про-сцена (Турниры)</span>
+                                    <span id="val-weight-pro" class="text-rose-400 font-bold">20%</span>
+                                </div>
+                                <input type="range" id="weight-pro" min="0" max="100" value="20" oninput="updateWeights()" class="w-full accent-rose-500 bg-gray-800 rounded-lg h-1">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[11px] font-semibold mb-1">
+                                    <span class="text-gray-400">Паб-мета (D2PT)</span>
+                                    <span id="val-weight-pub" class="text-cyan-400 font-bold">30%</span>
+                                </div>
+                                <input type="range" id="weight-pub" min="0" max="100" value="30" oninput="updateWeights()" class="w-full accent-cyan-500 bg-gray-800 rounded-lg h-1">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[11px] font-semibold mb-1">
+                                    <span class="text-gray-400">Твой комфорт</span>
+                                    <span id="val-weight-comfort" class="text-emerald-400 font-bold">50%</span>
+                                </div>
+                                <input type="range" id="weight-comfort" min="0" max="100" value="50" oninput="updateWeights()" class="w-full accent-emerald-500 bg-gray-800 rounded-lg h-1">
+                            </div>
                         </div>
-                        <select id="draft-ally-select" onchange="addDraftHero('ally')" class="w-full bg-[#1A1A24] border border-gray-700 text-xs text-white p-2 font-mono outline-none focus:border-[#00FF66]">
-                            <option value="">Добавить союзника...</option>
-                        </select>
                     </div>
 
-                    <!-- ENEMY PICK -->
-                    <div class="border-2 border-[#1A1A24] bg-[#0E0E12] p-4">
-                        <h3 class="text-sm font-extrabold text-red-500 uppercase tracking-wider mb-3">Враги (Команда оппонента)</h3>
-                        <div class="grid grid-cols-5 gap-2 mb-4" id="enemy-slots">
-                            <!-- 5 slots -->
+                    <div class="p-5 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-sm font-bold text-white mb-3 flex items-center justify-between">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-heart text-emerald-500"></i> Твой Пул</span>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono" id="pool-count">0</span>
+                        </h3>
+                        
+                        <div id="comfort-pool-list" class="space-y-2 max-h-[300px] overflow-y-auto mb-4 pr-1 custom-scrollbar">
+                            <!-- Populated dynamically -->
                         </div>
-                        <select id="draft-enemy-select" onchange="addDraftHero('enemy')" class="w-full bg-[#1A1A24] border border-gray-700 text-xs text-white p-2 font-mono outline-none focus:border-red-500">
-                            <option value="">Добавить врага...</option>
-                        </select>
+
+                        <div class="bg-black/30 p-3 rounded-xl border border-gray-800/80">
+                            <h4 class="text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-wide">Добавить героя в пул</h4>
+                            <select id="add-hero-select" class="w-full bg-[#04060a] text-xs rounded-lg border border-gray-800 px-2 py-2 mb-2 text-white focus:outline-none focus:border-rose-500"></select>
+                            <div class="grid grid-cols-2 gap-2 mb-2">
+                                <input type="number" id="add-hero-wr" placeholder="Винрейт %" min="0" max="100" class="bg-[#04060a] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
+                                <input type="number" id="add-hero-games" placeholder="Матчи" min="0" class="bg-[#04060a] text-xs font-mono rounded-lg border border-gray-800 px-2 py-2 text-white focus:outline-none focus:border-emerald-500">
+                            </div>
+                            <button onclick="manuallyAddHero()" class="w-full bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 text-emerald-400 font-bold text-xs py-2 rounded-lg transition-all">
+                                Сохранить
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- RECOMMENDATION RESULT -->
-                <div class="border-2 border-[#00FF66] bg-[#141F18] p-6 brutal-shadow-green">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="bg-[#00FF66] text-black font-extrabold text-xs px-2 py-1 uppercase">Рекомендация</div>
-                        <h3 class="text-lg font-bold text-white uppercase">Идеальные пики для текущего драфта:</h3>
+                <div class="lg:col-span-3 p-1">
+                    <div class="p-6 rounded-2xl bg-[#060a12]/90 border border-gray-800/80 backdrop-blur-xl relative shadow-2xl">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <div>
+                                <h3 class="text-lg font-black text-white flex items-center gap-2">
+                                    Абсолютная Мета &amp; PDS Рейтинг
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-1">Откалибровано под твои игры в патче 7.41+ (Без аспектов). Кликни на героя для подробной карты.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 bg-black/40 p-1.5 rounded-xl border border-gray-800/50">
+                                <input type="text" id="hero-search" oninput="renderHeroTable()" placeholder="Поиск героя..." class="bg-[#04060a] text-xs px-3 py-1.5 rounded-lg text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-36">
+                                <select id="role-filter" onchange="renderHeroTable()" class="bg-transparent text-xs font-bold px-3 py-1.5 text-white focus:outline-none cursor-pointer">
+                                    <option value="all">Все Роли</option>
+                                    <option value="Carry">Carry</option>
+                                    <option value="Mid">Mid</option>
+                                    <option value="Offlane">Offlane</option>
+                                    <option value="Support">Support</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto custom-scrollbar pb-2">
+                            <table class="w-full text-left border-collapse min-w-[950px]">
+                                <thead>
+                                    <tr class="text-[10px] text-gray-500 uppercase font-black tracking-widest border-b border-gray-800/60">
+                                        <th class="pb-3 pl-2 w-[240px]">Герой</th>
+                                        <th class="pb-3 text-center">Статистика</th>
+                                        <th class="pb-3">Сборка предметов</th>
+                                        <th class="pb-3">Синергия / Боится</th>
+                                        <th class="pb-3 text-center">Универсальность</th>
+                                        <th class="pb-3 text-right pr-4">PDS Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="meta-heroes-tbody">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div id="draft-recommendations" class="space-y-4">
-                        <!-- Calculated Picks go here -->
-                        <div class="text-xs text-gray-400 uppercase tracking-wider">Выберите хотя бы одного героя для расчета...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБ: Мой Профиль -->
+        <div id="stats-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
+                        <h3 class="text-sm font-bold text-white mb-4"><i class="fa-solid fa-chart-pie text-purple-500 mr-2"></i>Анализ текущей формы</h3>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800/80 text-center">
+                                <span class="text-gray-500 text-[10px] uppercase font-bold block mb-1">WR (Последние игры)</span>
+                                <span id="stats-winrate-pct" class="text-xl font-black text-emerald-400">0%</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800/80 text-center">
+                                <span class="text-gray-500 text-[10px] uppercase font-bold block mb-1">Средний KDA</span>
+                                <span id="stats-avg-kda" class="text-xl font-black text-rose-400">0.00</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-sm font-bold text-white mb-4 border-t border-gray-800 pt-4">Частые Тиммейты</h3>
+                        <div id="peers-list" class="space-y-2 max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
+                            <div class="text-center py-6 text-gray-600 text-xs"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Загрузка...</div>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- TAB 3: PRO TEAMS -->
-            <section id="tab-teams" class="tab-content hidden">
-                <div class="border-b-2 border-[#1A1A24] pb-4 mb-6">
-                    <h2 class="text-2xl font-black uppercase text-white">Форма и Аналитика Тир-1 Команд</h2>
-                    <p class="text-xs text-gray-500 uppercase mt-1">Рейтинг силы и тактические схемы тренеров</p>
+                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
+                    <h3 class="text-lg font-bold text-white mb-6">История последних матчей (OpenDota)</h3>
+                    
+                    <!-- Блок принудительного демо-режима для закрытых аккаунтов -->
+                    <div id="private-profile-instructions" class="hidden mb-6 p-5 rounded-xl border border-amber-500/20 bg-amber-500/5">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-lock text-amber-400 text-lg mt-0.5 animate-pulse"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-amber-300">Профиль Dota 2 скрыт или пуст</h4>
+                                <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                                    Чтобы дашборд подтянул твои реальные игры и высчитал идеальный PDS, зайди в настройки Dota 2 -> вкладка <b>«Сообщество»</b> и включи галочку <b>«Общедоступная история матчей»</b>.
+                                </p>
+                                <div class="flex gap-2 mt-4">
+                                    <button onclick="loadMockDotaMatches()" class="px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 hover:bg-amber-500/40 text-amber-400 font-bold text-[10px] rounded uppercase tracking-wider transition-all">
+                                        Загрузить демо-игры
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="matches-feed" class="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБ: Умный Драфт -->
+        <div id="sim-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
+                    <h3 class="text-md font-bold text-white mb-2">Пик Вражеской Команды</h3>
+                    <p class="text-xs text-gray-400 mb-6">Укажи героев соперника. ИИ рассчитает лучшие синергические контрпики из твоего личного пула и общей меты.</p>
+                    
+                    <div class="space-y-3" id="enemy-picks-selectors">
+                        <!-- 5 selectors populated by JS -->
+                    </div>
+                    
+                    <button onclick="calculateDraftCounters()" class="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-rose-600 hover:from-purple-500 hover:to-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-purple-900/20 transition-all">
+                        <i class="fa-solid fa-brain mr-2"></i>Анализировать драфт
+                    </button>
                 </div>
 
-                <div id="teams-list" class="space-y-6">
-                    <!-- Dynamic Teams -->
+                <div class="lg:col-span-2 p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md flex flex-col">
+                    <h3 class="text-md font-bold text-white mb-4">Анализ драфта &amp; Рекомендации</h3>
+                    <div id="draft-suggestions-results" class="flex-1 flex flex-col justify-center">
+                        <div class="flex flex-col items-center justify-center py-24 text-gray-600">
+                            <i class="fa-solid fa-microchip text-5xl mb-4 text-gray-800 animate-pulse"></i>
+                            <p class="text-sm font-semibold">Ожидание входных данных о пике противника...</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <!-- TAB 4: TOURNAMENTS -->
-            <section id="tab-tournament" class="tab-content hidden">
-                <div class="border-b-2 border-[#1A1A24] pb-4 mb-6">
-                    <h2 class="text-2xl font-black uppercase text-white">Актуальные Киберспортивные События</h2>
-                    <p class="text-xs text-gray-500 uppercase mt-1">Турнирная сетка, даты, расписание матчей и предикты ИИ</p>
+        <!-- ТАБ: Про-Сцена -->
+        <div id="team-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="p-6 rounded-2xl bg-[#060a12]/90 border border-gray-800/80 backdrop-blur-xl relative">
+                <div class="absolute -right-20 -top-20 w-44 h-44 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div class="mb-6">
+                    <h2 class="text-xl font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-users text-purple-500"></i> Аналитика Про-Сцены
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">Оценка формы команд, сыгранности, ментальной стойкости и стратегических предпочтений сторон.</p>
                 </div>
 
-                <div class="grid grid-cols-1 gap-6" id="tournament-matches">
-                    <!-- Dynamic Tournament Matches -->
+                <div id="teams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic team cards generated here -->
                 </div>
-            </section>
+            </div>
+        </div>
 
-        </main>
+        <!-- НОВЫЙ ТАБ: Турниры -->
+        <div id="tournament-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="p-6 rounded-2xl bg-[#060a12]/90 border border-gray-800/80 backdrop-blur-xl relative overflow-hidden">
+                <div class="absolute -left-20 -bottom-20 w-56 h-56 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="mb-8 border-b border-gray-800/60 pb-5">
+                    <h2 class="text-xl font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-amber-500"></i> Актуальные Турниры и Предикты
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">ИИ-прогнозы, расписание матчей и аналитика текущих киберспортивных событий (Datdota + Liquipedia).</p>
+                </div>
+
+                <div id="tournament-container">
+                    <!-- Populated by JS -->
+                    <div class="flex flex-col items-center justify-center py-12 text-gray-600">
+                        <i class="fa-solid fa-circle-notch fa-spin text-3xl mb-3"></i>
+                        <p class="text-sm">Загрузка турнирной сетки...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБ: База ИИ -->
+        <div id="config-tab" class="tab-content hidden transition-opacity duration-300">
+            <div class="p-6 rounded-2xl bg-[#060a12]/80 border border-gray-800/80 backdrop-blur-md">
+                <h3 class="text-lg font-bold text-white mb-2">Настройка Автоматизации GitHub</h3>
+                <p class="text-sm text-gray-400 mb-6">Укажи свой репозиторий, откуда сайт должен брать свежий файл data.json, собранный ИИ.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 max-w-xl mb-8">
+                    <input type="text" id="github-username-input" placeholder="Твой ник на GitHub (например: rekdekk)" class="bg-[#04060a] px-4 py-3 rounded-xl text-sm font-mono text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="rekdekk">
+                    <button onclick="saveConfigAndLoad()" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-save mr-2"></i>Сохранить и Загрузить
+                    </button>
+                </div>
+
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-gray-800/80">
+                    <h4 class="text-sm font-bold text-rose-400 mb-2"><i class="fa-solid fa-circle-info mr-2"></i>Как это работает?</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-2">1. Скрипт GitHub Actions (или Gemini Spark) каждый день собирает мету и кладет её в файл <code>data.json</code> в твоем репозитории <code>dota-meta-tracker</code>.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">2. Этот дашборд скачивает её по прямой ссылке, обходя кэширование, и накладывает на твою личную статистику.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- МОДАЛКА: Ультимативный Анализ Героя -->
+    <div id="hero-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden">
+        <div class="w-full max-w-3xl rounded-2xl border border-gray-800 bg-[#070b13] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-800/80 bg-slate-950/40">
+                <div class="flex items-center gap-3">
+                    <img id="modal-hero-icon" class="w-14 h-14 rounded-xl border border-rose-500/40 object-cover" src="">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 id="modal-hero-name" class="text-lg font-black text-white font-mono">Имя Героя</h2>
+                            <span id="modal-hero-tier-badge" class="px-2 py-0.5 rounded text-[10px] font-black bg-rose-500/20 text-rose-400">S-Tier</span>
+                        </div>
+                        <span id="modal-hero-role" class="text-xs text-rose-400 uppercase tracking-widest font-bold">Роль</span>
+                    </div>
+                </div>
+                <button onclick="closeHeroModal()" class="w-8 h-8 rounded-full bg-gray-800/80 hover:bg-rose-600/30 text-white flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto space-y-6 custom-scrollbar text-sm">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Винрейт D2PT</span>
+                        <span id="modal-hero-wr" class="text-base font-black text-cyan-400">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Пикрейт D2PT</span>
+                        <span id="modal-hero-pr" class="text-base font-black text-purple-400">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Про Банрейт</span>
+                        <span id="modal-hero-ban" class="text-base font-black text-rose-500">0%</span>
+                    </div>
+                    <div class="bg-black/35 p-3 rounded-xl border border-gray-800/80 text-center">
+                        <span class="text-[10px] text-gray-500 uppercase font-black block">Laning Winrate</span>
+                        <span id="modal-hero-laning" class="text-base font-black text-emerald-400">0%</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Врожденная пассивка (Innate)</h4>
+                        <div>
+                            <span id="modal-hero-innate" class="text-xs text-gray-300 leading-relaxed italic">Innate Power Details...</span>
+                        </div>
+                        <div class="pt-2">
+                            <span class="text-[11px] text-gray-500 block">Сила на линии / Темп</span>
+                            <span id="modal-hero-spike" class="text-xs font-bold text-white">Power Spike</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/20 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider border-b border-gray-800 pb-2">Тип урона &amp; Универсальность</h4>
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-gray-400">Баланс урона</span>
+                                <span id="modal-hero-dmg-ratio" class="font-bold text-gray-300">50% Phys / 50% Mag</span>
+                            </div>
+                            <div class="w-full bg-gray-900 rounded-full h-2 overflow-hidden flex">
+                                <div id="modal-dmg-phys" class="bg-orange-500 h-full" style="width: 50%"></div>
+                                <div id="modal-dmg-mag" class="bg-blue-500 h-full" style="width: 50%"></div>
+                                <div id="modal-dmg-pure" class="bg-yellow-500 h-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Сложность &amp; Разносторонность</span>
+                            <div id="modal-hero-versatility" class="text-xs font-bold text-white">0 / 10</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black/35 p-4 rounded-xl border border-gray-800/80 space-y-3">
+                    <h4 class="text-xs font-black text-white uppercase tracking-wider">Рекомендованный билд предметов</h4>
+                    <div id="modal-hero-items" class="flex flex-wrap gap-2">
+                        <!-- Dynamic items -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-[#1A1A24] pt-4 mt-auto flex flex-col sm:flex-row justify-between items-center text-[10px] text-gray-600 font-mono">
-        <div>REKDEKK CO. NO COPYRIGHT INFRINGEMENT INTENDED. ALL DATA PROCESSED SECURELY.</div>
-        <div class="mt-2 sm:mt-0 uppercase tracking-wider">Designed for Brutal Minimalism & Power Gaming</div>
-    </footer>
-
-    <!-- INTERFACE LOGIC & CALCULATION ENGINE -->
     <script>
-        // Global Data Store
-        let dotaData = null;
-        let selectedAllies = [];
-        let selectedEnemies = [];
+        // Глобальное состояние
+        const state = {
+            activeTab: 'hero-tab',
+            weights: { pro: 20, pub: 30, comfort: 50 },
+            steamId: '872107609',
+            githubUsername: 'rekdekk',
+            playerProfile: null,
+            userComfortPool: [],
+            metaHeroes: [],
+            heroMapping: {},
+            recentMatches: [],
+            peers: [],
+            proTeams: [],
+            tournament: null // Стейт для турниров
+        };
 
-        // Dota 2 Official Steam CDN Name Mapping for Heroes
-        const HERO_NAME_MAP = {
+        // Запасные мета-данные на случай отсутствия интернета
+        const fallbackHeroes = [
+            { name: "Shadow Fiend", role: "Mid", winrate_d2pt: "54.2%", pickrate_d2pt: "15%", banrate_pro: "42%", pro_trend: "high", tier: "S", badge: "Абсолютная Мета", innate_ability: "Necromastery (души дают урон и баффают способности в патче 7.41+)", core_items: ["black_king_bar", "blink", "ultimate_scepter", "silver_edge"], best_with: ["magnataur", "enigma", "tidehunter"], counters: ["templar_assassin", "pudge", "viper"], laning_winrate: "53%", versatility: "4.0", damage_ratio: { phys: 60, mag: 40, pure: 0 }, power_spike: "Мидгейм (15-25 мин)" },
+            { name: "Windranger", role: "Carry", winrate_d2pt: "52.8%", pickrate_d2pt: "18%", banrate_pro: "35%", pro_trend: "high", tier: "S", badge: "Универсальный Флекс", innate_ability: "Easy Breeze (повышенная скорость бега и уворот)", core_items: ["maelstrom", "black_king_bar", "lesser_crit"], best_with: ["treant", "crystal_maiden"], counters: ["bloodseeker", "axe"], laning_winrate: "51%", versatility: "6.0", damage_ratio: { phys: 70, mag: 30, pure: 0 }, power_spike: "Лейтгейм (35+ мин)" },
+            { name: "Centaur Warrunner", role: "Offlane", winrate_d2pt: "51.5%", pickrate_d2pt: "12%", banrate_pro: "20%", pro_trend: "stable", tier: "A", badge: "Стабильный Фронтлейнер", innate_ability: "Rawhide (увеличивает базовое здоровье и регенерацию)", core_items: ["blink", "crimson_guard", "pipe_of_insight"], best_with: ["rubick", "treant"], counters: ["lifestealer", "necrophos"], laning_winrate: "52%", versatility: "5.0", damage_ratio: { phys: 40, mag: 30, pure: 30 }, power_spike: "Ранняя доминация" }
+        ];
+
+        const fallbackTeams = [
+            { name: "Team Falcons", power_index: 95, recent_results: "W-W-W-W-L", status: "Тир-1 Фаворит", playstyle: "Быстрый темп и удушение", average_match_length: "34:12", win_rate_10m: "84%", coach_strategy: "Гибкие лайны, флекс Магнуса/Рубика", key_heroes: ["Razor", "Timbersaw"], last_opponents: ["Spirit: W", "Gaimin: L"] },
+            { name: "Team Spirit", power_index: 91, recent_results: "W-W-L-W-W", status: "Стабильный Фаворит", playstyle: "Агрессивный лейт и контратаки", average_match_length: "38:40", win_rate_10m: "72%", coach_strategy: "Поздние драфты, опора на сигнатурки Магнуса и Лины", key_heroes: ["Magnus", "Lina"], last_opponents: ["Falcons: L", "Xtreme: W"] }
+        ];
+
+        // Запасные данные по турниру
+        const fallbackTournament = {
+            "name": "The International / Riyadh (Локальный режим)", 
+            "stage": "Плей-офф", 
+            "prize_pool": "$1,000,000+", 
+            "location": "LAN",
+            "upcoming_matches": [
+                {"team1": "Falcons", "team2": "Spirit", "date": "Сегодня", "time": "18:00", "bo": "BO3", "favorite": "Falcons", "win_probability": "60%"}
+            ]
+        };
+
+        // Системный маппинг имен
+        const itemImageMapping = {
+            "black_king_bar": "black_king_bar",
+            "blink": "blink",
+            "ultimate_scepter": "ultimate_scepter",
+            "silver_edge": "silver_edge",
+            "maelstrom": "maelstrom",
+            "lesser_crit": "lesser_crit",
+            "desolator": "desolator",
+            "crimson_guard": "crimson_guard",
+            "pipe_of_insight": "pipe"
+        };
+
+        const heroImageMapping = {
             "shadow fiend": "nevermore",
-            "zeus": "zuus",
-            "nature's prophet": "furion",
-            "natures prophet": "furion",
+            "shadow_fiend": "nevermore",
             "windranger": "windrunner",
-            "magnus": "magnataur",
-            "clockwerk": "rattletrap",
-            "lifestealer": "life_stealer",
-            "necrophos": "necrolyte",
-            "wraith king": "skeleton_king",
-            "vengeful spirit": "vengefulspirit",
-            "io": "wisp",
-            "anti-mage": "antimage",
-            "centaur warrunner": "centaur",
-            "timbersaw": "shredder",
-            "treant protector": "treant",
-            "queen of pain": "queenofpain",
-            "underlord": "abyssal_underlord",
-            "doom": "doom_bringer",
-            "outworld destroyer": "obsidian_destroyer"
+            "magnataur": "magnataur",
+            "enigma": "enigma",
+            "tidehunter": "tidehunter",
+            "treant": "treant",
+            "crystal_maiden": "crystal_maiden",
+            "bloodseeker": "bloodseeker",
+            "centaur": "centaur",
+            "axe": "axe",
+            "templar_assassin": "templar_assassin",
+            "pudge": "pudge",
+            "viper": "viper"
         };
 
-        // Fallback Demo Data for Local Testing or if Fetch Fails
-        const fallbackData = {
-            "meta_heroes": [
-                {
-                    "name": "Shadow Fiend",
-                    "role": "Mid",
-                    "winrate_d2pt": "54.2%",
-                    "winrate_4k": "51.8%",
-                    "pickrate_d2pt": "15%",
-                    "banrate_pro": "42%",
-                    "tier": "S",
-                    "innate_ability": "Necromastery (души дают урон и баффают способности)",
-                    "core_items": ["black_king_bar", "blink", "ultimate_scepter", "silver_edge"],
-                    "best_with": ["magnataur", "enigma", "tidehunter"],
-                    "counters": ["templar_assassin", "pudge", "viper"],
-                    "laning_winrate": "53.5%",
-                    "versatility": "4.2",
-                    "damage_ratio": { "phys": 55, "mag": 45, "pure": 0 },
-                    "power_spike": "Мидгейм (15-25 мин)"
-                },
-                {
-                    "name": "Tiny",
-                    "role": "Mid",
-                    "winrate_d2pt": "55.4%",
-                    "winrate_4k": "52.1%",
-                    "pickrate_d2pt": "18%",
-                    "banrate_pro": "65%",
-                    "tier": "S",
-                    "innate_ability": "Craggy Exterior (пассивная броня и урон по площади)",
-                    "core_items": ["blink", "power_treads", "black_king_bar", "echo_sabre"],
-                    "best_with": ["rubick", "wisp", "nevermore"],
-                    "counters": ["lifestealer", "necrolyte", "viper"],
-                    "laning_winrate": "55.0%",
-                    "versatility": "6.5",
-                    "damage_ratio": { "phys": 70, "mag": 30, "pure": 0 },
-                    "power_spike": "Ранняя агрессия (10-20 мин)"
-                },
-                {
-                    "name": "Zeus",
-                    "role": "Mid",
-                    "winrate_d2pt": "53.1%",
-                    "winrate_4k": "54.5%",
-                    "pickrate_d2pt": "12%",
-                    "banrate_pro": "35%",
-                    "tier": "S",
-                    "innate_ability": "Static Field (процентный урон от текущего здоровья)",
-                    "core_items": ["arcane_boots", "phylactery", "ultimate_scepter", "refresher"],
-                    "best_with": ["treant", "crystal_maiden", "bloodseeker"],
-                    "counters": ["antimage", "viper", "pudge"],
-                    "laning_winrate": "51.2%",
-                    "versatility": "3.0",
-                    "damage_ratio": { "phys": 0, "mag": 100, "pure": 0 },
-                    "power_spike": "Лейтгейм (35+ мин)"
-                },
-                {
-                    "name": "Dawnbreaker",
-                    "role": "Offlane",
-                    "winrate_d2pt": "52.3%",
-                    "winrate_4k": "51.2%",
-                    "pickrate_d2pt": "10%",
-                    "banrate_pro": "28%",
-                    "tier": "A",
-                    "innate_ability": "Landmower (каждая 4-я атака исцеляет союзников)",
-                    "core_items": ["phase_boots", "echo_sabre", "black_king_bar", "heavens_halberd"],
-                    "best_with": ["wisp", "nevermore", "storm_spirit"],
-                    "counters": ["enigma", "silencer", "pudge"],
-                    "laning_winrate": "54.0%",
-                    "versatility": "5.0",
-                    "damage_ratio": { "phys": 80, "mag": 20, "pure": 0 },
-                    "power_spike": "Мидгейм (15-25 мин)"
-                }
-            ],
-            "teams": [
-                {
-                    "name": "Team Yandex",
-                    "power_index": 98,
-                    "recent_results": "W-W-W-W-W",
-                    "status": "Абсолютный Лидер",
-                    "playstyle": "Ультра-агрессивный ганк и ранний пуш",
-                    "average_match_length": "32:05",
-                    "win_rate_10m": "92%",
-                    "coach_strategy": "Ранний пик Tiny и Zeus, тотальный макро-контроль",
-                    "key_heroes": ["Tiny", "Zeus"],
-                    "last_opponents": ["Spirit: W", "PARIVISION: W", "MOUZ: W"]
-                },
-                {
-                    "name": "Team Falcons",
-                    "power_index": 95,
-                    "recent_results": "W-W-W-W-L",
-                    "status": "Тир-1 Фаворит",
-                    "playstyle": "Быстрый темп и удушение (Fast Tempo / Deathball)",
-                    "average_match_length": "34:12",
-                    "win_rate_10m": "84%",
-                    "coach_strategy": "Сильный упор на контр-инициацию",
-                    "key_heroes": ["Razor", "Timbersaw"],
-                    "last_opponents": ["Spirit: W", "Gaimin: W", "Xtreme: L"]
-                }
-            ],
-            "tournament": {
-                "name": "Riyadh Masters 2026",
-                "matches": [
-                    {
-                        "time": "18:00 (Сегодня)",
-                        "team_a": "Team Yandex",
-                        "team_b": "Team Falcons",
-                        "prediction": "Победа Team Yandex со счетом 2:1",
-                        "odds_a": "1.45",
-                        "odds_b": "2.80",
-                        "ai_reasoning": "Yandex в потрясающей игровой форме (98/100) с винрейтом на 10-й минуте в 92%. Falcons уязвимы к ранней агрессии, их темп медленнее."
-                    },
-                    {
-                        "time": "21:00 (Сегодня)",
-                        "team_a": "BB Team",
-                        "team_b": "Team Spirit",
-                        "prediction": "Победа BB Team со счетом 2:0",
-                        "odds_a": "1.75",
-                        "odds_b": "2.10",
-                        "ai_reasoning": "Spirit находятся в стадии перестройки состава и демонстрируют спад. BB Team переиграет их за счет мобильного сплит-пуша."
-                    }
-                ]
-            }
-        };
-
-        // Normalize string for CDN assets
-        function getNormalizedHeroName(name) {
-            let clean = name.toLowerCase().trim();
-            if (HERO_NAME_MAP[clean]) {
-                return HERO_NAME_MAP[clean];
-            }
-            return clean.replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_');
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `p-4 rounded-xl border text-xs font-bold shadow-lg transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2 ${
+                type === 'success' ? 'bg-emerald-950/90 border-emerald-500/40 text-emerald-400' :
+                type === 'error' ? 'bg-rose-950/90 border-rose-500/40 text-rose-400' :
+                'bg-[#0b0f19]/90 border-gray-800 text-gray-300'
+            }`;
+            toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-info'}"></i> ${message}`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.classList.remove('translate-y-2', 'opacity-0'); }, 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
         }
 
-        function getNormalizedItemName(name) {
-            let clean = name.toLowerCase().trim();
-            if (clean === "ultimate_scepter") return "ultimate_scepter";
-            return clean.replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_');
-        }
-
-        // Get CDN Image paths
-        function getHeroImgUrl(heroName) {
-            const normalized = getNormalizedHeroName(heroName);
-            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${normalized}.png`;
-        }
-
-        function getItemImgUrl(itemName) {
-            const normalized = getNormalizedItemName(itemName);
-            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${normalized}.png`;
-        }
-
-        // TAB SWITCHER
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
-            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
-
-            document.querySelectorAll('nav button').forEach(btn => {
-                btn.className = "w-full text-left p-4 border-2 border-[#262636] bg-[#111116] text-gray-400 font-bold uppercase tracking-wider transition-all duration-150 hover:text-white hover:border-white";
-                btn.style.boxShadow = "none";
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 text-gray-400 hover:text-white";
             });
-
-            const activeBtn = document.getElementById(`btn-${tabName}`);
-            activeBtn.className = `w-full text-left p-4 border-2 ${tabName === 'draft' ? 'border-[#00FF66] text-[#00FF66] brutal-shadow-green' : tabName === 'teams' ? 'border-[#00FF66] text-[#00FF66] brutal-shadow-green' : tabName === 'tournament' ? 'border-[#00FF66] text-[#00FF66] brutal-shadow-green' : 'border-[#00FF66] text-[#00FF66] brutal-shadow-green'} bg-[#111116] font-bold uppercase tracking-wider transition-all duration-150`;
+            
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all duration-200 bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md border border-rose-500/50";
+            }
+            state.activeTab = tabId;
         }
 
-        // FETCH DATA
-        async function loadData() {
+        async function fetchDotaHeroes() {
             try {
-                const response = await fetch('data.json');
-                if (!response.ok) throw new Error("JSON not found");
-                dotaData = await response.json();
-                document.getElementById('last-update').innerText = dotaData.last_updated || new Date().toISOString().slice(0,16).replace('T',' ');
+                const res = await fetch('https://api.opendota.com/api/heroes');
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                data.forEach(h => {
+                    state.heroMapping[h.id] = h;
+                });
+                populateAddHeroSelect();
             } catch (err) {
-                console.warn("Using fallback static meta-data.");
-                dotaData = fallbackData;
-                document.getElementById('last-update').innerText = "16-07-2026 (STATIC DEMO)";
+                showToast("Используется локальная база названий героев", "info");
             }
-            initApp();
         }
 
-        function initApp() {
-            renderMetaHeroes();
-            populateDraftSelectors();
-            renderDraftBoard();
-            renderTeams();
-            renderTournaments();
+        function populateAddHeroSelect() {
+            const select = document.getElementById('add-hero-select');
+            select.innerHTML = '<option value="">Выбрать героя...</option>';
+            Object.values(state.heroMapping)
+                .sort((a,b) => a.localized_name.localeCompare(b.localized_name))
+                .forEach(h => {
+                    select.innerHTML += `<option value="${h.id}">${h.localized_name}</option>`;
+                });
         }
 
-        // RENDER TAB 1: META HEROES
-        function renderMetaHeroes() {
-            const grid = document.getElementById('heroes-grid');
-            grid.innerHTML = '';
+        function loadPoolFromStorage() {
+            const saved = localStorage.getItem('dota_comfort_pool');
+            state.userComfortPool = saved ? JSON.parse(saved) : [
+                { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
+                { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
+            ];
+            renderComfortPool();
+        }
 
-            const roleFilter = document.getElementById('filter-role').value;
-            const tierFilter = document.getElementById('filter-tier').value;
+        function savePoolToStorage() {
+            localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
+            renderComfortPool();
+            renderHeroTable();
+        }
 
-            const heroes = dotaData.meta_heroes || [];
-
-            const filtered = heroes.filter(h => {
-                const rMatch = roleFilter === 'ALL' || h.role.toUpperCase() === roleFilter.toUpperCase();
-                const tMatch = tierFilter === 'ALL' || h.tier.toUpperCase() === tierFilter.toUpperCase();
-                return rMatch && tMatch;
-            });
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="text-xs text-gray-500 uppercase col-span-2">Нет героев, соответствующих фильтрам</div>`;
-                return;
-            }
-
-            filtered.forEach(hero => {
-                const card = document.createElement('div');
-                card.className = `border-2 ${hero.tier === 'S' ? 'border-[#00FF66] brutal-shadow-green' : 'border-[#262636]'} bg-[#0E0E12] p-4 flex flex-col justify-between`;
-
-                const itemsHtml = hero.core_items.map(item => `
-                    <div class="relative group">
-                        <img src="${getItemImgUrl(item)}" onerror="this.src='https://via.placeholder.com/40x30/1A1A24/F5F5FA?text=${item}'" class="w-10 h-7 border border-gray-700 object-cover hover:border-[#00FF66] transition-colors" alt="${item}">
-                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-[#1A1A24] text-[9px] text-white py-1 px-2 border border-gray-700 whitespace-nowrap z-50 uppercase font-mono">${item.replace(/_/g, ' ')}</div>
+        function renderComfortPool() {
+            const list = document.getElementById('comfort-pool-list');
+            document.getElementById('pool-count').textContent = state.userComfortPool.length;
+            list.innerHTML = '';
+            
+            state.userComfortPool.forEach((h, index) => {
+                const imgUrl = getHeroImage(h.localized_name);
+                list.innerHTML += `
+                    <div class="flex items-center justify-between bg-black/40 p-2.5 rounded-xl border border-gray-800/80">
+                        <div class="flex items-center gap-2">
+                            <img src="${imgUrl}" class="w-8 h-8 rounded object-cover" onerror="this.src='https://via.placeholder.com/32x32/1a1a1a/ffffff?text=Dota'">
+                            <div>
+                                <h4 class="text-xs font-bold text-white">${h.localized_name}</h4>
+                                <span class="text-[9px] text-gray-500 font-mono">WR: ${h.winrate}% | Матчей: ${h.games}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeHeroFromPool(${index})" class="text-gray-500 hover:text-rose-500 text-xs px-2"><i class="fa-solid fa-trash-can"></i></button>
                     </div>
+                `;
+            });
+        }
+
+        function manuallyAddHero() {
+            const select = document.getElementById('add-hero-select');
+            const wrInput = document.getElementById('add-hero-wr');
+            const gamesInput = document.getElementById('add-hero-games');
+            
+            if (!select.value) return showToast("Выбери героя!", "error");
+            const heroId = parseInt(select.value);
+            const foundHero = state.heroMapping[heroId];
+            
+            const newHero = {
+                id: heroId,
+                localized_name: foundHero.localized_name,
+                winrate: parseFloat(wrInput.value) || 50,
+                games: parseInt(gamesInput.value) || 10
+            };
+
+            const existIndex = state.userComfortPool.findIndex(h => h.id === heroId);
+            if (existIndex > -1) state.userComfortPool[existIndex] = newHero;
+            else state.userComfortPool.push(newHero);
+            
+            savePoolToStorage();
+            showToast(`${foundHero.localized_name} сохранен в пул`, "success");
+        }
+
+        function removeHeroFromPool(index) {
+            state.userComfortPool.splice(index, 1);
+            savePoolToStorage();
+        }
+
+        function updateWeights() {
+            state.weights.pro = parseInt(document.getElementById('weight-pro').value) || 0;
+            state.weights.pub = parseInt(document.getElementById('weight-pub').value) || 0;
+            state.weights.comfort = parseInt(document.getElementById('weight-comfort').value) || 0;
+
+            const total = state.weights.pro + state.weights.pub + state.weights.comfort;
+            if (total !== 100) {
+                document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_10px_#f43f5e]";
+                document.getElementById('sync-status-text').textContent = `Некалибровано (${total}%)`;
+            } else {
+                document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]";
+                document.getElementById('sync-status-text').textContent = "Калибровка идеальна";
+            }
+
+            document.getElementById('val-weight-pro').textContent = `${state.weights.pro}%`;
+            document.getElementById('val-weight-pub').textContent = `${state.weights.pub}%`;
+            document.getElementById('val-weight-comfort').textContent = `${state.weights.comfort}%`;
+            
+            renderHeroTable();
+        }
+
+        function calculatePDS(hero) {
+            const pub_wr = parseFloat(hero.winrate_d2pt) || 50;
+            const pro_ban = parseFloat(hero.banrate_pro) || 0;
+            const pro_rating = Math.min(100, pro_ban * 2); 
+
+            const comfortMatch = state.userComfortPool.find(h => h.localized_name.toLowerCase() === hero.name.toLowerCase());
+            const comfort_rating = comfortMatch ? comfortMatch.winrate : 50;
+
+            const pds = (pro_rating * (state.weights.pro / 100)) + 
+                        (pub_wr * (state.weights.pub / 100)) + 
+                        (comfort_rating * (state.weights.comfort / 100));
+            return parseFloat(pds.toFixed(1));
+        }
+
+        function getHeroImage(heroName) {
+            let formatted = heroName.toLowerCase().replace(/ /g, '_');
+            const short = heroImageMapping[formatted] || formatted;
+            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${short}.png`;
+        }
+
+        function getMinifiedItemImage(itemName) {
+            const mappedName = itemImageMapping[itemName] || itemName;
+            return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${mappedName}.png`;
+        }
+
+        function renderHeroTable() {
+            const tbody = document.getElementById('meta-heroes-tbody');
+            tbody.innerHTML = '';
+            
+            const search = document.getElementById('hero-search').value.toLowerCase();
+            const roleFilter = document.getElementById('role-filter').value;
+
+            const processed = state.metaHeroes.map(h => ({
+                ...h,
+                pds_score: calculatePDS(h)
+            })).sort((a,b) => b.pds_score - a.pds_score);
+
+            processed.forEach(h => {
+                if (search && !h.name.toLowerCase().includes(search)) return;
+                if (roleFilter !== 'all' && h.role !== roleFilter) return;
+
+                const itemsHTML = (h.core_items || []).map(item => `
+                    <img src="${getMinifiedItemImage(item)}" class="item-icon" title="${item.replace(/_/g, ' ')}">
                 `).join('');
 
-                card.innerHTML = `
-                    <div>
-                        <!-- Main Card Info -->
-                        <div class="flex gap-4 mb-4">
-                            <img src="${getHeroImgUrl(hero.name)}" onerror="this.src='https://via.placeholder.com/120x68/1A1A24/F5F5FA?text=${hero.name}'" class="w-20 h-12 border-2 border-gray-800 object-cover" alt="${hero.name}">
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="font-extrabold text-white text-md uppercase tracking-tight">${hero.name}</h3>
-                                    <span class="px-2 py-0.5 text-xs font-black bg-[#1A1A24] text-[#00FF66] border border-[#00FF66]">${hero.tier}</span>
+                const synergiesHTML = (h.best_with || []).map(s => `
+                    <img src="${getHeroImage(s)}" class="mini-hero-icon" title="${s}">
+                `).join('');
+
+                const countersHTML = (h.counters || []).map(c => `
+                    <img src="${getHeroImage(c)}" class="mini-hero-icon border-rose-500/50" title="Боится: ${c}">
+                `).join('');
+
+                tbody.innerHTML += `
+                    <tr class="border-b border-gray-900/60 hover:bg-[#0c1222]/50 transition-colors cursor-pointer" onclick="openHeroModal('${h.name}')">
+                        <td class="py-4 pl-2">
+                            <div class="flex items-center gap-3">
+                                <img src="${getHeroImage(h.name)}" class="w-12 h-8 rounded-lg object-cover shadow border border-gray-800">
+                                <div>
+                                    <h4 class="font-bold text-white text-xs">${h.name}</h4>
+                                    <div class="flex gap-1 items-center mt-1">
+                                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-400 font-bold border border-rose-500/20">${h.tier || 'A'}-Tier</span>
+                                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-gray-800 text-gray-400 font-mono">${h.role}</span>
+                                    </div>
                                 </div>
-                                <div class="text-[10px] text-gray-500 font-mono uppercase mt-0.5">Роль: ${hero.role}</div>
                             </div>
-                        </div>
+                        </td>
+                        <td class="py-4 text-center">
+                            <div class="text-[11px]">
+                                <div class="font-semibold text-cyan-400">D2PT: ${h.winrate_d2pt}</div>
+                                <div class="text-gray-500 text-[9px]">Pro Ban: ${h.banrate_pro}</div>
+                            </div>
+                        </td>
+                        <td class="py-4">
+                            <div class="flex gap-1.5">${itemsHTML}</div>
+                        </td>
+                        <td class="py-4">
+                            <div class="flex items-center gap-4">
+                                <div class="flex gap-1">${synergiesHTML}</div>
+                                <div class="w-px h-6 bg-gray-800"></div>
+                                <div class="flex gap-1">${countersHTML}</div>
+                            </div>
+                        </td>
+                        <td class="py-4 text-center text-xs font-mono font-bold text-purple-400">
+                            ${h.versatility || '5.0'}
+                        </td>
+                        <td class="py-4 text-right pr-4">
+                            <span class="px-2.5 py-1.5 rounded-lg text-xs font-black bg-rose-600/10 text-rose-400 border border-rose-500/30 font-mono">${h.pds_score}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
 
-                        <!-- Innate Ability Info -->
-                        <div class="bg-[#111116] border border-[#1A1A24] p-2.5 mb-4 text-xs">
-                            <div class="text-[9px] text-[#00FF66] uppercase font-bold tracking-widest mb-1"><i class="fa-solid fa-wand-magic-spark"></i> Врожденная способность (7.41+):</div>
-                            <div class="text-gray-300 font-mono text-[11px] leading-tight">${hero.innate_ability}</div>
-                        </div>
+        async function loadOpenDotaStats() {
+            const steamId = document.getElementById('steam-id-input').value.trim();
+            if (!steamId) return showToast("Укажи валидный Steam32 ID", "error");
 
-                        <!-- Stats Grid -->
-                        <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-[#111116] p-2.5 border border-[#1A1A24] mb-4">
-                            <div>Winrate d2pt: <span class="text-white font-bold">${hero.winrate_d2pt}</span></div>
-                            <div>Winrate 4k: <span class="text-[#00FF66] font-bold">${hero.winrate_4k}</span></div>
-                            <div>Pick d2pt: <span class="text-gray-400">${hero.pickrate_d2pt}</span></div>
-                            <div>Ban Pro: <span class="text-red-400">${hero.banrate_pro}</span></div>
-                            <div>Laning Win: <span class="text-gray-400">${hero.laning_winrate || 'N/A'}</span></div>
-                            <div>Power Spike: <span class="text-white">${hero.power_spike || 'N/A'}</span></div>
-                        </div>
-                    </div>
+            showToast("Загружаем данные профиля...", "info");
+            document.getElementById('private-profile-instructions').classList.add('hidden');
+            try {
+                const profileRes = await fetch(`https://api.opendota.com/api/players/${steamId}`);
+                if (profileRes.ok) {
+                    const profileData = await profileRes.json();
+                    if (profileData.profile) {
+                        document.getElementById('user-nickname').textContent = profileData.profile.personaname;
+                        document.getElementById('user-avatar').src = profileData.profile.avatarfull;
+                        document.getElementById('user-avatar-container').classList.remove('hidden');
+                    }
+                }
 
-                    <div>
-                        <!-- Core Items -->
-                        <div class="mb-4">
-                            <div class="text-[9px] text-gray-500 uppercase font-mono mb-1.5">Ключевая сборка предметов:</div>
-                            <div class="flex gap-2 flex-wrap">${itemsHtml}</div>
-                        </div>
+                const wlRes = await fetch(`https://api.opendota.com/api/players/${steamId}/wl`);
+                const wlData = wlRes.ok ? await wlRes.json() : { win: 0, lose: 0 };
+                const totalGames = wlData.win + wlData.lose;
+                const winrate = totalGames > 0 ? ((wlData.win / totalGames) * 100).toFixed(1) : 0;
+                document.getElementById('stats-winrate-pct').textContent = `${winrate}%`;
 
-                        <!-- Synergies & Counters -->
-                        <div class="grid grid-cols-2 gap-4 pt-2 border-t border-[#1A1A24] text-[10px] font-mono">
+                // Сигнатурки
+                const heroesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/heroes`);
+                if (heroesRes.ok) {
+                    const heroesData = await heroesRes.json();
+                    state.userComfortPool = heroesData.slice(0, 5).map(h => {
+                        const gameInfo = state.heroMapping[h.hero_id] || { localized_name: `Hero ${h.hero_id}` };
+                        return {
+                            id: parseInt(h.hero_id),
+                            localized_name: gameInfo.localized_name,
+                            winrate: h.games > 0 ? parseFloat(((h.win / h.games) * 100).toFixed(1)) : 50,
+                            games: h.games
+                        };
+                    });
+                    savePoolToStorage();
+                }
+
+                // Матчи
+                const matchesRes = await fetch(`https://api.opendota.com/api/players/${steamId}/recentMatches`);
+                if (matchesRes.ok) {
+                    state.recentMatches = await matchesRes.json();
+                    if (state.recentMatches.length === 0) {
+                        document.getElementById('private-profile-instructions').classList.remove('hidden');
+                    } else {
+                        renderMatchesFeed();
+                    }
+                }
+
+                // Соратники
+                const peersRes = await fetch(`https://api.opendota.com/api/players/${steamId}/peers`);
+                if (peersRes.ok) {
+                    state.peers = await peersRes.json();
+                    renderPeers();
+                }
+
+                showToast("Статистика OpenDota успешно импортирована!", "success");
+            } catch (err) {
+                showToast("Не удалось импортировать профиль. Используем ручную заглушку.", "error");
+                document.getElementById('private-profile-instructions').classList.remove('hidden');
+            }
+        }
+
+        function loadMockDotaMatches() {
+            state.recentMatches = [
+                { hero_id: 11, player_slot: 1, radiant_win: true, kills: 14, deaths: 3, assists: 11, start_time: Date.now()/1000 - 3600 },
+                { hero_id: 21, player_slot: 2, radiant_win: true, kills: 8, deaths: 4, assists: 19, start_time: Date.now()/1000 - 18000 },
+                { hero_id: 96, player_slot: 3, radiant_win: false, kills: 2, deaths: 8, assists: 10, start_time: Date.now()/1000 - 86400 }
+            ];
+            state.peers = [
+                { personaname: "Yatoro", games: 15, win: 12, avatar: "https://via.placeholder.com/32" },
+                { personaname: "Collapse", games: 10, win: 8, avatar: "https://via.placeholder.com/32" }
+            ];
+            document.getElementById('stats-winrate-pct').textContent = "68.5%";
+            document.getElementById('stats-avg-kda').textContent = "4.25";
+            document.getElementById('private-profile-instructions').classList.add('hidden');
+            renderMatchesFeed();
+            renderPeers();
+            showToast("Демо-игры успешно подгружены!", "success");
+        }
+
+        function renderMatchesFeed() {
+            const feed = document.getElementById('matches-feed');
+            feed.innerHTML = '';
+            
+            state.recentMatches.slice(0, 8).forEach(m => {
+                const isWin = (m.player_slot < 128 && m.radiant_win) || (m.player_slot >= 128 && !m.radiant_win);
+                const heroObj = state.heroMapping[m.hero_id] || { localized_name: `Hero ${m.hero_id}` };
+                const timeStr = new Date(m.start_time * 1000).toLocaleDateString('ru-RU');
+                
+                feed.innerHTML += `
+                    <div class="p-4 rounded-xl border flex justify-between items-center bg-slate-900/40 ${isWin ? 'border-emerald-500/20 hover:border-emerald-500/40' : 'border-rose-500/20 hover:border-rose-500/40'}">
+                        <div class="flex items-center gap-3">
+                            <img src="${getHeroImage(heroObj.localized_name)}" class="w-14 h-9 rounded object-cover shadow border border-gray-800">
                             <div>
-                                <span class="text-[#00FF66] uppercase font-bold">Синергия:</span>
-                                <div class="text-gray-400 mt-1 uppercase">${hero.best_with ? hero.best_with.join(', ') : 'No data'}</div>
-                            </div>
-                            <div>
-                                <span class="text-red-500 uppercase font-bold">Контрится:</span>
-                                <div class="text-gray-400 mt-1 uppercase">${hero.counters ? hero.counters.join(', ') : 'No data'}</div>
+                                <h4 class="font-bold text-sm text-white">${heroObj.localized_name}</h4>
+                                <div class="text-[10px] text-gray-500">KDA: <span class="text-white">${m.kills}/${m.deaths}/${m.assists}</span> | ${timeStr}</div>
                             </div>
                         </div>
+                        <span class="px-3 py-1 rounded font-black text-xs font-mono ${isWin ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}">
+                            ${isWin ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ'}
+                        </span>
                     </div>
                 `;
-                grid.appendChild(card);
             });
         }
 
-        // POPULATE SELECTORS FOR TAB 2 (DRAFT)
-        function populateDraftSelectors() {
-            const allySel = document.getElementById('draft-ally-select');
-            const enemySel = document.getElementById('draft-enemy-select');
-
-            // Clear previous options except first
-            allySel.innerHTML = '<option value="">Добавить союзника...</option>';
-            enemySel.innerHTML = '<option value="">Добавить врага...</option>';
-
-            const heroes = dotaData.meta_heroes || [];
-            heroes.forEach(h => {
-                const opt = `<option value="${h.name}">${h.name.toUpperCase()} (${h.role})</option>`;
-                allySel.insertAdjacentHTML('beforeend', opt);
-                enemySel.insertAdjacentHTML('beforeend', opt);
-            });
-        }
-
-        // ADD HERO TO DRAFT
-        function addDraftHero(side) {
-            const sel = document.getElementById(`draft-${side}-select`);
-            const heroName = sel.value;
-            if (!heroName) return;
-
-            if (side === 'ally') {
-                if (selectedAllies.length < 5 && !selectedAllies.includes(heroName) && !selectedEnemies.includes(heroName)) {
-                    selectedAllies.push(heroName);
-                }
-            } else {
-                if (selectedEnemies.length < 5 && !selectedEnemies.includes(heroName) && !selectedAllies.includes(heroName)) {
-                    selectedEnemies.push(heroName);
-                }
-            }
-
-            sel.value = ''; // Reset select
-            renderDraftBoard();
-            calculateDraft();
-        }
-
-        // REMOVE HERO FROM DRAFT
-        function removeDraftHero(side, index) {
-            if (side === 'ally') {
-                selectedAllies.splice(index, 1);
-            } else {
-                selectedEnemies.splice(index, 1);
-            }
-            renderDraftBoard();
-            calculateDraft();
-        }
-
-        // RENDER VISUAL SLOTS IN DRAFT
-        function renderDraftBoard() {
-            const allyContainer = document.getElementById('ally-slots');
-            const enemyContainer = document.getElementById('enemy-slots');
-
-            allyContainer.innerHTML = '';
-            enemyContainer.innerHTML = '';
-
-            // Render Allies
-            for (let i = 0; i < 5; i++) {
-                const slot = document.createElement('div');
-                slot.className = "aspect-[16/9] border-2 border-dashed border-[#262636] bg-[#111116] flex flex-col items-center justify-center relative group overflow-hidden";
-                if (selectedAllies[i]) {
-                    const hero = selectedAllies[i];
-                    slot.innerHTML = `
-                        <img src="${getHeroImgUrl(hero)}" class="w-full h-full object-cover">
-                        <button onclick="removeDraftHero('ally', ${i})" class="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-red-500 font-extrabold text-xs">УДАЛИТЬ</button>
-                    `;
-                } else {
-                    slot.innerHTML = `<span class="text-[10px] text-gray-600 font-bold font-mono">P${i+1}</span>`;
-                }
-                allyContainer.appendChild(slot);
-            }
-
-            // Render Enemies
-            for (let i = 0; i < 5; i++) {
-                const slot = document.createElement('div');
-                slot.className = "aspect-[16/9] border-2 border-dashed border-[#262636] bg-[#111116] flex flex-col items-center justify-center relative group overflow-hidden";
-                if (selectedEnemies[i]) {
-                    const hero = selectedEnemies[i];
-                    slot.innerHTML = `
-                        <img src="${getHeroImgUrl(hero)}" class="w-full h-full object-cover">
-                        <button onclick="removeDraftHero('enemy', ${i})" class="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-red-500 font-extrabold text-xs">УДАЛИТЬ</button>
-                    `;
-                } else {
-                    slot.innerHTML = `<span class="text-[10px] text-gray-600 font-bold font-mono">E${i+1}</span>`;
-                }
-                enemyContainer.appendChild(slot);
-            }
-        }
-
-        // REAL-TIME ALGORITHMIC DRAFT ENGINE
-        function calculateDraft() {
-            const container = document.getElementById('draft-recommendations');
-            container.innerHTML = '';
-
-            if (selectedAllies.length === 0 && selectedEnemies.length === 0) {
-                container.innerHTML = `<div class="text-xs text-gray-400 uppercase tracking-wider">Выберите хотя бы одного героя для расчета...</div>`;
-                return;
-            }
-
-            const heroes = dotaData.meta_heroes || [];
-            let scoring = [];
-
-            heroes.forEach(h => {
-                // Skip if hero is already picked
-                if (selectedAllies.includes(h.name) || selectedEnemies.includes(h.name)) return;
-
-                // Base rating = average winrate (from strings like "54.2%")
-                const parseWinrate = (str) => parseFloat(str.replace('%', '')) || 50.0;
-                let score = (parseWinrate(h.winrate_d2pt) + parseWinrate(h.winrate_4k)) / 2;
-
-                let explanations = [];
-
-                // 1. Check synergies with selected allies
-                selectedAllies.forEach(allyName => {
-                    const allyData = heroes.find(x => x.name === allyName);
-                    if (allyData && allyData.best_with) {
-                        const cleanBest = allyData.best_with.map(n => n.toLowerCase().replace(/_/g, ' '));
-                        if (cleanBest.includes(h.name.toLowerCase())) {
-                            score += 4.5;
-                            explanations.push(`Отличная связка с ${allyName} (в базе синергий)`);
-                        }
-                    }
-                    if (h.best_with) {
-                        const cleanBestH = h.best_with.map(n => n.toLowerCase().replace(/_/g, ' '));
-                        if (cleanBestH.includes(allyName.toLowerCase())) {
-                            score += 4.5;
-                            explanations.push(`Бафает способности союзника ${allyName}`);
-                        }
-                    }
-                });
-
-                // 2. Check counters against enemies
-                selectedEnemies.forEach(enemyName => {
-                    // Does our hero counter the enemy?
-                    if (h.counters) {
-                        const cleanCounters = h.counters.map(n => n.toLowerCase().replace(/_/g, ' '));
-                        if (cleanCounters.includes(enemyName.toLowerCase())) {
-                            score += 6.0;
-                            explanations.push(`Является жестким контрпиком для ${enemyName}`);
-                        }
-                    }
-                    // Does the enemy counter our hero? (Negative score impact)
-                    const enemyData = heroes.find(x => x.name === enemyName);
-                    if (enemyData && enemyData.counters) {
-                        const cleanEnemyCounters = enemyData.counters.map(n => n.toLowerCase().replace(/_/g, ' '));
-                        if (cleanEnemyCounters.includes(h.name.toLowerCase())) {
-                            score -= 5.0;
-                            explanations.push(`Опасно: контрится вражеским ${enemyName}`);
-                        }
-                    }
-                });
-
-                scoring.push({
-                    hero: h,
-                    finalScore: score.toFixed(2),
-                    explanations: explanations
-                });
-            });
-
-            // Sort by computed Power Score
-            scoring.sort((a, b) => b.finalScore - a.finalScore);
-
-            const topPicks = scoring.slice(0, 3);
-
-            if (topPicks.length === 0) {
-                container.innerHTML = `<div class="text-xs text-red-400">Нет подходящих вариантов по текущей базе героев.</div>`;
-                return;
-            }
-
-            topPicks.forEach((pick, idx) => {
-                const explanationList = pick.explanations.length > 0 
-                    ? pick.explanations.map(exp => `<li>• ${exp}</li>`).join('')
-                    : `<li>• Обладает лучшим базовым винрейтом на текущем рейтинге</li>`;
-
-                const html = `
-                    <div class="border-2 border-[#1A1A24] bg-[#0A0A0C] p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div class="flex gap-4">
-                            <div class="text-lg font-black text-[#00FF66] font-mono self-center">#${idx+1}</div>
-                            <img src="${getHeroImgUrl(pick.hero.name)}" class="w-16 h-10 object-cover border border-[#1A1A24] align-middle">
+        function renderPeers() {
+            const list = document.getElementById('peers-list');
+            list.innerHTML = '';
+            state.peers.slice(0, 4).forEach(p => {
+                const wr = p.games > 0 ? ((p.win / p.games) * 100).toFixed(1) : 0;
+                list.innerHTML += `
+                    <div class="flex items-center justify-between p-2.5 bg-black/40 rounded-xl border border-gray-800/80">
+                        <div class="flex items-center gap-2">
+                            <img src="${p.avatar || 'https://via.placeholder.com/32'}" class="w-8 h-8 rounded-full border border-gray-800">
                             <div>
-                                <h4 class="font-extrabold uppercase text-white">${pick.hero.name} (${pick.hero.role})</h4>
-                                <ul class="text-[10px] text-gray-400 font-mono mt-1 space-y-0.5">
-                                    ${explanationList}
-                                </ul>
+                                <h4 class="text-xs font-bold text-white">${p.personaname}</h4>
+                                <span class="text-[9px] text-gray-500">Совместных матчей: ${p.games}</span>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="text-[10px] text-gray-500 font-mono">POWER SCORE</div>
-                            <div class="text-xl font-black text-[#00FF66] font-mono">${pick.finalScore}%</div>
-                        </div>
+                        <span class="text-xs font-bold text-emerald-400">${wr}% WR</span>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', html);
             });
         }
 
-        // RENDER TAB 3: PRO TEAMS
-        function renderTeams() {
-            const container = document.getElementById('teams-list');
+        function openHeroModal(heroName) {
+            const h = state.metaHeroes.find(x => x.name.toLowerCase() === heroName.toLowerCase());
+            if (!h) return;
+
+            document.getElementById('modal-hero-icon').src = getHeroImage(h.name);
+            document.getElementById('modal-hero-name').textContent = h.name;
+            document.getElementById('modal-hero-role').textContent = h.role;
+            document.getElementById('modal-hero-tier-badge').textContent = `${h.tier || 'A'}-Tier`;
+            document.getElementById('modal-hero-wr').textContent = h.winrate_d2pt;
+            document.getElementById('modal-hero-pr').textContent = h.pickrate_d2pt || '10%';
+            document.getElementById('modal-hero-ban').textContent = h.banrate_pro || '20%';
+            document.getElementById('modal-hero-laning').textContent = h.laning_winrate || '50%';
+            document.getElementById('modal-hero-innate').textContent = h.innate_ability || 'Информация по врожденной способности подгружается...';
+            document.getElementById('modal-hero-spike').textContent = h.power_spike || 'Равномерный темп';
+            document.getElementById('modal-hero-versatility').textContent = `${h.versatility || '5.0'} / 10`;
+
+            const phys = h.damage_ratio ? h.damage_ratio.phys : 50;
+            const mag = h.damage_ratio ? h.damage_ratio.mag : 50;
+            const pure = h.damage_ratio ? h.damage_ratio.pure : 0;
+
+            document.getElementById('modal-dmg-phys').style.width = `${phys}%`;
+            document.getElementById('modal-dmg-mag').style.width = `${mag}%`;
+            document.getElementById('modal-dmg-pure').style.width = `${pure}%`;
+            document.getElementById('modal-hero-dmg-ratio').textContent = `${phys}% Физ / ${mag}% Маг / ${pure}% Чистый`;
+
+            const itemsBox = document.getElementById('modal-hero-items');
+            itemsBox.innerHTML = '';
+            (h.core_items || []).forEach(item => {
+                itemsBox.innerHTML += `
+                    <div class="flex items-center gap-2 bg-black/40 p-2 rounded-xl border border-gray-800">
+                        <img src="${getMinifiedItemImage(item)}" class="w-10 h-7 object-cover rounded">
+                        <span class="text-xs text-white capitalize font-bold">${item.replace(/_/g, ' ')}</span>
+                    </div>
+                `;
+            });
+
+            document.getElementById('hero-modal').classList.remove('hidden');
+        }
+
+        function closeHeroModal() {
+            document.getElementById('hero-modal').classList.add('hidden');
+        }
+
+        function initDraftSimulator() {
+            const container = document.getElementById('enemy-picks-selectors');
             container.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                container.innerHTML += `
+                    <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-[10px] font-black text-rose-500 uppercase tracking-widest">Враг ${i}:</span>
+                        <select id="enemy-pick-${i}" class="bg-[#04060a] w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-800 text-xs text-white focus:outline-none focus:border-rose-500 cursor-pointer">
+                            <option value="">Не выбран...</option>
+                        </select>
+                    </div>
+                `;
+            }
 
-            const teams = dotaData.teams || [];
+            setTimeout(() => {
+                for (let i = 1; i <= 5; i++) {
+                    const sel = document.getElementById(`enemy-pick-${i}`);
+                    Object.values(state.heroMapping)
+                        .sort((a,b) => a.localized_name.localeCompare(b.localized_name))
+                        .forEach(h => {
+                            sel.innerHTML += `<option value="${h.localized_name}">${h.localized_name}</option>`;
+                        });
+                }
+            }, 1000);
+        }
 
-            teams.forEach(team => {
-                const recentBadges = team.recent_results.split('-').map(res => {
-                    const isWin = res.trim().toUpperCase() === 'W';
-                    return `<span class="px-1.5 py-0.5 font-bold ${isWin ? 'bg-[#141F18] text-[#00FF66] border border-[#00FF66]' : 'bg-[#221212] text-red-500 border border-red-500'} font-mono">${res}</span>`;
-                }).join(' ');
+        function calculateDraftCounters() {
+            const enemies = [];
+            for (let i = 1; i <= 5; i++) {
+                const val = document.getElementById(`enemy-pick-${i}`).value;
+                if (val) enemies.push(val.toLowerCase());
+            }
 
-                const oppBadges = team.last_opponents ? team.last_opponents.map(opp => {
-                    const isWin = opp.includes(': W');
-                    return `<span class="px-2 py-1 text-[10px] border ${isWin ? 'border-[#00FF66] text-[#00FF66] bg-[#141F18]' : 'border-red-500 text-red-500 bg-[#221212]'} font-mono uppercase">${opp}</span>`;
-                }).join(' ') : 'No recent opponents tracked';
+            if (enemies.length === 0) {
+                return showToast("Укажи хотя бы одного вражеского героя!", "error");
+            }
 
-                const html = `
-                    <div class="border-2 border-[#1A1A24] bg-[#0E0E12] p-6">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 border-b border-[#1A1A24] pb-3">
+            const resultsBox = document.getElementById('draft-suggestions-results');
+            resultsBox.innerHTML = '';
+
+            const scored = state.metaHeroes.map(h => {
+                let score = calculatePDS(h);
+                let counterBonus = 0;
+                let synergyBonus = 0;
+
+                enemies.forEach(enemy => {
+                    if ((h.counters || []).some(c => c.toLowerCase() === enemy)) counterBonus -= 15;
+                    if ((h.best_with || []).some(b => b.toLowerCase() === enemy)) synergyBonus += 10;
+                });
+
+                const comfortBonus = state.userComfortPool.some(x => x.localized_name.toLowerCase() === h.name.toLowerCase()) ? 15 : 0;
+
+                return {
+                    ...h,
+                    final_score: score + counterBonus + synergyBonus + comfortBonus,
+                    counterBonus,
+                    comfortBonus
+                };
+            }).sort((a,b) => b.final_score - a.final_score).slice(0, 5);
+
+            scored.forEach(h => {
+                resultsBox.innerHTML += `
+                    <div class="p-4 rounded-xl border border-gray-800/80 bg-black/35 flex justify-between items-center mb-3">
+                        <div class="flex items-center gap-3">
+                            <img src="${getHeroImage(h.name)}" class="w-14 h-9 rounded object-cover shadow">
                             <div>
-                                <h3 class="text-xl font-extrabold text-white uppercase">${team.name}</h3>
-                                <div class="text-[10px] text-gray-500 font-mono mt-0.5 uppercase">СТАТУС: ${team.status}</div>
+                                <h4 class="font-bold text-white text-sm">${h.name}</h4>
+                                <div class="text-[10px] text-gray-500">Синергии: ${h.best_with.join(', ') || 'Нет'}</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded font-black text-xs font-mono bg-purple-500/10 text-purple-400">
+                            Score: ${h.final_score.toFixed(1)}
+                        </span>
+                    </div>
+                `;
+            });
+        }
+
+        async function loadGitHubData() {
+            const username = document.getElementById('github-username-input').value.trim() || state.githubUsername;
+            // Добавлена метка времени (t=...) для полного обхода кэширования GitHub CDN
+            const url = `https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${Date.now()}`;
+            
+            showToast("Обновляем базу данных с GitHub...", "info");
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error();
+                const data = await res.json();
+                
+                state.metaHeroes = data.meta_heroes || fallbackHeroes;
+                state.proTeams = data.teams || fallbackTeams;
+                // Подгружаем новую структуру турниров из data.json
+                state.tournament = data.tournament || fallbackTournament;
+                
+                renderHeroTable();
+                renderProTeams();
+                renderTournaments(); // Отрисовка нового таба турниров
+                showToast("Интеграция ИИ успешно завершена!", "success");
+            } catch (err) {
+                showToast("Используется локальная база (оффлайн режим)", "info");
+                state.metaHeroes = fallbackHeroes;
+                state.proTeams = fallbackTeams;
+                state.tournament = fallbackTournament;
+                renderHeroTable();
+                renderProTeams();
+                renderTournaments();
+            }
+        }
+
+        function renderProTeams() {
+            const grid = document.getElementById('teams-grid');
+            grid.innerHTML = '';
+
+            state.proTeams.forEach(t => {
+                const results = (t.recent_results || '').split('-').map(r => `
+                    <span class="w-6 h-6 rounded flex items-center justify-center font-mono text-[10px] font-bold ${r === 'W' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'}">${r}</span>
+                `).join('');
+
+                grid.innerHTML += `
+                    <div class="p-5 rounded-2xl bg-black/40 border border-gray-800 hover:border-purple-500/40 transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-base font-black text-white">${t.name}</h3>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">${t.status}</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-xs text-gray-500 font-mono uppercase block mb-1">Индекс силы</span>
-                                <span class="text-2xl font-black text-[#00FF66] font-mono">${team.power_index}/100</span>
+                                <span class="text-xs text-gray-500 block uppercase font-mono font-bold">Power Index</span>
+                                <span class="text-base font-black text-purple-400 font-mono">${t.power_index}</span>
                             </div>
                         </div>
 
-                        <!-- Progress Bar for Power Index -->
-                        <div class="w-full bg-[#111116] h-2 border border-gray-800 mb-6 relative">
-                            <div class="bg-[#00FF66] h-full" style="width: ${team.power_index}%"></div>
-                        </div>
-
-                        <!-- Details Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-                            <div class="border border-[#1A1A24] p-3 bg-[#111116]">
-                                <span class="text-gray-500 block uppercase mb-1">Игровая Схема</span>
-                                <div class="text-white font-bold uppercase leading-tight">${team.playstyle}</div>
-                            </div>
-                            <div class="border border-[#1A1A24] p-3 bg-[#111116]">
-                                <span class="text-gray-500 block uppercase mb-1">Длина матча (ср.)</span>
-                                <div class="text-white font-bold uppercase">${team.average_match_length}</div>
-                            </div>
-                            <div class="border border-[#1A1A24] p-3 bg-[#111116]">
-                                <span class="text-gray-500 block uppercase mb-1">Винрейт до 10м</span>
-                                <div class="text-[#00FF66] font-bold">${team.win_rate_10m}</div>
-                            </div>
-                        </div>
-
-                        <!-- Coach Strategy Box -->
-                        <div class="bg-[#111116] border border-[#1A1A24] p-4 mt-4 text-xs font-mono">
-                            <span class="text-[#00FF66] font-bold block uppercase mb-1"><i class="fa-solid fa-clipboard-list"></i> Стратегическая задумка:</span>
-                            <div class="text-gray-300 leading-normal">${team.coach_strategy}</div>
-                        </div>
-
-                        <!-- Opponents and Results -->
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mt-6 pt-4 border-t border-[#1A1A24] text-[11px] font-mono">
+                        <div class="space-y-3 text-xs mb-4">
                             <div>
-                                <span class="text-gray-500 uppercase block mb-1.5">Последние Стычки:</span>
-                                <div class="flex gap-2 flex-wrap">${oppBadges}</div>
+                                <span class="text-gray-500 text-[10px] block">Стиль игры:</span>
+                                <span class="text-gray-300 font-medium">${t.playstyle || 'Неизвестно'}</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 uppercase block mb-1.5 text-right md:text-left">Текущая Форма:</span>
-                                <div class="flex gap-1.5 justify-end md:justify-start">${recentBadges}</div>
+                                <span class="text-gray-500 text-[10px] block">План тренера:</span>
+                                <span class="text-gray-300 italic font-mono text-[11px]">${t.coach_strategy || 'Патч тестируется'}</span>
                             </div>
+                        </div>
+
+                        <div class="border-t border-gray-900 pt-4">
+                            <span class="text-[10px] text-gray-500 block uppercase font-bold mb-2">Последняя форма</span>
+                            <div class="flex gap-1.5">${results}</div>
                         </div>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', html);
             });
         }
 
-        // RENDER TAB 4: TOURNAMENTS
+        // РЕНДЕР НОВОГО ТАБА ТУРНИРОВ
         function renderTournaments() {
-            const container = document.getElementById('tournament-matches');
+            const container = document.getElementById('tournament-container');
             container.innerHTML = '';
 
-            const tour = dotaData.tournament;
-            if (!tour || !tour.matches || tour.matches.length === 0) {
-                container.innerHTML = `<div class="text-xs text-gray-500 uppercase font-mono">В данный момент нет крупных активных турниров.</div>`;
+            const tour = state.tournament;
+            if (!tour || !tour.upcoming_matches || tour.upcoming_matches.length === 0) {
+                container.innerHTML = `<div class="text-center text-gray-500 text-xs py-8">Нет данных по текущим турнирам или матчам.</div>`;
                 return;
             }
 
-            tour.matches.forEach(match => {
-                const html = `
-                    <div class="border-2 border-[#1A1A24] bg-[#0E0E12] p-6">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-[#1A1A24] pb-4 mb-4 font-mono">
-                            <div>
-                                <span class="text-[#00FF66] font-bold uppercase text-xs tracking-widest">[ ${tour.name} ]</span>
-                                <h3 class="text-md font-extrabold text-white uppercase mt-1">${match.team_a} vs ${match.team_b}</h3>
+            // Заголовок турнира
+            const headerHtml = `
+                <div class="mb-6 flex items-center gap-3">
+                    <h3 class="text-lg font-bold text-amber-400 uppercase tracking-wide">${tour.name}</h3>
+                    <span class="px-2 py-1 text-[9px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded">${tour.stage}</span>
+                    <span class="px-2 py-1 text-[9px] font-bold bg-gray-800 text-gray-400 border border-gray-700 rounded">${tour.prize_pool}</span>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', headerHtml);
+
+            // Сетка матчей
+            const gridHtml = document.createElement('div');
+            gridHtml.className = "grid grid-cols-1 lg:grid-cols-2 gap-6";
+
+            tour.upcoming_matches.forEach(match => {
+                const card = `
+                    <div class="bg-black/40 border border-gray-800/80 rounded-xl p-5 hover:border-amber-500/40 transition-colors">
+                        <div class="flex justify-between items-center mb-4 border-b border-gray-800/80 pb-3">
+                            <div class="text-[10px] text-gray-400 font-mono font-bold">${match.date} | ${match.time}</div>
+                            <div class="text-[10px] font-black bg-gray-800 text-white px-2 py-0.5 rounded">${match.bo}</div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center gap-4 mb-5">
+                            <div class="flex-1 text-center">
+                                <h4 class="text-base font-black ${match.team1 === match.favorite ? 'text-amber-400' : 'text-white'}">${match.team1}</h4>
                             </div>
-                            <div class="bg-[#1A1A24] px-3 py-1 text-xs border border-gray-700 text-gray-300">
-                                СТАРТ: ${match.time}
+                            <div class="text-xs text-gray-600 font-bold">VS</div>
+                            <div class="flex-1 text-center">
+                                <h4 class="text-base font-black ${match.team2 === match.favorite ? 'text-amber-400' : 'text-white'}">${match.team2}</h4>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                            <!-- Odds & Prediction -->
-                            <div class="space-y-4">
-                                <div class="grid grid-cols-2 gap-4 text-center font-mono">
-                                    <div class="border border-[#1A1A24] bg-[#111116] p-3">
-                                        <div class="text-[10px] text-gray-500 uppercase mb-1">Коэффициент ${match.team_a}</div>
-                                        <div class="text-lg font-bold text-white">${match.odds_a}</div>
-                                    </div>
-                                    <div class="border border-[#1A1A24] bg-[#111116] p-3">
-                                        <div class="text-[10px] text-gray-500 uppercase mb-1">Коэффициент ${match.team_b}</div>
-                                        <div class="text-lg font-bold text-white">${match.odds_b}</div>
-                                    </div>
-                                </div>
-                                <div class="border-2 border-red-500 bg-[#221212] p-4 brutal-shadow-red font-mono text-xs">
-                                    <span class="text-red-500 font-bold uppercase block mb-1"><i class="fa-solid fa-wand-magic-spark"></i> ИИ Прогноз:</span>
-                                    <div class="text-white font-extrabold uppercase">${match.prediction}</div>
-                                </div>
+                        <div class="bg-[#060a12] border border-gray-800 rounded-lg p-3 text-xs">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-500 font-bold">Предикт ИИ:</span>
+                                <span class="text-amber-400 font-black">${match.favorite}</span>
                             </div>
-
-                            <!-- AI Reasoning -->
-                            <div class="bg-[#111116] border border-[#1A1A24] p-4 h-full text-xs font-mono leading-relaxed">
-                                <span class="text-gray-500 uppercase block mb-1">Аналитическое обоснование ИИ:</span>
-                                <div class="text-gray-300">${match.ai_reasoning}</div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500 font-bold">Уверенность:</span>
+                                <span class="text-white font-mono font-bold">${match.win_probability}</span>
                             </div>
                         </div>
                     </div>
                 `;
-                container.insertAdjacentHTML('beforeend', html);
+                gridHtml.insertAdjacentHTML('beforeend', card);
             });
+
+            container.appendChild(gridHtml);
         }
 
-        // STARTUP LOAD
-        window.addEventListener('DOMContentLoaded', loadData);
+        function saveConfigAndLoad() {
+            const username = document.getElementById('github-username-input').value.trim();
+            if (username) {
+                state.githubUsername = username;
+                loadGitHubData();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            await fetchDotaHeroes();
+            loadPoolFromStorage();
+            initDraftSimulator();
+            loadGitHubData();
+        });
     </script>
 </body>
 </html>
