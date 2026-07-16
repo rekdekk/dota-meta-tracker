@@ -1,29 +1,19 @@
-name: Daily Dota 2 Meta Update
-
-on:
-schedule:
-- cron: '0 12 * * *'
-workflow_dispatch:
-
-jobs:
-build-and-update:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout Repository Code
-uses: actions/checkout@v4
-- name: Set up Python
+name: Daily Dota 2 Meta Updateon:schedule:- cron: '0 12 * * *'workflow_dispatch:jobs:build-and-update:runs-on: ubuntu-lateststeps:- name: Checkout Repository Codeuses: actions/checkout@v4  - name: Set up Python
     uses: actions/setup-python@v5
     with:
       python-version: '3.10'
-- name: Install Python Dependencies
+
+  - name: Install Python Dependencies
     run: |
       python -m pip install --upgrade pip
       pip install requests beautifulsoup4
-- name: Run Meta Update Script
+
+  - name: Run Meta Update Script
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     run: python update.py
-- name: Commit and Push changes
+
+  - name: Commit and Push changes
     run: |
       git config --global user.name "github-actions[bot]"
       git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
