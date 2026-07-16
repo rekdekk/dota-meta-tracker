@@ -361,7 +361,7 @@
 При обновлении файла data.json на GitHub ты обязан соблюдать строгий двухэтапный алгоритм, иначе запрос PUT упадет с ошибкой 409 Conflict:
 1. ЭТАП 1 (GET): Отправь HTTP GET запрос на адрес:
    https://api.github.com/repos/rekdekk/dota-meta-tracker/contents/data.json
-   с заголовком Authorization: Bearer ghp_ВАШ_ЛИЧНЫЙ_ТОКЕН_ДОСТУПА_ИЗ_НАСТРОЕК_GITHUB.
+   with header Authorization: Bearer ghp_ВАШ_ЛИЧНЫЙ_ТОКЕН_ДОСТУПА_ИЗ_НАСТРОЕК_GITHUB.
 2. ЭТАП 2 (EXTRACT): Из полученного JSON-ответа вытащи значение поля "sha".
 3. ЭТАП 3 (PUT): Сформируй HTTP PUT запрос на тот же адрес. В теле запроса отправь JSON-объект:
    {
@@ -389,11 +389,11 @@
             githubUsername: 'rekdekk',
             playerProfile: null,
             userComfortPool: [
-                { id: 11, name: "Nevermore", rawName: "nevermore", localizedName: "Shadow Fiend", winrate: 56.5, games: 120, userComfort: 9 },
-                { id: 21, name: "Windrunner", rawName: "windrunner", localizedName: "Windranger", winrate: 53.2, games: 98, userComfort: 8 },
-                { id: 96, name: "Centaur", rawName: "centaur", localizedName: "Centaur Warrunner", winrate: 51.0, games: 60, userComfort: 7 },
-                { id: 86, name: "Rubick", rawName: "rubick", localizedName: "Rubick", winrate: 48.2, games: 250, userComfort: 10 },
-                { id: 18, name: "Sven", rawName: "sven", localizedName: "Sven", winrate: 45.1, games: 40, userComfort: 4 }
+                { id: 11, name: "nevermore", rawName: "nevermore", localizedName: "Shadow Fiend", winrate: 56.5, games: 120, userComfort: 9 },
+                { id: 21, name: "windrunner", rawName: "windrunner", localizedName: "Windranger", winrate: 53.2, games: 98, userComfort: 8 },
+                { id: 96, name: "centaur", rawName: "centaur", localizedName: "Centaur Warrunner", winrate: 51.0, games: 60, userComfort: 7 },
+                { id: 86, name: "rubick", rawName: "rubick", localizedName: "Rubick", winrate: 48.2, games: 250, userComfort: 10 },
+                { id: 18, name: "sven", rawName: "sven", localizedName: "Sven", winrate: 45.1, games: 40, userComfort: 4 }
             ],
             metaHeroes: [
                 { name: "Shadow Fiend", role: "Mid", pds_score: 85.0, tier: "S", pro_trend: "high_priority", badge: "Комфортный пик", winrate_d2pt: "54%", build_advice: "Аспект Shadow Mire. Arcane -> Blink -> Eul." },
@@ -414,7 +414,7 @@
             peers: []
         };
 
-        const localHeroList = [
+        let localHeroList = [
             { id: 1, name: "antimage", localized: "Anti-Mage" }, { id: 2, name: "axe", localized: "Axe" },
             { id: 3, name: "bane", localized: "Bane" }, { id: 4, name: "bloodseeker", localized: "Bloodseeker" },
             { id: 5, name: "crystal_maiden", localized: "Crystal Maiden" }, { id: 6, name: "drow_ranger", localized: "Drow Ranger" },
@@ -422,19 +422,68 @@
             { id: 9, name: "mirana", localized: "Mirana" }, { id: 10, name: "morphling", localized: "Morphling" },
             { id: 11, name: "nevermore", localized: "Shadow Fiend" }, { id: 12, name: "phantom_lancer", localized: "Phantom Lancer" },
             { id: 13, name: "puck", localized: "Puck" }, { id: 14, name: "pudge", localized: "Pudge" },
+            { id: 15, name: "razor", localized: "Razor" }, { id: 16, name: "sand_king", localized: "Sand King" },
             { id: 17, name: "storm_spirit", localized: "Storm Spirit" }, { id: 18, name: "sven", localized: "Sven" },
+            { id: 19, name: "tiny", localized: "Tiny" }, { id: 20, name: "vengefulspirit", localized: "Vengeful Spirit" },
             { id: 21, name: "windrunner", localized: "Windranger" }, { id: 22, name: "zuus", localized: "Zeus" },
             { id: 23, name: "kunkka", localized: "Kunkka" }, { id: 25, name: "lina", localized: "Lina" },
-            { id: 31, name: "lich", localized: "Lich" }, { id: 39, name: "queenofpain", localized: "Queen of Pain" },
-            { id: 74, name: "invoker", localized: "Invoker" }, { id: 86, name: "rubick", localized: "Rubick" },
-            { id: 96, name: "centaur", localized: "Centaur Warrunner" }
+            { id: 26, name: "lion", localized: "Lion" }, { id: 27, name: "shadow_shaman", localized: "Shadow Shaman" },
+            { id: 28, name: "slardar", localized: "Slardar" }, { id: 29, name: "tidehunter", localized: "Tidehunter" },
+            { id: 30, name: "witch_doctor", localized: "Witch Doctor" }, { id: 31, name: "lich", localized: "Lich" },
+            { id: 32, name: "riki", localized: "Riki" }, { id: 33, name: "enigma", localized: "Enigma" },
+            { id: 34, name: "tinker", localized: "Tinker" }, { id: 35, name: "sniper", localized: "Sniper" },
+            { id: 36, name: "necrolyte", localized: "Necrophos" }, { id: 37, name: "warlock", localized: "Warlock" },
+            { id: 38, name: "beastmaster", localized: "Beastmaster" }, { id: 39, name: "queenofpain", localized: "Queen of Pain" },
+            { id: 40, name: "venomancer", localized: "Venomancer" }, { id: 41, name: "faceless_void", localized: "Faceless Void" },
+            { id: 42, name: "skeleton_king", localized: "Wraith King" }, { id: 43, name: "death_prophet", localized: "Death Prophet" },
+            { id: 44, name: "phantom_assassin", localized: "Phantom Assassin" }, { id: 45, name: "pugna", localized: "Pugna" },
+            { id: 46, name: "templar_assassin", localized: "Templar Assassin" }, { id: 47, name: "viper", localized: "Viper" },
+            { id: 48, name: "luna", localized: "Luna" }, { id: 49, name: "dragon_knight", localized: "Dragon Knight" },
+            { id: 50, name: "dazzle", localized: "Dazzle" }, { id: 51, name: "rattletrap", localized: "Clockwerk" },
+            { id: 52, name: "leshrac", localized: "Leshrac" }, { id: 53, name: "furion", localized: "Nature's Prophet" },
+            { id: 54, name: "life_stealer", localized: "Lifestealer" }, { id: 55, name: "dark_seer", localized: "Dark Seer" },
+            { id: 56, name: "clinkz", localized: "Clinkz" }, { id: 57, name: "omniknight", localized: "Omniknight" },
+            { id: 58, name: "enchantress", localized: "Enchantress" }, { id: 59, name: "huskar", localized: "Huskar" },
+            { id: 60, name: "night_stalker", localized: "Night Stalker" }, { id: 61, name: "broodmother", localized: "Broodmother" },
+            { id: 62, name: "bounty_hunter", localized: "Bounty Hunter" }, { id: 63, name: "weaver", localized: "Weaver" },
+            { id: 64, name: "jakiro", localized: "Jakiro" }, { id: 65, name: "batrider", localized: "Batrider" },
+            { id: 66, name: "chen", localized: "Chen" }, { id: 67, name: "spectre", localized: "Spectre" },
+            { id: 68, name: "ancient_apparition", localized: "Ancient Apparition" }, { id: 69, name: "doom_bringer", localized: "Doom" },
+            { id: 70, name: "ursa", localized: "Ursa" }, { id: 71, name: "spirit_breaker", localized: "Spirit Breaker" },
+            { id: 72, name: "gyrocopter", localized: "Gyrocopter" }, { id: 73, name: "alchemist", localized: "Alchemist" },
+            { id: 74, name: "invoker", localized: "Invoker" }, { id: 75, name: "silencer", localized: "Silencer" },
+            { id: 76, name: "obsidian_destroyer", localized: "Outworld Destroyer" }, { id: 77, name: "lycan", localized: "Lycan" },
+            { id: 78, name: "brewmaster", localized: "Brewmaster" }, { id: 79, name: "shadow_demon", localized: "Shadow Demon" },
+            { id: 80, name: "lone_druid", localized: "Lone Druid" }, { id: 81, name: "chaos_knight", localized: "Chaos Knight" },
+            { id: 82, name: "meepo", localized: "Meepo" }, { id: 83, name: "treant", localized: "Treant Protector" },
+            { id: 84, name: "ogre_magi", localized: "Ogre Magi" }, { id: 85, name: "undying", localized: "Undying" },
+            { id: 86, name: "rubick", localized: "Rubick" }, { id: 87, name: "disruptor", localized: "Disruptor" },
+            { id: 88, name: "nyx_assassin", localized: "Nyx Assassin" }, { id: 89, name: "naga_siren", localized: "Naga Siren" },
+            { id: 90, name: "keeper_of_the_light", localized: "Keeper of the Light" }, { id: 91, name: "wisp", localized: "Io" },
+            { id: 92, name: "visage", localized: "Visage" }, { id: 93, name: "slark", localized: "Slark" },
+            { id: 94, name: "medusa", localized: "Medusa" }, { id: 95, name: "troll_warlord", localized: "Troll Warlord" },
+            { id: 96, name: "centaur", localized: "Centaur Warrunner" }, { id: 97, name: "magnataur", localized: "Magnus" },
+            { id: 98, name: "shredder", localized: "Timbersaw" }, { id: 99, name: "bristleback", localized: "Bristleback" },
+            { id: 100, name: "tusk", localized: "Tusk" }, { id: 101, name: "skywrath_mage", localized: "Skywrath Mage" },
+            { id: 102, name: "abaddon", localized: "Abaddon" }, { id: 103, name: "elder_titan", localized: "Elder Titan" },
+            { id: 104, name: "legion_commander", localized: "Legion Commander" }, { id: 105, name: "techies", localized: "Techies" },
+            { id: 106, name: "ember_spirit", localized: "Ember Spirit" }, { id: 107, name: "earth_spirit", localized: "Earth Spirit" },
+            { id: 108, name: "abyssal_underlord", localized: "Underlord" }, { id: 109, name: "terrorblade", localized: "Terrorblade" },
+            { id: 110, name: "phoenix", localized: "Phoenix" }, { id: 111, name: "oracle", localized: "Oracle" },
+            { id: 112, name: "winter_wyvern", localized: "Winter Wyvern" }, { id: 113, name: "arc_warden", localized: "Arc Warden" },
+            { id: 114, name: "monkey_king", localized: "Monkey King" }, { id: 119, name: "dark_willow", localized: "Dark Willow" },
+            { id: 120, name: "pangolier", localized: "Pangolier" }, { id: 121, name: "grimstroke", localized: "Grimstroke" },
+            { id: 123, name: "hoodwink", localized: "Hoodwink" }, { id: 126, name: "void_spirit", localized: "Void Spirit" },
+            { id: 128, name: "snapfire", localized: "Snapfire" }, { id: 129, name: "mars", localized: "Mars" },
+            { id: 135, name: "dawnbreaker", localized: "Dawnbreaker" }, { id: 136, name: "marci", localized: "Marci" },
+            { id: 137, name: "primal_beast", localized: "Primal Beast" }, { id: 138, name: "muerta", localized: "Muerta" },
+            { id: 131, name: "ringmaster", localized: "Ringmaster" }, { id: 145, name: "kez", localized: "Kez" }
         ];
 
-        window.onload = function() {
-            initHeroMapping();
+        window.onload = async function() {
+            await fetchAllHeroes();
             initEnemySelectors();
             
-            // Если в кэше пусто, записываем дефолты рекдекка
             if (!localStorage.getItem('steam_id')) {
                 localStorage.setItem('steam_id', '872107609');
             }
@@ -445,18 +494,44 @@
             const savedSteamId = localStorage.getItem('steam_id');
             const savedGithub = localStorage.getItem('github_username');
 
-            if (savedSteamId) {
-                document.getElementById('steam-id-input').value = savedSteamId;
-                loadOpenDotaStats();
-            }
             if (savedGithub) {
                 document.getElementById('github-username-input').value = savedGithub;
                 loadGitHubData();
             }
 
-            renderAll();
+            if (savedSteamId) {
+                document.getElementById('steam-id-input').value = savedSteamId;
+                loadOpenDotaStats();
+            } else {
+                renderAll();
+            }
+
             showToast("Система готова к аналитике!", "info");
         };
+
+        async function fetchAllHeroes() {
+            try {
+                // Инициализируем оффлайн-базу из 125 героев для мгновенной загрузки UI
+                initHeroMapping();
+                
+                // Делаем невидимый фоновый запрос к официальной базе, чтобы подтянуть самых новых героев
+                const res = await fetch('https://api.opendota.com/api/heroes');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.length > 0) {
+                        localHeroList = data.map(h => ({
+                            id: h.id,
+                            name: h.name.replace('npc_dota_hero_', ''),
+                            localized: h.localized_name
+                        }));
+                        // Пересобираем UI с абсолютно полным живым списком
+                        initHeroMapping();
+                    }
+                }
+            } catch (err) {
+                console.warn("API героев недоступно, используется оффлайн-база", err);
+            }
+        }
 
         async function loadGitHubData() {
             const username = document.getElementById('github-username-input').value.trim();
@@ -466,7 +541,7 @@
             }
             showToast("Запрашиваем ИИ-базу данных с GitHub...", "info");
             try {
-                // Добавлен cache-buster (?t=timestamp), чтобы мгновенно подтягивать свежайшую дату в обход 5-минутного кэша GitHub CDN
+                // Добавлен динамический timestamp (?t=...) для мгновенного обхода 5-минутного кэша GitHub raw CDN
                 const res = await fetch(`https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${new Date().getTime()}`);
                 if (!res.ok) throw new Error("Файл data.json не найден");
                 const data = await res.json();
@@ -480,22 +555,25 @@
                 }
             } catch (e) {
                 console.error(e);
-                showToast("Файл data.json не найден. Спарк еще не создал его в твоем репозитории!", "error");
+                showToast("База данных data.json еще не создана. Запустите Спарк или экшен на GitHub!", "error");
             }
         }
 
         function initHeroMapping() {
+            localHeroList.sort((a, b) => a.localized.localeCompare(b.localized));
             localHeroList.forEach(h => {
                 state.heroMapping[h.id] = { name: h.localized, raw: h.name };
             });
             const select = document.getElementById('add-hero-select');
-            select.innerHTML = '';
-            localHeroList.forEach(h => {
-                const opt = document.createElement('option');
-                opt.value = h.id;
-                opt.textContent = h.localized;
-                select.appendChild(opt);
-            });
+            if (select) {
+                select.innerHTML = '';
+                localHeroList.forEach(h => {
+                    const opt = document.createElement('option');
+                    opt.value = h.id;
+                    opt.textContent = h.localized;
+                    select.appendChild(opt);
+                });
+            }
         }
 
         function initEnemySelectors() {
@@ -541,7 +619,9 @@
             showToast("Запрашиваем данные с серверов OpenDota...", "info");
 
             try {
+                // 1. Загрузка профиля игрока
                 const profileRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}`);
+                if (profileRes.status === 429) throw new Error("OpenDota rate limit");
                 if (!profileRes.ok) throw new Error("Профиль не найден");
                 const profileData = await profileRes.json();
                 
@@ -556,40 +636,61 @@
                     document.getElementById('sync-status-text').className = "text-xs text-emerald-400 font-bold uppercase tracking-widest";
                     
                     localStorage.setItem('steam_id', state.steamId);
+                } else {
+                    document.getElementById('user-nickname').textContent = "Скрытый Профиль";
+                    document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse";
+                    document.getElementById('sync-status-text').textContent = "Профиль скрыт";
                 }
 
-                const heroesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/heroes`);
-                const heroesData = await heroesRes.json();
-                if (Array.isArray(heroesData)) {
-                    state.userComfortPool = heroesData
-                        .filter(h => h.games > 4)
-                        .slice(0, 8)
-                        .map(h => {
-                            const mapHero = state.heroMapping[h.hero_id] || { name: `Hero ${h.hero_id}`, raw: "nevermore" };
-                            return {
-                                id: parseInt(h.hero_id),
-                                name: mapHero.raw,
-                                rawName: mapHero.raw,
-                                localizedName: mapHero.name,
-                                winrate: parseFloat(((h.win / h.games) * 100).toFixed(1)),
-                                games: h.games,
-                                userComfort: Math.min(10, Math.max(1, Math.round(h.games / 10)))
-                            };
-                        });
+                // 2. Изолированная загрузка героев
+                try {
+                    const heroesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/heroes`);
+                    if (heroesRes.ok) {
+                        const heroesData = await heroesRes.json();
+                        if (Array.isArray(heroesData) && heroesData.length > 0) {
+                            state.userComfortPool = heroesData
+                                .filter(h => h.games > 4)
+                                .slice(0, 8)
+                                .map(h => {
+                                    const mapHero = state.heroMapping[h.hero_id] || { name: `Hero ${h.hero_id}`, raw: "nevermore" };
+                                    return {
+                                        id: parseInt(h.hero_id),
+                                        name: mapHero.raw,
+                                        rawName: mapHero.raw,
+                                        localizedName: mapHero.name,
+                                        winrate: parseFloat(((h.win / h.games) * 100).toFixed(1)),
+                                        games: h.games,
+                                        userComfort: Math.min(10, Math.max(1, Math.round(h.games / 10)))
+                                    };
+                                });
+                        }
+                    }
+                } catch (err) {
+                    console.warn("Не удалось загрузить сигнатурных героев:", err);
                 }
 
-                const matchesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/recentMatches`);
-                const matchesData = await matchesRes.json();
-                if (Array.isArray(matchesData)) {
-                    state.recentMatches = matchesData.slice(0, 20);
+                // 3. Изолированная загрузка последних матчей
+                try {
+                    const matchesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/recentMatches`);
+                    if (matchesRes.ok) {
+                        const matchesData = await matchesRes.json();
+                        state.recentMatches = Array.isArray(matchesData) ? matchesData.slice(0, 20) : [];
+                    }
+                } catch (err) {
+                    console.warn("Не удалось загрузить историю матчей:", err);
+                    state.recentMatches = [];
                 }
 
-                const peersRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/peers`);
-                const peersData = await peersRes.json();
-                if (Array.isArray(peersData)) {
-                    state.peers = peersData
-                        .filter(p => p.personaname && p.with_games >= 3)
-                        .slice(0, 8);
+                // 4. Изолированная загрузка друзей
+                try {
+                    const peersRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/peers`);
+                    if (peersRes.ok) {
+                        const peersData = await peersRes.json();
+                        state.peers = Array.isArray(peersData) ? peersData.filter(p => p.personaname && p.with_games >= 3).slice(0, 8) : [];
+                    }
+                } catch (err) {
+                    console.warn("Не удалось загрузить тиммейтов:", err);
+                    state.peers = [];
                 }
 
                 showToast("Данные успешно синхронизированы!", "success");
@@ -597,8 +698,30 @@
 
             } catch (e) {
                 console.error(e);
-                showToast("Ошибка импорта! Проверьте правильность Steam ID и публичность профиля в Dota 2.", "error");
+                if (e.message.includes("rate limit")) {
+                    showToast("У OpenDota лимит запросов. Загружаем демо-игры...", "warning");
+                } else {
+                    showToast("Профиль скрыт или не найден. Загружаем демо-игры...", "error");
+                }
+                loadDemoMatches();
             }
+        }
+
+        // Загрузчик Демо-данных, если профиль скрыт или API перегружен
+        function loadDemoMatches() {
+            state.recentMatches = [
+                { player_slot: 1, radiant_win: true, kills: 14, deaths: 2, assists: 19, hero_id: 11, duration: 2340, game_mode: 22, start_time: Date.now()/1000 - 3600, gold_per_min: 680, xp_per_min: 720 },
+                { player_slot: 128, radiant_win: true, kills: 5, deaths: 8, assists: 12, hero_id: 86, duration: 2600, game_mode: 22, start_time: Date.now()/1000 - 86400, gold_per_min: 310, xp_per_min: 420 },
+                { player_slot: 2, radiant_win: true, kills: 8, deaths: 1, assists: 15, hero_id: 21, duration: 2100, game_mode: 22, start_time: Date.now()/1000 - 172800, gold_per_min: 620, xp_per_min: 690 },
+                { player_slot: 3, radiant_win: false, kills: 10, deaths: 7, assists: 8, hero_id: 11, duration: 2800, game_mode: 22, start_time: Date.now()/1000 - 259200, gold_per_min: 550, xp_per_min: 580 },
+                { player_slot: 129, radiant_win: false, kills: 4, deaths: 9, assists: 6, hero_id: 18, duration: 1950, game_mode: 22, start_time: Date.now()/1000 - 345600, gold_per_min: 440, xp_per_min: 490 }
+            ];
+            state.peers = [
+                { personaname: "Solo", account_id: 13456784, avatar: "https://placehold.co/36x36/22c55e/fff?text=S", with_win: 12, with_games: 15 },
+                { personaname: "RAMZES666", account_id: 87278291, avatar: "https://placehold.co/36x36/3b82f6/fff?text=R", with_win: 8, with_games: 11 },
+                { personaname: "No[o]ne", account_id: 70388657, avatar: "https://placehold.co/36x36/f59e0b/fff?text=N", with_win: 6, with_games: 10 }
+            ];
+            renderAll();
         }
 
         function renderAll() {
@@ -700,9 +823,36 @@
 
         function renderMatchesFeed() {
             const container = document.getElementById('matches-feed');
-            if (state.recentMatches.length === 0) return;
+            container.innerHTML = ''; // Очищаем спиннер
 
-            container.innerHTML = '';
+            // Если список матчей пуст — показываем инструкцию и кнопку демо-режима
+            if (!state.recentMatches || state.recentMatches.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 px-6 rounded-2xl bg-slate-900/40 border border-dashed border-slate-800">
+                        <i class="fa-solid fa-eye-slash text-4xl mb-4 text-amber-500/70 animate-pulse animate-duration-1000"></i>
+                        <h4 class="text-md font-bold text-white mb-2">История игр не обнаружена</h4>
+                        <p class="text-xs text-gray-400 max-w-md mx-auto mb-6 leading-relaxed">
+                            У тебя скрыта история матчей в клиенте Dota 2, либо профиль Steam закрыт настройками приватности.
+                        </p>
+                        
+                        <div class="bg-slate-950/80 p-5 rounded-xl text-left text-xs max-w-md mx-auto space-y-3 mb-6 border border-slate-800 text-gray-300">
+                            <p class="font-bold text-rose-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gears"></i> Как открыть историю в игре:
+                            </p>
+                            <p class="pl-2 border-l border-slate-800">1. Запусти <span class="font-semibold text-white">Dota 2</span> и нажми на <span class="font-semibold text-white">шестеренку</span> (Настройки) в верхнем левом углу.</p>
+                            <p class="pl-2 border-l border-slate-800">2. Перейди в раздел <span class="font-semibold text-white">«Сообщество» (Social)</span>.</p>
+                            <p class="pl-2 border-l border-slate-800">3. Поставь галочку напротив пункта <span class="font-semibold text-amber-400">«Общедоступная история матчей» (Expose Public Match Data)</span>.</p>
+                            <p class="pl-2 border-l border-slate-800">4. Сыграй одну любую игру (можно даже турбо), чтобы обновить базу OpenDota.</p>
+                        </div>
+
+                        <button onclick="loadDemoMatches()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600/20 to-amber-600/20 hover:from-rose-600/30 hover:to-amber-600/30 text-rose-400 hover:text-rose-300 border border-rose-500/30 text-xs font-bold transition-all inline-flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Загрузить демо-игры для теста
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
             let winCount = 0;
             let totalKills = 0, totalDeaths = 0, totalAssists = 0;
 
@@ -757,16 +907,24 @@
             const winratePct = ((winCount / state.recentMatches.length) * 100).toFixed(0);
             document.getElementById('stats-winrate-pct').textContent = `${winratePct}%`;
             
-            const totalGames = state.recentMatches.length;
             const avgKda = ((totalKills + totalAssists) / Math.max(1, totalDeaths)).toFixed(2);
             document.getElementById('stats-avg-kda').textContent = avgKda;
         }
 
         function renderPeersList() {
             const container = document.getElementById('peers-list');
-            if (state.peers.length === 0) return;
-
             container.innerHTML = '';
+
+            if (!state.peers || state.peers.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-gray-500 text-xs">
+                        <i class="fa-solid fa-users-slash text-2xl mb-2 block text-gray-600"></i>
+                        Список тиммейтов пуст или скрыт настройками приватности.
+                    </div>
+                `;
+                return;
+            }
+
             state.peers.forEach(peer => {
                 const winrate = ((peer.with_win / peer.with_games) * 100).toFixed(0);
                 const peerDiv = document.createElement('div');
