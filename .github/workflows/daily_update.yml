@@ -1,14 +1,3 @@
-name: Daily Dota 2 Meta Update
-
-on:
-schedule:
-- cron: '0 12 * * *'
-workflow_dispatch:
-
-jobs:
-build-and-update:
-runs-on: ubuntu-latest
-
 steps:
   - name: Checkout Repository Code
     uses: actions/checkout@v4
