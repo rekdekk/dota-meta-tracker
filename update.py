@@ -4,7 +4,7 @@ from datetime import datetime
 def fetch_data():
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
     
-    # 30 heroes structured data for Patch 7.41+ with winrate_4k
+    # 30 героев для патча 7.41+
     meta_heroes = [
         {
             "name": "Shadow Fiend",
@@ -516,8 +516,10 @@ def fetch_data():
             "damage_ratio": { "phys": 20, "mag": 80, "pure": 0 },
             "power_spike": "Мидгейм (15-25 мин)"
         }
-    ],
-    "teams": [
+    ]
+    
+    # Статистика тир-1 команд
+    teams = [
         {
             "name": "Team Falcons",
             "power_index": 95,
@@ -579,11 +581,17 @@ def fetch_data():
             "last_opponents": ["Yandex: L", "Liquid: W", "Falcons: L"]
         }
     ]
-}
+
+    # Правильное формирование итогового словаря (Вот здесь была ошибка Спарка)
+    return {
+        "last_updated": now,
+        "meta_heroes": meta_heroes,
+        "teams": teams
+    }
 
 if __name__ == "__main__":
+    # Запускаем сбор и сохраняем в JSON
     data = fetch_data()
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print("Successfully generated data.json with Legend/Ancient winrates!")
-
+    print("Successfully generated data.json with Absolute Meta!")
