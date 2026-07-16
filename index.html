@@ -91,18 +91,25 @@
                         <span id="sync-status-indicator" class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
                         <span id="sync-status-text" class="text-xs text-amber-400 font-bold uppercase tracking-widest">Локальный Демо-Режим</span>
                     </div>
-                    <h2 class="text-lg font-bold text-white"><span id="user-nickname">Игрок Dota 2</span>: Твоя экосистема готова к калибровке</h2>
-                    <p class="text-sm text-gray-400">Введите свой Steam32 ID для привязки OpenDota и свяжите репозиторий GitHub для загрузки отчетов от ИИ.</p>
+                    <h2 class="text-lg font-bold text-white"><span id="user-nickname">rekdekk</span>: Твоя экосистема авто-синхронизирована</h2>
+                    <p class="text-sm text-gray-400">Сайт загружает твою статистику OpenDota и стягивает отчеты ИИ с твоего GitHub в реальном времени.</p>
                 </div>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
-                <div class="relative w-full sm:w-60">
+            <div class="flex flex-col md:flex-row gap-3 w-full xl:w-auto items-stretch">
+                <div class="relative w-full md:w-40">
                     <span class="absolute left-3 top-2.5 text-gray-500 text-xs font-bold">ID:</span>
-                    <input type="text" id="steam-id-input" placeholder="Steam32 ID (например: 113402035)" class="bg-[#06080c] pl-9 pr-4 py-2 rounded-xl text-xs text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="">
+                    <input type="text" id="steam-id-input" placeholder="Steam32 ID" class="bg-[#06080c] pl-9 pr-4 py-2 rounded-xl text-xs text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="872107609">
                 </div>
-                <button onclick="loadOpenDotaStats()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                    <i class="fa-solid fa-rotate mr-1"></i> Связать с OpenDota
+                <button onclick="loadOpenDotaStats()" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-rotate mr-1"></i> OpenDota
+                </button>
+                <div class="relative w-full md:w-44">
+                    <span class="absolute left-3 top-2.5 text-gray-500 text-xs font-bold">Git:</span>
+                    <input type="text" id="github-username-input" placeholder="GitHub Username" class="bg-[#06080c] pl-9 pr-4 py-2 rounded-xl text-xs text-white border border-gray-800 focus:outline-none focus:border-rose-500 w-full" value="rekdekk">
+                </div>
+                <button onclick="loadGitHubData()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-cloud-arrow-down mr-1"></i> Синхронизировать ИИ
                 </button>
             </div>
         </div>
@@ -234,7 +241,7 @@
                             <!-- Populated dynamically via OpenDota peers API -->
                             <div class="text-center py-8 text-gray-500 text-xs">
                                 <i class="fa-solid fa-users-slash text-2xl mb-2 block"></i>
-                                Введите Steam ID для загрузки списка друзей
+                                Загружаем список друзей...
                             </div>
                         </div>
                     </div>
@@ -271,7 +278,7 @@
                         <!-- Populated dynamically via OpenDota recentMatches API -->
                         <div class="text-center py-20 text-gray-500 text-sm">
                             <i class="fa-solid fa-gamepad text-3xl mb-3 block text-gray-600 animate-bounce"></i>
-                            Привяжи свой аккаунт по Steam32 ID, чтобы развернуть детальную историю всех каток
+                            Загружаем матчи...
                         </div>
                     </div>
                 </div>
@@ -338,47 +345,30 @@
                 <div class="relative">
                     <pre class="bg-[#030508] border border-gray-900 rounded-xl p-5 text-xs text-rose-400/90 overflow-x-auto max-h-96 leading-relaxed font-mono" id="prompt-code-block">
 [ROLE]
-Ты — Senior Data Analyst по Dota 2, специализирующийся на аналитике хай-ММР пабликов (Dota2ProTracker) и профессиональной сцены (Liquipedia / текущие тир-1 турниры 2026 года). 
+Ты — Senior Data Analyst по Dota 2, специализирующийся на аналитике профессиональной сцены (Riyadh Masters / EWC 2026) и пабликов (Dota2ProTracker, 8k+ MMR).
 
 [OBJECTIVE]
-Твоя задача — раз в сутки собирать актуальные данные по мете, сопоставлять их с личным пулом пользователя (4k MMR, Ancient/Legend) и обновлять базу данных в формате JSON для интерактивного дашборда.
+Твоя задача — раз в сутки заходить в интернет, собирать свежую мета-аналитику по героям и турнирному тонусу команд, рассчитывать показатели и автоматически обновлять файл data.json в GitHub-репозитории пользователя без ошибок и конфликтов API.
 
-[CORE ALGORITHM - PERSONAL DIFF SCORE (PDS)]
-Для каждого героя рассчитай показатель PDS по формуле:
-PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
+[GITHUB ACCESS]
+Ты должен использовать предоставленный пользователем токен доступа (Personal Access Token) для авторизации и обновления репозитория.
+- GitHub Username: rekdekk
+- Repository Name: dota-meta-tracker
+- File Path: data.json
+- Token: ghp_ВАШ_ЛИЧНЫЙ_ТОКЕН_ДОСТУПА_ИЗ_НАСТРОЕК_GITHUB
 
-Где:
-- Pro_Rating = (Pick_Ban_Rate_Percentage + Winrate_Percentage) / 2
-- D2PT_Rating = (D2PT_Winrate * 0.8) + (D2PT_Pickrate * 0.2)
-- User_Comfort_Rating = (User_Comfort_Scale_1_to_10 * 10) * 0.4 + (User_Winrate * 0.6)
-
-[OUTPUT FORMAT]
-Результат своей работы ты должен выгрузить строго в формате JSON. Не пиши никакого лишнего текста, только валидный JSON-код. 
-Структура JSON должна содержать:
-{
-  "last_updated": "ГГГГ-ММ-ДД ЧЧ:ММ",
-  "meta_heroes": [
-    {
-      "name": "Имя Героя",
-      "role": "Carry/Mid/Offlane/Support",
-      "pds_score": 84.5,
-      "tier": "S / A / B / C",
-      "pro_trend": "high_priority / stable / falling",
-      "badge": "Скрытая имба / Комфортный пик / Мусор",
-      "winrate_d2pt": "54%",
-      "build_advice": "Краткий совет по билду или аспекту"
-    }
-  ],
-  "teams": [
-    {
-      "name": "Название Команды",
-      "power_index": 88,
-      "recent_results": "W-W-L-W-W",
-      "key_heroes": ["Hero1", "Hero2"],
-      "status": "Фаворит / Спад / Темная Лошадка"
-    }
-  ]
-}
+[CRITICAL: GITHUB SHA HANDSHAKE ALGORITHM]
+При обновлении файла data.json на GitHub ты обязан соблюдать строгий двухэтапный алгоритм, иначе запрос PUT упадет с ошибкой 409 Conflict:
+1. ЭТАП 1 (GET): Отправь HTTP GET запрос на адрес:
+   https://api.github.com/repos/rekdekk/dota-meta-tracker/contents/data.json
+   с заголовком Authorization: Bearer ghp_ВАШ_ЛИЧНЫЙ_ТОКЕН_ДОСТУПА_ИЗ_НАСТРОЕК_GITHUB.
+2. ЭТАП 2 (EXTRACT): Из полученного JSON-ответа вытащи значение поля "sha".
+3. ЭТАП 3 (PUT): Сформируй HTTP PUT запрос на тот же адрес. В теле запроса отправь JSON-объект:
+   {
+     "message": "Daily meta update by Gemini Spark Agent",
+     "content": "BASE64_ENCODED_JSON_STRING",
+     "sha": "ВСТАВЬ_ВЫТАЩЕННЫЙ_SHA_ИЗ_ЭТАПА_2"
+   }
                     </pre>
                 </div>
             </div>
@@ -395,7 +385,8 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 pub: 30,
                 comfort: 50
             },
-            steamId: '',
+            steamId: '872107609',
+            githubUsername: 'rekdekk',
             playerProfile: null,
             userComfortPool: [
                 { id: 11, name: "Nevermore", rawName: "nevermore", localizedName: "Shadow Fiend", winrate: 56.5, games: 120, userComfort: 9 },
@@ -404,7 +395,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 { id: 86, name: "Rubick", rawName: "rubick", localizedName: "Rubick", winrate: 48.2, games: 250, userComfort: 10 },
                 { id: 18, name: "Sven", rawName: "sven", localizedName: "Sven", winrate: 45.1, games: 40, userComfort: 4 }
             ],
-            // Базовые мета-герои (при первом открытии в демо-режиме)
             metaHeroes: [
                 { name: "Shadow Fiend", role: "Mid", pds_score: 85.0, tier: "S", pro_trend: "high_priority", badge: "Комфортный пик", winrate_d2pt: "54%", build_advice: "Аспект Shadow Mire. Arcane -> Blink -> Eul." },
                 { name: "Windranger", role: "Carry", pds_score: 81.2, tier: "S", pro_trend: "high_priority", badge: "Скрытая имба", winrate_d2pt: "52.5%", build_advice: "Gleipnir -> BKB -> Aghanim." },
@@ -412,20 +402,18 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 { name: "Rubick", role: "Support", pds_score: 71.1, tier: "A", pro_trend: "stable", badge: "Стабильный выбор", winrate_d2pt: "49.5%", build_advice: "Arcane -> Aether Lens -> Blink." },
                 { name: "Sven", role: "Carry", pds_score: 48.3, tier: "C", pro_trend: "falling", badge: "Не в мете", winrate_d2pt: "45%", build_advice: "Попробуй изменить сборку или дождаться патча." }
             ],
-            // Форма команд на про-сцене
             teams: [
-                { name: "Team Spirit", power_index: 92, recent_results: "W-W-W-L-W", key_heroes: ["Magnus", "Lina"], status: "Фаворит" },
-                { name: "Team Falcons", power_index: 95, recent_results: "W-W-W-W-L", key_heroes: ["Razor", "Timbersaw"], status: "Фаворит" },
-                { name: "Gaimin Gladiators", power_index: 84, recent_results: "W-L-W-W-L", key_heroes: ["Broodmother", "Pangolier"], status: "Темная Лошадка" },
-                { name: "BetBoom Team", power_index: 78, recent_results: "L-W-W-L-W", key_heroes: ["Storm Spirit", "Doom"], status: "Стабильно" },
-                { name: "Team Liquid", power_index: 89, recent_results: "W-W-L-W-W", key_heroes: ["Rubick", "Faceless Void"], status: "Фаворит" }
+                { name: "Team Yandex", power_index: 96, recent_results: "W-W-W-W-W", key_heroes: ["Centaur", "Beastmaster"], status: "Абсолютный Фаворит" },
+                { name: "Team Spirit", power_index: 88, recent_results: "W-W-W-L-W", key_heroes: ["Magnus", "Lina"], status: "Фаворит" },
+                { name: "Team Falcons", power_index: 92, recent_results: "W-W-W-W-L", key_heroes: ["Razor", "Timbersaw"], status: "Фаворит" },
+                { name: "Gaimin Gladiators", power_index: 80, recent_results: "W-L-W-W-L", key_heroes: ["Broodmother", "Pangolier"], status: "Стабильно" },
+                { name: "BetBoom Team", power_index: 75, recent_results: "L-W-W-L-W", key_heroes: ["Storm Spirit", "Doom"], status: "Спад" }
             ],
-            heroMapping: {}, // Map ID -> Name
+            heroMapping: {},
             recentMatches: [],
             peers: []
         };
 
-        // Таблица соответствия ID героев Dota 2
         const localHeroList = [
             { id: 1, name: "antimage", localized: "Anti-Mage" }, { id: 2, name: "axe", localized: "Axe" },
             { id: 3, name: "bane", localized: "Bane" }, { id: 4, name: "bloodseeker", localized: "Bloodseeker" },
@@ -445,15 +433,60 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
         window.onload = function() {
             initHeroMapping();
             initEnemySelectors();
+            
+            // Если в кэше пусто, записываем дефолты рекдекка
+            if (!localStorage.getItem('steam_id')) {
+                localStorage.setItem('steam_id', '872107609');
+            }
+            if (!localStorage.getItem('github_username')) {
+                localStorage.setItem('github_username', 'rekdekk');
+            }
+
+            const savedSteamId = localStorage.getItem('steam_id');
+            const savedGithub = localStorage.getItem('github_username');
+
+            if (savedSteamId) {
+                document.getElementById('steam-id-input').value = savedSteamId;
+                loadOpenDotaStats();
+            }
+            if (savedGithub) {
+                document.getElementById('github-username-input').value = savedGithub;
+                loadGitHubData();
+            }
+
             renderAll();
             showToast("Система готова к аналитике!", "info");
         };
+
+        async function loadGitHubData() {
+            const username = document.getElementById('github-username-input').value.trim();
+            if (!username) {
+                showToast("Введите имя пользователя GitHub", "warning");
+                return;
+            }
+            showToast("Запрашиваем ИИ-базу данных с GitHub...", "info");
+            try {
+                const res = await fetch(`https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json`);
+                if (!res.ok) throw new Error("Файл data.json не найден");
+                const data = await res.json();
+                
+                if (data.meta_heroes && data.teams) {
+                    state.metaHeroes = data.meta_heroes;
+                    state.teams = data.teams;
+                    renderAll();
+                    showToast(`Аналитика синхронизирована! Дата: ${data.last_updated || 'не указана'}`, "success");
+                    localStorage.setItem('github_username', username);
+                }
+            } catch (e) {
+                console.error(e);
+                showToast("Файл data.json не найден. Спарк еще не создал его в твоем репозитории!", "error");
+            }
+        }
 
         function initHeroMapping() {
             localHeroList.forEach(h => {
                 state.heroMapping[h.id] = { name: h.localized, raw: h.name };
             });
-            // Populate Dropdown for adding heroes
             const select = document.getElementById('add-hero-select');
             select.innerHTML = '';
             localHeroList.forEach(h => {
@@ -507,7 +540,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
             showToast("Запрашиваем данные с серверов OpenDota...", "info");
 
             try {
-                // 1. Загрузка профиля
                 const profileRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}`);
                 if (!profileRes.ok) throw new Error("Профиль не найден");
                 const profileData = await profileRes.json();
@@ -521,14 +553,15 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                     document.getElementById('sync-status-indicator').className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
                     document.getElementById('sync-status-text').textContent = "Синхронизировано";
                     document.getElementById('sync-status-text').className = "text-xs text-emerald-400 font-bold uppercase tracking-widest";
+                    
+                    localStorage.setItem('steam_id', state.steamId);
                 }
 
-                // 2. Загрузка героев комфорта игрока
                 const heroesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/heroes`);
                 const heroesData = await heroesRes.json();
                 if (Array.isArray(heroesData)) {
                     state.userComfortPool = heroesData
-                        .filter(h => h.games > 5)
+                        .filter(h => h.games > 4)
                         .slice(0, 8)
                         .map(h => {
                             const mapHero = state.heroMapping[h.hero_id] || { name: `Hero ${h.hero_id}`, raw: "nevermore" };
@@ -544,20 +577,17 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                         });
                 }
 
-                // 3. Загрузка последних 20 матчей
                 const matchesRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/recentMatches`);
                 const matchesData = await matchesRes.json();
                 if (Array.isArray(matchesData)) {
                     state.recentMatches = matchesData.slice(0, 20);
                 }
 
-                // 4. Загрузка Тиммейтов / Друзей (Peers)
                 const peersRes = await fetch(`https://api.opendota.com/api/players/${state.steamId}/peers`);
                 const peersData = await peersRes.json();
                 if (Array.isArray(peersData)) {
-                    // Оставляем только тех, кто имеет имя в Steam и сыграл с нами хотя бы 5 игр
                     state.peers = peersData
-                        .filter(p => p.personaname && p.with_games >= 5)
+                        .filter(p => p.personaname && p.with_games >= 3)
                         .slice(0, 8);
                 }
 
@@ -587,7 +617,7 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 item.className = "flex items-center justify-between p-2.5 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-slate-700/80 transition-all";
                 item.innerHTML = `
                     <div class="flex items-center gap-2">
-                        <img class="w-8 h-8 rounded border border-slate-700 object-cover" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.rawName}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.rawName[0]}'">
+                        <img class="w-8 h-8 rounded border border-slate-700 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${hero.rawName}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.rawName[0]}'">
                         <div>
                             <p class="text-xs font-bold text-white">${hero.localizedName}</p>
                             <p class="text-[10px] text-gray-400">Винрейт: <span class="font-bold text-emerald-400">${hero.winrate}%</span> (${hero.games} игр)</p>
@@ -607,19 +637,16 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
             tbody.innerHTML = '';
             const roleFilter = document.getElementById('role-filter').value;
 
-            // Расчет Personal Diff Score
             const computedList = state.metaHeroes.map(meta => {
-                // Ищем этого героя в пуле комфорта пользователя
                 const comfortMatch = state.userComfortPool.find(c => c.localizedName.toLowerCase() === meta.name.toLowerCase());
                 
-                const comfortVal = comfortMatch ? comfortMatch.userComfort * 10 : 30; // дефолтный комфорт если не играем на нем
-                const personalWr = comfortMatch ? comfortMatch.winrate : 45.0; // дефолтный винрейт
+                const comfortVal = comfortMatch ? comfortMatch.userComfort * 10 : 30;
+                const personalWr = comfortMatch ? comfortMatch.winrate : 45.0;
 
                 const d2ptWr = parseFloat(meta.winrate_d2pt.replace('%', '')) || 50.0;
                 
-                // Формула PDS
                 const proRating = meta.pro_trend === 'high_priority' ? 95 : (meta.pro_trend === 'stable' ? 70 : 40);
-                const pubRating = d2ptWr * 1.5; // маппинг в шкалу
+                const pubRating = d2ptWr * 1.5;
                 const userComfortRating = (comfortVal * 0.4) + (personalWr * 0.6);
 
                 const finalPds = (
@@ -636,7 +663,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 };
             });
 
-            // Сортировка по PDS
             computedList.sort((a, b) => b.pds - a.pds);
 
             computedList.forEach(hero => {
@@ -645,14 +671,13 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 const tr = document.createElement('tr');
                 tr.className = "border-b border-gray-900/60 hover:bg-[#0c111e]/40 transition-colors";
                 
-                // Определение цвета для PDS
                 let pdsColorClass = "text-rose-500 font-extrabold";
                 if (hero.pds >= 75) pdsColorClass = "text-emerald-400 font-black";
                 else if (hero.pds >= 60) pdsColorClass = "text-amber-400 font-bold";
 
                 tr.innerHTML = `
                     <td class="py-3 pl-2 flex items-center gap-2">
-                        <img class="w-8 h-8 rounded border border-slate-800 object-cover" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.name.toLowerCase().replace(/\s+/g, '_')}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.name[0]}'">
+                        <img class="w-8 h-8 rounded border border-slate-800 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${hero.name.toLowerCase().replace(/\s+/g, '_')}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${hero.name[0]}'">
                         <div>
                             <span class="font-bold text-white block">${hero.name}</span>
                             <span class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded-full uppercase">${hero.badge}</span>
@@ -681,7 +706,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
             let totalKills = 0, totalDeaths = 0, totalAssists = 0;
 
             state.recentMatches.forEach(match => {
-                // Определение выигрыша
                 const isRadiant = match.player_slot < 128;
                 const isWin = (isRadiant && match.radiant_win) || (!isRadiant && !match.radiant_win);
                 if (isWin) winCount++;
@@ -690,18 +714,16 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 totalDeaths += match.deaths;
                 totalAssists += match.assists;
 
-                // Маппинг героя
                 const heroMapped = state.heroMapping[match.hero_id] || { name: `Герой ${match.hero_id}`, raw: "nevermore" };
                 const matchDiv = document.createElement('div');
                 matchDiv.className = `flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-slate-900/30 border ${isWin ? 'border-emerald-500/20 hover:border-emerald-500/40' : 'border-rose-500/20 hover:border-rose-500/40'} transition-all gap-4`;
 
-                // Подсчет времени
                 const date = new Date(match.start_time * 1000);
                 const timeStr = date.toLocaleDateString("ru-RU", { day: 'numeric', month: 'short' });
 
                 matchDiv.innerHTML = `
                     <div class="flex items-center gap-3">
-                        <img class="w-12 h-12 rounded-lg border border-slate-800 object-cover" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroMapped.raw}.png" onerror="this.src='https://placehold.co/48x48/1a1f29/fff?text=${heroMapped.name[0]}'">
+                        <img class="w-12 h-12 rounded-lg border border-slate-800 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${heroMapped.raw}.png" onerror="this.src='https://placehold.co/48x48/1a1f29/fff?text=${heroMapped.name[0]}'">
                         <div>
                             <div class="flex items-center gap-2">
                                 <span class="font-bold text-white text-sm">${heroMapped.name}</span>
@@ -731,7 +753,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 container.appendChild(matchDiv);
             });
 
-            // Обновление KPI-панели
             const winratePct = ((winCount / state.recentMatches.length) * 100).toFixed(0);
             document.getElementById('stats-winrate-pct').textContent = `${winratePct}%`;
             
@@ -808,7 +829,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
             const suggestionsContainer = document.getElementById('draft-suggestions-results');
             suggestionsContainer.innerHTML = '';
 
-            // Собираем выбранных врагов
             const selectedEnemies = [];
             for (let i = 1; i <= 5; i++) {
                 const val = document.getElementById(`enemy-pick-${i}`).value;
@@ -820,14 +840,13 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                 return;
             }
 
-            // Имитация ИИ-калькуляции на основе твоего PDS
             showToast("ИИ-Симулятор рассчитывает наилучшие контр-пики...", "info");
 
             setTimeout(() => {
                 const suggestions = [
-                    { name: "Centaur Warrunner", role: "Offlane", reason: "Отлично контрит текущий тонкий пик врага, поглощая инициацию.", pds: 84.5 },
-                    { name: "Windranger", role: "Carry", reason: "Убегает от фокуса через Windrun и способна шотнуть ключевых саппортов.", pds: 81.2 },
-                    { name: "Shadow Fiend", role: "Mid", reason: "Обеспечивает взрывной урон в тимфайтах и имеет огромный комфорт по твоей статистике.", pds: 79.0 }
+                    { name: "Centaur Warrunner", role: "Offlane", reason: "Отлично поглощает инициацию соперников, блокирует врыв через Counterstrike.", pds: 84.5 },
+                    { name: "Windranger", role: "Carry", reason: "Имеет встроенный эскейп от физического урона, легко шотнет саппортов.", pds: 81.2 },
+                    { name: "Shadow Fiend", role: "Mid", reason: "Взрывной урон в тимфайтах и огромный комфорт по твоей статистике.", pds: 79.0 }
                 ];
 
                 suggestionsContainer.innerHTML = '<h4 class="text-sm font-bold text-gray-300 mb-2">Рекомендуемые герои из твоего пула:</h4>';
@@ -836,7 +855,7 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
                     block.className = "p-4 rounded-xl bg-slate-900/50 border border-emerald-500/10 hover:border-emerald-500/30 transition-all flex justify-between items-center";
                     block.innerHTML = `
                         <div class="flex gap-3 items-center">
-                            <img class="w-10 h-10 rounded border border-slate-800 object-cover" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${item.name.toLowerCase().replace(/\s+/g, '_')}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${item.name[0]}'">
+                            <img class="w-10 h-10 rounded border border-slate-800 object-cover" src="https://cdn.cloudflaresteamstatic.com/apps/dota2/images/dota_react/heroes/${item.name.toLowerCase().replace(/\s+/g, '_')}.png" onerror="this.src='https://placehold.co/40x40/1a1f29/fff?text=${item.name[0]}'">
                             <div>
                                 <span class="font-bold text-white text-sm block">${item.name} (${item.role})</span>
                                 <span class="text-xs text-gray-400 leading-relaxed mt-0.5 block">${item.reason}</span>
@@ -857,7 +876,6 @@ PDS = (Pro_Rating * 0.20) + (D2PT_Rating * 0.30) + (User_Comfort_Rating * 0.50)
             const pub = parseInt(document.getElementById('weight-pub').value);
             const comfort = parseInt(document.getElementById('weight-comfort').value);
 
-            // Автоматическая нормализация
             const sum = pro + pub + comfort;
             state.weights.pro = Math.round((pro / sum) * 100);
             state.weights.pub = Math.round((pub / sum) * 100);
