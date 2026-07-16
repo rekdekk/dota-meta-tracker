@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dota 2 Absolute Meta Tracker</title>
+    <!-- Tailwind CSS for high-performance layout styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for gaming metrics and navigation icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium fonts integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -428,7 +431,7 @@
         const state = {
             activeTab: 'hero-tab',
             weights: { pro: 20, pub: 30, comfort: 50 },
-            githubUsername: 'rekdekk', // Никнейм жестко зашит
+            githubUsername: 'rekdekk', // Hardcoded repository target
             playerProfile: null,
             userComfortPool: [],
             metaHeroes: [],
@@ -475,7 +478,12 @@
                 const res = await fetch(url, { cache: "no-store" });
                 if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
                 const text = await res.text();
-                if (text.trim().startsWith('<')) throw new Error("Сервер вернул HTML-страницу.");
+                if (!text || text.trim() === "") {
+                    throw new Error("Empty payload returned from API endpoint.");
+                }
+                if (text.trim().startsWith('<')) {
+                    throw new Error("Server returned an HTML document instead of valid JSON.");
+                }
                 return JSON.parse(text);
             } catch (err) {
                 console.warn(`[SafeFetch Error] Failed to load ${url}:`, err);
@@ -536,16 +544,28 @@
         }
 
         function loadPoolFromStorage() {
-            const saved = localStorage.getItem('dota_comfort_pool');
-            state.userComfortPool = saved ? JSON.parse(saved) : [
-                { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
-                { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
-            ];
+            try {
+                const saved = localStorage.getItem('dota_comfort_pool');
+                state.userComfortPool = saved ? JSON.parse(saved) : [
+                    { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
+                    { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
+                ];
+            } catch (e) {
+                console.error("Local Storage is corrupt or locked. Restoring baseline.", e);
+                state.userComfortPool = [
+                    { id: 11, localized_name: "Shadow Fiend", winrate: 56, games: 80 },
+                    { id: 21, localized_name: "Windranger", winrate: 53, games: 45 }
+                ];
+            }
             renderComfortPool();
         }
 
         function savePoolToStorage() {
-            localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
+            try {
+                localStorage.setItem('dota_comfort_pool', JSON.stringify(state.userComfortPool));
+            } catch (e) {
+                console.error("Failed to write comfort pool state.", e);
+            }
             renderComfortPool();
             renderHeroTable();
         }
@@ -1012,7 +1032,6 @@
                             </div>
                         </div>
 
-                        <!-- Datdota-Grade Advanced Stats Card Section -->
                         <div class="grid grid-cols-2 gap-2 text-[10px] font-mono border-t border-gray-900 pt-3 pb-3">
                             <div class="bg-black/30 p-2 rounded border border-gray-800">
                                 <span class="text-gray-500 block">Smoke Success</span>
