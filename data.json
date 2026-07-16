@@ -1,0 +1,24 @@
+{
+  "last_updated": "Сейчас",
+  "meta_heroes": [
+    {
+      "name": "Shadow Fiend",
+      "role": "Mid",
+      "pds_score": 85.0,
+      "tier": "S",
+      "pro_trend": "high_priority",
+      "badge": "Комфортный пик",
+      "winrate_d2pt": "54%",
+      "build_advice": "Аспект Shadow Mire. Собирай Arcane Boots -> Blink -> Eul."
+    }
+  ],
+  "teams": [
+    {
+      "name": "Team Spirit",
+      "power_index": 90,
+      "recent_results": "W-W-W-L-W",
+      "key_heroes": ["Magnus", "Lina"],
+      "status": "Фаворит"
+    }
+  ]
+}
