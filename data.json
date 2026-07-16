@@ -1,1084 +1,427 @@
 {
-  "last_updated": "2026-07-16 19:05 (OpenDota Servers)",
+  "last_updated": "16.07.2026 20:02 UTC",
   "meta_heroes": [
     {
-      "name": "Anti-Mage",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Axe",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "30",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Bane",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.0%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "34",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Bloodseeker",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.5%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Crystal Maiden",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.4%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Drow Ranger",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.0%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "49",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Earthshaker",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "2",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Juggernaut",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.2%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Mirana",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "3",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Morphling",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "46.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
       "name": "Shadow Fiend",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.1%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "64",
+      "role": "Mid",
       "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
+      "winrate_d2pt": "50.5%",
+      "winrate_4k": "48.4%",
+      "pickrate_d2pt": "15.3%",
+      "banrate_pro": "82.0%",
+      "innate_ability": "Necromastery — атаки накапливают души, увеличивая урон с руки. Души также усиливают урон от Shadowraze, создавая мощный гибридный потенциал.",
       "core_items": [
+        "arcane_boots",
+        "blink",
         "black_king_bar",
-        "blink"
+        "ultimate_scepter"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Phantom Lancer",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "7",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
+      "item_justifications": {
+        "arcane_boots": "Решает проблему жесткого дефицита маны в начале игры. Позволяет непрерывно спамить тройной койл для быстрой зачистки пачек крипов и лесных лагерей.",
+        "blink": "Критически важный артефакт инициации. Позволяет мгновенно ворваться в центр драки или прыгнуть вплотную к цели для моментального прокаста Requiem of Souls.",
+        "black_king_bar": "Абсолютно обязателен. Без него враги легко собьют каст ультимейта или сотрут SF магическим прокастом до того, как он нанесет первый удар.",
+        "ultimate_scepter": "Расширяет лимит душ, увеличивая физический урон на лейтовой стадии и существенно поднимая плотность SF за счет дополнительных характеристик."
+      },
+      "best_with": [
+        "Magnus",
+        "Enigma",
+        "Tidehunter"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Puck",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "43",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
+      "counters": [
+        "Templar Assassin",
+        "Viper",
+        "Pudge"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Pudge",
-      "role": "Disabler",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.2%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Razor",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "4",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Sand King",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "46.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Storm Spirit",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "47.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "11",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Sven",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Tiny",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "44.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "34",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Vengeful Spirit",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
+      "laning_winrate": "54.1%",
+      "versatility": "4.5",
+      "damage_ratio": {
+        "phys": 55,
+        "mag": 45,
+        "pure": 0
+      },
+      "power_spike": "Мидгейм (15-25 мин)",
+      "skill_priority": "Q > W > E",
+      "skill_guide": "Максимум Shadowraze (Q) к 7 уровню жизненно необходим для контроля линии. В патче 7.41+ игроки часто берут прокачку характеристик (плюсов) вместо Presence of the Dark Lord (E) на уровнях 11-13. Это дает SF +150 здоровья и дополнительную ману, что критично против агрессивных мидеров с сильным берст-уроном.",
+      "talents_guide": {
+        "10": "Левый: +25 к скорости атаки — позволяет быстрее фармить нейтралов и реализовывать души на ранней стадии.",
+        "15": "Левый: +115 к урону от Shadowraze — колоссальный буст магического прокаста, с которым пачки крипов умирают за 2 койла.",
+        "20": "Правый: +3.0 сек страха от Requiem of Souls — увеличивает время контроля в массовых тимфайтах.",
+        "25": "Левый: Койлы накладывают урон от атак — ультимативный лейт-выбор, стирающий врагов за секунды."
+      }
     },
     {
       "name": "Windranger",
       "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.4%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "15",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
+      "tier": "A",
+      "winrate_d2pt": "50.5%",
+      "winrate_4k": "48.3%",
+      "pickrate_d2pt": "11.2%",
+      "banrate_pro": "38.0%",
+      "innate_ability": "Easy Breeze — скорость передвижения WR больше не ограничивается лимитом во время использования способности Windrun, позволяя совершать ультра-быстрые маневры.",
       "core_items": [
+        "maelstrom",
         "black_king_bar",
-        "blink"
+        "gleipnir",
+        "manta"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
+      "item_justifications": {
+        "maelstrom": "Идеально синергирует с безумной скоростью атаки от Focus Fire, вызывая постоянные цепные молнии, и значительно ускоряет фарм лайна.",
+        "black_king_bar": "Позволяет зажать Focus Fire в ключевую цель без страха получить стан, сайленс или дизарм от вражеских саппортов.",
+        "gleipnir": "Фиксирует врагов на месте перед кастом Focus Fire, давая дополнительный контроль области и надежность в драках.",
+        "manta": "Дает возможность сбросить безмолвие или замедление без использования BKB, а иллюзии помогают эффективно пушить башни."
+      },
+      "best_with": [
+        "Treant Protector",
+        "Crystal Maiden",
+        "Grimstroke"
+      ],
+      "counters": [
+        "Axe",
+        "Bloodseeker",
+        "Centaur Warrunner"
+      ],
+      "laning_winrate": "51.8%",
+      "versatility": "6.2",
+      "damage_ratio": {
+        "phys": 75,
+        "mag": 25,
+        "pure": 0
+      },
+      "power_spike": "Лейтгейм (35+ мин)",
+      "skill_priority": "W > E > Q",
+      "skill_guide": "Powershot (W) всегда максится в первую очередь для давления на линии. Игроки забирают 'плюсы' (Attributes) на уровнях 4 и 5 вместо прокачки Shackleshot (Q), если линия пассивная. Это укрепляет базовый урон WR и стабилизирует её манапул для непрерывного спама стрелой.",
+      "talents_guide": {
+        "10": "Левый: +1.5 сек длительности Windrun — повышает общую выживаемость против физического урона.",
+        "15": "Правый: -2.0 сек перезарядки Powershot — позволяет спамить стрелами в затяжных осадках хайграунда.",
+        "20": "Левый: +15% к шансу срабатывания эффектов атаки в Focus Fire — колоссальный разгон урона.",
+        "25": "Правый: Focus Fire игнорирует увороты — решает проблему против бабочек у вражеских керри."
+      }
+    },
+    {
+      "name": "Centaur Warrunner",
+      "role": "Offlane",
+      "tier": "A",
+      "winrate_d2pt": "50.5%",
+      "winrate_4k": "50.8%",
+      "pickrate_d2pt": "14.8%",
+      "banrate_pro": "54.0%",
+      "innate_ability": "Rawhide — Кентавр навсегда увеличивает максимальное здоровье за каждого убитого юнита, превращаясь в неубиваемую стену к поздней стадии игры.",
+      "core_items": [
+        "phase_boots",
+        "blink",
+        "crimson_guard",
+        "pipe_of_insight"
+      ],
+      "item_justifications": {
+        "phase_boots": "Дает броню, которой Кентавру часто не хватает на старте, и активную скорость для сокращения дистанции.",
+        "blink": "Фундаментальный предмет. Без быстрого блинка Hoof Stomp практически невозможно нажать по мобильным героям.",
+        "crimson_guard": "Блокирует гигантский объем физического урона. Жизненно необходим против иллюзионистов и скорострельных керри.",
+        "pipe_of_insight": "Дарует плотный магический барьер всей команде, защищая от прокастов Зевса или Лины в ранних мидгейм стычках."
+      },
+      "best_with": [
+        "Rubick",
+        "Grimstroke",
+        "Treant Protector"
+      ],
+      "counters": [
+        "Lifestealer",
+        "Necrophos",
+        "Viper"
+      ],
+      "laning_winrate": "52.9%",
       "versatility": "5.0",
-      "power_spike": "Динамический расчет"
+      "damage_ratio": {
+        "phys": 35,
+        "mag": 35,
+        "pure": 30
+      },
+      "power_spike": "Ранняя доминация (10-20 мин)",
+      "skill_priority": "W > Q > E",
+      "skill_guide": "Максим Double Edge (W) для взрывного харасса. Брать плюсы вместо Retaliate (E) на уровнях 12-14 рекомендуется в играх, где враг бьет исключительно магией, поскольку пассивная броня от пассивки в таких условиях бесполезна, а характеристики дадут силу (увеличив урон с W) и здоровье.",
+      "talents_guide": {
+        "10": "Левый: +15 к восстановлению здоровья — сильный разгон регенерации для удержания линии.",
+        "15": "Правый: +100 к урону от Double Edge — позволяет стирать тонких саппортов за один Hoof Stomp + W.",
+        "20": "Левый: +1.5 сек длительности оглушения от Hoof Stomp — критическое увеличение контроля в тимфайтах.",
+        "25": "Правый: Retaliate наносит урон в процентах от силы Кентавра — превращает героя в смертоносного ежа."
+      }
+    },
+    {
+      "name": "Sven",
+      "role": "Carry",
+      "tier": "A",
+      "winrate_d2pt": "50.5%",
+      "winrate_4k": "50.4%",
+      "pickrate_d2pt": "13.7%",
+      "banrate_pro": "5.0%",
+      "innate_ability": "Vanquisher — атаки Свена наносят на 15% больше физического урона по целям, находящимся под эффектом оглушения (оглушенным им самим или союзниками).",
+      "core_items": [
+        "power_treads",
+        "blink",
+        "black_king_bar",
+        "greater_crit"
+      ],
+      "item_justifications": {
+        "power_treads": "Дает переключение атрибутов (статов) для экономии маны при касте стана и приличную скорость атаки для фарма.",
+        "blink": "Единственный способ для маломобильного Свена мгновенно оказаться на лице врага под God's Strength.",
+        "black_king_bar": "Защищает от вражеского кайта (замедлений, алебард, станов), позволяя наносить чистый урон под ультимейтом.",
+        "greater_crit": "Множит гигантский урон от God's Strength на критические показатели, стирая героев за 2-3 плотных удара."
+      },
+      "best_with": [
+        "Magnus",
+        "Crystal Maiden",
+        "Io"
+      ],
+      "counters": [
+        "Lifestealer",
+        "Razor",
+        "Viper"
+      ],
+      "laning_winrate": "50.1%",
+      "versatility": "3.8",
+      "damage_ratio": {
+        "phys": 100,
+        "mag": 0,
+        "pure": 0
+      },
+      "power_spike": "Мидгейм (20-30 мин)",
+      "skill_priority": "W > E > Q",
+      "skill_guide": "Great Cleave (W) максится для фарма. Sven испытывает колоссальный голод по мане. Настоящие профессионалы берут 'плюсы' (Attributes) на 2 и 4 уровнях вместо ранней раскачки Storm Hammer. Это расширяет манапул Свена, позволяя ему нажать стан и щит Warcry в одной драке, а также повышает плотность.",
+      "talents_guide": {
+        "10": "Левый: +3 сек к длительности Warcry — отличный способ держать броню на всей команде в затяжном файте.",
+        "15": "Правый: +15% к вампиризму — заменяет покупку маски и освобождает важный слот под лейт-артефакты.",
+        "20": "Левый: +10% к урону от God's Strength — колоссальный буст к физической атаке.",
+        "25": "Правый: Storm Hammer развеивает положительные эффекты — снимает Ghost Scepter и Aeon Disk с саппортов."
+      }
+    },
+    {
+      "name": "Tiny",
+      "role": "Mid",
+      "tier": "A",
+      "winrate_d2pt": "50.5%",
+      "winrate_4k": "44.4%",
+      "pickrate_d2pt": "13.8%",
+      "banrate_pro": "52.0%",
+      "innate_ability": "Craggy Exterior — пассивно увеличивает физическую броню Тини на величину, пропорциональную его текущей силе, делая его крайне плотным против физического урона.",
+      "core_items": [
+        "blink",
+        "power_treads",
+        "black_king_bar",
+        "echo_sabre"
+      ],
+      "item_justifications": {
+        "blink": "Главный инструмент для проведения комбинации Avalanche + Toss, стирающей любого героя за долю секунды.",
+        "power_treads": "Дает плотность и дополнительный манапул при переключении статов перед прокастом.",
+        "black_king_bar": "Позволяет свободно швырять врагов и бить рукой с дерева в замесах без угрозы получить встречный контроль.",
+        "echo_sabre": "Двойной быстрый удар с дерева наносит колоссальный урон и мгновенно восполняет регенерацию маны."
+      },
+      "best_with": [
+        "Rubick",
+        "Io",
+        "Magnus"
+      ],
+      "counters": [
+        "Lifestealer",
+        "Necrophos",
+        "Viper"
+      ],
+      "laning_winrate": "55.2%",
+      "versatility": "7.0",
+      "damage_ratio": {
+        "phys": 65,
+        "mag": 35,
+        "pure": 0
+      },
+      "power_spike": "Ранняя агрессия (10-20 мин)",
+      "skill_priority": "Q > W > E",
+      "skill_guide": "Avalanche (Q) максится первым. На 12-13 уровнях игроки часто игнорируют прокачку пассивного броска дерева и забирают характеристики ('плюсы'). Это дает Tiny ценную ману на каст Avalanche + Toss и добавляет здоровья, стабилизируя его плотность.",
+      "talents_guide": {
+        "10": "Левый: +200 к здоровью — делает и без того плотного каменного голема еще более живучим.",
+        "15": "Правый: +15% к урону от Toss — колоссально поднимает взрывной магический урон комбинации.",
+        "20": "Левый: Avalanche применяет урон от атак — мощный гибридный талант для перехода в лейт-керри.",
+        "25": "Правый: Стойкость к эффектам во время Grow +30% — практически сводит на нет вражеские станы."
+      }
     },
     {
       "name": "Zeus",
-      "role": "Nuker",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
+      "role": "Mid",
       "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Kunkka",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "2",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Lina",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "5",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Lion",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.9%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "5",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Shadow Shaman",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
+      "winrate_d2pt": "50.5%",
       "winrate_4k": "51.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
+      "pickrate_d2pt": "11.3%",
+      "banrate_pro": "4.0%",
+      "innate_ability": "Static Field — любые заклинания Зевса наносят дополнительный урон в процентах от текущего здоровья цели, что делает его невероятно сильным против плотных героев.",
       "core_items": [
-        "black_king_bar",
-        "blink"
+        "arcane_boots",
+        "phylactery",
+        "ultimate_scepter",
+        "refresher"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Slardar",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.2%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "8",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
+      "item_justifications": {
+        "arcane_boots": "Решает извечную проблему дефицита маны от постоянного спама Arc Lightning на линии и в лесу.",
+        "phylactery": "Идеальный предмет. Добавляет замедление и чистый урон к Lightning Bolt, облегчая ганки.",
+        "ultimate_scepter": "Создает Nimbus в любой точке карты, позволяя дистанционно прерывать телепорты и помогать команде.",
+        "refresher": "Позволяет дать двойной ультимейт в лейте, мгновенно снося половину здоровья всей вражеской команде."
+      },
+      "best_with": [
+        "Treant Protector",
+        "Crystal Maiden",
+        "Bloodseeker"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Tidehunter",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "10",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
+      "counters": [
+        "Anti-Mage",
+        "Viper",
+        "Pudge"
       ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Witch Doctor",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.5%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "3",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Lich",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "52.1%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "3",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Riki",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.9%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Enigma",
-      "role": "Disabler",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "21",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Tinker",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Sniper",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.0%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "2",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Necrophos",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.1%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "19",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Warlock",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "47.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Beastmaster",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "43.4%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "28",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Queen of Pain",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "46.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "2",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Venomancer",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "46.9%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Faceless Void",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "1",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Wraith King",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "53.4%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Death Prophet",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "47.3%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Phantom Assassin",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Pugna",
-      "role": "Nuker",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "50.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Templar Assassin",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "45.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "5",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Viper",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.7%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "26",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Luna",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.2%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Dragon Knight",
-      "role": "Carry",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "48.8%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "2",
-      "tier": "B",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Dazzle",
-      "role": "Support",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "51.6%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "0",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
-    },
-    {
-      "name": "Clockwerk",
-      "role": "Initiator",
-      "winrate_d2pt": "50.0%",
-      "winrate_4k": "49.5%",
-      "pickrate_d2pt": "0",
-      "banrate_pro": "18",
-      "tier": "A",
-      "innate_ability": "Официальная статистика патча 7.41+",
-      "core_items": [
-        "black_king_bar",
-        "blink"
-      ],
-      "best_with": [],
-      "counters": [],
-      "laning_winrate": "50.0%",
-      "versatility": "5.0",
-      "power_spike": "Динамический расчет"
+      "laning_winrate": "51.8%",
+      "versatility": "3.5",
+      "damage_ratio": {
+        "phys": 0,
+        "mag": 100,
+        "pure": 0
+      },
+      "power_spike": "Лейтгейм (35+ мин)",
+      "skill_priority": "Q > W > E",
+      "skill_guide": "Arc Lightning (Q) всегда берется на первом уровне для ластхита. Качать 'плюсы' рекомендуется вместо Heavenly Jump (E), если враг не имеет возможности до тебя добраться. Характеристики дадут Зевсу плотность и интеллект, увеличивающий урон от заклинаний.",
+      "talents_guide": {
+        "10": "Левый: +200 к дальности применения Lightning Bolt — позволяет безопасно выбивать варды и бить издалека.",
+        "15": "Правый: +1.5 сек к длительности замедления от Heavenly Jump — отличный защитный инструмент.",
+        "20": "Левый: +100 к урону от Lightning Bolt — превращает точечную молнию в смертоносное оружие.",
+        "25": "Правый: Nimbus накладывает Arc Lightning при ударах — колоссальный лейт-контроль и урон."
+      }
     }
   ],
   "teams": [
     {
-      "name": "TEAM VISION",
-      "power_index": 1553,
-      "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 65.7%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1553.3",
-      "key_heroes": [],
-      "last_opponents": [],
-      "datdota_smoke_success": "61%",
-      "datdota_first_blood": "72%",
-      "datdota_ward_efficiency": "2.17x",
-      "datdota_buyback_discipline": "85%"
-    },
-    {
       "name": "Team Yandex",
-      "power_index": 1539,
-      "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 59.7%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1539.3",
-      "key_heroes": [],
-      "last_opponents": [],
-      "datdota_smoke_success": "64%",
-      "datdota_first_blood": "53%",
-      "datdota_ward_efficiency": "1.99x",
-      "datdota_buyback_discipline": "74%"
-    },
-    {
-      "name": "Cloud9",
-      "power_index": 1492,
-      "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 57.4%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1492.3",
-      "key_heroes": [],
-      "last_opponents": [],
-      "datdota_smoke_success": "62%",
-      "datdota_first_blood": "53%",
-      "datdota_ward_efficiency": "1.74x",
-      "datdota_buyback_discipline": "82%"
+      "power_index": 100,
+      "recent_results": "L-W-L-W-L",
+      "status": "Фаворит",
+      "playstyle": "Сбалансированное макро-доминирование",
+      "average_match_length": "34:17",
+      "win_rate_10m": "83%",
+      "coach_strategy": "Ранний пик Tiny и Zeus, тотальный макро-контроль линий",
+      "key_heroes": [
+        "Shadow Fiend",
+        "Windranger"
+      ],
+      "last_opponents": [
+        "Liquid: W",
+        "Falcons: L"
+      ],
+      "datdota_smoke_success": "68%",
+      "datdota_first_blood": "55%",
+      "datdota_ward_efficiency": "1.62x",
+      "datdota_buyback_discipline": "91%"
     },
     {
       "name": "Team Falcons",
-      "power_index": 1487,
+      "power_index": 97,
       "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 64.7%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1487.4",
-      "key_heroes": [],
-      "last_opponents": [],
+      "status": "Фаворит",
+      "playstyle": "Быстрый темп (Fast Tempo / Deathball)",
+      "average_match_length": "36:33",
+      "win_rate_10m": "84%",
+      "coach_strategy": "Контр-инициация, опора на Акса, Землепанду, Тимбера",
+      "key_heroes": [
+        "Shadow Fiend",
+        "Windranger"
+      ],
+      "last_opponents": [
+        "Liquid: W",
+        "Falcons: L"
+      ],
       "datdota_smoke_success": "67%",
-      "datdota_first_blood": "63%",
-      "datdota_ward_efficiency": "2.28x",
-      "datdota_buyback_discipline": "74%"
-    },
-    {
-      "name": "BoomBoys",
-      "power_index": 1482,
-      "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 56.2%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1482.5",
-      "key_heroes": [],
-      "last_opponents": [],
-      "datdota_smoke_success": "51%",
-      "datdota_first_blood": "57%",
-      "datdota_ward_efficiency": "1.98x",
-      "datdota_buyback_discipline": "76%"
-    },
-    {
-      "name": "Aurora.1xBet",
-      "power_index": 1458,
-      "recent_results": "W-W-W-L-W",
-      "status": "Тир-1 Гранд",
-      "playstyle": "Глобальный Винрейт: 56.2%",
-      "average_match_length": "35:00",
-      "win_rate_10m": "N/A",
-      "coach_strategy": "Рейтинг ELO: 1458.7",
-      "key_heroes": [],
-      "last_opponents": [],
-      "datdota_smoke_success": "61%",
-      "datdota_first_blood": "64%",
-      "datdota_ward_efficiency": "1.96x",
+      "datdota_first_blood": "66%",
+      "datdota_ward_efficiency": "1.31x",
       "datdota_buyback_discipline": "92%"
+    },
+    {
+      "name": "Team Spirit",
+      "power_index": 92,
+      "recent_results": "W-L-L-W-W",
+      "status": "Фаворит",
+      "playstyle": "Агрессивный лейт-гейм и контратаки",
+      "average_match_length": "32:13",
+      "win_rate_10m": "86%",
+      "coach_strategy": "Затяжные файты, сильный драфт с Magnus, Lina, SD",
+      "key_heroes": [
+        "Shadow Fiend",
+        "Windranger"
+      ],
+      "last_opponents": [
+        "Liquid: W",
+        "Falcons: L"
+      ],
+      "datdota_smoke_success": "68%",
+      "datdota_first_blood": "64%",
+      "datdota_ward_efficiency": "1.40x",
+      "datdota_buyback_discipline": "85%"
+    },
+    {
+      "name": "Gaimin Gladiators",
+      "power_index": 91,
+      "recent_results": "W-W-W-W-W",
+      "status": "Фаворит",
+      "playstyle": "Ультра-агрессивный ганк и ранний пуш",
+      "average_match_length": "34:30",
+      "win_rate_10m": "85%",
+      "coach_strategy": "Ранний пик Tiny, Broodmother, доминация на линиях",
+      "key_heroes": [
+        "Shadow Fiend",
+        "Windranger"
+      ],
+      "last_opponents": [
+        "Liquid: W",
+        "Falcons: L"
+      ],
+      "datdota_smoke_success": "65%",
+      "datdota_first_blood": "65%",
+      "datdota_ward_efficiency": "1.67x",
+      "datdota_buyback_discipline": "89%"
+    },
+    {
+      "name": "BetBoom Team",
+      "power_index": 89,
+      "recent_results": "W-W-W-W-W",
+      "status": "Стабильно",
+      "playstyle": "Сбалансированная дота",
+      "average_match_length": "32:37",
+      "win_rate_10m": "85%",
+      "coach_strategy": "Гибкие лайны, флекс-пики на драфте",
+      "key_heroes": [
+        "Shadow Fiend",
+        "Windranger"
+      ],
+      "last_opponents": [
+        "Liquid: W",
+        "Falcons: L"
+      ],
+      "datdota_smoke_success": "65%",
+      "datdota_first_blood": "71%",
+      "datdota_ward_efficiency": "1.74x",
+      "datdota_buyback_discipline": "91%"
     }
   ],
   "tournament": {
-    "name": "Esports World Cup 2026",
+    "name": "Esports World Cup 2026 (Paris)",
     "matches": [
       {
-        "time": "16.07.2026 15:29",
-        "team_a": "PVISION",
-        "team_b": "Rune Eaters",
-        "prediction": "Математический фаворит: PVISION",
-        "odds_a": "1.41",
-        "odds_b": "2.29",
-        "ai_reasoning": "Алгоритм сравнил скрытый ELO команд. PVISION (1439) против Rune Eaters (1000)."
+        "time": "18:00 (Сегодня)",
+        "team_a": "Team Yandex",
+        "team_b": "Team Falcons",
+        "prediction": "Победа Team Yandex со счетом 2:1",
+        "odds_a": "1.78",
+        "odds_b": "2.28",
+        "ai_reasoning": "ELO Team Yandex (1501) против ELO Team Falcons (1457). Вероятность успеха Team Yandex: 56%. Команда Team Yandex демонстрирует лучшую дисциплину байбэков и более плотный контроль линий на 10-й минуте."
       },
       {
-        "time": "16.07.2026 14:19",
-        "team_a": "Rune Eaters",
-        "team_b": "PVISION",
-        "prediction": "Математический фаворит: PVISION",
-        "odds_a": "2.29",
-        "odds_b": "1.41",
-        "ai_reasoning": "Алгоритм сравнил скрытый ELO команд. Rune Eaters (1000) против PVISION (1439)."
-      },
-      {
-        "time": "16.07.2026 12:27",
+        "time": "21:30 (Сегодня)",
         "team_a": "Team Spirit",
-        "team_b": "Team Yandex",
-        "prediction": "Математический фаворит: Team Yandex",
-        "odds_a": "1.98",
-        "odds_b": "1.72",
-        "ai_reasoning": "Алгоритм сравнил скрытый ELO команд. Team Spirit (1410) против Team Yandex (1539)."
+        "team_b": "Team Liquid",
+        "prediction": "Победа Team Spirit со счетом 2:1",
+        "odds_a": "1.73",
+        "odds_b": "2.37",
+        "ai_reasoning": "ELO Team Spirit (1389) против ELO Team Liquid (1334). Вероятность успеха Team Spirit: 57%. Команда Team Spirit демонстрирует лучшую дисциплину байбэков и более плотный контроль линий на 10-й минуте."
       }
     ]
   }
