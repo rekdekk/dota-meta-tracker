@@ -466,7 +466,8 @@
             }
             showToast("Запрашиваем ИИ-базу данных с GitHub...", "info");
             try {
-                const res = await fetch(`https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json`);
+                // Добавлен cache-buster (?t=timestamp), чтобы мгновенно подтягивать свежайшую дату в обход 5-минутного кэша GitHub CDN
+                const res = await fetch(`https://raw.githubusercontent.com/${username}/dota-meta-tracker/main/data.json?t=${new Date().getTime()}`);
                 if (!res.ok) throw new Error("Файл data.json не найден");
                 const data = await res.json();
                 
