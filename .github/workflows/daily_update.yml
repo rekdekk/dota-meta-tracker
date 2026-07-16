@@ -1,22 +1,36 @@
-name: Daily Dota 2 Meta Updateon:schedule:- cron: '0 12 * * *'workflow_dispatch:jobs:build-and-update:runs-on: ubuntu-lateststeps:- name: Checkout Repository Codeuses: actions/checkout@v4  - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.10'
+name: Daily Dota 2 Meta Update
 
-  - name: Install Python Dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install requests beautifulsoup4
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
-  - name: Run Meta Update Script
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    run: python update.py
+jobs:
+  build-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
 
-  - name: Commit and Push changes
-    run: |
-      git config --global user.name "github-actions[bot]"
-      git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      git add data.json
-      git diff-index --quiet HEAD || git commit -m "Auto-update data.json by GitHub Actions"
-      git push
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run Meta Update Script
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python update.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff-index --quiet HEAD || git commit -m "Auto-update data.json by GitHub Actions"
+          git push
