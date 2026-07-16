@@ -497,9 +497,9 @@
                     document.getElementById("weight-pub").value = appState.weights.pub;
                     document.getElementById("weight-comfort").value = appState.weights.comfort;
 
-                    document.getElementById("gh-username-input").value = appState.github.username;
-                    document.getElementById("gh-repo-input").value = appState.github.repo;
-                    document.getElementById("steam-id-input").value = appState.steamId;
+                    document.getElementById("gh-username-input").value = appState.github.username || "";
+                    document.getElementById("gh-repo-input").value = appState.github.repo || "";
+                    document.getElementById("steam-id-input").value = appState.steamId || "";
 
                 } catch (e) {
                     console.error("Error reading localStorage", e);
