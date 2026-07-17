@@ -23,9 +23,11 @@ jobs:
       - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests google-generativeai
 
       - name: Run Meta Update Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python update.py
 
       - name: Commit and Push changes
@@ -33,11 +35,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Принудительно добавляем файл. Если его нет — игнорируем ошибку (true)
+          # Индексируем файл, игнорируем системные предупреждения
           git add data.json || true
           
-          # Пытаемся сделать коммит. Если изменений нет и гит ругается — игнорируем
-          git commit -m "Absolute Meta: Auto-update data.json" || true
+          # Коммитим. Если изменений нет, команда не убьет процесс (сработает true)
+          git commit -m "Absolute Meta & AI: Auto-update data.json" || true
           
-          # Пушим. Если гитхаб блокирует права — игнорируем падение скрипта
+          # Отправляем в репозиторий. Если гитхаб тупит с правами, скрипт всё равно выживет
           git push || true
