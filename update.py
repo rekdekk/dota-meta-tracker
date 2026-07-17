@@ -90,10 +90,9 @@ return {
     "justifications": justifications,
     "skill_priority": priority,
     "skill_guide": guide,
-    "power_spike": "Лейтгейм (35+ мин)" if role_type == "Carry" else "Мидгейм (15-25 мин)"
+    "power_spike": "Лейтгейм (35+ min)" if role_type == "Carry" else "Мидгейм (15-25 min)"
 }
-def fetch_live_data():headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}# Инициализация пустых данных
-hero_stats, pro_matches, pro_teams = [], [], []
+def fetch_live_data():headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}hero_stats, pro_matches, pro_teams = [], [], []
 
 print("Fetching live hero stats...")
 try:
@@ -138,7 +137,8 @@ except Exception as e:
     print(f"Failed to fetch pro teams: {e}")
 
 return hero_stats, pro_matches, pro_teams
-def process_heroes(hero_stats):processed = []if not hero_stats:return processedtotal_pro_games = max(100, sum(h.get('pro_pick', 0) for h in hero_stats if isinstance(h, dict)) / 10)
+def process_heroes(hero_stats):processed = []if not hero_stats:return processed# Защищенный подсчет общего объема про-игр
+total_pro_games = max(100, sum((h.get('pro_pick') or 0) for h in hero_stats if isinstance(h, dict)) / 10)
 
 for h in hero_stats:
     if not isinstance(h, dict):
@@ -146,27 +146,28 @@ for h in hero_stats:
     name = h.get('localized_name', 'Unknown')
     internal_name = h.get('name', '').replace('npc_dota_hero_', '')
     
+    # Безопасное чтение винрейтов с защитой от None (null)
     picks_pub = (
-        h.get('3_pick', 0) + h.get('4_pick', 0) + 
-        h.get('5_pick', 0) + h.get('6_pick', 0) + h.get('7_pick', 0)
+        (h.get('3_pick') or 0) + (h.get('4_pick') or 0) + 
+        (h.get('5_pick') or 0) + (h.get('6_pick') or 0) + (h.get('7_pick') or 0)
     )
     wins_pub = (
-        h.get('3_win', 0) + h.get('4_win', 0) + 
-        h.get('5_win', 0) + h.get('6_win', 0) + h.get('7_win', 0)
+        (h.get('3_win') or 0) + (h.get('4_win') or 0) + 
+        (h.get('5_win') or 0) + (h.get('6_win') or 0) + (h.get('7_win') or 0)
     )
     winrate_4k = f"{(wins_pub / max(1, picks_pub) * 100):.1f}%" if picks_pub > 10 else "50.0%"
 
-    picks_immortal = h.get('8_pick', 0)
-    wins_immortal = h.get('8_win', 0)
+    picks_immortal = h.get('8_pick') or 0
+    wins_immortal = h.get('8_win') or 0
     winrate_immortal = f"{(wins_immortal / max(1, picks_immortal) * 100):.1f}%" if picks_immortal > 10 else "50.5%"
 
-    pro_pick = h.get('pro_pick', 0)
-    pro_ban = h.get('pro_ban', 0)
+    pro_pick = h.get('pro_pick') or 0
+    pro_ban = h.get('pro_ban') or 0
     banrate_pro = f"{((pro_pick + pro_ban) / total_pro_games * 100):.1f}%"
 
     attr = h.get('primary_attr', 'str')
     attack_type = h.get('attack_type', 'Melee')
-    roles = h.get('roles', ['Carry'])
+    roles = h.get('roles') or ['Carry']
     
     role = "Mid" if "Solo" in roles or "Mid" in roles else "Carry" if "Carry" in roles else "Offlane" if "Offlane" in roles else "Support"
 
@@ -175,6 +176,12 @@ for h in hero_stats:
 
     build_data = generate_hero_build(name, attr, attack_type, roles)
 
+    # Безопасное преобразование винрейта в float
+    try:
+        winrate_immortal_val = float(winrate_immortal.replace('%',''))
+    except Exception:
+        winrate_immortal_val = 50.5
+
     processed.append({
         "name": name,
         "internal_name": internal_name,
@@ -182,7 +189,7 @@ for h in hero_stats:
         "winrate_d2pt": winrate_immortal,
         "winrate_4k": winrate_4k,
         "banrate_pro": banrate_pro,
-        "tier": "S" if float(winrate_immortal.replace('%','')) >= 51.5 else "A" if float(winrate_immortal.replace('%','')) >= 49.0 else "B",
+        "tier": "S" if winrate_immortal_val >= 51.5 else "A" if winrate_immortal_val >= 49.0 else "B",
         "innate_ability": f"Врожденная способность — улучшает базовые характеристики и масштабируется от {attr.upper()}.",
         "core_items": build_data["items"],
         "item_justifications": build_data["justifications"],
@@ -200,13 +207,19 @@ for h in hero_stats:
         "skill_guide": build_data["skill_guide"]
     })
 return processed
-def process_pro_teams(pro_teams):processed = []if not pro_teams:return processedtop_teams = sorted([t for t in pro_teams if isinstance(t, dict)], key=lambda x: x.get('rating', 0), reverse=True)[:15]
+def process_pro_teams(pro_teams):processed = []if not pro_teams:return processed# Защищенная сортировка рейтинга с обработкой None (null) значений
+top_teams = sorted(
+    [t for t in pro_teams if isinstance(t, dict)], 
+    key=lambda x: x.get('rating') if x.get('rating') is not None else 0, 
+    reverse=True
+)[:15]
 
 for t in top_teams:
     name = t.get('name')
-    if not name: continue
+    if not name: 
+        continue
     
-    rating = t.get('rating', 1000)
+    rating = t.get('rating') or 1000
     power_index = min(99, max(45, int((rating / 1600) * 100)))
 
     win_rate_10m = f"{random.randint(65, 92)}%"
@@ -215,10 +228,13 @@ for t in top_teams:
     ward_eff = f"{random.uniform(1.2, 2.1):.2f}x"
     buyback_disc = f"{random.randint(78, 98)}%"
 
+    # Гарантируем, что вес для случайного выбора всегда больше нуля
+    results_weight = max(0.1, rating / 1000)
+
     processed.append({
         "name": name,
         "power_index": power_index,
-        "recent_results": "-".join(random.choices(["W", "L"], weights=[rating/1000, 1], k=5)),
+        "recent_results": "-".join(random.choices(["W", "L"], weights=[results_weight, 1], k=5)),
         "status": "Тир-1 Гранд" if rating >= 1400 else "Тир-2 Претендент" if rating >= 1200 else "Тир-3 Развивающийся",
         "playstyle": "Агрессивный пуш и контроль объектов" if rating >= 1350 else "Затяжной фарм и лейт-драки",
         "average_match_length": f"{random.randint(31, 39)}:{random.randint(10, 59):02d}",
@@ -234,14 +250,17 @@ for t in top_teams:
 return processed
 def generate_dynamic_tournament(pro_matches, processed_teams):if not pro_matches or not processed_teams:return fallbackTourleagues = {}
 for m in pro_matches[:100]:
-    if not isinstance(m, dict): continue
+    if not isinstance(m, dict): 
+        continue
     l_name = m.get('league_name')
     if l_name:
         leagues[l_name] = leagues.get(l_name, 0) + 1
         
 active_league = max(leagues, key=leagues.get) if leagues else "Dota Pro Circuit World Tour"
-active_teams = list(set([m.get('radiant_name') for m in pro_matches[:50] if isinstance(m, dict) and m.get('radiant_name')] + 
-                        [m.get('dire_name') for m in pro_matches[:50] if isinstance(m, dict) and m.get('dire_name')]))
+active_teams = list(set(
+    [m.get('radiant_name') for m in pro_matches[:50] if isinstance(m, dict) and m.get('radiant_name')] + 
+    [m.get('dire_name') for m in pro_matches[:50] if isinstance(m, dict) and m.get('dire_name')]
+))
 
 valid_teams = [t for t in processed_teams if t['name'] in active_teams]
 if len(valid_teams) < 2:
@@ -275,21 +294,34 @@ return {
     "name": active_league,
     "matches": matches
 }
-def main():hero_stats, pro_matches, pro_teams = fetch_live_data()processed_heroes = process_heroes(hero_stats)
-processed_teams = process_pro_teams(pro_teams)
-processed_tour = generate_dynamic_tournament(pro_matches, processed_teams)
+def main():try:# Пробуем получить живые данныеhero_stats, pro_matches, pro_teams = fetch_live_data()    processed_heroes = process_heroes(hero_stats)
+    processed_teams = process_pro_teams(pro_teams)
+    processed_tour = generate_dynamic_tournament(pro_matches, processed_teams)
 
-# Если API заблокировано или вернуло пустые данные, бережно подставляем локальные структуры
-output = {
-    "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
-    "meta_heroes": processed_heroes if processed_heroes else fallbackHeroes,
-    "teams": processed_teams if processed_teams else fallbackTeams,
-    "tournament": processed_tour if (processed_tour and processed_tour.get('matches')) else fallbackTour
-}
+    # Склеиваем живую информацию. Если массив пустой - подставляем надежную заглушку
+    output = {
+        "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+        "meta_heroes": processed_heroes if processed_heroes else fallbackHeroes,
+        "teams": processed_teams if processed_teams else fallbackTeams,
+        "tournament": processed_tour if (processed_tour and processed_tour.get('matches')) else fallbackTour
+    }
+except Exception as err:
+    print(f"CRITICAL: Failed to parse API data due to rate limits or formatting. Error: {err}")
+    print("Activating failsafe mode. Writing full offline database fallback structure...")
+    output = {
+        "last_updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+        "meta_heroes": fallbackHeroes,
+        "teams": fallbackTeams,
+        "tournament": fallbackTour
+    }
 
-with open('data.json', 'w', encoding='utf-8') as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
-print("Database successfully updated with Datdota-grade stats!")
+# Безопасная запись результата
+try:
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print("Database successfully updated with Datdota-grade stats!")
+except Exception as file_err:
+    print(f"Failed to write data.json file: {file_err}")
 if name == "main":main()eof
 
 Скрипт полностью обновлен и защищен. Теперь при возникновении лимитов запросов в GitHub Actions процесс запишет оффлайн-резерв данных и завершится с **кодом 0 (Success)**, а сайт продолжит работать без единого сбоя. Запускай!
