@@ -1,4 +1,5 @@
 {
+    "last_updated": "2026-07-17 10:08:48",
     "meta_heroes": [
         {
             "id": 1,
@@ -6,46 +7,26 @@
             "internal_name": "antimage",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.2%",
-            "banrate_pro": "13.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.8",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_orb",
+                "basher",
+                "butterfly",
+                "eagle"
             ]
         },
         {
             "id": 2,
             "name": "Axe",
             "internal_name": "axe",
-            "role": "Carry",
+            "role": "Offlane",
             "tier": "B",
-            "winrate_d2pt": "47.6%",
-            "banrate_pro": "11.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "shivas_guard",
+                "soul_booster",
+                "lotus_orb"
             ]
         },
         {
@@ -54,22 +35,12 @@
             "internal_name": "bane",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "46.1%",
-            "banrate_pro": "23.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "ultimate_scepter",
                 "blink",
-                "force_staff",
+                "aether_lens",
                 "glimmer_cape"
-            ],
-            "versatility": "5.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
             ]
         },
         {
@@ -78,46 +49,26 @@
             "internal_name": "bloodseeker",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.9%",
-            "banrate_pro": "19.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "eagle",
+                "sange",
+                "basher",
+                "black_king_bar"
             ]
         },
         {
             "id": 5,
             "name": "Crystal Maiden",
             "internal_name": "crystal_maiden",
-            "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "50.5%",
-            "banrate_pro": "9.8%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
+                "ultimate_scepter",
                 "force_staff",
                 "glimmer_cape"
-            ],
-            "versatility": "8.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
             ]
         },
         {
@@ -125,23 +76,13 @@
             "name": "Drow Ranger",
             "internal_name": "drow_ranger",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.3%",
-            "banrate_pro": "21.8%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "lesser_crit",
+                "eagle"
             ]
         },
         {
@@ -150,22 +91,12 @@
             "internal_name": "earthshaker",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "48.0%",
-            "banrate_pro": "32.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "yasha",
+                "yasha_and_kaya",
+                "refresher",
+                "cyclone"
             ]
         },
         {
@@ -173,23 +104,13 @@
             "name": "Juggernaut",
             "internal_name": "juggernaut",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.8%",
-            "banrate_pro": "37.6%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "eagle",
+                "butterfly",
                 "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter"
             ]
         },
         {
@@ -197,23 +118,13 @@
             "name": "Mirana",
             "internal_name": "mirana",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.1%",
-            "banrate_pro": "25.3%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "ultimate_scepter",
+                "mystic_staff",
+                "cyclone",
+                "guardian_greaves"
             ]
         },
         {
@@ -222,22 +133,12 @@
             "internal_name": "morphling",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.3%",
-            "banrate_pro": "28.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_orb",
+                "butterfly",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "demon_edge"
             ]
         },
         {
@@ -245,23 +146,13 @@
             "name": "Shadow Fiend",
             "internal_name": "nevermore",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "54.2%",
-            "banrate_pro": "6.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.5",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "lesser_crit",
+                "greater_crit",
+                "reaver"
             ]
         },
         {
@@ -269,23 +160,13 @@
             "name": "Phantom Lancer",
             "internal_name": "phantom_lancer",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.3%",
-            "banrate_pro": "28.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_orb",
+                "skadi",
+                "orchid",
+                "bloodthorn"
             ]
         },
         {
@@ -293,47 +174,27 @@
             "name": "Puck",
             "internal_name": "puck",
             "role": "Mid/Offlane",
-            "tier": "S",
-            "winrate_d2pt": "54.0%",
-            "banrate_pro": "12.3%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "devastator",
+                "mystic_staff",
+                "octarine_core",
+                "soul_booster"
             ]
         },
         {
             "id": 14,
             "name": "Pudge",
             "internal_name": "pudge",
-            "role": "Mid/Offlane",
-            "tier": "S",
-            "winrate_d2pt": "53.5%",
-            "banrate_pro": "39.0%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "3.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "black_king_bar",
+                "shivas_guard",
+                "reaver"
             ]
         },
         {
@@ -342,22 +203,12 @@
             "internal_name": "razor",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.3%",
-            "banrate_pro": "12.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "reaver",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "satanic",
+                "eagle"
             ]
         },
         {
@@ -365,47 +216,27 @@
             "name": "Sand King",
             "internal_name": "sand_king",
             "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "50.5%",
-            "banrate_pro": "38.4%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "7.4",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "lesser_crit",
+                "demon_edge",
+                "shivas_guard"
             ]
         },
         {
             "id": 17,
             "name": "Storm Spirit",
             "internal_name": "storm_spirit",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "47.6%",
-            "banrate_pro": "15.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "mystic_staff",
+                "witch_blade",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "devastator"
             ]
         },
         {
@@ -413,23 +244,13 @@
             "name": "Sven",
             "internal_name": "sven",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.9%",
-            "banrate_pro": "14.3%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "greater_crit",
+                "harpoon",
+                "lesser_crit"
             ]
         },
         {
@@ -437,23 +258,13 @@
             "name": "Tiny",
             "internal_name": "tiny",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "52.0%",
-            "banrate_pro": "29.9%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "3.6",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "harpoon",
+                "lesser_crit"
             ]
         },
         {
@@ -461,23 +272,13 @@
             "name": "Vengeful Spirit",
             "internal_name": "vengefulspirit",
             "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.6%",
-            "banrate_pro": "21.7%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "eagle",
+                "manta",
+                "hydras_breath",
+                "butterfly"
             ]
         },
         {
@@ -485,47 +286,27 @@
             "name": "Windranger",
             "internal_name": "windrunner",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.2%",
-            "banrate_pro": "28.8%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "lesser_crit",
+                "greater_crit",
+                "force_staff"
             ]
         },
         {
             "id": 22,
             "name": "Zeus",
             "internal_name": "zuus",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.9%",
-            "banrate_pro": "19.2%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "refresher",
+                "relic",
+                "demon_edge",
+                "rapier"
             ]
         },
         {
@@ -534,190 +315,110 @@
             "internal_name": "kunkka",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.1%",
-            "banrate_pro": "32.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "shivas_guard"
             ]
         },
         {
             "id": 25,
             "name": "Lina",
             "internal_name": "lina",
-            "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "50.9%",
-            "banrate_pro": "37.0%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "ultimate_orb",
                 "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "yasha",
+                "black_king_bar"
             ]
         },
         {
             "id": 26,
             "name": "Lion",
             "internal_name": "lion",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "49.7%",
-            "banrate_pro": "22.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "7.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "aether_lens",
+                "glimmer_cape",
+                "aeon_disk"
             ]
         },
         {
             "id": 27,
             "name": "Shadow Shaman",
             "internal_name": "shadow_shaman",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.7%",
-            "banrate_pro": "17.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "glimmer_cape",
+                "aether_lens",
                 "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "force_staff"
             ]
         },
         {
             "id": 28,
             "name": "Slardar",
             "internal_name": "slardar",
-            "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.6%",
-            "banrate_pro": "37.9%",
+            "role": "Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.7",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "echo_sabre",
+                "hyperstone"
             ]
         },
         {
             "id": 29,
             "name": "Tidehunter",
             "internal_name": "tidehunter",
-            "role": "Carry",
+            "role": "Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.9%",
-            "banrate_pro": "8.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
+                "shivas_guard",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.5",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "mystic_staff"
             ]
         },
         {
             "id": 30,
             "name": "Witch Doctor",
             "internal_name": "witch_doctor",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "54.1%",
-            "banrate_pro": "5.9%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "6.5",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "ultimate_scepter",
+                "guardian_greaves"
             ]
         },
         {
             "id": 31,
             "name": "Lich",
             "internal_name": "lich",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.0%",
-            "banrate_pro": "24.8%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "8.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter",
+                "glimmer_cape",
+                "force_staff"
             ]
         },
         {
@@ -725,71 +426,41 @@
             "name": "Riki",
             "internal_name": "riki",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.5%",
-            "banrate_pro": "31.9%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
+                "eagle",
                 "manta",
-                "skadi"
-            ],
-            "versatility": "3.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "disperser",
+                "basher"
             ]
         },
         {
             "id": 33,
             "name": "Enigma",
             "internal_name": "enigma",
-            "role": "Mid/Offlane",
-            "tier": "A",
-            "winrate_d2pt": "50.1%",
-            "banrate_pro": "37.0%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "7.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter",
+                "shivas_guard",
+                "soul_booster"
             ]
         },
         {
             "id": 34,
             "name": "Tinker",
             "internal_name": "tinker",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.1%",
-            "banrate_pro": "28.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.2",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "mystic_staff",
+                "shivas_guard",
+                "sange",
+                "aether_lens"
             ]
         },
         {
@@ -797,119 +468,69 @@
             "name": "Sniper",
             "internal_name": "sniper",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.3%",
-            "banrate_pro": "8.5%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "lesser_crit",
+                "force_staff"
             ]
         },
         {
             "id": 36,
             "name": "Necrophos",
             "internal_name": "necrolyte",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.7%",
-            "banrate_pro": "19.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "reaver",
+                "heart",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.8",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "travel_boots_2"
             ]
         },
         {
             "id": 37,
             "name": "Warlock",
             "internal_name": "warlock",
-            "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "51.5%",
-            "banrate_pro": "31.9%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
+                "ultimate_scepter",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "glimmer_cape",
+                "refresher"
             ]
         },
         {
             "id": 38,
             "name": "Beastmaster",
             "internal_name": "beastmaster",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "49.7%",
-            "banrate_pro": "34.2%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "hyperstone",
+                "assault",
+                "blink"
             ]
         },
         {
             "id": 39,
             "name": "Queen of Pain",
             "internal_name": "queenofpain",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "49.7%",
-            "banrate_pro": "12.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "soul_booster",
+                "shivas_guard",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter"
             ]
         },
         {
@@ -918,22 +539,12 @@
             "internal_name": "venomancer",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "49.8%",
-            "banrate_pro": "18.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "7.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink",
+                "ultimate_scepter",
+                "solar_crest"
             ]
         },
         {
@@ -941,23 +552,13 @@
             "name": "Faceless Void",
             "internal_name": "faceless_void",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.5%",
-            "banrate_pro": "22.7%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_orb",
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge"
             ]
         },
         {
@@ -966,22 +567,12 @@
             "internal_name": "skeleton_king",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.3%",
-            "banrate_pro": "17.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "black_king_bar",
+                "hyperstone",
+                "assault"
             ]
         },
         {
@@ -990,22 +581,12 @@
             "internal_name": "death_prophet",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.1%",
-            "banrate_pro": "39.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
+                "shivas_guard",
                 "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "soul_booster"
             ]
         },
         {
@@ -1014,22 +595,12 @@
             "internal_name": "phantom_assassin",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.9%",
-            "banrate_pro": "17.4%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.6",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "basher",
+                "reaver",
+                "satanic",
+                "black_king_bar"
             ]
         },
         {
@@ -1038,22 +609,12 @@
             "internal_name": "pugna",
             "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.6%",
-            "banrate_pro": "15.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "aether_lens",
+                "force_staff",
+                "glimmer_cape",
+                "blink"
             ]
         },
         {
@@ -1062,22 +623,12 @@
             "internal_name": "templar_assassin",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.2%",
-            "banrate_pro": "18.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.8",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "greater_crit",
+                "eagle",
+                "lesser_crit"
             ]
         },
         {
@@ -1086,22 +637,12 @@
             "internal_name": "viper",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.7%",
-            "banrate_pro": "31.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_orb",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.4",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "skadi",
+                "manta"
             ]
         },
         {
@@ -1110,22 +651,12 @@
             "internal_name": "luna",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.7%",
-            "banrate_pro": "10.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "butterfly",
+                "eagle",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.7",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "reaver"
             ]
         },
         {
@@ -1134,22 +665,12 @@
             "internal_name": "dragon_knight",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.9%",
-            "banrate_pro": "28.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "greater_crit",
+                "lesser_crit",
+                "black_king_bar"
             ]
         },
         {
@@ -1158,70 +679,40 @@
             "internal_name": "dazzle",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "47.2%",
-            "banrate_pro": "30.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "guardian_greaves",
                 "blink",
-                "force_staff",
+                "aether_lens",
                 "glimmer_cape"
-            ],
-            "versatility": "4.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
             ]
         },
         {
             "id": 51,
             "name": "Clockwerk",
             "internal_name": "rattletrap",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "47.6%",
-            "banrate_pro": "24.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "force_staff",
                 "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "3.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "cyclone",
+                "solar_crest"
             ]
         },
         {
             "id": 52,
             "name": "Leshrac",
             "internal_name": "leshrac",
-            "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.4%",
-            "banrate_pro": "24.7%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "soul_booster",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "shivas_guard",
+                "bloodstone"
             ]
         },
         {
@@ -1229,23 +720,13 @@
             "name": "Nature's Prophet",
             "internal_name": "furion",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.4%",
-            "banrate_pro": "19.6%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
+                "lesser_crit",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "greater_crit"
             ]
         },
         {
@@ -1254,22 +735,12 @@
             "internal_name": "life_stealer",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.0%",
-            "banrate_pro": "29.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "basher",
+                "ultimate_scepter",
+                "abyssal_blade",
+                "sange"
             ]
         },
         {
@@ -1277,23 +748,13 @@
             "name": "Dark Seer",
             "internal_name": "dark_seer",
             "role": "Mid/Offlane",
-            "tier": "S",
-            "winrate_d2pt": "53.4%",
-            "banrate_pro": "27.8%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "shivas_guard",
                 "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "black_king_bar",
+                "ultimate_scepter"
             ]
         },
         {
@@ -1301,23 +762,13 @@
             "name": "Clinkz",
             "internal_name": "clinkz",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.9%",
-            "banrate_pro": "34.3%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "demon_edge",
+                "greater_crit",
+                "hurricane_pike",
+                "force_staff"
             ]
         },
         {
@@ -1325,47 +776,27 @@
             "name": "Omniknight",
             "internal_name": "omniknight",
             "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "50.6%",
-            "banrate_pro": "9.7%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
                 "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter",
+                "soul_booster"
             ]
         },
         {
             "id": 58,
             "name": "Enchantress",
             "internal_name": "enchantress",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "52.7%",
-            "banrate_pro": "26.9%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
+                "hurricane_pike",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter",
+                "hyperstone"
             ]
         },
         {
@@ -1374,22 +805,12 @@
             "internal_name": "huskar",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.9%",
-            "banrate_pro": "38.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "ultimate_scepter",
+                "reaver",
+                "yasha",
+                "black_king_bar"
             ]
         },
         {
@@ -1397,23 +818,13 @@
             "name": "Night Stalker",
             "internal_name": "night_stalker",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "54.1%",
-            "banrate_pro": "29.7%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "3.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "relic",
+                "nullifier",
+                "harpoon"
             ]
         },
         {
@@ -1421,47 +832,27 @@
             "name": "Broodmother",
             "internal_name": "broodmother",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.1%",
-            "banrate_pro": "14.5%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_orb",
+                "eagle",
+                "butterfly",
+                "black_king_bar"
             ]
         },
         {
             "id": 62,
             "name": "Bounty Hunter",
             "internal_name": "bounty_hunter",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "46.6%",
-            "banrate_pro": "22.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
+                "mystic_staff",
                 "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "4.6",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "boots_of_bearing",
+                "cyclone"
             ]
         },
         {
@@ -1469,95 +860,55 @@
             "name": "Weaver",
             "internal_name": "weaver",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.6%",
-            "banrate_pro": "32.3%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "demon_edge",
+                "lesser_crit",
+                "greater_crit",
+                "black_king_bar"
             ]
         },
         {
             "id": 64,
             "name": "Jakiro",
             "internal_name": "jakiro",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.1%",
-            "banrate_pro": "36.5%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
                 "force_staff",
+                "ultimate_scepter",
+                "cyclone",
                 "glimmer_cape"
-            ],
-            "versatility": "8.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
             ]
         },
         {
             "id": 65,
             "name": "Batrider",
             "internal_name": "batrider",
-            "role": "Mid/Offlane",
-            "tier": "A",
-            "winrate_d2pt": "51.5%",
-            "banrate_pro": "33.4%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "8.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "force_staff",
+                "boots_of_bearing"
             ]
         },
         {
             "id": 66,
             "name": "Chen",
             "internal_name": "chen",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.6%",
-            "banrate_pro": "26.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "3.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "pipe",
+                "ultimate_scepter",
+                "guardian_greaves",
+                "vladmir"
             ]
         },
         {
@@ -1565,71 +916,41 @@
             "name": "Spectre",
             "internal_name": "spectre",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.2%",
-            "banrate_pro": "30.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
+                "ultimate_orb",
                 "manta",
-                "skadi"
-            ],
-            "versatility": "3.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "skadi",
+                "eagle"
             ]
         },
         {
             "id": 68,
             "name": "Ancient Apparition",
             "internal_name": "ancient_apparition",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.3%",
-            "banrate_pro": "24.1%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
                 "force_staff",
+                "blink",
+                "mystic_staff",
                 "glimmer_cape"
-            ],
-            "versatility": "4.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
             ]
         },
         {
             "id": 69,
             "name": "Doom",
             "internal_name": "doom_bringer",
-            "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.9%",
-            "banrate_pro": "17.9%",
+            "role": "Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "shivas_guard",
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "reaver"
             ]
         },
         {
@@ -1638,22 +959,10 @@
             "internal_name": "ursa",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.4%",
-            "banrate_pro": "20.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1662,22 +971,10 @@
             "internal_name": "spirit_breaker",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.8%",
-            "banrate_pro": "33.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1685,23 +982,11 @@
             "name": "Gyrocopter",
             "internal_name": "gyrocopter",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "50.8%",
-            "banrate_pro": "9.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1710,94 +995,46 @@
             "internal_name": "alchemist",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.6%",
-            "banrate_pro": "19.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 74,
             "name": "Invoker",
             "internal_name": "invoker",
-            "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.8%",
-            "banrate_pro": "9.7%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 75,
             "name": "Silencer",
             "internal_name": "silencer",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "47.0%",
-            "banrate_pro": "33.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.6",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 76,
-            "name": "Outworld Destroyer",
+            "name": "Outworld Devourer",
             "internal_name": "obsidian_destroyer",
-            "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.9%",
-            "banrate_pro": "8.7%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -1806,22 +1043,10 @@
             "internal_name": "lycan",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.3%",
-            "banrate_pro": "26.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.4",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1829,47 +1054,23 @@
             "name": "Brewmaster",
             "internal_name": "brewmaster",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "51.8%",
-            "banrate_pro": "32.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
             "id": 79,
             "name": "Shadow Demon",
             "internal_name": "shadow_demon",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "52.1%",
-            "banrate_pro": "25.0%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -1878,22 +1079,10 @@
             "internal_name": "lone_druid",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.4%",
-            "banrate_pro": "28.4%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "9.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -1902,22 +1091,10 @@
             "internal_name": "chaos_knight",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.2%",
-            "banrate_pro": "16.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1926,22 +1103,10 @@
             "internal_name": "meepo",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.8%",
-            "banrate_pro": "23.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.7",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1950,22 +1115,10 @@
             "internal_name": "treant",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "49.8%",
-            "banrate_pro": "38.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "4.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -1974,22 +1127,10 @@
             "internal_name": "ogre_magi",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "47.5%",
-            "banrate_pro": "34.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "7.7",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -1997,95 +1138,47 @@
             "name": "Undying",
             "internal_name": "undying",
             "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "51.3%",
-            "banrate_pro": "22.2%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "4.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 86,
             "name": "Rubick",
             "internal_name": "rubick",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.3%",
-            "banrate_pro": "35.4%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "4.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
             "id": 87,
             "name": "Disruptor",
             "internal_name": "disruptor",
-            "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "52.3%",
-            "banrate_pro": "38.6%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 88,
             "name": "Nyx Assassin",
             "internal_name": "nyx_assassin",
-            "role": "Mid/Offlane",
-            "tier": "A",
-            "winrate_d2pt": "51.5%",
-            "banrate_pro": "27.5%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2094,46 +1187,22 @@
             "internal_name": "naga_siren",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.3%",
-            "banrate_pro": "28.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 90,
             "name": "Keeper of the Light",
             "internal_name": "keeper_of_the_light",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "47.8%",
-            "banrate_pro": "20.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "8.6",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2141,23 +1210,11 @@
             "name": "Io",
             "internal_name": "wisp",
             "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "51.7%",
-            "banrate_pro": "27.6%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "8.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -2165,23 +1222,11 @@
             "name": "Visage",
             "internal_name": "visage",
             "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "54.3%",
-            "banrate_pro": "24.7%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "8.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2189,23 +1234,11 @@
             "name": "Slark",
             "internal_name": "slark",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.7%",
-            "banrate_pro": "7.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.4",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2214,22 +1247,10 @@
             "internal_name": "medusa",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.9%",
-            "banrate_pro": "26.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2237,167 +1258,83 @@
             "name": "Troll Warlord",
             "internal_name": "troll_warlord",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "52.9%",
-            "banrate_pro": "11.8%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 96,
             "name": "Centaur Warrunner",
             "internal_name": "centaur",
-            "role": "Mid/Offlane",
+            "role": "Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.1%",
-            "banrate_pro": "13.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "5.2",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 97,
             "name": "Magnus",
             "internal_name": "magnataur",
-            "role": "Mid/Offlane",
-            "tier": "S",
-            "winrate_d2pt": "53.0%",
-            "banrate_pro": "27.2%",
+            "role": "Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "8.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 98,
             "name": "Timbersaw",
             "internal_name": "shredder",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "48.0%",
-            "banrate_pro": "11.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "4.9",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
             "id": 99,
             "name": "Bristleback",
             "internal_name": "bristleback",
-            "role": "Carry",
+            "role": "Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.7%",
-            "banrate_pro": "13.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "8.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
             "id": 100,
             "name": "Tusk",
             "internal_name": "tusk",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "48.5%",
-            "banrate_pro": "28.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "3.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 101,
             "name": "Skywrath Mage",
             "internal_name": "skywrath_mage",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "49.0%",
-            "banrate_pro": "26.4%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "8.2",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
@@ -2406,46 +1343,22 @@
             "internal_name": "abaddon",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.6%",
-            "banrate_pro": "24.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.2",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
             "id": 103,
             "name": "Elder Titan",
             "internal_name": "elder_titan",
-            "role": "Mid/Offlane",
-            "tier": "A",
-            "winrate_d2pt": "51.8%",
-            "banrate_pro": "7.8%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "6.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "blink"
             ]
         },
         {
@@ -2454,46 +1367,24 @@
             "internal_name": "legion_commander",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.7%",
-            "banrate_pro": "35.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "blink"
             ]
         },
         {
             "id": 105,
             "name": "Techies",
             "internal_name": "techies",
-            "role": "Mid/Offlane",
-            "tier": "A",
-            "winrate_d2pt": "52.0%",
-            "banrate_pro": "21.3%",
+            "role": "Support",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "4.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "mystic_staff",
+                "force_staff",
+                "sheepstick",
+                "lotus_orb"
             ]
         },
         {
@@ -2502,46 +1393,26 @@
             "internal_name": "ember_spirit",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.1%",
-            "banrate_pro": "10.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "sange",
+                "kaya_and_sange"
             ]
         },
         {
             "id": 107,
             "name": "Earth Spirit",
             "internal_name": "earth_spirit",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "46.0%",
-            "banrate_pro": "24.0%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "8.2",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "shivas_guard",
+                "kaya_and_sange",
+                "sange",
+                "soul_booster"
             ]
         },
         {
@@ -2549,23 +1420,13 @@
             "name": "Underlord",
             "internal_name": "abyssal_underlord",
             "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.0%",
-            "banrate_pro": "13.1%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "6.1",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "shivas_guard",
+                "ultimate_scepter",
+                "soul_booster"
             ]
         },
         {
@@ -2573,23 +1434,13 @@
             "name": "Terrorblade",
             "internal_name": "terrorblade",
             "role": "Carry",
-            "tier": "S",
-            "winrate_d2pt": "53.8%",
-            "banrate_pro": "23.0%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.4",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "ultimate_orb",
+                "skadi",
+                "demon_edge",
+                "black_king_bar"
             ]
         },
         {
@@ -2598,70 +1449,40 @@
             "internal_name": "phoenix",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "49.5%",
-            "banrate_pro": "12.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "3.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "mystic_staff",
+                "refresher",
+                "aeon_disk",
+                "sheepstick"
             ]
         },
         {
             "id": 111,
             "name": "Oracle",
             "internal_name": "oracle",
-            "role": "Support",
-            "tier": "A",
-            "winrate_d2pt": "51.4%",
-            "banrate_pro": "8.6%",
+            "role": "Mid/Offlane",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "5.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "aether_lens",
+                "aeon_disk",
+                "guardian_greaves"
             ]
         },
         {
             "id": 112,
             "name": "Winter Wyvern",
             "internal_name": "winter_wyvern",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "47.2%",
-            "banrate_pro": "27.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
+                "glimmer_cape",
                 "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "4.4",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "aeon_disk"
             ]
         },
         {
@@ -2670,22 +1491,12 @@
             "internal_name": "arc_warden",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.6%",
-            "banrate_pro": "36.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "hyperstone",
+                "bloodthorn",
+                "force_staff",
+                "ultimate_orb"
             ]
         },
         {
@@ -2694,46 +1505,26 @@
             "internal_name": "monkey_king",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "46.0%",
-            "banrate_pro": "19.5%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_orb",
+                "demon_edge",
                 "black_king_bar",
-                "blink",
-                "manta",
                 "skadi"
-            ],
-            "versatility": "7.3",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
             ]
         },
         {
             "id": 119,
             "name": "Dark Willow",
             "internal_name": "dark_willow",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "46.7%",
-            "banrate_pro": "36.1%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
                 "force_staff",
+                "cyclone",
                 "glimmer_cape"
-            ],
-            "versatility": "5.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
             ]
         },
         {
@@ -2741,47 +1532,27 @@
             "name": "Pangolier",
             "internal_name": "pangolier",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "50.3%",
-            "banrate_pro": "30.5%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "basher",
+                "ultimate_scepter",
+                "soul_booster",
+                "octarine_core"
             ]
         },
         {
             "id": 121,
             "name": "Grimstroke",
             "internal_name": "grimstroke",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.0%",
-            "banrate_pro": "8.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
+                "ultimate_scepter",
                 "blink",
-                "force_staff",
+                "mystic_staff",
                 "glimmer_cape"
-            ],
-            "versatility": "6.9",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
             ]
         },
         {
@@ -2789,23 +1560,13 @@
             "name": "Hoodwink",
             "internal_name": "hoodwink",
             "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.6%",
-            "banrate_pro": "12.6%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "6.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "glimmer_cape",
+                "mystic_staff",
+                "force_staff"
             ]
         },
         {
@@ -2813,23 +1574,13 @@
             "name": "Void Spirit",
             "internal_name": "void_spirit",
             "role": "Carry",
-            "tier": "A",
-            "winrate_d2pt": "50.4%",
-            "banrate_pro": "24.1%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "5.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "yasha",
+                "yasha_and_kaya"
             ]
         },
         {
@@ -2837,23 +1588,13 @@
             "name": "Snapfire",
             "internal_name": "snapfire",
             "role": "Support",
-            "tier": "S",
-            "winrate_d2pt": "53.7%",
-            "banrate_pro": "31.4%",
+            "tier": "B",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "3.8",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "yasha",
+                "yasha_and_kaya",
+                "shivas_guard"
             ]
         },
         {
@@ -2862,46 +1603,26 @@
             "internal_name": "mars",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "47.8%",
-            "banrate_pro": "39.2%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "4.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "mystic_staff",
+                "sheepstick",
+                "reaver"
             ]
         },
         {
             "id": 131,
-            "name": "Ringmaster",
+            "name": "Ring Master",
             "internal_name": "ringmaster",
-            "role": "Support",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.9%",
-            "banrate_pro": "32.7%",
+            "winrate_d2pt": "0%",
             "core_items": [
-                "black_king_bar",
                 "blink",
-                "force_staff",
+                "aether_lens",
+                "ultimate_scepter",
                 "glimmer_cape"
-            ],
-            "versatility": "4.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
             ]
         },
         {
@@ -2910,22 +1631,12 @@
             "internal_name": "dawnbreaker",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.0%",
-            "banrate_pro": "20.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "hyperstone",
+                "assault",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.0",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "viper",
-                "necrophos"
+                "basher"
             ]
         },
         {
@@ -2934,70 +1645,40 @@
             "internal_name": "marci",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "49.8%",
-            "banrate_pro": "25.6%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "glimmer_cape",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "7.0",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "basher",
+                "blink"
             ]
         },
         {
             "id": 137,
             "name": "Primal Beast",
             "internal_name": "primal_beast",
-            "role": "Mid/Offlane",
+            "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "46.4%",
-            "banrate_pro": "8.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "shivas_guard",
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "pipe",
-                "crimson_guard"
-            ],
-            "versatility": "7.1",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "reaver"
             ]
         },
         {
             "id": 138,
             "name": "Muerta",
             "internal_name": "muerta",
-            "role": "Carry",
+            "role": "Mid/Offlane",
             "tier": "B",
-            "winrate_d2pt": "48.9%",
-            "banrate_pro": "39.3%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "demon_edge",
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "3.5",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "hurricane_pike",
+                "lesser_crit"
             ]
         },
         {
@@ -3006,22 +1687,12 @@
             "internal_name": "kez",
             "role": "Carry",
             "tier": "B",
-            "winrate_d2pt": "48.0%",
-            "banrate_pro": "39.9%",
+            "winrate_d2pt": "0%",
             "core_items": [
                 "black_king_bar",
-                "blink",
-                "manta",
-                "skadi"
-            ],
-            "versatility": "6.6",
-            "best_with": [
-                "magnataur",
-                "treant"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "ultimate_scepter",
+                "demon_edge",
+                "eagle"
             ]
         },
         {
@@ -3030,78 +1701,81 @@
             "internal_name": "largo",
             "role": "Support",
             "tier": "B",
-            "winrate_d2pt": "47.8%",
-            "banrate_pro": "19.8%",
+            "winrate_d2pt": "0%",
             "core_items": [
+                "ultimate_scepter",
                 "black_king_bar",
-                "blink",
-                "force_staff",
-                "glimmer_cape"
-            ],
-            "versatility": "4.3",
-            "best_with": [
-                "crystal_maiden",
-                "enigma"
-            ],
-            "counters": [
-                "bloodseeker",
-                "axe"
+                "sange",
+                "kaya_and_sange"
             ]
         }
     ],
     "teams": [
         {
-            "name": "Team Falcons",
-            "power_index": 95,
-            "recent_results": "W-W-W-W-L",
-            "status": "Tier-1",
-            "datdota_smoke_success": "72%",
-            "datdota_first_blood": "68%",
-            "datdota_ward_efficiency": "1.85x",
-            "datdota_buyback_discipline": "92%"
+            "name": "PVISION",
+            "power_index": 90,
+            "status": "Pro"
+        },
+        {
+            "name": "Rune Eaters",
+            "power_index": 90,
+            "status": "Pro"
         },
         {
             "name": "Team Spirit",
-            "power_index": 91,
-            "recent_results": "W-W-L-W-W",
-            "status": "Tier-1",
-            "datdota_smoke_success": "65%",
-            "datdota_first_blood": "55%",
-            "datdota_ward_efficiency": "1.42x",
-            "datdota_buyback_discipline": "88%"
+            "power_index": 90,
+            "status": "Pro"
         },
         {
-            "name": "Team Liquid",
-            "power_index": 89,
-            "recent_results": "L-W-W-W-L",
-            "status": "Tier-1",
-            "datdota_smoke_success": "60%",
-            "datdota_first_blood": "50%",
-            "datdota_ward_efficiency": "1.30x",
-            "datdota_buyback_discipline": "85%"
+            "name": "Team Yandex",
+            "power_index": 90,
+            "status": "Pro"
+        },
+        {
+            "name": "BoomBoys",
+            "power_index": 90,
+            "status": "Pro"
+        },
+        {
+            "name": "LGD Gaming",
+            "power_index": 90,
+            "status": "Pro"
         }
     ],
     "tournament": {
-        "name": "Esports World Cup 2026 (Live)",
+        "name": "OpenDota Pro Tracker",
         "matches": [
             {
-                "time": "18:00 (Today)",
-                "team_a": "Falcons",
-                "team_b": "Spirit",
-                "prediction": "Falcons Win 2:1",
-                "odds_a": "1.45",
-                "odds_b": "2.80",
-                "ai_reasoning": "Falcons control early map better."
+                "time": "Завершен",
+                "team_a": "PVISION",
+                "team_b": "Rune Eaters",
+                "prediction": "Победил PVISION"
             },
             {
-                "time": "21:00 (Today)",
-                "team_a": "Liquid",
-                "team_b": "Gaimin",
-                "prediction": "Liquid Win 2:0",
-                "odds_a": "1.85",
-                "odds_b": "1.90",
-                "ai_reasoning": "Liquid draft advantage in 7.41+."
+                "time": "Завершен",
+                "team_a": "Rune Eaters",
+                "team_b": "PVISION",
+                "prediction": "Победил PVISION"
+            },
+            {
+                "time": "Завершен",
+                "team_a": "Team Spirit",
+                "team_b": "Team Yandex",
+                "prediction": "Победил Team Yandex"
+            },
+            {
+                "time": "Завершен",
+                "team_a": "Team Spirit",
+                "team_b": "Team Yandex",
+                "prediction": "Победил Team Yandex"
+            },
+            {
+                "time": "Завершен",
+                "team_a": "BoomBoys",
+                "team_b": "LGD Gaming",
+                "prediction": "Победил BoomBoys"
             }
         ]
-    }
+    },
+    "ai_insight": "Сбой ИИ: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
 }
