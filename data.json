@@ -1,1781 +1,4195 @@
 {
-    "last_updated": "2026-07-17 10:08:48",
+    "last_updated": "2026-07-17 10:23:06",
+    "player_id": "872107609",
     "meta_heroes": [
-        {
-            "id": 1,
-            "name": "Anti-Mage",
-            "internal_name": "antimage",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "basher",
-                "butterfly",
-                "eagle"
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Axe",
-            "internal_name": "axe",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "shivas_guard",
-                "soul_booster",
-                "lotus_orb"
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Bane",
-            "internal_name": "bane",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "blink",
-                "aether_lens",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Bloodseeker",
-            "internal_name": "bloodseeker",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "eagle",
-                "sange",
-                "basher",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Crystal Maiden",
-            "internal_name": "crystal_maiden",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "ultimate_scepter",
-                "force_staff",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Drow Ranger",
-            "internal_name": "drow_ranger",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "black_king_bar",
-                "lesser_crit",
-                "eagle"
-            ]
-        },
-        {
-            "id": 7,
-            "name": "Earthshaker",
-            "internal_name": "earthshaker",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "yasha",
-                "yasha_and_kaya",
-                "refresher",
-                "cyclone"
-            ]
-        },
-        {
-            "id": 8,
-            "name": "Juggernaut",
-            "internal_name": "juggernaut",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "eagle",
-                "butterfly",
-                "blink",
-                "ultimate_scepter"
-            ]
-        },
-        {
-            "id": 9,
-            "name": "Mirana",
-            "internal_name": "mirana",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "mystic_staff",
-                "cyclone",
-                "guardian_greaves"
-            ]
-        },
-        {
-            "id": 10,
-            "name": "Morphling",
-            "internal_name": "morphling",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "butterfly",
-                "black_king_bar",
-                "demon_edge"
-            ]
-        },
-        {
-            "id": 11,
-            "name": "Shadow Fiend",
-            "internal_name": "nevermore",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "lesser_crit",
-                "greater_crit",
-                "reaver"
-            ]
-        },
-        {
-            "id": 12,
-            "name": "Phantom Lancer",
-            "internal_name": "phantom_lancer",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "skadi",
-                "orchid",
-                "bloodthorn"
-            ]
-        },
-        {
-            "id": 13,
-            "name": "Puck",
-            "internal_name": "puck",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "devastator",
-                "mystic_staff",
-                "octarine_core",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 14,
-            "name": "Pudge",
-            "internal_name": "pudge",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "black_king_bar",
-                "shivas_guard",
-                "reaver"
-            ]
-        },
-        {
-            "id": 15,
-            "name": "Razor",
-            "internal_name": "razor",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "reaver",
-                "black_king_bar",
-                "satanic",
-                "eagle"
-            ]
-        },
-        {
-            "id": 16,
-            "name": "Sand King",
-            "internal_name": "sand_king",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "lesser_crit",
-                "demon_edge",
-                "shivas_guard"
-            ]
-        },
-        {
-            "id": 17,
-            "name": "Storm Spirit",
-            "internal_name": "storm_spirit",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "mystic_staff",
-                "witch_blade",
-                "black_king_bar",
-                "devastator"
-            ]
-        },
-        {
-            "id": 18,
-            "name": "Sven",
-            "internal_name": "sven",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "greater_crit",
-                "harpoon",
-                "lesser_crit"
-            ]
-        },
-        {
-            "id": 19,
-            "name": "Tiny",
-            "internal_name": "tiny",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "black_king_bar",
-                "harpoon",
-                "lesser_crit"
-            ]
-        },
-        {
-            "id": 20,
-            "name": "Vengeful Spirit",
-            "internal_name": "vengefulspirit",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "eagle",
-                "manta",
-                "hydras_breath",
-                "butterfly"
-            ]
-        },
-        {
-            "id": 21,
-            "name": "Windranger",
-            "internal_name": "windrunner",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "lesser_crit",
-                "greater_crit",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 22,
-            "name": "Zeus",
-            "internal_name": "zuus",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "refresher",
-                "relic",
-                "demon_edge",
-                "rapier"
-            ]
-        },
-        {
-            "id": 23,
-            "name": "Kunkka",
-            "internal_name": "kunkka",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "ultimate_scepter",
-                "black_king_bar",
-                "shivas_guard"
-            ]
-        },
-        {
-            "id": 25,
-            "name": "Lina",
-            "internal_name": "lina",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "blink",
-                "yasha",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 26,
-            "name": "Lion",
-            "internal_name": "lion",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "force_staff",
-                "aether_lens",
-                "glimmer_cape",
-                "aeon_disk"
-            ]
-        },
-        {
-            "id": 27,
-            "name": "Shadow Shaman",
-            "internal_name": "shadow_shaman",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "glimmer_cape",
-                "aether_lens",
-                "blink",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 28,
-            "name": "Slardar",
-            "internal_name": "slardar",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "black_king_bar",
-                "echo_sabre",
-                "hyperstone"
-            ]
-        },
-        {
-            "id": 29,
-            "name": "Tidehunter",
-            "internal_name": "tidehunter",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "shivas_guard",
-                "black_king_bar",
-                "mystic_staff"
-            ]
-        },
-        {
-            "id": 30,
-            "name": "Witch Doctor",
-            "internal_name": "witch_doctor",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "force_staff",
-                "ultimate_scepter",
-                "guardian_greaves"
-            ]
-        },
-        {
-            "id": 31,
-            "name": "Lich",
-            "internal_name": "lich",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "ultimate_scepter",
-                "glimmer_cape",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 32,
-            "name": "Riki",
-            "internal_name": "riki",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "eagle",
-                "manta",
-                "disperser",
-                "basher"
-            ]
-        },
-        {
-            "id": 33,
-            "name": "Enigma",
-            "internal_name": "enigma",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "ultimate_scepter",
-                "shivas_guard",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 34,
-            "name": "Tinker",
-            "internal_name": "tinker",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "mystic_staff",
-                "shivas_guard",
-                "sange",
-                "aether_lens"
-            ]
-        },
-        {
-            "id": 35,
-            "name": "Sniper",
-            "internal_name": "sniper",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "black_king_bar",
-                "lesser_crit",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 36,
-            "name": "Necrophos",
-            "internal_name": "necrolyte",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "reaver",
-                "heart",
-                "black_king_bar",
-                "travel_boots_2"
-            ]
-        },
-        {
-            "id": 37,
-            "name": "Warlock",
-            "internal_name": "warlock",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "force_staff",
-                "glimmer_cape",
-                "refresher"
-            ]
-        },
-        {
-            "id": 38,
-            "name": "Beastmaster",
-            "internal_name": "beastmaster",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "hyperstone",
-                "assault",
-                "blink"
-            ]
-        },
-        {
-            "id": 39,
-            "name": "Queen of Pain",
-            "internal_name": "queenofpain",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "soul_booster",
-                "shivas_guard",
-                "black_king_bar",
-                "ultimate_scepter"
-            ]
-        },
-        {
-            "id": 40,
-            "name": "Venomancer",
-            "internal_name": "venomancer",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "force_staff",
-                "blink",
-                "ultimate_scepter",
-                "solar_crest"
-            ]
-        },
-        {
-            "id": 41,
-            "name": "Faceless Void",
-            "internal_name": "faceless_void",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "ultimate_scepter",
-                "black_king_bar",
-                "demon_edge"
-            ]
-        },
-        {
-            "id": 42,
-            "name": "Wraith King",
-            "internal_name": "skeleton_king",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "black_king_bar",
-                "hyperstone",
-                "assault"
-            ]
-        },
-        {
-            "id": 43,
-            "name": "Death Prophet",
-            "internal_name": "death_prophet",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "shivas_guard",
-                "blink",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 44,
-            "name": "Phantom Assassin",
-            "internal_name": "phantom_assassin",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "basher",
-                "reaver",
-                "satanic",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 45,
-            "name": "Pugna",
-            "internal_name": "pugna",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "aether_lens",
-                "force_staff",
-                "glimmer_cape",
-                "blink"
-            ]
-        },
-        {
-            "id": 46,
-            "name": "Templar Assassin",
-            "internal_name": "templar_assassin",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "greater_crit",
-                "eagle",
-                "lesser_crit"
-            ]
-        },
-        {
-            "id": 47,
-            "name": "Viper",
-            "internal_name": "viper",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "black_king_bar",
-                "skadi",
-                "manta"
-            ]
-        },
-        {
-            "id": 48,
-            "name": "Luna",
-            "internal_name": "luna",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "butterfly",
-                "eagle",
-                "black_king_bar",
-                "reaver"
-            ]
-        },
-        {
-            "id": 49,
-            "name": "Dragon Knight",
-            "internal_name": "dragon_knight",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "greater_crit",
-                "lesser_crit",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 50,
-            "name": "Dazzle",
-            "internal_name": "dazzle",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "guardian_greaves",
-                "blink",
-                "aether_lens",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 51,
-            "name": "Clockwerk",
-            "internal_name": "rattletrap",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "force_staff",
-                "blink",
-                "cyclone",
-                "solar_crest"
-            ]
-        },
-        {
-            "id": 52,
-            "name": "Leshrac",
-            "internal_name": "leshrac",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "soul_booster",
-                "black_king_bar",
-                "shivas_guard",
-                "bloodstone"
-            ]
-        },
-        {
-            "id": 53,
-            "name": "Nature's Prophet",
-            "internal_name": "furion",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "lesser_crit",
-                "black_king_bar",
-                "greater_crit"
-            ]
-        },
-        {
-            "id": 54,
-            "name": "Lifestealer",
-            "internal_name": "life_stealer",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "basher",
-                "ultimate_scepter",
-                "abyssal_blade",
-                "sange"
-            ]
-        },
-        {
-            "id": 55,
-            "name": "Dark Seer",
-            "internal_name": "dark_seer",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "shivas_guard",
-                "blink",
-                "black_king_bar",
-                "ultimate_scepter"
-            ]
-        },
-        {
-            "id": 56,
-            "name": "Clinkz",
-            "internal_name": "clinkz",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "greater_crit",
-                "hurricane_pike",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 57,
-            "name": "Omniknight",
-            "internal_name": "omniknight",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink",
-                "ultimate_scepter",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 58,
-            "name": "Enchantress",
-            "internal_name": "enchantress",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "hurricane_pike",
-                "force_staff",
-                "ultimate_scepter",
-                "hyperstone"
-            ]
-        },
-        {
-            "id": 59,
-            "name": "Huskar",
-            "internal_name": "huskar",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "reaver",
-                "yasha",
-                "black_king_bar"
-            ]
-        },
         {
             "id": 60,
             "name": "Night Stalker",
             "internal_name": "night_stalker",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "relic",
-                "nullifier",
-                "harpoon"
-            ]
-        },
-        {
-            "id": 61,
-            "name": "Broodmother",
-            "internal_name": "broodmother",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "eagle",
-                "butterfly",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 62,
-            "name": "Bounty Hunter",
-            "internal_name": "bounty_hunter",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "mystic_staff",
-                "pipe",
-                "boots_of_bearing",
-                "cyclone"
-            ]
-        },
-        {
-            "id": 63,
-            "name": "Weaver",
-            "internal_name": "weaver",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "lesser_crit",
-                "greater_crit",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 64,
-            "name": "Jakiro",
-            "internal_name": "jakiro",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "force_staff",
-                "ultimate_scepter",
-                "cyclone",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 65,
-            "name": "Batrider",
-            "internal_name": "batrider",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "black_king_bar",
-                "force_staff",
-                "boots_of_bearing"
-            ]
-        },
-        {
-            "id": 66,
-            "name": "Chen",
-            "internal_name": "chen",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "pipe",
-                "ultimate_scepter",
-                "guardian_greaves",
-                "vladmir"
-            ]
+            "pub_3000_plus_winrate": "53.9%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 6,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bracer",
+                    "boots",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blink",
+                    "mithril_hammer",
+                    "echo_sabre"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "relic",
+                    "nullifier",
+                    "harpoon"
+                ]
+            }
         },
         {
             "id": 67,
             "name": "Spectre",
             "internal_name": "spectre",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "manta",
-                "skadi",
-                "eagle"
-            ]
+            "pub_3000_plus_winrate": "53.7%",
+            "pro_winrate": "80.0%",
+            "pro_bans": 11,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "urn_of_shadows",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "relic",
+                    "talisman_of_evasion",
+                    "yasha"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "manta",
+                    "skadi",
+                    "eagle"
+                ]
+            }
         },
         {
-            "id": 68,
-            "name": "Ancient Apparition",
-            "internal_name": "ancient_apparition",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "force_staff",
-                "blink",
-                "mystic_staff",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 69,
-            "name": "Doom",
-            "internal_name": "doom_bringer",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "shivas_guard",
-                "ultimate_scepter",
-                "black_king_bar",
-                "reaver"
-            ]
-        },
-        {
-            "id": 70,
-            "name": "Ursa",
-            "internal_name": "ursa",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 71,
-            "name": "Spirit Breaker",
-            "internal_name": "spirit_breaker",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 72,
-            "name": "Gyrocopter",
-            "internal_name": "gyrocopter",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 73,
-            "name": "Alchemist",
-            "internal_name": "alchemist",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 74,
-            "name": "Invoker",
-            "internal_name": "invoker",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 75,
-            "name": "Silencer",
-            "internal_name": "silencer",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 76,
-            "name": "Outworld Devourer",
-            "internal_name": "obsidian_destroyer",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 77,
-            "name": "Lycan",
-            "internal_name": "lycan",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 78,
-            "name": "Brewmaster",
-            "internal_name": "brewmaster",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 79,
-            "name": "Shadow Demon",
-            "internal_name": "shadow_demon",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 80,
-            "name": "Lone Druid",
-            "internal_name": "lone_druid",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 81,
-            "name": "Chaos Knight",
-            "internal_name": "chaos_knight",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 82,
-            "name": "Meepo",
-            "internal_name": "meepo",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 83,
-            "name": "Treant Protector",
-            "internal_name": "treant",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 84,
-            "name": "Ogre Magi",
-            "internal_name": "ogre_magi",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 85,
-            "name": "Undying",
-            "internal_name": "undying",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 86,
-            "name": "Rubick",
-            "internal_name": "rubick",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 87,
-            "name": "Disruptor",
-            "internal_name": "disruptor",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 88,
-            "name": "Nyx Assassin",
-            "internal_name": "nyx_assassin",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 89,
-            "name": "Naga Siren",
-            "internal_name": "naga_siren",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 90,
-            "name": "Keeper of the Light",
-            "internal_name": "keeper_of_the_light",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 91,
-            "name": "Io",
-            "internal_name": "wisp",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
+            "id": 42,
+            "name": "Wraith King",
+            "internal_name": "skeleton_king",
+            "pub_3000_plus_winrate": "53.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 6,
+                "winrate": "83.3%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "bracer"
+                ],
+                "mid": [
+                    "talisman_of_evasion",
+                    "relic",
+                    "radiance",
+                    "blink"
+                ],
+                "late": [
+                    "blink",
+                    "black_king_bar",
+                    "hyperstone",
+                    "assault"
+                ]
+            }
         },
         {
             "id": 92,
             "name": "Visage",
             "internal_name": "visage",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 93,
-            "name": "Slark",
-            "internal_name": "slark",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 94,
-            "name": "Medusa",
-            "internal_name": "medusa",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 95,
-            "name": "Troll Warlord",
-            "internal_name": "troll_warlord",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 96,
-            "name": "Centaur Warrunner",
-            "internal_name": "centaur",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 97,
-            "name": "Magnus",
-            "internal_name": "magnataur",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 98,
-            "name": "Timbersaw",
-            "internal_name": "shredder",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 99,
-            "name": "Bristleback",
-            "internal_name": "bristleback",
-            "role": "Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 100,
-            "name": "Tusk",
-            "internal_name": "tusk",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 101,
-            "name": "Skywrath Mage",
-            "internal_name": "skywrath_mage",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 102,
-            "name": "Abaddon",
-            "internal_name": "abaddon",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 103,
-            "name": "Elder Titan",
-            "internal_name": "elder_titan",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 104,
-            "name": "Legion Commander",
-            "internal_name": "legion_commander",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "blink"
-            ]
-        },
-        {
-            "id": 105,
-            "name": "Techies",
-            "internal_name": "techies",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "mystic_staff",
-                "force_staff",
-                "sheepstick",
-                "lotus_orb"
-            ]
-        },
-        {
-            "id": 106,
-            "name": "Ember Spirit",
-            "internal_name": "ember_spirit",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "black_king_bar",
-                "sange",
-                "kaya_and_sange"
-            ]
-        },
-        {
-            "id": 107,
-            "name": "Earth Spirit",
-            "internal_name": "earth_spirit",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "shivas_guard",
-                "kaya_and_sange",
-                "sange",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 108,
-            "name": "Underlord",
-            "internal_name": "abyssal_underlord",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "shivas_guard",
-                "ultimate_scepter",
-                "soul_booster"
-            ]
-        },
-        {
-            "id": 109,
-            "name": "Terrorblade",
-            "internal_name": "terrorblade",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "skadi",
-                "demon_edge",
-                "black_king_bar"
-            ]
-        },
-        {
-            "id": 110,
-            "name": "Phoenix",
-            "internal_name": "phoenix",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "mystic_staff",
-                "refresher",
-                "aeon_disk",
-                "sheepstick"
-            ]
-        },
-        {
-            "id": 111,
-            "name": "Oracle",
-            "internal_name": "oracle",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "aether_lens",
-                "aeon_disk",
-                "guardian_greaves"
-            ]
-        },
-        {
-            "id": 112,
-            "name": "Winter Wyvern",
-            "internal_name": "winter_wyvern",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "glimmer_cape",
-                "force_staff",
-                "aeon_disk"
-            ]
-        },
-        {
-            "id": 113,
-            "name": "Arc Warden",
-            "internal_name": "arc_warden",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "hyperstone",
-                "bloodthorn",
-                "force_staff",
-                "ultimate_orb"
-            ]
-        },
-        {
-            "id": 114,
-            "name": "Monkey King",
-            "internal_name": "monkey_king",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_orb",
-                "demon_edge",
-                "black_king_bar",
-                "skadi"
-            ]
-        },
-        {
-            "id": 119,
-            "name": "Dark Willow",
-            "internal_name": "dark_willow",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "force_staff",
-                "cyclone",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 120,
-            "name": "Pangolier",
-            "internal_name": "pangolier",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "basher",
-                "ultimate_scepter",
-                "soul_booster",
-                "octarine_core"
-            ]
-        },
-        {
-            "id": 121,
-            "name": "Grimstroke",
-            "internal_name": "grimstroke",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "blink",
-                "mystic_staff",
-                "glimmer_cape"
-            ]
-        },
-        {
-            "id": 123,
-            "name": "Hoodwink",
-            "internal_name": "hoodwink",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "glimmer_cape",
-                "mystic_staff",
-                "force_staff"
-            ]
-        },
-        {
-            "id": 126,
-            "name": "Void Spirit",
-            "internal_name": "void_spirit",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "black_king_bar",
-                "yasha",
-                "yasha_and_kaya"
-            ]
+            "pub_3000_plus_winrate": "53.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "null_talisman",
+                    "tranquil_boots",
+                    "ancient_janggo"
+                ],
+                "mid": [
+                    "ancient_janggo",
+                    "ring_of_tarrasque",
+                    "vladmir",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "assault",
+                    "hyperstone",
+                    "ultimate_scepter",
+                    "mystic_staff"
+                ]
+            }
         },
         {
             "id": 128,
             "name": "Snapfire",
             "internal_name": "snapfire",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "yasha",
-                "yasha_and_kaya",
-                "shivas_guard"
-            ]
+            "pub_3000_plus_winrate": "53.3%",
+            "pro_winrate": "31.6%",
+            "pro_bans": 11,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "soul_ring",
+                    "bottle",
+                    "bracer"
+                ],
+                "mid": [
+                    "aghanims_shard",
+                    "staff_of_wizardry",
+                    "blink",
+                    "kaya"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "yasha",
+                    "yasha_and_kaya",
+                    "shivas_guard"
+                ]
+            }
         },
         {
-            "id": 129,
-            "name": "Mars",
-            "internal_name": "mars",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "mystic_staff",
-                "sheepstick",
-                "reaver"
-            ]
+            "id": 62,
+            "name": "Bounty Hunter",
+            "internal_name": "bounty_hunter",
+            "pub_3000_plus_winrate": "53.1%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "tranquil_boots",
+                    "boots",
+                    "urn_of_shadows",
+                    "chainmail"
+                ],
+                "mid": [
+                    "ancient_janggo",
+                    "ring_of_tarrasque",
+                    "staff_of_wizardry",
+                    "diadem"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "pipe",
+                    "boots_of_bearing",
+                    "cyclone"
+                ]
+            }
         },
         {
-            "id": 131,
-            "name": "Ring Master",
-            "internal_name": "ringmaster",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "blink",
-                "aether_lens",
-                "ultimate_scepter",
-                "glimmer_cape"
-            ]
+            "id": 54,
+            "name": "Lifestealer",
+            "internal_name": "life_stealer",
+            "pub_3000_plus_winrate": "52.8%",
+            "pro_winrate": "25.0%",
+            "pro_bans": 10,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "bracer"
+                ],
+                "mid": [
+                    "relic",
+                    "radiance",
+                    "talisman_of_evasion",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "basher",
+                    "ultimate_scepter",
+                    "abyssal_blade",
+                    "sange"
+                ]
+            }
+        },
+        {
+            "id": 20,
+            "name": "Vengeful Spirit",
+            "internal_name": "vengefulspirit",
+            "pub_3000_plus_winrate": "52.7%",
+            "pro_winrate": "0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "wraith_band",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "broadsword",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "eagle",
+                    "manta",
+                    "hydras_breath",
+                    "butterfly"
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "name": "Phantom Lancer",
+            "internal_name": "phantom_lancer",
+            "pub_3000_plus_winrate": "52.6%",
+            "pro_winrate": "75.0%",
+            "pro_bans": 4,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "blade_of_alacrity",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diadem",
+                    "manta",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "skadi",
+                    "orchid",
+                    "bloodthorn"
+                ]
+            }
+        },
+        {
+            "id": 103,
+            "name": "Elder Titan",
+            "internal_name": "elder_titan",
+            "pub_3000_plus_winrate": "52.5%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "tranquil_boots"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "ogre_axe",
+                    "ancient_janggo",
+                    "point_booster"
+                ],
+                "late": [
+                    "solar_crest",
+                    "lesser_crit",
+                    "ultimate_scepter",
+                    "demon_edge"
+                ]
+            }
+        },
+        {
+            "id": 85,
+            "name": "Undying",
+            "internal_name": "undying",
+            "pub_3000_plus_winrate": "52.4%",
+            "pro_winrate": "62.5%",
+            "pro_bans": 26,
+            "personal_stats": {
+                "games_played": 8,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "blink",
+                    "arcane_boots",
+                    "ogre_axe",
+                    "platemail"
+                ],
+                "late": [
+                    "blink",
+                    "black_king_bar",
+                    "soul_booster",
+                    "octarine_core"
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "name": "Juggernaut",
+            "internal_name": "juggernaut",
+            "pub_3000_plus_winrate": "52.2%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ring_of_health",
+                    "void_stone"
+                ],
+                "mid": [
+                    "broadsword",
+                    "blade_of_alacrity",
+                    "yasha",
+                    "bfury"
+                ],
+                "late": [
+                    "eagle",
+                    "butterfly",
+                    "blink",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 32,
+            "name": "Riki",
+            "internal_name": "riki",
+            "pub_3000_plus_winrate": "52.2%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 4,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "wraith_band",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diffusal_blade",
+                    "yasha",
+                    "diadem"
+                ],
+                "late": [
+                    "eagle",
+                    "manta",
+                    "disperser",
+                    "basher"
+                ]
+            }
+        },
+        {
+            "id": 90,
+            "name": "Keeper of the Light",
+            "internal_name": "keeper_of_the_light",
+            "pub_3000_plus_winrate": "52.2%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 34,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "diadem",
+                    "tranquil_boots"
+                ],
+                "mid": [
+                    "holy_locket",
+                    "staff_of_wizardry",
+                    "force_staff",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "ultimate_scepter",
+                    "force_staff",
+                    "sheepstick"
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "name": "Drow Ranger",
+            "internal_name": "drow_ranger",
+            "pub_3000_plus_winrate": "52.0%",
+            "pro_winrate": "44.4%",
+            "pro_bans": 35,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "dragon_lance",
+                    "yasha"
+                ],
+                "late": [
+                    "demon_edge",
+                    "black_king_bar",
+                    "lesser_crit",
+                    "eagle"
+                ]
+            }
+        },
+        {
+            "id": 27,
+            "name": "Shadow Shaman",
+            "internal_name": "shadow_shaman",
+            "pub_3000_plus_winrate": "52.0%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "arcane_boots",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "blink",
+                    "arcane_boots",
+                    "aether_lens",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "glimmer_cape",
+                    "aether_lens",
+                    "blink",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 31,
+            "name": "Lich",
+            "internal_name": "lich",
+            "pub_3000_plus_winrate": "51.9%",
+            "pro_winrate": "38.5%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "arcane_boots"
+                ],
+                "mid": [
+                    "aghanims_shard",
+                    "glimmer_cape",
+                    "staff_of_wizardry",
+                    "blink"
+                ],
+                "late": [
+                    "blink",
+                    "ultimate_scepter",
+                    "glimmer_cape",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 33,
+            "name": "Enigma",
+            "internal_name": "enigma",
+            "pub_3000_plus_winrate": "51.9%",
+            "pro_winrate": "40.0%",
+            "pro_bans": 17,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "ancient_janggo",
+                    "tranquil_boots",
+                    "helm_of_iron_will"
+                ],
+                "mid": [
+                    "blink",
+                    "ogre_axe",
+                    "aghanims_shard",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "ultimate_scepter",
+                    "shivas_guard",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 74,
+            "name": "Invoker",
+            "internal_name": "invoker",
+            "pub_3000_plus_winrate": "51.9%",
+            "pro_winrate": "63.6%",
+            "pro_bans": 22,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "null_talisman",
+                    "staff_of_wizardry",
+                    "boots",
+                    "kaya"
+                ],
+                "mid": [
+                    "travel_boots",
+                    "staff_of_wizardry",
+                    "aghanims_shard",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "octarine_core",
+                    "mystic_staff",
+                    "soul_booster",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 88,
+            "name": "Nyx Assassin",
+            "internal_name": "nyx_assassin",
+            "pub_3000_plus_winrate": "51.9%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "tranquil_boots",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "cyclone",
+                    "blink",
+                    "arcane_boots"
+                ],
+                "late": [
+                    "blink",
+                    "cyclone",
+                    "ultimate_scepter",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 104,
+            "name": "Legion Commander",
+            "internal_name": "legion_commander",
+            "pub_3000_plus_winrate": "51.9%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 3,
+                "winrate": "66.7%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "blink",
+                    "blade_mail",
+                    "broadsword",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "invis_sword",
+                    "demon_edge",
+                    "assault"
+                ]
+            }
+        },
+        {
+            "id": 83,
+            "name": "Treant Protector",
+            "internal_name": "treant",
+            "pub_3000_plus_winrate": "51.8%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 63,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "tranquil_boots",
+                    "arcane_boots"
+                ],
+                "mid": [
+                    "blink",
+                    "arcane_boots",
+                    "essence_distiller",
+                    "pavise"
+                ],
+                "late": [
+                    "blink",
+                    "ultimate_scepter",
+                    "solar_crest",
+                    "vladmir"
+                ]
+            }
+        },
+        {
+            "id": 113,
+            "name": "Arc Warden",
+            "internal_name": "arc_warden",
+            "pub_3000_plus_winrate": "51.8%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "hand_of_midas",
+                    "boots",
+                    "javelin",
+                    "mithril_hammer"
+                ],
+                "mid": [
+                    "maelstrom",
+                    "hyperstone",
+                    "mjollnir",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "hyperstone",
+                    "bloodthorn",
+                    "force_staff",
+                    "ultimate_orb"
+                ]
+            }
         },
         {
             "id": 135,
             "name": "Dawnbreaker",
             "internal_name": "dawnbreaker",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "hyperstone",
-                "assault",
-                "black_king_bar",
-                "basher"
-            ]
+            "pub_3000_plus_winrate": "51.8%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "chainmail",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "broadsword",
+                    "echo_sabre",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "hyperstone",
+                    "assault",
+                    "black_king_bar",
+                    "basher"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "name": "Bloodseeker",
+            "internal_name": "bloodseeker",
+            "pub_3000_plus_winrate": "51.7%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "javelin"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "ogre_axe",
+                    "maelstrom",
+                    "hyperstone"
+                ],
+                "late": [
+                    "eagle",
+                    "sange",
+                    "basher",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 71,
+            "name": "Spirit Breaker",
+            "internal_name": "spirit_breaker",
+            "pub_3000_plus_winrate": "51.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 5,
+                "winrate": "60.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "chainmail",
+                    "phase_boots",
+                    "boots",
+                    "bracer"
+                ],
+                "mid": [
+                    "blitz_knuckles",
+                    "phase_boots",
+                    "claymore",
+                    "ancient_janggo"
+                ],
+                "late": [
+                    "invis_sword",
+                    "yasha",
+                    "black_king_bar",
+                    "kaya"
+                ]
+            }
+        },
+        {
+            "id": 82,
+            "name": "Meepo",
+            "internal_name": "meepo",
+            "pub_3000_plus_winrate": "51.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "wraith_band",
+                    "boots",
+                    "power_treads",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blade_of_alacrity",
+                    "sange_and_yasha",
+                    "sange"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "eagle",
+                    "ultimate_scepter",
+                    "skadi"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "name": "Axe",
+            "internal_name": "axe",
+            "pub_3000_plus_winrate": "51.5%",
+            "pro_winrate": "20.0%",
+            "pro_bans": 20,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "splintmail"
+                ],
+                "mid": [
+                    "blink",
+                    "blade_mail",
+                    "ogre_axe",
+                    "broadsword"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "shivas_guard",
+                    "soul_booster",
+                    "lotus_orb"
+                ]
+            }
+        },
+        {
+            "id": 22,
+            "name": "Zeus",
+            "internal_name": "zuus",
+            "pub_3000_plus_winrate": "51.5%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 4,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "bottle",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "ogre_axe",
+                    "point_booster",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "refresher",
+                    "relic",
+                    "demon_edge",
+                    "rapier"
+                ]
+            }
+        },
+        {
+            "id": 107,
+            "name": "Earth Spirit",
+            "internal_name": "earth_spirit",
+            "pub_3000_plus_winrate": "51.5%",
+            "pro_winrate": "46.4%",
+            "pro_bans": 22,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "urn_of_shadows",
+                    "power_treads"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "mithril_hammer",
+                    "black_king_bar",
+                    "spirit_vessel"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "kaya_and_sange",
+                    "sange",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 36,
+            "name": "Necrophos",
+            "internal_name": "necrolyte",
+            "pub_3000_plus_winrate": "51.4%",
+            "pro_winrate": "40.0%",
+            "pro_bans": 12,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "relic",
+                    "talisman_of_evasion"
+                ],
+                "mid": [
+                    "radiance",
+                    "aghanims_shard",
+                    "talisman_of_evasion",
+                    "travel_boots"
+                ],
+                "late": [
+                    "reaver",
+                    "heart",
+                    "black_king_bar",
+                    "travel_boots_2"
+                ]
+            }
+        },
+        {
+            "id": 121,
+            "name": "Grimstroke",
+            "internal_name": "grimstroke",
+            "pub_3000_plus_winrate": "51.4%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "null_talisman",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "blink",
+                    "staff_of_wizardry",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "blink",
+                    "mystic_staff",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 102,
+            "name": "Abaddon",
+            "internal_name": "abaddon",
+            "pub_3000_plus_winrate": "51.3%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "talisman_of_evasion",
+                    "relic",
+                    "radiance",
+                    "diadem"
+                ],
+                "late": [
+                    "orchid",
+                    "blink",
+                    "bloodthorn",
+                    "basher"
+                ]
+            }
+        },
+        {
+            "id": 14,
+            "name": "Pudge",
+            "internal_name": "pudge",
+            "pub_3000_plus_winrate": "51.2%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "bracer",
+                    "chainmail"
+                ],
+                "mid": [
+                    "blink",
+                    "aether_lens",
+                    "staff_of_wizardry",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "blink",
+                    "black_king_bar",
+                    "shivas_guard",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "name": "Bane",
+            "internal_name": "bane",
+            "pub_3000_plus_winrate": "51.1%",
+            "pro_winrate": "52.4%",
+            "pro_bans": 25,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "tranquil_boots",
+                    "void_stone"
+                ],
+                "mid": [
+                    "aether_lens",
+                    "arcane_boots",
+                    "point_booster",
+                    "blink"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "blink",
+                    "aether_lens",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "name": "Mirana",
+            "internal_name": "mirana",
+            "pub_3000_plus_winrate": "51.1%",
+            "pro_winrate": "53.8%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "power_treads",
+                    "chainmail"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "arcane_boots",
+                    "essence_distiller",
+                    "mekansm"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "mystic_staff",
+                    "cyclone",
+                    "guardian_greaves"
+                ]
+            }
+        },
+        {
+            "id": 50,
+            "name": "Dazzle",
+            "internal_name": "dazzle",
+            "pub_3000_plus_winrate": "51.0%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "soul_ring",
+                    "bracer"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "holy_locket",
+                    "mekansm",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "guardian_greaves",
+                    "blink",
+                    "aether_lens",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 57,
+            "name": "Omniknight",
+            "internal_name": "omniknight",
+            "pub_3000_plus_winrate": "50.9%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "bracer",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "echo_sabre",
+                    "broadsword",
+                    "diadem"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "blink",
+                    "ultimate_scepter",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "name": "Earthshaker",
+            "internal_name": "earthshaker",
+            "pub_3000_plus_winrate": "50.8%",
+            "pro_winrate": "75.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "bottle",
+                    "power_treads"
+                ],
+                "mid": [
+                    "blink",
+                    "staff_of_wizardry",
+                    "blade_of_alacrity",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "yasha",
+                    "yasha_and_kaya",
+                    "refresher",
+                    "cyclone"
+                ]
+            }
+        },
+        {
+            "id": 78,
+            "name": "Brewmaster",
+            "internal_name": "brewmaster",
+            "pub_3000_plus_winrate": "50.8%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "urn_of_shadows",
+                    "chainmail"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "blade_of_alacrity",
+                    "point_booster"
+                ],
+                "late": [
+                    "hyperstone",
+                    "assault",
+                    "refresher",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 106,
+            "name": "Ember Spirit",
+            "internal_name": "ember_spirit",
+            "pub_3000_plus_winrate": "50.8%",
+            "pro_winrate": "77.8%",
+            "pro_bans": 30,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bottle",
+                    "boots",
+                    "urn_of_shadows",
+                    "chainmail"
+                ],
+                "mid": [
+                    "spirit_vessel",
+                    "ogre_axe",
+                    "pers",
+                    "mage_slayer"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "sange",
+                    "kaya_and_sange"
+                ]
+            }
+        },
+        {
+            "id": 110,
+            "name": "Phoenix",
+            "internal_name": "phoenix",
+            "pub_3000_plus_winrate": "50.8%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "bracer",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "aghanims_shard",
+                    "staff_of_wizardry",
+                    "pavise",
+                    "solar_crest"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "refresher",
+                    "aeon_disk",
+                    "sheepstick"
+                ]
+            }
+        },
+        {
+            "id": 30,
+            "name": "Witch Doctor",
+            "internal_name": "witch_doctor",
+            "pub_3000_plus_winrate": "50.7%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "arcane_boots",
+                    "chainmail"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "glimmer_cape",
+                    "aghanims_shard",
+                    "pavise"
+                ],
+                "late": [
+                    "blink",
+                    "force_staff",
+                    "ultimate_scepter",
+                    "guardian_greaves"
+                ]
+            }
+        },
+        {
+            "id": 25,
+            "name": "Lina",
+            "internal_name": "lina",
+            "pub_3000_plus_winrate": "50.6%",
+            "pro_winrate": "69.2%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 3,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "null_talisman",
+                    "boots",
+                    "bottle",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "ogre_axe",
+                    "travel_boots"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "blink",
+                    "yasha",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 76,
+            "name": "Outworld Devourer",
+            "internal_name": "obsidian_destroyer",
+            "pub_3000_plus_winrate": "50.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "null_talisman",
+                    "boots",
+                    "power_treads",
+                    "blitz_knuckles"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "witch_blade",
+                    "oblivion_staff"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "hyperstone",
+                    "hurricane_pike",
+                    "devastator"
+                ]
+            }
+        },
+        {
+            "id": 77,
+            "name": "Lycan",
+            "internal_name": "lycan",
+            "pub_3000_plus_winrate": "50.6%",
+            "pro_winrate": "75.0%",
+            "pro_bans": 11,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "helm_of_iron_will",
+                    "helm_of_the_dominator",
+                    "null_talisman",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "ultimate_orb",
+                    "helm_of_the_overlord",
+                    "aghanims_shard",
+                    "platemail"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "assault",
+                    "relic",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "name": "Crystal Maiden",
+            "internal_name": "crystal_maiden",
+            "pub_3000_plus_winrate": "50.4%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "soul_ring",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "aghanims_shard",
+                    "blink",
+                    "glimmer_cape",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "blink",
+                    "ultimate_scepter",
+                    "force_staff",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 61,
+            "name": "Broodmother",
+            "internal_name": "broodmother",
+            "pub_3000_plus_winrate": "50.4%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "soul_ring",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "diadem",
+                    "manta",
+                    "yasha",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "eagle",
+                    "butterfly",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 87,
+            "name": "Disruptor",
+            "internal_name": "disruptor",
+            "pub_3000_plus_winrate": "50.4%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "blink",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "blink",
+                    "staff_of_wizardry",
+                    "point_booster"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "blink",
+                    "glimmer_cape",
+                    "cyclone"
+                ]
+            }
+        },
+        {
+            "id": 96,
+            "name": "Centaur Warrunner",
+            "internal_name": "centaur",
+            "pub_3000_plus_winrate": "50.4%",
+            "pro_winrate": "52.2%",
+            "pro_bans": 20,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "helm_of_iron_will",
+                    "helm_of_the_dominator",
+                    "bracer",
+                    "ring_of_health"
+                ],
+                "mid": [
+                    "blink",
+                    "ring_of_tarrasque",
+                    "reaver",
+                    "heart"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "black_king_bar",
+                    "ultimate_scepter",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 111,
+            "name": "Oracle",
+            "internal_name": "oracle",
+            "pub_3000_plus_winrate": "50.4%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "null_talisman",
+                    "bottle"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "blink",
+                    "ghost",
+                    "mekansm"
+                ],
+                "late": [
+                    "blink",
+                    "aether_lens",
+                    "aeon_disk",
+                    "guardian_greaves"
+                ]
+            }
+        },
+        {
+            "id": 18,
+            "name": "Sven",
+            "internal_name": "sven",
+            "pub_3000_plus_winrate": "50.3%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "lifesteal",
+                    "broadsword"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "broadsword",
+                    "echo_sabre",
+                    "blink"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "harpoon",
+                    "lesser_crit"
+                ]
+            }
+        },
+        {
+            "id": 45,
+            "name": "Pugna",
+            "internal_name": "pugna",
+            "pub_3000_plus_winrate": "50.3%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "null_talisman",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "glimmer_cape",
+                    "aether_lens",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "aether_lens",
+                    "force_staff",
+                    "glimmer_cape",
+                    "blink"
+                ]
+            }
+        },
+        {
+            "id": 56,
+            "name": "Clinkz",
+            "internal_name": "clinkz",
+            "pub_3000_plus_winrate": "50.2%",
+            "pro_winrate": "55.6%",
+            "pro_bans": 12,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "blade_of_alacrity",
+                    "desolator",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "hurricane_pike",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 68,
+            "name": "Ancient Apparition",
+            "internal_name": "ancient_apparition",
+            "pub_3000_plus_winrate": "50.2%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "tranquil_boots",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "staff_of_wizardry",
+                    "vitality_booster",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "force_staff",
+                    "blink",
+                    "mystic_staff",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 75,
+            "name": "Silencer",
+            "internal_name": "silencer",
+            "pub_3000_plus_winrate": "50.2%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "null_talisman",
+                    "tranquil_boots"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "staff_of_wizardry",
+                    "force_staff",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "refresher",
+                    "force_staff",
+                    "glimmer_cape",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 105,
+            "name": "Techies",
+            "internal_name": "techies",
+            "pub_3000_plus_winrate": "50.2%",
+            "pro_winrate": "57.1%",
+            "pro_bans": 4,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "urn_of_shadows",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "staff_of_wizardry",
+                    "glimmer_cape",
+                    "aether_lens"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "force_staff",
+                    "sheepstick",
+                    "lotus_orb"
+                ]
+            }
+        },
+        {
+            "id": 112,
+            "name": "Winter Wyvern",
+            "internal_name": "winter_wyvern",
+            "pub_3000_plus_winrate": "50.2%",
+            "pro_winrate": "75.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "null_talisman",
+                    "arcane_boots",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "blink",
+                    "arcane_boots",
+                    "power_treads",
+                    "glimmer_cape"
+                ],
+                "late": [
+                    "blink",
+                    "glimmer_cape",
+                    "force_staff",
+                    "aeon_disk"
+                ]
+            }
+        },
+        {
+            "id": 15,
+            "name": "Razor",
+            "internal_name": "razor",
+            "pub_3000_plus_winrate": "50.1%",
+            "pro_winrate": "0%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "wraith_band",
+                    "falcon_blade"
+                ],
+                "mid": [
+                    "yasha",
+                    "blade_of_alacrity",
+                    "ogre_axe",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "reaver",
+                    "black_king_bar",
+                    "satanic",
+                    "eagle"
+                ]
+            }
         },
         {
             "id": 136,
             "name": "Marci",
             "internal_name": "marci",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "glimmer_cape",
-                "black_king_bar",
-                "basher",
-                "blink"
-            ]
+            "pub_3000_plus_winrate": "50.1%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "bracer"
+                ],
+                "mid": [
+                    "phase_boots",
+                    "ogre_axe",
+                    "mithril_hammer",
+                    "pavise"
+                ],
+                "late": [
+                    "glimmer_cape",
+                    "black_king_bar",
+                    "basher",
+                    "blink"
+                ]
+            }
+        },
+        {
+            "id": 84,
+            "name": "Ogre Magi",
+            "internal_name": "ogre_magi",
+            "pub_3000_plus_winrate": "50.0%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 3,
+                "winrate": "33.3%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "soul_ring",
+                    "bracer"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "hand_of_midas",
+                    "aether_lens",
+                    "pavise"
+                ],
+                "late": [
+                    "glimmer_cape",
+                    "mystic_staff",
+                    "blink",
+                    "vladmir"
+                ]
+            }
+        },
+        {
+            "id": 41,
+            "name": "Faceless Void",
+            "internal_name": "faceless_void",
+            "pub_3000_plus_winrate": "49.9%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ring_of_health",
+                    "broadsword"
+                ],
+                "mid": [
+                    "broadsword",
+                    "blade_of_alacrity",
+                    "bfury",
+                    "yasha"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "demon_edge"
+                ]
+            }
+        },
+        {
+            "id": 44,
+            "name": "Phantom Assassin",
+            "internal_name": "phantom_assassin",
+            "pub_3000_plus_winrate": "49.8%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ring_of_health",
+                    "broadsword"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "broadsword",
+                    "bfury",
+                    "desolator"
+                ],
+                "late": [
+                    "basher",
+                    "reaver",
+                    "satanic",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 91,
+            "name": "Io",
+            "internal_name": "wisp",
+            "pub_3000_plus_winrate": "49.8%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "soul_ring",
+                    "chainmail",
+                    "bracer",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "mekansm",
+                    "holy_locket",
+                    "ogre_axe",
+                    "point_booster"
+                ],
+                "late": [
+                    "reaver",
+                    "heart",
+                    "glimmer_cape",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 52,
+            "name": "Leshrac",
+            "internal_name": "leshrac",
+            "pub_3000_plus_winrate": "49.7%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "bottle",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "kaya",
+                    "staff_of_wizardry",
+                    "blink",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "soul_booster",
+                    "black_king_bar",
+                    "shivas_guard",
+                    "bloodstone"
+                ]
+            }
+        },
+        {
+            "id": 81,
+            "name": "Chaos Knight",
+            "internal_name": "chaos_knight",
+            "pub_3000_plus_winrate": "49.7%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "helm_of_iron_will"
+                ],
+                "mid": [
+                    "blitz_knuckles",
+                    "armlet",
+                    "oblivion_staff",
+                    "claymore"
+                ],
+                "late": [
+                    "reaver",
+                    "bloodthorn",
+                    "heart",
+                    "blink"
+                ]
+            }
+        },
+        {
+            "id": 86,
+            "name": "Rubick",
+            "internal_name": "rubick",
+            "pub_3000_plus_winrate": "49.7%",
+            "pro_winrate": "54.5%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 3,
+                "winrate": "33.3%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "arcane_boots",
+                    "bottle"
+                ],
+                "mid": [
+                    "essence_distiller",
+                    "arcane_boots",
+                    "blink",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "blink",
+                    "ultimate_scepter",
+                    "cyclone",
+                    "aether_lens"
+                ]
+            }
+        },
+        {
+            "id": 29,
+            "name": "Tidehunter",
+            "internal_name": "tidehunter",
+            "pub_3000_plus_winrate": "49.6%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 8,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "bracer",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "blink",
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "point_booster"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "shivas_guard",
+                    "black_king_bar",
+                    "mystic_staff"
+                ]
+            }
+        },
+        {
+            "id": 93,
+            "name": "Slark",
+            "internal_name": "slark",
+            "pub_3000_plus_winrate": "49.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 4,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "blade_of_alacrity",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "ogre_axe",
+                    "diffusal_blade",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "eagle",
+                    "ultimate_scepter",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 95,
+            "name": "Troll Warlord",
+            "internal_name": "troll_warlord",
+            "pub_3000_plus_winrate": "49.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 9,
+                "winrate": "44.4%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ring_of_health",
+                    "void_stone"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "broadsword",
+                    "blade_of_alacrity",
+                    "bfury"
+                ],
+                "late": [
+                    "demon_edge",
+                    "black_king_bar",
+                    "basher",
+                    "sange"
+                ]
+            }
+        },
+        {
+            "id": 101,
+            "name": "Skywrath Mage",
+            "internal_name": "skywrath_mage",
+            "pub_3000_plus_winrate": "49.6%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "null_talisman",
+                    "boots",
+                    "staff_of_wizardry",
+                    "arcane_boots"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "arcane_boots",
+                    "vitality_booster",
+                    "rod_of_atos"
+                ],
+                "late": [
+                    "blink",
+                    "mystic_staff",
+                    "kaya",
+                    "sheepstick"
+                ]
+            }
+        },
+        {
+            "id": 23,
+            "name": "Kunkka",
+            "internal_name": "kunkka",
+            "pub_3000_plus_winrate": "49.5%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bracer",
+                    "boots",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "point_booster",
+                    "claymore",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "demon_edge",
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "shivas_guard"
+                ]
+            }
+        },
+        {
+            "id": 51,
+            "name": "Clockwerk",
+            "internal_name": "rattletrap",
+            "pub_3000_plus_winrate": "49.5%",
+            "pro_winrate": "41.7%",
+            "pro_bans": 15,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "urn_of_shadows",
+                    "bracer"
+                ],
+                "mid": [
+                    "essence_distiller",
+                    "staff_of_wizardry",
+                    "blink",
+                    "pavise"
+                ],
+                "late": [
+                    "force_staff",
+                    "blink",
+                    "cyclone",
+                    "solar_crest"
+                ]
+            }
+        },
+        {
+            "id": 97,
+            "name": "Magnus",
+            "internal_name": "magnataur",
+            "pub_3000_plus_winrate": "49.5%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "broadsword"
+                ],
+                "mid": [
+                    "blink",
+                    "ogre_axe",
+                    "broadsword",
+                    "echo_sabre"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "harpoon",
+                    "demon_edge",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 126,
+            "name": "Void Spirit",
+            "internal_name": "void_spirit",
+            "pub_3000_plus_winrate": "49.5%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "urn_of_shadows",
+                    "power_treads"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "blade_of_alacrity",
+                    "aghanims_shard",
+                    "spirit_vessel"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "yasha",
+                    "yasha_and_kaya"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "name": "Anti-Mage",
+            "internal_name": "antimage",
+            "pub_3000_plus_winrate": "49.4%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 5,
+                "winrate": "60.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "ring_of_health",
+                    "power_treads",
+                    "broadsword"
+                ],
+                "mid": [
+                    "broadsword",
+                    "blade_of_alacrity",
+                    "yasha",
+                    "diadem"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "basher",
+                    "butterfly",
+                    "eagle"
+                ]
+            }
+        },
+        {
+            "id": 28,
+            "name": "Slardar",
+            "internal_name": "slardar",
+            "pub_3000_plus_winrate": "49.4%",
+            "pro_winrate": "90.0%",
+            "pro_bans": 7,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "bottle"
+                ],
+                "mid": [
+                    "blink",
+                    "ogre_axe",
+                    "aghanims_shard",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "echo_sabre",
+                    "hyperstone"
+                ]
+            }
+        },
+        {
+            "id": 48,
+            "name": "Luna",
+            "internal_name": "luna",
+            "pub_3000_plus_winrate": "49.4%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "lifesteal",
+                    "broadsword"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diadem",
+                    "yasha",
+                    "manta"
+                ],
+                "late": [
+                    "butterfly",
+                    "eagle",
+                    "black_king_bar",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 55,
+            "name": "Dark Seer",
+            "internal_name": "dark_seer",
+            "pub_3000_plus_winrate": "49.4%",
+            "pro_winrate": "61.5%",
+            "pro_bans": 36,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "helm_of_iron_will",
+                    "arcane_boots",
+                    "helm_of_the_dominator"
+                ],
+                "mid": [
+                    "platemail",
+                    "blink",
+                    "guardian_greaves",
+                    "arcane_boots"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "blink",
+                    "black_king_bar",
+                    "ultimate_scepter"
+                ]
+            }
         },
         {
             "id": 137,
             "name": "Primal Beast",
             "internal_name": "primal_beast",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "shivas_guard",
-                "ultimate_scepter",
-                "black_king_bar",
-                "reaver"
-            ]
+            "pub_3000_plus_winrate": "49.4%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "chainmail",
+                    "boots",
+                    "phase_boots",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blink",
+                    "mithril_hammer",
+                    "black_king_bar"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "reaver"
+                ]
+            }
         },
         {
-            "id": 138,
-            "name": "Muerta",
-            "internal_name": "muerta",
-            "role": "Mid/Offlane",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "demon_edge",
-                "black_king_bar",
-                "hurricane_pike",
-                "lesser_crit"
-            ]
+            "id": 35,
+            "name": "Sniper",
+            "internal_name": "sniper",
+            "pub_3000_plus_winrate": "49.0%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "wraith_band",
+                    "boots",
+                    "power_treads",
+                    "javelin"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "dragon_lance",
+                    "mithril_hammer",
+                    "maelstrom"
+                ],
+                "late": [
+                    "demon_edge",
+                    "black_king_bar",
+                    "lesser_crit",
+                    "force_staff"
+                ]
+            }
         },
         {
-            "id": 145,
-            "name": "Kez",
-            "internal_name": "kez",
-            "role": "Carry",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "black_king_bar",
-                "ultimate_scepter",
-                "demon_edge",
-                "eagle"
-            ]
+            "id": 119,
+            "name": "Dark Willow",
+            "internal_name": "dark_willow",
+            "pub_3000_plus_winrate": "48.9%",
+            "pro_winrate": "36.8%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "urn_of_shadows",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "cyclone",
+                    "essence_distiller",
+                    "blink"
+                ],
+                "late": [
+                    "blink",
+                    "force_staff",
+                    "cyclone",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 80,
+            "name": "Lone Druid",
+            "internal_name": "lone_druid",
+            "pub_3000_plus_winrate": "48.8%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 61,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "javelin",
+                    "mithril_hammer"
+                ],
+                "mid": [
+                    "hyperstone",
+                    "mjollnir",
+                    "maelstrom",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "demon_edge",
+                    "silver_edge",
+                    "black_king_bar",
+                    "eagle"
+                ]
+            }
+        },
+        {
+            "id": 94,
+            "name": "Medusa",
+            "internal_name": "medusa",
+            "pub_3000_plus_winrate": "48.8%",
+            "pro_winrate": "0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "null_talisman",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "manta",
+                    "diadem",
+                    "claymore",
+                    "yasha"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "demon_edge",
+                    "skadi",
+                    "lesser_crit"
+                ]
+            }
+        },
+        {
+            "id": 108,
+            "name": "Underlord",
+            "internal_name": "abyssal_underlord",
+            "pub_3000_plus_winrate": "48.8%",
+            "pro_winrate": "20.0%",
+            "pro_bans": 8,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "soul_ring",
+                    "bracer",
+                    "power_treads"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "ogre_axe",
+                    "point_booster",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "shivas_guard",
+                    "ultimate_scepter",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 47,
+            "name": "Viper",
+            "internal_name": "viper",
+            "pub_3000_plus_winrate": "48.7%",
+            "pro_winrate": "16.7%",
+            "pro_bans": 13,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "dragon_lance",
+                    "force_staff"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "black_king_bar",
+                    "skadi",
+                    "manta"
+                ]
+            }
+        },
+        {
+            "id": 100,
+            "name": "Tusk",
+            "internal_name": "tusk",
+            "pub_3000_plus_winrate": "48.7%",
+            "pro_winrate": "40.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "bottle",
+                    "power_treads"
+                ],
+                "mid": [
+                    "blink",
+                    "phase_boots",
+                    "ogre_axe",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "ultimate_scepter",
+                    "cyclone",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 21,
+            "name": "Windranger",
+            "internal_name": "windrunner",
+            "pub_3000_plus_winrate": "48.6%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 9,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "null_talisman",
+                    "bracer"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "maelstrom",
+                    "blade_of_alacrity",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "demon_edge",
+                    "lesser_crit",
+                    "greater_crit",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 26,
+            "name": "Lion",
+            "internal_name": "lion",
+            "pub_3000_plus_winrate": "48.6%",
+            "pro_winrate": "75.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "bracer",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "blink",
+                    "staff_of_wizardry",
+                    "force_staff",
+                    "ogre_axe"
+                ],
+                "late": [
+                    "force_staff",
+                    "aether_lens",
+                    "glimmer_cape",
+                    "aeon_disk"
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "name": "Puck",
+            "internal_name": "puck",
+            "pub_3000_plus_winrate": "48.5%",
+            "pro_winrate": "17.6%",
+            "pro_bans": 32,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bottle",
+                    "boots",
+                    "power_treads",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "witch_blade",
+                    "oblivion_staff",
+                    "blink",
+                    "blitz_knuckles"
+                ],
+                "late": [
+                    "devastator",
+                    "mystic_staff",
+                    "octarine_core",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 34,
+            "name": "Tinker",
+            "internal_name": "tinker",
+            "pub_3000_plus_winrate": "48.4%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bottle",
+                    "staff_of_wizardry",
+                    "kaya",
+                    "blink"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "point_booster",
+                    "staff_of_wizardry",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "shivas_guard",
+                    "sange",
+                    "aether_lens"
+                ]
+            }
+        },
+        {
+            "id": 49,
+            "name": "Dragon Knight",
+            "internal_name": "dragon_knight",
+            "pub_3000_plus_winrate": "48.4%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 5,
+                "winrate": "40.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "lifesteal"
+                ],
+                "mid": [
+                    "claymore",
+                    "blink",
+                    "mithril_hammer",
+                    "mask_of_madness"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "lesser_crit",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 123,
+            "name": "Hoodwink",
+            "internal_name": "hoodwink",
+            "pub_3000_plus_winrate": "48.4%",
+            "pro_winrate": "58.1%",
+            "pro_bans": 22,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "arcane_boots",
+                    "chainmail"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "arcane_boots",
+                    "essence_distiller",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "blink",
+                    "glimmer_cape",
+                    "mystic_staff",
+                    "force_staff"
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "name": "Shadow Fiend",
+            "internal_name": "nevermore",
+            "pub_3000_plus_winrate": "48.3%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 50,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "lifesteal"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "dragon_lance",
+                    "staff_of_wizardry",
+                    "yasha"
+                ],
+                "late": [
+                    "demon_edge",
+                    "lesser_crit",
+                    "greater_crit",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 37,
+            "name": "Warlock",
+            "internal_name": "warlock",
+            "pub_3000_plus_winrate": "48.0%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "shadow_amulet"
+                ],
+                "mid": [
+                    "glimmer_cape",
+                    "arcane_boots",
+                    "aghanims_shard",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "force_staff",
+                    "glimmer_cape",
+                    "refresher"
+                ]
+            }
+        },
+        {
+            "id": 131,
+            "name": "Ring Master",
+            "internal_name": "ringmaster",
+            "pub_3000_plus_winrate": "48.0%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "arcane_boots"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "blink",
+                    "staff_of_wizardry",
+                    "essence_distiller"
+                ],
+                "late": [
+                    "blink",
+                    "aether_lens",
+                    "ultimate_scepter",
+                    "glimmer_cape"
+                ]
+            }
         },
         {
             "id": 155,
             "name": "Largo",
             "internal_name": "largo",
-            "role": "Support",
-            "tier": "B",
-            "winrate_d2pt": "0%",
-            "core_items": [
-                "ultimate_scepter",
-                "black_king_bar",
-                "sange",
-                "kaya_and_sange"
-            ]
-        }
-    ],
-    "teams": [
-        {
-            "name": "PVISION",
-            "power_index": 90,
-            "status": "Pro"
-        },
-        {
-            "name": "Rune Eaters",
-            "power_index": 90,
-            "status": "Pro"
-        },
-        {
-            "name": "Team Spirit",
-            "power_index": 90,
-            "status": "Pro"
-        },
-        {
-            "name": "Team Yandex",
-            "power_index": 90,
-            "status": "Pro"
-        },
-        {
-            "name": "BoomBoys",
-            "power_index": 90,
-            "status": "Pro"
-        },
-        {
-            "name": "LGD Gaming",
-            "power_index": 90,
-            "status": "Pro"
-        }
-    ],
-    "tournament": {
-        "name": "OpenDota Pro Tracker",
-        "matches": [
-            {
-                "time": "Завершен",
-                "team_a": "PVISION",
-                "team_b": "Rune Eaters",
-                "prediction": "Победил PVISION"
+            "pub_3000_plus_winrate": "48.0%",
+            "pro_winrate": "64.7%",
+            "pro_bans": 26,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
             },
-            {
-                "time": "Завершен",
-                "team_a": "Rune Eaters",
-                "team_b": "PVISION",
-                "prediction": "Победил PVISION"
-            },
-            {
-                "time": "Завершен",
-                "team_a": "Team Spirit",
-                "team_b": "Team Yandex",
-                "prediction": "Победил Team Yandex"
-            },
-            {
-                "time": "Завершен",
-                "team_a": "Team Spirit",
-                "team_b": "Team Yandex",
-                "prediction": "Победил Team Yandex"
-            },
-            {
-                "time": "Завершен",
-                "team_a": "BoomBoys",
-                "team_b": "LGD Gaming",
-                "prediction": "Победил BoomBoys"
+            "items": {
+                "early": [
+                    "boots",
+                    "chainmail",
+                    "phase_boots",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "kaya",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "sange",
+                    "kaya_and_sange"
+                ]
             }
-        ]
-    },
-    "ai_insight": "Сбой ИИ: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
+        },
+        {
+            "id": 69,
+            "name": "Doom",
+            "internal_name": "doom_bringer",
+            "pub_3000_plus_winrate": "47.9%",
+            "pro_winrate": "36.4%",
+            "pro_bans": 27,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bracer",
+                    "chainmail",
+                    "boots",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blink",
+                    "mithril_hammer",
+                    "black_king_bar"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 58,
+            "name": "Enchantress",
+            "internal_name": "enchantress",
+            "pub_3000_plus_winrate": "47.8%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 6,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "power_treads",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "ancient_janggo",
+                    "staff_of_wizardry",
+                    "power_treads",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "hurricane_pike",
+                    "force_staff",
+                    "ultimate_scepter",
+                    "hyperstone"
+                ]
+            }
+        },
+        {
+            "id": 70,
+            "name": "Ursa",
+            "internal_name": "ursa",
+            "pub_3000_plus_winrate": "47.8%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "ring_of_health",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "broadsword",
+                    "mithril_hammer",
+                    "bfury",
+                    "blink"
+                ],
+                "late": [
+                    "sange",
+                    "abyssal_blade",
+                    "black_king_bar",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 89,
+            "name": "Naga Siren",
+            "internal_name": "naga_siren",
+            "pub_3000_plus_winrate": "47.8%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 4,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "wraith_band",
+                    "power_treads",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "claymore",
+                    "blitz_knuckles",
+                    "diadem",
+                    "oblivion_staff"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "eagle",
+                    "butterfly",
+                    "bloodthorn"
+                ]
+            }
+        },
+        {
+            "id": 43,
+            "name": "Death Prophet",
+            "internal_name": "death_prophet",
+            "pub_3000_plus_winrate": "47.5%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "null_talisman",
+                    "bottle",
+                    "power_treads"
+                ],
+                "mid": [
+                    "staff_of_wizardry",
+                    "ogre_axe",
+                    "vitality_booster",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "shivas_guard",
+                    "blink",
+                    "soul_booster"
+                ]
+            }
+        },
+        {
+            "id": 17,
+            "name": "Storm Spirit",
+            "internal_name": "storm_spirit",
+            "pub_3000_plus_winrate": "47.4%",
+            "pro_winrate": "37.5%",
+            "pro_bans": 6,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "soul_ring",
+                    "power_treads"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "kaya",
+                    "sange"
+                ],
+                "late": [
+                    "mystic_staff",
+                    "witch_blade",
+                    "black_king_bar",
+                    "devastator"
+                ]
+            }
+        },
+        {
+            "id": 63,
+            "name": "Weaver",
+            "internal_name": "weaver",
+            "pub_3000_plus_winrate": "47.3%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "100.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "blade_of_alacrity",
+                    "aghanims_shard",
+                    "dragon_lance"
+                ],
+                "late": [
+                    "demon_edge",
+                    "lesser_crit",
+                    "greater_crit",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 109,
+            "name": "Terrorblade",
+            "internal_name": "terrorblade",
+            "pub_3000_plus_winrate": "47.3%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 15,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "blade_of_alacrity"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diadem",
+                    "yasha",
+                    "manta"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "skadi",
+                    "demon_edge",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 66,
+            "name": "Chen",
+            "internal_name": "chen",
+            "pub_3000_plus_winrate": "47.1%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "ancient_janggo",
+                    "chainmail"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "mekansm",
+                    "ancient_janggo",
+                    "guardian_greaves"
+                ],
+                "late": [
+                    "pipe",
+                    "ultimate_scepter",
+                    "guardian_greaves",
+                    "vladmir"
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "name": "Morphling",
+            "internal_name": "morphling",
+            "pub_3000_plus_winrate": "46.9%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "lifesteal",
+                    "wraith_band"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diadem",
+                    "yasha",
+                    "manta"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "butterfly",
+                    "black_king_bar",
+                    "demon_edge"
+                ]
+            }
+        },
+        {
+            "id": 16,
+            "name": "Sand King",
+            "internal_name": "sand_king",
+            "pub_3000_plus_winrate": "46.8%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "blink",
+                    "point_booster"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "lesser_crit",
+                    "demon_edge",
+                    "shivas_guard"
+                ]
+            }
+        },
+        {
+            "id": 40,
+            "name": "Venomancer",
+            "internal_name": "venomancer",
+            "pub_3000_plus_winrate": "46.8%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "urn_of_shadows",
+                    "arcane_boots",
+                    "tranquil_boots"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "staff_of_wizardry",
+                    "diadem",
+                    "spirit_vessel"
+                ],
+                "late": [
+                    "force_staff",
+                    "blink",
+                    "ultimate_scepter",
+                    "solar_crest"
+                ]
+            }
+        },
+        {
+            "id": 129,
+            "name": "Mars",
+            "internal_name": "mars",
+            "pub_3000_plus_winrate": "46.6%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bracer",
+                    "boots",
+                    "chainmail",
+                    "soul_ring"
+                ],
+                "mid": [
+                    "blink",
+                    "aghanims_shard",
+                    "mithril_hammer",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "mystic_staff",
+                    "sheepstick",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 39,
+            "name": "Queen of Pain",
+            "internal_name": "queenofpain",
+            "pub_3000_plus_winrate": "46.3%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "power_treads",
+                    "null_talisman"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "staff_of_wizardry",
+                    "kaya",
+                    "point_booster"
+                ],
+                "late": [
+                    "soul_booster",
+                    "shivas_guard",
+                    "black_king_bar",
+                    "ultimate_scepter"
+                ]
+            }
+        },
+        {
+            "id": 64,
+            "name": "Jakiro",
+            "internal_name": "jakiro",
+            "pub_3000_plus_winrate": "46.3%",
+            "pro_winrate": "57.1%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "null_talisman",
+                    "tranquil_boots"
+                ],
+                "mid": [
+                    "arcane_boots",
+                    "staff_of_wizardry",
+                    "glimmer_cape",
+                    "cyclone"
+                ],
+                "late": [
+                    "force_staff",
+                    "ultimate_scepter",
+                    "cyclone",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 73,
+            "name": "Alchemist",
+            "internal_name": "alchemist",
+            "pub_3000_plus_winrate": "46.3%",
+            "pro_winrate": "62.5%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 4,
+                "winrate": "25.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "soul_ring",
+                    "chainmail",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blade_of_alacrity",
+                    "staff_of_wizardry",
+                    "point_booster"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "assault",
+                    "hyperstone",
+                    "basher"
+                ]
+            }
+        },
+        {
+            "id": 46,
+            "name": "Templar Assassin",
+            "internal_name": "templar_assassin",
+            "pub_3000_plus_winrate": "46.2%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 5,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "mithril_hammer"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "desolator",
+                    "blink",
+                    "dragon_lance"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "eagle",
+                    "lesser_crit"
+                ]
+            }
+        },
+        {
+            "id": 99,
+            "name": "Bristleback",
+            "internal_name": "bristleback",
+            "pub_3000_plus_winrate": "46.1%",
+            "pro_winrate": "0%",
+            "pro_bans": 1,
+            "personal_stats": {
+                "games_played": 2,
+                "winrate": "50.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bracer",
+                    "power_treads",
+                    "ring_of_health"
+                ],
+                "mid": [
+                    "aghanims_shard",
+                    "ogre_axe",
+                    "blade_of_alacrity",
+                    "sange"
+                ],
+                "late": [
+                    "reaver",
+                    "heart",
+                    "sange_and_yasha",
+                    "sange"
+                ]
+            }
+        },
+        {
+            "id": 59,
+            "name": "Huskar",
+            "internal_name": "huskar",
+            "pub_3000_plus_winrate": "45.9%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 19,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "helm_of_iron_will",
+                    "armlet",
+                    "bracer"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blade_of_alacrity",
+                    "blink",
+                    "mithril_hammer"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "reaver",
+                    "yasha",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
+            "id": 120,
+            "name": "Pangolier",
+            "internal_name": "pangolier",
+            "pub_3000_plus_winrate": "45.8%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 7,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "bottle",
+                    "blade_of_alacrity",
+                    "power_treads"
+                ],
+                "mid": [
+                    "blade_of_alacrity",
+                    "diffusal_blade",
+                    "blink",
+                    "point_booster"
+                ],
+                "late": [
+                    "basher",
+                    "ultimate_scepter",
+                    "soul_booster",
+                    "octarine_core"
+                ]
+            }
+        },
+        {
+            "id": 79,
+            "name": "Shadow Demon",
+            "internal_name": "shadow_demon",
+            "pub_3000_plus_winrate": "45.6%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 3,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "arcane_boots",
+                    "tranquil_boots",
+                    "bracer"
+                ],
+                "mid": [
+                    "blink",
+                    "arcane_boots",
+                    "aghanims_shard",
+                    "aether_lens"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "blink",
+                    "aether_lens",
+                    "glimmer_cape"
+                ]
+            }
+        },
+        {
+            "id": 138,
+            "name": "Muerta",
+            "internal_name": "muerta",
+            "pub_3000_plus_winrate": "45.6%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 4,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "javelin"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "maelstrom",
+                    "blade_of_alacrity",
+                    "dragon_lance"
+                ],
+                "late": [
+                    "demon_edge",
+                    "black_king_bar",
+                    "hurricane_pike",
+                    "lesser_crit"
+                ]
+            }
+        },
+        {
+            "id": 114,
+            "name": "Monkey King",
+            "internal_name": "monkey_king",
+            "pub_3000_plus_winrate": "44.8%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 4,
+            "personal_stats": {
+                "games_played": 5,
+                "winrate": "80.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "wraith_band",
+                    "void_stone"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "ogre_axe",
+                    "broadsword",
+                    "desolator"
+                ],
+                "late": [
+                    "ultimate_orb",
+                    "demon_edge",
+                    "black_king_bar",
+                    "skadi"
+                ]
+            }
+        },
+        {
+            "id": 19,
+            "name": "Tiny",
+            "internal_name": "tiny",
+            "pub_3000_plus_winrate": "44.6%",
+            "pro_winrate": "53.3%",
+            "pro_bans": 25,
+            "personal_stats": {
+                "games_played": 3,
+                "winrate": "33.3%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ogre_axe",
+                    "broadsword"
+                ],
+                "mid": [
+                    "echo_sabre",
+                    "ogre_axe",
+                    "claymore",
+                    "invis_sword"
+                ],
+                "late": [
+                    "demon_edge",
+                    "black_king_bar",
+                    "harpoon",
+                    "lesser_crit"
+                ]
+            }
+        },
+        {
+            "id": 145,
+            "name": "Kez",
+            "internal_name": "kez",
+            "pub_3000_plus_winrate": "44.6%",
+            "pro_winrate": "55.6%",
+            "pro_bans": 22,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "ring_of_health",
+                    "void_stone"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "mage_slayer",
+                    "ogre_axe",
+                    "blade_of_alacrity"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "ultimate_scepter",
+                    "demon_edge",
+                    "eagle"
+                ]
+            }
+        },
+        {
+            "id": 38,
+            "name": "Beastmaster",
+            "internal_name": "beastmaster",
+            "pub_3000_plus_winrate": "44.4%",
+            "pro_winrate": "60.0%",
+            "pro_bans": 17,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "helm_of_iron_will",
+                    "helm_of_the_dominator",
+                    "arcane_boots"
+                ],
+                "mid": [
+                    "ultimate_orb",
+                    "helm_of_the_overlord",
+                    "ogre_axe",
+                    "blink"
+                ],
+                "late": [
+                    "black_king_bar",
+                    "hyperstone",
+                    "assault",
+                    "blink"
+                ]
+            }
+        },
+        {
+            "id": 98,
+            "name": "Timbersaw",
+            "internal_name": "shredder",
+            "pub_3000_plus_winrate": "43.8%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 8,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "soul_ring",
+                    "bracer",
+                    "staff_of_wizardry"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "kaya",
+                    "staff_of_wizardry",
+                    "sange"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "reaver",
+                    "black_king_bar",
+                    "blink"
+                ]
+            }
+        },
+        {
+            "id": 53,
+            "name": "Nature's Prophet",
+            "internal_name": "furion",
+            "pub_3000_plus_winrate": "43.0%",
+            "pro_winrate": "50.0%",
+            "pro_bans": 24,
+            "personal_stats": {
+                "games_played": 1,
+                "winrate": "0.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "javelin",
+                    "urn_of_shadows"
+                ],
+                "mid": [
+                    "mithril_hammer",
+                    "blade_of_alacrity",
+                    "hyperstone",
+                    "mjollnir"
+                ],
+                "late": [
+                    "demon_edge",
+                    "lesser_crit",
+                    "black_king_bar",
+                    "greater_crit"
+                ]
+            }
+        },
+        {
+            "id": 72,
+            "name": "Gyrocopter",
+            "internal_name": "gyrocopter",
+            "pub_3000_plus_winrate": "42.7%",
+            "pro_winrate": "66.7%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "falcon_blade",
+                    "claymore"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blade_of_alacrity",
+                    "claymore",
+                    "staff_of_wizardry"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "satanic",
+                    "reaver"
+                ]
+            }
+        },
+        {
+            "id": 65,
+            "name": "Batrider",
+            "internal_name": "batrider",
+            "pub_3000_plus_winrate": "42.5%",
+            "pro_winrate": "33.3%",
+            "pro_bans": 9,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "tranquil_boots",
+                    "null_talisman",
+                    "bracer"
+                ],
+                "mid": [
+                    "blink",
+                    "ogre_axe",
+                    "ancient_janggo",
+                    "ring_of_tarrasque"
+                ],
+                "late": [
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "force_staff",
+                    "boots_of_bearing"
+                ]
+            }
+        }
+    ],
+    "upcoming_pro_matches": "Сбой ИИ: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
 }
