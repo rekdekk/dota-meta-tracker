@@ -11,7 +11,10 @@ except ImportError:
     print("Установите зависимости: pip install requests beautifulsoup4 google-generativeai")
     sys.exit(0)
 
-def get_ai_predictions(meta_data, raw_schedule_text):
+def get_ai_predictions(meta_data, real_matches):
+    if not real_matches:
+        return "В данный момент нет актуальных предстоящих матчей на Liquipedia."
+        
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         return "ИИ-аналитика недоступна. Добавьте GEMINI_API_KEY."
@@ -22,16 +25,18 @@ def get_ai_predictions(meta_data, raw_schedule_text):
         
         prompt = f"""
         Ты — старший аналитик Dota 2.
-        Вот список актуальных мета-героев (винрейт 3000+ MMR): {meta_data[:10]}
+        Твоя задача — проанализировать РЕАЛЬНЫЕ предстоящие матчи и выдать предикт.
+        ЗАПРЕЩЕНО выдумывать матчи, команды или турниры. Работай ТОЛЬКО с предоставленным списком.
         
-        А вот сырой текст со страницы расписания предстоящих матчей Liquipedia:
-        {raw_schedule_text[:3000]}
+        Текущая мета (винрейт 3000+ MMR): {meta_data[:10]}
         
-        Твоя задача:
-        1. Найди в этом тексте 3-4 ближайших ПРЕДСТОЯЩИХ матча (Team A vs Team B).
-        2. Опираясь на текущую мету, сделай жесткий и точный предикт победителя для каждого матча.
-        3. Напиши краткий инсайт, почему именно эта команда заберет серию.
-        Выведи результат в структурированном виде, без воды.
+        Список реальных предстоящих матчей с Liquipedia:
+        {real_matches}
+        
+        Для каждого матча из списка:
+        1. Сделай жесткий предикт победителя, опираясь на форму команд и мету.
+        2. Дай инсайт в 1-2 предложения (почему именно они).
+        Выведи профессионально, без воды.
         """
         response = model.generate_content(prompt)
         return response.text.strip()
@@ -39,14 +44,13 @@ def get_ai_predictions(meta_data, raw_schedule_text):
         return f"Сбой ИИ: {e}"
 
 def main():
-    print("Инициализация Absolute Hub (3000+ MMR, Pro Scene, Personal Comfort)...")
+    print("Инициализация Absolute Hub (API Liquipedia + OpenDota + Steam)...")
     
     session = requests.Session()
-    # Жесткая маскировка под реального пользователя для обхода блокировок
+    # Белый User-Agent по правилам API Liquipedia (иначе бан)
     session.headers.update({
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
+        'User-Agent': 'AbsoluteMetaTracker/1.0 (github.com/rekdekk; bot)',
+        'Accept-Encoding': 'gzip, deflate'
     })
     
     data = {
@@ -57,44 +61,38 @@ def main():
     }
 
     try:
-        # 1. Загрузка базы предметов
+        # 1. Загрузка DotaConstants (Маппинг шмоток)
         print("Подгрузка DotaConstants...")
         items_req = session.get("https://raw.githubusercontent.com/odota/dotaconstants/master/build/items.json").json()
         id_to_item = {str(v.get('id')): k for k, v in items_req.items() if 'id' in v}
 
-        # 2. Выгрузка личной статистики игрока (Зона комфорта)
-        print("Сбор персональной статистики (Steam ID 872107609)...")
+        # 2. Выгрузка личной статистики игрока
+        print("Сбор персональной статистики Steam...")
         player_data = {}
         player_resp = session.get("https://api.opendota.com/api/players/872107609/heroes", timeout=10)
         if player_resp.status_code == 200:
             for item in player_resp.json():
                 player_data[str(item['hero_id'])] = item
-        else:
-            print("Не удалось получить стату профиля. Идем дальше.")
 
         # 3. Выгрузка глобальной статистики
-        print("Выгрузка статистики героев (3000+ MMR и Pro Scene)...")
+        print("Выгрузка статистики героев (3000+ MMR)...")
         hero_stats = session.get("https://api.opendota.com/api/heroStats").json()
-        
         meta_summary_for_ai = []
         
         for index, h in enumerate(hero_stats):
             hero_id = h['id']
             name = h['localized_name']
             
-            # Агрегация пабликов от 3000 MMR (Legend) до Immortal
-            # OpenDota brackets: 5=Legend, 6=Ancient, 7=Divine, 8=Immortal
+            # Агрегация от 3000 MMR до Immortal
             high_picks = sum(h.get(f"{i}_pick", 0) for i in range(5, 9))
             high_wins = sum(h.get(f"{i}_win", 0) for i in range(5, 9))
             high_winrate = round((high_wins / high_picks * 100), 1) if high_picks > 0 else 0
             
-            # Про-сцена
             pro_picks = h.get('pro_pick', 0)
             pro_wins = h.get('pro_win', 0)
-            pro_bans = h.get('pro_ban', 0)
             pro_winrate = round((pro_wins / pro_picks * 100), 1) if pro_picks > 0 else 0
             
-            # Интеграция личного комфорта
+            # Личный комфорт
             my_stats = player_data.get(str(hero_id), {})
             my_games = my_stats.get("games", 0)
             my_wins = my_stats.get("win", 0)
@@ -104,14 +102,13 @@ def main():
             if high_picks > 10000 and high_winrate > 51:
                 meta_summary_for_ai.append(f"{name} ({high_winrate}%)")
 
-            # Предметы (с паузой для защиты от бана)
+            # Предметы
             early_game, mid_game, late_game = [], [], []
             try:
-                time.sleep(1.2) # ЖЕСТКО НЕ ТРОГАТЬ. ЭТО ЗАЩИТА ОТ БАНА OPENDOTA.
+                time.sleep(1.2) # Защита от бана OpenDota
                 item_resp = session.get(f"https://api.opendota.com/api/heroes/{hero_id}/itemPopularity", timeout=10)
                 if item_resp.status_code == 200:
                     popular_items = item_resp.json()
-                    
                     for phase, target_list in [('early_game_items', early_game), ('mid_game_items', mid_game), ('late_game_items', late_game)]:
                         phase_items = popular_items.get(phase, {})
                         top_ids = sorted(phase_items.items(), key=lambda x: x[1], reverse=True)[:4]
@@ -128,7 +125,7 @@ def main():
                 "internal_name": h['name'].replace("npc_dota_hero_", ""),
                 "pub_3000_plus_winrate": f"{high_winrate}%",
                 "pro_winrate": f"{pro_winrate}%",
-                "pro_bans": pro_bans,
+                "pro_bans": h.get('pro_ban', 0),
                 "personal_stats": {
                     "games_played": my_games,
                     "winrate": f"{my_winrate}%",
@@ -144,33 +141,52 @@ def main():
             if index % 20 == 0 and index > 0:
                 print(f"Обработано {index} / 124 героев...")
 
-        # 4. Предстоящие матчи (Парсинг Liquipedia)
-        print("Сбор расписания предстоящих матчей...")
+        # 4. РЕАЛЬНЫЕ Предстоящие матчи (API Liquipedia)
+        print("Сбор реального расписания через MediaWiki API...")
+        real_matches_list = []
         try:
-            # Парсим открытый хаб матчей
-            liq_url = "https://liquipedia.net/dota2/Liquipedia:Upcoming_and_ongoing_matches"
-            req = session.get(liq_url, timeout=15)
+            liq_api_url = "https://liquipedia.net/dota2/api.php"
+            params = {
+                "action": "parse",
+                "page": "Liquipedia:Upcoming_and_ongoing_matches",
+                "format": "json"
+            }
+            req = session.get(liq_api_url, params=params, timeout=15)
+            
             if req.status_code == 200:
-                soup = BeautifulSoup(req.text, 'html.parser')
-                # Вытягиваем весь текст из таблиц с матчами
-                matches_text = " ".join([t.get_text(separator=' ') for t in soup.find_all('table', class_='infobox_matches_content')[:10]])
-            else:
-                matches_text = "Не удалось пробить Cloudflare Liquipedia. Анализируй текущие тренды турниров."
-        except Exception:
-            matches_text = "Ошибка соединения с турнирными хабами."
+                html_content = req.json().get('parse', {}).get('text', {}).get('*', '')
+                soup = BeautifulSoup(html_content, 'html.parser')
+                
+                # Ищем таблицы матчей
+                match_tables = soup.find_all('table', class_='infobox_matches_content')
+                for table in match_tables[:5]: # Берем топ-5 матчей
+                    team_left = table.find('td', class_='team-left')
+                    team_right = table.find('td', class_='team-right')
+                    
+                    if team_left and team_right:
+                        # Очищаем от мусора
+                        t1 = team_left.get_text(strip=True)
+                        t2 = team_right.get_text(strip=True)
+                        if t1 and t2:
+                            real_matches_list.append(f"{t1} vs {t2}")
+        except Exception as e:
+            print(f"Ошибка API Liquipedia: {e}")
 
-        # 5. ИИ-Предикты на основе расписания
-        print("Генерация предиктов предстоящих игр...")
-        data["upcoming_pro_matches"] = get_ai_predictions(meta_summary_for_ai, matches_text)
-        print(f"ИИ выдал расписание и предикты:\n{data['upcoming_pro_matches']}")
+        # 5. ИИ-Предикты
+        print("Генерация предиктов...")
+        if real_matches_list:
+            matches_text = "\n".join(real_matches_list)
+            data["upcoming_pro_matches"] = get_ai_predictions(meta_summary_for_ai, matches_text)
+        else:
+            data["upcoming_pro_matches"] = "Матчи не найдены или API Liquipedia недоступно."
 
-        # Сортируем героев по винрейту на 3000+ MMR перед сохранением (чтобы топ был в начале)
+        # Сортировка по винрейту
         data["meta_heroes"].sort(key=lambda x: float(x['pub_3000_plus_winrate'].replace('%', '')), reverse=True)
 
         # 6. Сохранение
         with open("data.json", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
-        print("Абсолютный хаб успешно скомпилирован! Объем данных колоссальный.")
+        print("Скрипт отработал чисто. Фейков нет.")
 
     except Exception as e:
         print(f"Критический сбой: {e}")
