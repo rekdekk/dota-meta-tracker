@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-17 10:23:06",
+    "last_updated": "2026-07-17 10:31:51",
     "player_id": "872107609",
     "meta_heroes": [
         {
@@ -69,6 +69,39 @@
             }
         },
         {
+            "id": 92,
+            "name": "Visage",
+            "internal_name": "visage",
+            "pub_3000_plus_winrate": "53.7%",
+            "pro_winrate": "0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "null_talisman",
+                    "tranquil_boots",
+                    "ancient_janggo"
+                ],
+                "mid": [
+                    "ancient_janggo",
+                    "ring_of_tarrasque",
+                    "vladmir",
+                    "aghanims_shard"
+                ],
+                "late": [
+                    "assault",
+                    "hyperstone",
+                    "ultimate_scepter",
+                    "mystic_staff"
+                ]
+            }
+        },
+        {
             "id": 42,
             "name": "Wraith King",
             "internal_name": "skeleton_king",
@@ -102,39 +135,6 @@
             }
         },
         {
-            "id": 92,
-            "name": "Visage",
-            "internal_name": "visage",
-            "pub_3000_plus_winrate": "53.6%",
-            "pro_winrate": "0%",
-            "pro_bans": 0,
-            "personal_stats": {
-                "games_played": 0,
-                "winrate": "0%",
-                "comfort_level": "Low"
-            },
-            "items": {
-                "early": [
-                    "boots",
-                    "null_talisman",
-                    "tranquil_boots",
-                    "ancient_janggo"
-                ],
-                "mid": [
-                    "ancient_janggo",
-                    "ring_of_tarrasque",
-                    "vladmir",
-                    "aghanims_shard"
-                ],
-                "late": [
-                    "assault",
-                    "hyperstone",
-                    "ultimate_scepter",
-                    "mystic_staff"
-                ]
-            }
-        },
-        {
             "id": 128,
             "name": "Snapfire",
             "internal_name": "snapfire",
@@ -148,22 +148,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "soul_ring",
-                    "bottle",
-                    "bracer"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "aghanims_shard",
-                    "staff_of_wizardry",
-                    "blink",
-                    "kaya"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "black_king_bar",
-                    "yasha",
-                    "yasha_and_kaya",
-                    "shivas_guard"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -774,22 +767,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "bracer",
-                    "chainmail",
-                    "soul_ring"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "ogre_axe",
-                    "broadsword",
-                    "echo_sabre",
-                    "mithril_hammer"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "hyperstone",
-                    "assault",
-                    "black_king_bar",
-                    "basher"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -1038,22 +1024,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "arcane_boots",
-                    "null_talisman",
-                    "urn_of_shadows"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "arcane_boots",
-                    "blink",
-                    "staff_of_wizardry",
-                    "glimmer_cape"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "ultimate_scepter",
                     "blink",
-                    "mystic_staff",
-                    "glimmer_cape"
+                    "skadi"
                 ]
             }
         },
@@ -1754,7 +1733,7 @@
             "id": 56,
             "name": "Clinkz",
             "internal_name": "clinkz",
-            "pub_3000_plus_winrate": "50.2%",
+            "pub_3000_plus_winrate": "50.3%",
             "pro_winrate": "55.6%",
             "pro_bans": 12,
             "personal_stats": {
@@ -1787,7 +1766,7 @@
             "id": 68,
             "name": "Ancient Apparition",
             "internal_name": "ancient_apparition",
-            "pub_3000_plus_winrate": "50.2%",
+            "pub_3000_plus_winrate": "50.3%",
             "pro_winrate": "100.0%",
             "pro_bans": 1,
             "personal_stats": {
@@ -1916,10 +1895,36 @@
             }
         },
         {
+            "id": 136,
+            "name": "Marci",
+            "internal_name": "marci",
+            "pub_3000_plus_winrate": "50.1%",
+            "pro_winrate": "100.0%",
+            "pro_bans": 0,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "magic_wand",
+                    "boots"
+                ],
+                "mid": [
+                    "black_king_bar"
+                ],
+                "late": [
+                    "blink",
+                    "skadi"
+                ]
+            }
+        },
+        {
             "id": 15,
             "name": "Razor",
             "internal_name": "razor",
-            "pub_3000_plus_winrate": "50.1%",
+            "pub_3000_plus_winrate": "50.0%",
             "pro_winrate": "0%",
             "pro_bans": 3,
             "personal_stats": {
@@ -1945,39 +1950,6 @@
                     "black_king_bar",
                     "satanic",
                     "eagle"
-                ]
-            }
-        },
-        {
-            "id": 136,
-            "name": "Marci",
-            "internal_name": "marci",
-            "pub_3000_plus_winrate": "50.1%",
-            "pro_winrate": "100.0%",
-            "pro_bans": 0,
-            "personal_stats": {
-                "games_played": 0,
-                "winrate": "0%",
-                "comfort_level": "Low"
-            },
-            "items": {
-                "early": [
-                    "boots",
-                    "chainmail",
-                    "phase_boots",
-                    "bracer"
-                ],
-                "mid": [
-                    "phase_boots",
-                    "ogre_axe",
-                    "mithril_hammer",
-                    "pavise"
-                ],
-                "late": [
-                    "glimmer_cape",
-                    "black_king_bar",
-                    "basher",
-                    "blink"
                 ]
             }
         },
@@ -2457,22 +2429,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "bottle",
-                    "urn_of_shadows",
-                    "power_treads"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "staff_of_wizardry",
-                    "blade_of_alacrity",
-                    "aghanims_shard",
-                    "spirit_vessel"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "ultimate_scepter",
-                    "black_king_bar",
-                    "yasha",
-                    "yasha_and_kaya"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -2622,22 +2587,15 @@
             },
             "items": {
                 "early": [
-                    "chainmail",
-                    "boots",
-                    "phase_boots",
-                    "soul_ring"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "ogre_axe",
-                    "blink",
-                    "mithril_hammer",
                     "black_king_bar"
                 ],
                 "late": [
-                    "shivas_guard",
-                    "ultimate_scepter",
-                    "black_king_bar",
-                    "reaver"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -2688,22 +2646,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "tranquil_boots",
-                    "urn_of_shadows",
-                    "staff_of_wizardry"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "staff_of_wizardry",
-                    "cyclone",
-                    "essence_distiller",
-                    "blink"
+                    "black_king_bar"
                 ],
                 "late": [
                     "blink",
-                    "force_staff",
-                    "cyclone",
-                    "glimmer_cape"
+                    "skadi"
                 ]
             }
         },
@@ -2972,6 +2923,39 @@
             }
         },
         {
+            "id": 49,
+            "name": "Dragon Knight",
+            "internal_name": "dragon_knight",
+            "pub_3000_plus_winrate": "48.5%",
+            "pro_winrate": "0.0%",
+            "pro_bans": 2,
+            "personal_stats": {
+                "games_played": 5,
+                "winrate": "40.0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "boots",
+                    "power_treads",
+                    "bracer",
+                    "lifesteal"
+                ],
+                "mid": [
+                    "claymore",
+                    "blink",
+                    "mithril_hammer",
+                    "mask_of_madness"
+                ],
+                "late": [
+                    "demon_edge",
+                    "greater_crit",
+                    "lesser_crit",
+                    "black_king_bar"
+                ]
+            }
+        },
+        {
             "id": 34,
             "name": "Tinker",
             "internal_name": "tinker",
@@ -3005,39 +2989,6 @@
             }
         },
         {
-            "id": 49,
-            "name": "Dragon Knight",
-            "internal_name": "dragon_knight",
-            "pub_3000_plus_winrate": "48.4%",
-            "pro_winrate": "0.0%",
-            "pro_bans": 2,
-            "personal_stats": {
-                "games_played": 5,
-                "winrate": "40.0%",
-                "comfort_level": "Low"
-            },
-            "items": {
-                "early": [
-                    "boots",
-                    "power_treads",
-                    "bracer",
-                    "lifesteal"
-                ],
-                "mid": [
-                    "claymore",
-                    "blink",
-                    "mithril_hammer",
-                    "mask_of_madness"
-                ],
-                "late": [
-                    "demon_edge",
-                    "greater_crit",
-                    "lesser_crit",
-                    "black_king_bar"
-                ]
-            }
-        },
-        {
             "id": 123,
             "name": "Hoodwink",
             "internal_name": "hoodwink",
@@ -3051,22 +3002,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "urn_of_shadows",
-                    "arcane_boots",
-                    "chainmail"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "staff_of_wizardry",
-                    "arcane_boots",
-                    "essence_distiller",
-                    "aghanims_shard"
+                    "black_king_bar"
                 ],
                 "late": [
                     "blink",
-                    "glimmer_cape",
-                    "mystic_staff",
-                    "force_staff"
+                    "skadi"
                 ]
             }
         },
@@ -3149,21 +3093,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "urn_of_shadows",
-                    "arcane_boots"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "arcane_boots",
-                    "blink",
-                    "staff_of_wizardry",
-                    "essence_distiller"
+                    "black_king_bar"
                 ],
                 "late": [
                     "blink",
-                    "aether_lens",
-                    "ultimate_scepter",
-                    "glimmer_cape"
+                    "skadi"
                 ]
             }
         },
@@ -3181,55 +3119,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "chainmail",
-                    "phase_boots",
-                    "soul_ring"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "ogre_axe",
-                    "staff_of_wizardry",
-                    "kaya",
-                    "aghanims_shard"
-                ],
-                "late": [
-                    "ultimate_scepter",
-                    "black_king_bar",
-                    "sange",
-                    "kaya_and_sange"
-                ]
-            }
-        },
-        {
-            "id": 69,
-            "name": "Doom",
-            "internal_name": "doom_bringer",
-            "pub_3000_plus_winrate": "47.9%",
-            "pro_winrate": "36.4%",
-            "pro_bans": 27,
-            "personal_stats": {
-                "games_played": 0,
-                "winrate": "0%",
-                "comfort_level": "Low"
-            },
-            "items": {
-                "early": [
-                    "bracer",
-                    "chainmail",
-                    "boots",
-                    "phase_boots"
-                ],
-                "mid": [
-                    "ogre_axe",
-                    "blink",
-                    "mithril_hammer",
                     "black_king_bar"
                 ],
                 "late": [
-                    "shivas_guard",
-                    "ultimate_scepter",
-                    "black_king_bar",
-                    "reaver"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -3263,6 +3161,39 @@
                     "force_staff",
                     "ultimate_scepter",
                     "hyperstone"
+                ]
+            }
+        },
+        {
+            "id": 69,
+            "name": "Doom",
+            "internal_name": "doom_bringer",
+            "pub_3000_plus_winrate": "47.8%",
+            "pro_winrate": "36.4%",
+            "pro_bans": 27,
+            "personal_stats": {
+                "games_played": 0,
+                "winrate": "0%",
+                "comfort_level": "Low"
+            },
+            "items": {
+                "early": [
+                    "bracer",
+                    "chainmail",
+                    "boots",
+                    "phase_boots"
+                ],
+                "mid": [
+                    "ogre_axe",
+                    "blink",
+                    "mithril_hammer",
+                    "black_king_bar"
+                ],
+                "late": [
+                    "shivas_guard",
+                    "ultimate_scepter",
+                    "black_king_bar",
+                    "reaver"
                 ]
             }
         },
@@ -3610,22 +3541,15 @@
             },
             "items": {
                 "early": [
-                    "bracer",
-                    "boots",
-                    "chainmail",
-                    "soul_ring"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "blink",
-                    "aghanims_shard",
-                    "mithril_hammer",
-                    "staff_of_wizardry"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "black_king_bar",
-                    "mystic_staff",
-                    "sheepstick",
-                    "reaver"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -3841,22 +3765,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "bottle",
-                    "blade_of_alacrity",
-                    "power_treads"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "blade_of_alacrity",
-                    "diffusal_blade",
-                    "blink",
-                    "point_booster"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "basher",
-                    "ultimate_scepter",
-                    "soul_booster",
-                    "octarine_core"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -3907,22 +3824,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "power_treads",
-                    "falcon_blade",
-                    "javelin"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "mithril_hammer",
-                    "maelstrom",
-                    "blade_of_alacrity",
-                    "dragon_lance"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "demon_edge",
-                    "black_king_bar",
-                    "hurricane_pike",
-                    "lesser_crit"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -3940,21 +3850,14 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "power_treads",
-                    "wraith_band",
-                    "void_stone"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "mithril_hammer",
-                    "ogre_axe",
-                    "broadsword",
-                    "desolator"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "ultimate_orb",
-                    "demon_edge",
-                    "black_king_bar",
+                    "blink",
                     "skadi"
                 ]
             }
@@ -4006,22 +3909,15 @@
             },
             "items": {
                 "early": [
-                    "boots",
-                    "power_treads",
-                    "ring_of_health",
-                    "void_stone"
+                    "magic_wand",
+                    "boots"
                 ],
                 "mid": [
-                    "mithril_hammer",
-                    "mage_slayer",
-                    "ogre_axe",
-                    "blade_of_alacrity"
+                    "black_king_bar"
                 ],
                 "late": [
-                    "black_king_bar",
-                    "ultimate_scepter",
-                    "demon_edge",
-                    "eagle"
+                    "blink",
+                    "skadi"
                 ]
             }
         },
@@ -4191,5 +4087,5 @@
             }
         }
     ],
-    "upcoming_pro_matches": "Сбой ИИ: 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements."
+    "upcoming_pro_matches": "Матчи не найдены или API Liquipedia недоступно."
 }
